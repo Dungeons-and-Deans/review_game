@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :teachers
+  root 'games#index'
   resources :games
   resources :students
   resources :categories
