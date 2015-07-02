@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 1
+  name: MyString
+  student_icon: MyString
+  movement: 1
+
+two:
+  teacher_id: 1
+  name: MyString
+  student_icon: MyString
+  movement: 1
