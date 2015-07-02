@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :teachers
-  root 'students#index'
+  root 'games#index'
   resources :games
   resources :students
   resources :categories
