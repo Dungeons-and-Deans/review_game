@@ -10,11 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= scaffolds
- *= defaults
- *= categories
- *= games
- *= students
+ *= require scaffolds
+ *= require font-awesome
+ *= require jquery-ui
+ *= require defaults
+ *= require categories
+ *= require games
+ *= require students
  *
  *= require_self
  */
