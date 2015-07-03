@@ -3,13 +3,17 @@ class Student < ActiveRecord::Base
   has_many :groups, through: :group_assignments
   belongs_to :teacher
 
-  validates :teacher_id, presence: true
-  validates :games_won, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  before_create :set_games_won
+
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  private def set_games_won
+    self.games_won = 0
   end
 
 end
