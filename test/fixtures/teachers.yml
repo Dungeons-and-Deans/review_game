@@ -14,4 +14,11 @@ two:
   first_name: "Sandra"
   last_name: "Winston"
   email: "anotheremail@google.com"
+  encrypted_password: "test"
 #  column: value
+
+teacher:
+  first_name: "teacher"
+  last_name: "test"
+  email: "teacher@example.com"
+  encrypted_password: "test"

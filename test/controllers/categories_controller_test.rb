@@ -1,4 +1,6 @@
 require 'test_helper'
+include Devise::TestHelpers
+
 
 class CategoriesControllerTest < ActionController::TestCase
   setup do
