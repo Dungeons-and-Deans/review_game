@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   before_action :authenticate_teacher!
 
   def index
-    @students = Student.where(teacher_id: current_teacher.id)
+    @students = Student.where(teacher_id: current_teacher.id).order(:last_name)
   end
 
   def show
