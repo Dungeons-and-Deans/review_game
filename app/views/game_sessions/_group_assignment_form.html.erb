@@ -1,3 +1,4 @@
-<%= ff.simple_fields_for :group_assignments, group.group_assignments.build do |fff| %>
-  <%= fff.association :student, label: false %>
+<%= ff.simple_fields_for :group_assignments do |fff| %>
+  <%= fff.association :student, label_method: :full_name, label: false, include_blank: true %>
+  <%= fff.input :_destroy, as: :boolean, label: "Remove Student" %>
 <% end %>
