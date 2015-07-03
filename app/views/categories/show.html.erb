@@ -1,0 +1,9 @@
+<% @categories.each do |category| %>
+  <ol>
+    <% @questions.each do |question| %>
+      <li><%= question.content %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= link_to 'Back', categoriess_path %>

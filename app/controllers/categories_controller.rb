@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
+
   # GET /categories
   # GET /categories.json
   def index
@@ -10,6 +11,12 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new(teacher_id: current_user.id)
+  end
+
+  # GET /categories/1
+  # GET /categories/1.json
+  def show
+    @questions = Question.where(category_id: @category.id)
   end
 
   # GET /categories/1/edit
