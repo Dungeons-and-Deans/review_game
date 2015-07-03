@@ -11,6 +11,7 @@ class GameSessionsController < ApplicationController
       redirect_to "/game_sessions/#{@game_session.id}/groups", notice: 'Game Session was successfully updated.'
     else
       render :groups
+      flash[:notice] = @game_session.errors
     end
   end
 

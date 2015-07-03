@@ -4,7 +4,5 @@ class GroupAssignment < ActiveRecord::Base
 
   validates :student_id, presence: true
   validates :group_id, presence: true
-  validates :board_x, presence: true
-  validates :board_y, presence: true
 
 end
