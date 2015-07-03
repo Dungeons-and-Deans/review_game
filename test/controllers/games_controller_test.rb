@@ -2,6 +2,7 @@ require 'test_helper'
 
 class GamesControllerTest < ActionController::TestCase
   setup do
+    sign_in teachers(:three)
     @game = games(:one)
   end
 

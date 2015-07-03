@@ -2,6 +2,7 @@ require 'test_helper'
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
+    sign_in teachers(:three)
     @student = students(:one)
   end
 

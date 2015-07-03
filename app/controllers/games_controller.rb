@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_teacher!
+  
   # GET /games
   # GET /games.json
   def index
@@ -14,7 +15,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new(teacher_id: current_user.id)
+    @game = Game.new(teacher_id: current_teacher.id)
   end
 
   # GET /games/1/edit

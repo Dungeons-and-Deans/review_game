@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_teacher!
 
 
   # GET /categories
@@ -10,7 +11,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new(teacher_id: current_user.id)
+    @category = Category.new(teacher_id: current_teacher.id)
   end
 
   # GET /categories/1

@@ -1,9 +1,10 @@
 require 'test_helper'
-include Devise::TestHelpers
-
+require 'categories_controller.rb'
 
 class CategoriesControllerTest < ActionController::TestCase
+
   setup do
+    sign_in teachers(:three)
     @category = categories(:one)
   end
 

@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_teacher!
 
   # GET /students
   # GET /students.json
@@ -14,7 +15,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new(teacher_id: current_user.id)
+    @student = Student.new(teacher_id: current_teacher.id)
   end
 
   # GET /students/1/edit
