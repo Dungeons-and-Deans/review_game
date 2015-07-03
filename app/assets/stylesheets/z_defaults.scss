@@ -16,6 +16,7 @@ h1, h2, h3, h4,
 h5, h6 {
   font-weight: 100;
   line-height: 1.3em;
+  text-align: center;
 }
 
 p {
@@ -28,6 +29,7 @@ a {
   color: $link-color;
   text-decoration: none;
   outline: none;
+  text-align: center;
 }
 
 a:hover {
@@ -42,6 +44,11 @@ form,
 table {
   position: relative;
   margin: 0 auto;
+  text-align: center;
+}
+
+.form-inputs > div {
+  margin-bottom: 1rem;
 }
 
 td {
@@ -59,11 +66,6 @@ textarea {
   background: $input-bg-color;
   padding: 0.25em;
   color: inherit;
-}
-
-input {
-  position: absolute;
-  right: 0;
 }
 
 button {
