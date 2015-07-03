@@ -3,7 +3,7 @@ class GameSessionsController < ApplicationController
 
   def groups
     @group = @game_session.groups.build
-    @group.group_assignments.build
+    @game_session.groups.each { |group| group.group_assignments.build }
   end
 
   def assign_groups
