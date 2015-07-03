@@ -14,10 +14,11 @@
  *= require jquery-ui
  *
  *= require scaffolds
- *= require defaults
- *= require categories
- *= require games
- *= require students
+ *= require z_defaults
+ *= require z_colors
+ *= require z_categories
+ *= require z_games
+ *= require z_students
  *
  *= require_self
  */
