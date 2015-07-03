@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //
-//= require app
-//= require categories
-//= require games
-//= require students
+//= require z_app
+//= require z_categories
+//= require z_games
+//= require z_students
 //
-//= require init
+//= require z_init
