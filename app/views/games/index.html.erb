@@ -1,11 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Games</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Teacher</th>
       <th>Name</th>
       <th>Student icon</th>
       <th>Movement</th>
@@ -16,9 +13,8 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.teacher_id %></td>
         <td><%= game.name %></td>
-        <td><%= game.student_icon %></td>
+        <td><i class="<%= game.student_icon %> fa-2x"></i></td>
         <td><%= game.movement %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>

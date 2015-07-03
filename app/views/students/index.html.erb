@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Teacher</th>
       <th>Games won</th>
       <th>Name</th>
       <th colspan="2"></th>
@@ -13,7 +12,6 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.teacher_id %></td>
         <td><%= student.games_won %></td>
         <td><%= link_to "#{student.first_name} #{student.last_name}", student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
