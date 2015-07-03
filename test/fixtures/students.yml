@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  teacher_id: 1
+  teacher: :one
   games_won: 1
-  first_name: MyString
-  last_name: MyString
+  first_name: "David"
+  last_name: "Tennant"
 
 two:
-  teacher_id: 1
+  teacher: :one
   games_won: 1
-  first_name: MyString
-  last_name: MyString
+  first_name: "Matt"
+  last_name: "Smith"

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  teacher_id: 1
-  name: MyString
-  student_icon: MyString
+  teacher: :one
+  name: "GameOne"
+  student_icon: "fa fa-star"
   movement: 1
 
 two:
-  teacher_id: 1
-  name: MyString
-  student_icon: MyString
+  teacher: :one
+  name: "GameTwo"
+  student_icon: "fa fa-star-o"
   movement: 1
