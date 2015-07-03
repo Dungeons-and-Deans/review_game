@@ -6,7 +6,4 @@ class GameSession < ActiveRecord::Base
 
   accepts_nested_attributes_for :groups, reject_if: :all_blank, allow_destroy: true
 
-  validates :game_id, presence: true
-  validates :turn_group_id, presence: true
-
 end

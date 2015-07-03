@@ -2,7 +2,7 @@ class GameSessionsController < ApplicationController
   before_action :set_game_session, only: [:groups, :assign_groups]
 
   def groups
-    @group = @game_session.groups.build
+    @game_session.groups.build
     @game_session.groups.each { |group| group.group_assignments.build }
   end
 
@@ -19,8 +19,8 @@ class GameSessionsController < ApplicationController
   end
 
   private def game_session_params
-    params.require(:game_session).permit(:game_id, :turn_group_id,
-      groups_attributes: [:id, :name, :score, :_destroy,
+    params.require(:game_session).permit(:game_id, :turn_group_id, :name,
+      groups_attributes: [:id, :name, :score, :_destroy, :password,
           group_assignments_attributes: [:id, :student_id, :board_x, :board_y, :_destroy]])
   end
 
