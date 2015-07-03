@@ -1,7 +1,9 @@
-<%= f.simple_fields_for :groups, group = @game_session.groups.build do |ff| %>
-  <%= ff.input :name %>
+<%= f.simple_fields_for :groups do |ff| %>
+<h2>Group</h2>
+  <%= ff.input :name, label: "Group Name"%>
+  <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
 
   <h3>Students</h3>
-  <%= render partial: 'group_assignment_form', locals: {ff: ff, group: group} %>
+  <%= render partial: 'group_assignment_form', locals: {ff: ff} %>
 
 <% end %>
