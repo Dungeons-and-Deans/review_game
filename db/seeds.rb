@@ -13,19 +13,19 @@ Game.create!(teacher_id: 1, name: "Gameone", student_icon: "fa fa-bus", movement
 Game.create!(teacher_id: 1, name: "Gametwo", student_icon: "fa fa-ship", movement: 1)
 Game.create!(teacher_id: 1, name: "Gamethree", student_icon: "fa fa-taxi", movement: 1)
 
-GameSession.create!(game_id: 1, turn_group_id: 1)
-GameSession.create!(game_id: 1, turn_group_id: 2)
-GameSession.create!(game_id: 2, turn_group_id: 1)
-GameSession.create!(game_id: 3, turn_group_id: 1)
+GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period")
+GameSession.create!(game_id: 1, turn_group_id: 2, name: "Second Period")
+GameSession.create!(game_id: 2, turn_group_id: 1, name: "Third Period")
+GameSession.create!(game_id: 3, turn_group_id: 1, name: "Fouth Period")
 
-Group.create!(game_session_id: 1, name: "groupone", score: 350)
-Group.create!(game_session_id: 1, name: "grouptwo", score: 100)
-Group.create!(game_session_id: 2, name: "groupthree", score: 50)
-Group.create!(game_session_id: 2, name: "groupfour", score: 70)
-Group.create!(game_session_id: 3, name: "groupfive", score: 0)
-Group.create!(game_session_id: 3, name: "groupsix", score: 0)
-Group.create!(game_session_id: 4, name: "groupseven", score: 200)
-Group.create!(game_session_id: 4, name: "groupeight", score: 200)
+Group.create!(game_session_id: 1, name: "groupone", score: 350, password: "password")
+Group.create!(game_session_id: 1, name: "grouptwo", score: 100, password: "password")
+Group.create!(game_session_id: 2, name: "groupthree", score: 50, password: "password")
+Group.create!(game_session_id: 2, name: "groupfour", score: 70, password: "password")
+Group.create!(game_session_id: 3, name: "groupfive", score: 0, password: "password")
+Group.create!(game_session_id: 3, name: "groupsix", score: 0, password: "password")
+Group.create!(game_session_id: 4, name: "groupseven", score: 200, password: "password")
+Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "password")
 
 
 20.times do |t|

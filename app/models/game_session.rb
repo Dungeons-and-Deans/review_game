@@ -8,3 +8,5 @@ class GameSession < ActiveRecord::Base
 
   validates :game_id, presence: true
   validates :turn_group_id, presence: true
+
+end
