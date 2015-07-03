@@ -4,6 +4,10 @@
   <%= f.input :name %>
   <%= f.hidden_field :teacher_id %>
 
+  <h3>Questions</h3>
+
+  <div><%= render partial: 'questions_form', locals: {f: f} %></div>
+
   <%= f.button :submit %>
 
 <% end %>
