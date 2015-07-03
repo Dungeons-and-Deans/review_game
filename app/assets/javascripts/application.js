@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require bootstrap-sprockets
 //
 //= require z_app
 //= require z_categories
