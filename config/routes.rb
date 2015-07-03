@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :students
   resources :categories
 
+  get 'game_sessions/new'
+  post 'game_sessions/create'
   get 'game_sessions/:id/groups' => 'game_sessions#groups'
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups'
   # The priority is based upon order of creation: first created -> highest priority.

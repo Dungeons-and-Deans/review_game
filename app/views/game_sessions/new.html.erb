@@ -1,0 +1,9 @@
+<%= simple_form_for @game_session, url: 'create' do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.association :game, label_method: :name %>
+  <%= number_field_tag :number_of_groups %>
+
+  <%= f.button :submit %>
+<% end %>
