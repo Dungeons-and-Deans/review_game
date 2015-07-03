@@ -19,6 +19,7 @@ h5, h6 {
 }
 
 p {
+  text-align: center;
   line-height: 1.4em;
   margin-bottom: 1em;
 }
@@ -33,19 +34,36 @@ a:hover {
   color: $link-active-color;
 }
 
+form {
+  width: 20rem;
+}
+
+form,
+table {
+  position: relative;
+  margin: 0 auto;
+}
+
 td {
   padding: 0.25em 0.5em;
+  text-align: center;
 }
 
 input, 
 select,
 textarea {
+  position: relative;
   font-size: 1em;
   // border: 1px solid $input-border-color;
   border: 0;
   background: $input-bg-color;
   padding: 0.25em;
   color: inherit;
+}
+
+input {
+  position: absolute;
+  right: 0;
 }
 
 button {

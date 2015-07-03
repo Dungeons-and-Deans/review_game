@@ -1,0 +1,7 @@
+<%= f.simple_fields_for :groups, group = @game_session.groups.build do |ff| %>
+  <%= ff.input :name %>
+
+  <h3>Students</h3>
+  <%= render partial: 'group_assignment_form', locals: {ff: ff, group: group} %>
+
+<% end %>
