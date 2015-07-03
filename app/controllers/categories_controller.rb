@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = Category.new(teacher_id: current_user.id)
   end
 
   # GET /categories/1/edit
