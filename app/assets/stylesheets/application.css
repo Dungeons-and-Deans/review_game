@@ -14,8 +14,8 @@
  *= require jquery-ui
  *
  *= require scaffolds
- *= require z_defaults
  *= require z_colors
+ *= require z_defaults
  *= require z_categories
  *= require z_games
  *= require z_students
