@@ -13,12 +13,13 @@
  *= require font-awesome
  *= require jquery-ui
  *
- *= require scaffolds
- *= require z_colors
- *= require z_defaults
- *= require z_categories
- *= require z_games
- *= require z_students
- *
- *= require_self
  */
+
+@import "scaffolds";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "z_colors";
+@import "z_defaults";
+@import "z_categories";
+@import "z_games";
+@import "z_students";
