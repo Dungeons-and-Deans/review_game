@@ -3,7 +3,6 @@
 <p>Password: <%= ff.object.password %></p>
   <%= ff.input :name, label: "Group Name"%>
   <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
-  <%= ff.hidden_field :password, value: SecureRandom.hex %>
 
   <h3>Students</h3>
   <%= render partial: 'group_assignment_form', locals: {ff: ff} %>
