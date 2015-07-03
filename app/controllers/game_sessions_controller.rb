@@ -1,8 +1,21 @@
 class GameSessionsController < ApplicationController
   before_action :set_game_session, only: [:groups, :assign_groups]
 
+  def new
+    @game_session = GameSession.new
+  end
+
+  def create
+    @game_session = GameSession.new(game_session_params)
+    params[:number_of_groups].to_i.times { @game_session.groups.build }
+    if @game_session.save
+      redirect_to "/game_sessions/#{@game_session.id}/groups"
+    else
+      render :new
+    end
+  end
+
   def groups
-    @game_session.groups.build
     @game_session.groups.each { |group| group.group_assignments.build }
   end
 
