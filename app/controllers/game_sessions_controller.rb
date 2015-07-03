@@ -7,7 +7,7 @@ class GameSessionsController < ApplicationController
 
   def create
     @game_session = GameSession.new(game_session_params)
-    params[:number_of_groups].to_i.times { @game_session.groups.build }
+    params[:number_of_groups].to_i.times { @game_session.groups.build(password: SecureRandom.hex(4)) }
     if @game_session.save
       redirect_to "/game_sessions/#{@game_session.id}/groups"
     else

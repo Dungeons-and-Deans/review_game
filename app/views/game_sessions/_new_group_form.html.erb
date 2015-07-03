@@ -1,5 +1,6 @@
 <%= f.simple_fields_for :groups do |ff| %>
 <h2>Group</h2>
+<p>Password: <%= ff.object.password %></p>
   <%= ff.input :name, label: "Group Name"%>
   <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
   <%= ff.hidden_field :password, value: SecureRandom.hex %>
