@@ -7,7 +7,5 @@ class Group < ActiveRecord::Base
   accepts_nested_attributes_for :group_assignments, reject_if: :all_blank, allow_destroy: true
 
   validates :name, presence: true
-  validates :game_session_id, presence: true
-  validates :score, presence: true
 
 end

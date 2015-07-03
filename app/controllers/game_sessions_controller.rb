@@ -2,7 +2,7 @@ class GameSessionsController < ApplicationController
   before_action :set_game_session, only: [:groups, :assign_groups]
 
   def groups
-    @game_session.groups.build(password: SecureRandom.hex(8))
+    @game_session.groups.build
     @game_session.groups.each { |group| group.group_assignments.build }
   end
 
