@@ -5,6 +5,7 @@ one:
   name: "GameOne"
   student_icon: "fa fa-star"
   movement: 1
+  
 
 two:
   teacher: :one

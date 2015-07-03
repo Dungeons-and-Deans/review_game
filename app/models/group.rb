@@ -4,4 +4,9 @@ class Group < ActiveRecord::Base
   belongs_to :game_session
 
   accepts_nested_attributes_for :group_assignments, reject_if: :all_blank
+
+  validates :name, presence: true
+  validates :game_session_id, presence: true
+  validates :score, presence: true
+
 end
