@@ -3,6 +3,7 @@ class GameSessionsController < ApplicationController
 
   def new
     @game_session = GameSession.new
+    @game_session.category_game_session_assignments.build
   end
 
   def create
@@ -34,8 +35,9 @@ class GameSessionsController < ApplicationController
 
   private def game_session_params
     params.require(:game_session).permit(:game_id, :turn_group_id, :name,
-      groups_attributes: [:id, :name, :score, :_destroy, :password,
-          group_assignments_attributes: [:id, :student_id, :board_x, :board_y, :_destroy]])
+    category_game_session_assignments_attributes: [:id, :category_id, :_destroy],
+    groups_attributes: [:id, :name, :score, :_destroy, :password,
+        group_assignments_attributes: [:id, :student_id, :board_x, :board_y, :_destroy]])
   end
 
 end
