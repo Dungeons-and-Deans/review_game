@@ -39,10 +39,10 @@ class StudentsController < ApplicationController
   end
 
   private  def set_student
-      @student = Student.find(params[:id])
-    end
+    @student = Student.find(params[:id])
+  end
 
   private  def student_params
-      params.require(:student).permit(:teacher_id, :games_won, :first_name, :last_name)
-    end
+    params.require(:student).permit(:teacher_id, :games_won, :first_name, :last_name)
+  end
 end

@@ -1,0 +1,8 @@
+<% @groups.each do |group| %>
+  <%= group.name %>
+  <ol>
+    <% group.supplies.each do |supply| %>
+      <li><%= supply.amount %> <%= supply.name %></li>
+    <% end %>
+  </ol>
+<% end %>
