@@ -3,6 +3,11 @@
 
   <%= f.input :name %>
   <%= f.association :game, label_method: :name %>
+
+  <%= f.simple_fields_for :category_game_session_assignments do |ff| %>
+    <%= ff.association :category, label_method: :name, as: :check_boxes %>
+  <% end %>
+
   Number of Groups <%= number_field_tag :number_of_groups %>
 
   <%= f.button :submit %>
