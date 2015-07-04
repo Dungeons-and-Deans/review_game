@@ -1,2 +1,11 @@
-<h1>TeacherGameplay#home</h1>
-<p>Find me in app/views/teacher_gameplay/home.html.erb</p>
+<div>
+  <h3>Scores</h3>
+  <% @game_session.groups.each do |group| %>
+    <div><%= group.name %> <%= group.score %></div>
+  <% end %>
+</div>
+
+<div>
+  <h3>Current Group</h3>
+  <div><%= @current_group.name %></div>
+</div>

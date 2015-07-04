@@ -1,2 +1,8 @@
-<h1>TeacherGameplay#competition</h1>
-<p>Find me in app/views/teacher_gameplay/competition.html.erb</p>
+<h3>Choose the groups to receive this question</h3>
+
+<%= form_tag do %>
+  <% @groups.each do |group| %>
+    <div><%= group.name %> <%= check_box_tag :group %></div>
+  <% end %>
+  <%= submit_tag %>
+<% end %>
