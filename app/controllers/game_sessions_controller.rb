@@ -10,11 +10,8 @@ class GameSessionsController < ApplicationController
 
   def create
     @game_session = GameSession.new(game_session_params)
-    params[:number_of_groups].to_i.times { @game_session.groups.build(password: SecureRandom.hex(4)) }
     if @game_session.save
-      params[:category].each do |c|
-        CategoryGameSessionAssignment.create(game_session_id: @game_session.id, category_id: c)
-      end
+      @game_session.begin_game(params[:category], params[:number_of_groups])
       redirect_to "/game_sessions/#{@game_session.id}/groups"
     else
       render :new

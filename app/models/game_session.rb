@@ -12,4 +12,13 @@ class GameSession < ActiveRecord::Base
   def current_group
     Group.find_by_id(self.turn_group_id)
   end
+
+  def begin_game(categories, num_of_groups)
+    categories.each do |c|
+      CategoryGameSessionAssignment.create(game_session_id: self.id, category_id: c)
+    end
+    num_of_groups.to_i.times { self.groups.build(password: SecureRandom.hex(4)) }
+    self.save
+  end
+
 end
