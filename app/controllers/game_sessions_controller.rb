@@ -1,15 +1,20 @@
 class GameSessionsController < ApplicationController
   before_action :set_game_session, only: [:groups, :assign_groups]
+  before_action :authenticate_teacher!
 
   def new
     @game_session = GameSession.new
     @game_session.category_game_session_assignments.build
+    @categories = Category.where(teacher_id: current_teacher.id)
   end
 
   def create
     @game_session = GameSession.new(game_session_params)
     params[:number_of_groups].to_i.times { @game_session.groups.build(password: SecureRandom.hex(4)) }
     if @game_session.save
+      params[:category].each do |c|
+        CategoryGameSessionAssignment.create(game_session_id: @game_session.id, category_id: c)
+      end
       redirect_to "/game_sessions/#{@game_session.id}/groups"
     else
       render :new
