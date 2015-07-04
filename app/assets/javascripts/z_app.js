@@ -14,6 +14,6 @@ var app = {
     } else if (/categories/.test(pathname)) {
       $('.nav .categories').addClass('active');
     }
-    
   }
+  
 };
