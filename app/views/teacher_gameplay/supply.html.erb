@@ -1,7 +1,7 @@
 <%= simple_form_for @supply, url: 'assign_supply' do |f| %>
   <%= f.input :name %>
   <%= f.input :amount %>
-  <%= f.association :group, label_method: :name %>
+  <%= f.association :group, label_method: :name, collection: @game_session.groups %>
 
   <%= f.button :submit, "Assign" %>
 <% end %>
