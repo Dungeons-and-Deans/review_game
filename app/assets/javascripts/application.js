@@ -25,11 +25,10 @@
 var questionCounter = 1;
 
 function copySection() {
-  var questionForm = $("#question-form")
   var question = $("#question-form").clone().html();
 
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
-        .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
-  questionForm.append(question);
+    .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
+  $("#question-list").append(question);
   questionCounter++;
 }
