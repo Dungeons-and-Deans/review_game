@@ -1,20 +1,12 @@
 $(function () {
   'use strict';
   
-  var path = $(location).attr('pathname');
-  
-  $('.nav').find('.active').removeClass('active');
-  
+  app.navActive($(location).attr('pathname'));
+
   if ($('.simple_form.new_teacher').length) {
     app.loginNoNav();
   }
   
-  if (path.length === 1 || (/games/.test(path))) {
-    $('.nav .home').addClass('active');
-  } else if (/students/.test(path)) {
-    $('.nav .roster').addClass('active');
-  } else if (/categories/.test(path)) {
-    $('.nav .categories').addClass('active');
-  }
+  
   
 });
