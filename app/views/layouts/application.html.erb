@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ReviewGame</title>
-  <%= stylesheet_link_tag    'application' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
   
-  <ul class="nav nav-tabs">
-    <li role="presentation"><%= link_to 'Home', root_path %></li>
-    <li role="presentation"><%= link_to 'Roster', students_path %></li>
-    <li role="presentation"><%= link_to 'Questions', categories_path %></li>
-  </ul>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-<%= yield %>
-
-<% if teacher_signed_in? %>
-<%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %>
-<% end %>
-
-</body>
+  <head>
+    <title>ReviewGame</title>
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
+    
+    <ul class="nav nav-tabs">
+      <li role="presentation"><%= link_to 'Home', root_path %></li>
+      <li role="presentation"><%= link_to 'Roster', students_path %></li>
+      <li role="presentation"><%= link_to 'Questions', categories_path %></li>
+      <li role="presentation"><% if teacher_signed_in? %><%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %><% end %></li>
+    </ul>
+  
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
+  <%= yield %>
+  
+  </body>
+  
 </html>
