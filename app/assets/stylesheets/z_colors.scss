@@ -1,18 +1,14 @@
-$off-white: #F0F0F0;
-$light-white: #FDFDFD;
-$gray:  #7D7F83;
-$dark-gray: #525558;
-$blue: #127ABD;
-$carolina-blue:	#56A0D3;
+$off-white: #FAFAFA;
+$gray-light: #EEEEEE;
+$gray:  #9E9E9E;
+$gray-dark: #424242;
+$blue-light:	#90CAF9;
+$blue: #2196F3;
+$blue-dark: #1565C0;
 
 $bg-color: $off-white;
-$fg-color: $dark-gray;
+$fg-color: $gray-dark;
+$bg-color-hover: $gray-light;
 
-$input-bg-color: $light-white;
-
-$link-color: $carolina-blue;
+$link-color: $blue-light;
 $link-active-color: $blue;
-
-$action-bg-color: $carolina-blue;
-$action-fg-color: $light-white;
-$action-bg-color-second: $blue;

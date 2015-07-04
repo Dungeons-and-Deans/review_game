@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   background: $bg-color;
   color: $fg-color;
+  padding: 0 2rem;
 }
 
 h1, h2, h3, h4,
@@ -45,6 +46,14 @@ table {
 
 form {
   width: 20rem;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid $fg-color;
+}
+
+tbody tr:hover {
+  background: $bg-color-hover;
 }
 
 input[type="submit"] {
