@@ -4,15 +4,16 @@
   <%= f.input :name %>
   <%= f.hidden_field :teacher_id %>
   <% if @category.id != nil %>
-  <div id='question-list'>
-    <h3>Question</h3>
-    <div>
-      <%= render partial: 'questions_form', locals: {f: f} %>
+    <div id='question-list'>
+      <h3>Question</h3>
+      <div>
+        <%= render partial: 'questions_form', locals: {f: f} %>
+      </div>
     </div>
-  </div>
-  <% end  %>
-
+  <% end %>
   <%= f.button :submit %>
-
 <% end %>
-<%= link_to "Copy it!", "#", id: "copy_link", onclick: "copySection();" %>
+
+<div>
+  <%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %>
+</div>
