@@ -3,7 +3,7 @@
 
   <%= f.input :name %>
   <%= f.association :game, label_method: :name %>
-  Number of Groups <%= number_field_tag :number_of_groups %>
+  Number of Groups <%= number_field_tag :number_of_groups, nil, min: 1 %>
 
   <% @categories.each do |category| %>
     <div><%= category.name %> <%= check_box_tag "category[]", category.id %></div>
