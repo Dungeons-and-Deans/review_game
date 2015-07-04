@@ -11,10 +11,12 @@
   <body>
     
     <ul class="nav nav-tabs">
-      <li role="presentation"><%= link_to 'Home', root_path %></li>
-      <li role="presentation"><%= link_to 'Roster', students_path %></li>
-      <li role="presentation"><%= link_to 'Questions', categories_path %></li>
-      <li role="presentation"><% if teacher_signed_in? %><%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %><% end %></li>
+      <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
+      <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
+      <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
+      <% if teacher_signed_in? %>
+        <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout') %>
+      <% end %>
     </ul>
   
     <p class="notice"><%= notice %></p>

@@ -28,15 +28,14 @@ p {
   margin-bottom: 1em;
 }
 
-// a {
-//   color: $link-color;
-//   text-decoration: none;
-//   display: block;
-// }
+a {
+  color: $link-color;
+  text-decoration: none;
+}
 
-// a:hover {
-//   color: $link-active-color;
-// }
+a:hover {
+  color: $link-color-active;
+}
 
 form,
 table {
@@ -68,4 +67,21 @@ input[type="submit"] {
 td, th {
   padding: 0.25em 0.5em;
   text-align: center;
+}
+
+.logout {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  background: $button-color;
+  color: $button-color-font;
+  border-radius: 0.5rem;
+  
+  &:hover {
+    background: $button-color-hover;
+    color: $button-color-font;
+    text-decoration: none;
+  }
 }
