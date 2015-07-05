@@ -4,13 +4,13 @@
 <div>
   <%= session[:group_id] %>
   <p><%= @group.name %></p>
+  <p><%= @group.score %></p>
   <% @group.supplies.each do |supply|%>
     <p>
       <%=  supply.name %>
       <%=  supply.amount %>
     </p>
   <% end %>
-
   <% @group.students.each do |student| %>
     <p>
       <%= student.first_name %>
