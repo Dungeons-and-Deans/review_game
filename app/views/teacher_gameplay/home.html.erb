@@ -1,11 +1,19 @@
 <div>
   <h3>Scores</h3>
   <% @game_session.groups.each do |group| %>
-    <div><%= group.name %> <%= group.score %></div>
+    <div><%= group.name %> <span id="update_score"><%= link_to group.score, "/teacher_gameplay/#{@game_session.id}/edit_score/#{group.id}", remote: true %></span></div>
   <% end %>
 </div>
 
 <div>
   <h3>Current Group</h3>
   <div><%= @current_group.name %></div>
+</div>
+
+<div>
+  <%= simple_form_for @game_session, url: 'next_group' do |f| %>
+    <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
+
+    <%= f.button :submit, "Next Turn" %>
+  <% end %>
 </div>

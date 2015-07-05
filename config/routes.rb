@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'student_gameplay/login'
+  post 'student_gameplay/login'
+  get 'student_gameplay/logout'
+  get 'student_gameplay/home'
+
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
   get 'teacher_gameplay/:id/supply' => 'teacher_gameplay#supply'
   get 'teacher_gameplay/:id/supplies' => 'teacher_gameplay#supplies'
   post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply'
   get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition'
+  patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score'
+  get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score'
+  patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group'
 
   devise_for :teachers
   root 'games#index'
