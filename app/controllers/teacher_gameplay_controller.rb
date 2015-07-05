@@ -38,7 +38,7 @@ class TeacherGameplayController < ApplicationController
   def update_score
     @group = Group.find(params[:group_id])
 
-    if @group.update(score: params[:score])
+    if @group.update(group_params)
       redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Score was successfully updated.'
     else
       render :home, notice: 'Score failed to be updated.'
@@ -55,6 +55,10 @@ class TeacherGameplayController < ApplicationController
 
   private def set_game_session
     @game_session = GameSession.find(params[:id])
+  end
+
+  private def group_params
+    params.require(:group).permit(:score)
   end
 
   private def game_session_params
