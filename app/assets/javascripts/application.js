@@ -25,7 +25,7 @@
 var questionCounter = 1;
 
 function copySection() {
-  var question = $("#question-form").clone().html();
+  var question = $("#question-form").parent().clone().html();
 
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
     .replace(/_[0-9]+_/g, '_' + questionCounter + '_');

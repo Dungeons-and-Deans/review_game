@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// app/view/categories/index.html.erb
+// app/views/categories/index.html.erb
 
 .categories-table th a {
   display: block;
@@ -22,3 +22,15 @@
   text-align: left;
 }
 
+// app/views/categories/_questions_form.html.erb
+
+#question-form {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+}
+
+input.numeric.integer {
+  width: 6rem;
+}

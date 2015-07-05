@@ -1,11 +1,10 @@
 <%= simple_form_for @category do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
+  <%= f.input :name, label: 'Category Name' %>
   <%= f.hidden_field :teacher_id %>
   <% if @category.id != nil %>
     <div id='question-list'>
-      <h3>Question</h3>
       <div>
         <%= render partial: 'questions_form', locals: {f: f} %>
       </div>
@@ -14,6 +13,6 @@
   <%= f.button :submit %>
 <% end %>
 
-<div>
+<div class="links">
   <%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %>
 </div>
