@@ -1,0 +1,7 @@
+<%= simple_form_for @group, url: "update_score/#{@group.id}", remote: true do |f| %>
+
+  <%= f.input :score, label: false %>
+
+  <%= f.button :submit %>
+
+<% end %>
