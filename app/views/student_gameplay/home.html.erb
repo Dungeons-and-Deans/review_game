@@ -1,2 +1,22 @@
 <h1>StudentGameplay#home</h1>
 <p>Find me in app/views/student_gameplay/home.html.erb</p>
+
+<div>
+  <%= session[:group_id] %>
+  <p><%= @group.name %></p>
+  <% @group.supplies.each do |supply|%>
+    <p>
+      <%=  supply.name %>
+      <%=  supply.amount %>
+    </p>
+  <% end %>
+
+  <% @group.students.each do |student| %>
+    <p>
+      <%= student.first_name %>
+      <%= student.last_name %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Logout", student_gameplay_logout_path %>
