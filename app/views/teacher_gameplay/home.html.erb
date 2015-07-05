@@ -11,7 +11,7 @@
 </div>
 
 <div>
-  <%= simple_form_for @game_session, remote: true do |f| %>
+  <%= simple_form_for @game_session, url: 'next_group' do |f| %>
     <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
 
     <%= f.button :submit, "Next Turn" %>

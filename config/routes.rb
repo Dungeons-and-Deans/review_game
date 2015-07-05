@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition'
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score'
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score'
+  patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group'
 
   devise_for :teachers
   root 'games#index'

@@ -45,8 +45,20 @@ class TeacherGameplayController < ApplicationController
     end
   end
 
+  def next_group
+    if @game_session.update(game_session_params)
+      redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: "Success"
+    else
+      render :home, notice: "Nope"
+    end
+  end
+
   private def set_game_session
     @game_session = GameSession.find(params[:id])
+  end
+
+  private def game_session_params
+    params.require(:game_session).permit(:turn_group_id, :name)
   end
 
   private def supply_params
