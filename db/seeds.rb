@@ -27,13 +27,12 @@ Group.create!(game_session_id: 3, name: "groupsix", score: 0, password: "passwor
 Group.create!(game_session_id: 4, name: "groupseven", score: 200, password: "password")
 Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "password")
 
+Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
+    password: 'testtest', password_confirmation: 'testtest')
 
 20.times do |t|
   GroupAssignment.create!(student_id: t, group_id: (1..8).to_a.sample, board_x: 1, board_y: 1)
 end
-
-Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
-    password: 'testtest', password_confirmation: 'testtest')
 
 5.times do
   Supply.create(name: "stick", amount: (1..5).to_a.sample, group_id: (1..8).to_a.sample)
