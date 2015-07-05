@@ -10,7 +10,7 @@ class GameSession < ActiveRecord::Base
   accepts_nested_attributes_for :category_game_session_assignments, allow_destroy: true
 
   def current_group
-    Group.find_by_id(self.turn_group_id)
+    Group.find(self.turn_group_id)
   end
 
   def begin_game(categories, num_of_groups)
