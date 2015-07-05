@@ -6,7 +6,7 @@ class TeacherGameplayController < ApplicationController
   end
 
   def supply
-    @supply = Supply.new
+    @supply = Supply.new(group_id: params[:group_id])
   end
 
   def assign_supply

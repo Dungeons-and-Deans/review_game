@@ -6,6 +6,12 @@
 <div>
   <h3>Current Group</h3>
   <div><%= @current_group.name %></div>
+  <div><ul>
+    <% @current_group.supplies.each do |s| %>
+    <li><%= s.amount %> <%= s.name %></li>
+    <% end %>
+    <ls><%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "/teacher_gameplay/#{@game_session.id}/supply/#{@current_group.id}" %></li>
+  </ul></div>
 </div>
 
 <div>
