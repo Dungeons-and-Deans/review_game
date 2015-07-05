@@ -30,18 +30,18 @@ class TeacherGameplayController < ApplicationController
   def edit_score
     @group = Group.find(params[:group_id])
     respond_to do |format|
-      format.html { render partial: 'edit_score_form', notice: "Not where you want to be" }
       format.js
     end
   end
 
   def update_score
     @group = Group.find(params[:group_id])
-
-    if @group.update(group_params)
-      redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Score was successfully updated.'
-    else
-      render :home, notice: 'Score failed to be updated.'
+    respond_to do |format|
+      if @group.update(group_params)
+        format.js
+      else
+        format.html { render :home, notice: 'Score failed to be updated.' }
+      end
     end
   end
 

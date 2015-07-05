@@ -1,4 +1,4 @@
-<%= simple_form_for @group, url: "/teacher_gameplay/#{@game_session.id}/update_score/#{@group.id}" do |f| %>
+<%= simple_form_for @group, url: "/teacher_gameplay/#{@game_session.id}/update_score/#{@group.id}", remote: true do |f| %>
 
   <%= f.input :score, label: false %>
 

@@ -1,0 +1,3 @@
+<% @game_session.groups.each do |group| %>
+  <div><%= group.name %> <span id="update_score"><%= link_to group.score, "/teacher_gameplay/#{@game_session.id}/edit_score/#{group.id}", remote: true %></span></div>
+<% end %>
