@@ -21,4 +21,9 @@ class GameSession < ActiveRecord::Base
     self.save
   end
 
+  def next_group
+    turn = self.turn_group_id
+    order = self.groups.map {|g| g.id}
+  end
+
 end
