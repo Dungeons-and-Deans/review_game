@@ -1,4 +1,4 @@
-<h1>Listing Games</h1>
+<h1>Available Games</h1>
 
 <table>
   <thead>
@@ -19,6 +19,28 @@
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Remove', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Current Games</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Active Date</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_sessions.each do |game_session| %>
+      <tr>
+        <td><%= game_session.name %></td>
+        <td><%= game_session.updated_at.strftime("%b %e, %Y") %></td>
+        <td><%= link_to 'Play', "/teacher_gameplay/#{game_session.id}/home" %></td>
+        <td><%= link_to 'Remove', "/game_sessions/#{game_session.id}/destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

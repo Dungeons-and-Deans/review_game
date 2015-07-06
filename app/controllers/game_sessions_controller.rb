@@ -1,5 +1,5 @@
 class GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:groups, :assign_groups]
+  before_action :set_game_session, only: [:groups, :assign_groups, :destroy]
   before_action :authenticate_teacher!
 
   def new
@@ -29,6 +29,11 @@ class GameSessionsController < ApplicationController
       render :groups
       flash[:notice] = @game_session.errors
     end
+  end
+
+  def destroy
+    @game_session.destroy
+    redirect_to games_url, notice: 'Game was successfully destroyed.'
   end
 
   private def set_game_session
