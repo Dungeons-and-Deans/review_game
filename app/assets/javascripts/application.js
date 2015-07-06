@@ -20,6 +20,7 @@
 //= require z_games
 //= require z_students
 //= require z_teacher_gameplay
+//= require z_class_gameplay
 //
 //= require z_init
 var questionCounter = 1;

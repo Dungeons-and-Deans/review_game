@@ -5,5 +5,5 @@
 </div>
 
 <% @players.each do |player| %>
-  <i class="<%= @icon.description %>"><%= player.student.first_name[0] %></i>
+  <i class="<%= @icon.description %> draggables"><%= player.student.first_name[0] %></i>
 <% end %>
