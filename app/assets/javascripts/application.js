@@ -32,3 +32,5 @@ function copySection() {
   $("#question-list").append(question);
   questionCounter++;
 }
+//= require websocket_rails/main
+
