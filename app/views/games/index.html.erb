@@ -14,7 +14,7 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
-        <td><i class="<%= game.student_icon %> fa-2x"></i></td>
+        <td><i class="<%= game.icon.description %> fa-2x"></i></td>
         <td><%= game.movement %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>

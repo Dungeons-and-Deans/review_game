@@ -9,9 +9,9 @@
 Category.create!(name: "History", teacher_id: 1)
 Category.create!(name: "Math", teacher_id: 1)
 
-Game.create!(teacher_id: 1, name: "Gameone", student_icon: "fa fa-bus", movement: 1)
-Game.create!(teacher_id: 1, name: "Gametwo", student_icon: "fa fa-ship", movement: 1)
-Game.create!(teacher_id: 1, name: "Gamethree", student_icon: "fa fa-taxi", movement: 1)
+Game.create!(teacher_id: 1, name: "Gameone", icon_id: 1, movement: 1)
+Game.create!(teacher_id: 1, name: "Gametwo", icon_id: 2, movement: 1)
+Game.create!(teacher_id: 1, name: "Gamethree", icon_id: 3, movement: 1)
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period")
 GameSession.create!(game_id: 1, turn_group_id: 2, name: "Second Period")
@@ -26,6 +26,10 @@ Group.create!(game_session_id: 3, name: "groupfive", score: 0, password: "passwo
 Group.create!(game_session_id: 3, name: "groupsix", score: 0, password: "password")
 Group.create!(game_session_id: 4, name: "groupseven", score: 200, password: "password")
 Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "password")
+
+Icon.create(name: "Bus", description: "fa fa-bus")
+Icon.create(name: "Ship", description: "fa fa-ship")
+Icon.create(name: "Taxi", description: "fa fa-taxi")
 
 Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')
@@ -44,7 +48,7 @@ end
 
 20.times do
   Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-      teacher_id: 1, games_won: [1, 2, 3].sample)
+      teacher_id: 1, games_won: [1, 2, 3].sample, active: [true, false].sample)
 end
 
 Question.create(content: "Who was the first US president?", difficulty_level: 1,
