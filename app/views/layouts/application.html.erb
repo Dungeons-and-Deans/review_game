@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <title>ReviewGame</title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  
+
   <body>
-    
+
     <%= image_tag "books.jpg", class: "bg-image" %>
-    
+
     <ul class="nav nav-pills">
       <script type="text/html" id="nav-links">
         <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
@@ -22,12 +22,16 @@
         <% end %>
       </script>
     </ul>
-  
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  
-  <%= yield %>
-  
+
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
   </body>
-  
+
 </html>
