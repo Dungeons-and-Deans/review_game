@@ -1,7 +1,8 @@
 class StudentGameplayController < ApplicationController
   def login
     if request.post?
-      group = Group.find_by_password(params[:password])
+      # password = params[:password]
+      group = Group.find_by_password(params[:password]["password"])
       if group
         session[:group_id] = group.id
         redirect_to student_gameplay_home_path, notice: "Logged in."
