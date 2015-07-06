@@ -6,7 +6,8 @@
       <% group.supplies.each do |supply| %>
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>
-      <li><%= render partial: 'supply', locals: { id: group.id } %></li>
     </ol>
   </div>
 <% end %>
+
+<%= link_to 'Main Game', "/teacher_gameplay/#{@game_session.id}/home"%>

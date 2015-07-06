@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'student_gameplay/home'
 
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
-    get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups'
+  get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups'
   get 'teacher_gameplay/:id/supply/:group_id' => 'teacher_gameplay#supply'
   post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply'
   get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition'
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'game_sessions/new'
   post 'game_sessions/create'
   get 'game_sessions/:id/groups' => 'game_sessions#groups'
+  delete 'game_sessions/:id/destroy' => 'game_sessions#destroy'
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
