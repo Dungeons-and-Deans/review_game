@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'student_gameplay/home'
 
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
+    get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups'
   get 'teacher_gameplay/:id/supply/:group_id' => 'teacher_gameplay#supply'
   post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply'
   get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition'
