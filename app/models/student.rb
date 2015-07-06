@@ -12,8 +12,8 @@ class Student < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
-  private def set_games_won
-    self.games_won = 0
-  end
+  # private def set_games_won
+  #   self.games_won = 0
+  # end
 
 end
