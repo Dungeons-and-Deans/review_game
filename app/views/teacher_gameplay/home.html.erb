@@ -26,3 +26,5 @@
   <h3>Next Question</h3>
   <%= @question.content %>
 </div>
+
+<%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>
