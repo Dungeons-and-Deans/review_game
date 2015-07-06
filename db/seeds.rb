@@ -35,6 +35,11 @@ Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "pas
 Icon.create(name: "Bus", description: "fa fa-bus")
 Icon.create(name: "Ship", description: "fa fa-ship")
 Icon.create(name: "Taxi", description: "fa fa-taxi")
+Icon.create(name: "Circle", description: "fa fa-circle")
+Icon.create(name: "Person", description: "fa fa-child")
+Icon.create(name: "Jet", description: "fa fa-fighter-jet")
+Icon.create(name: "Bug", description: "fa fa-bug")
+Icon.create(name: "Flag", description: "fa fa-flag")
 
 Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')
