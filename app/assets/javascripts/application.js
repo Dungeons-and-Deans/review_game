@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
+//= require websocket_rails/main
 //
 //= require z_app
 //= require z_categories
@@ -32,5 +33,3 @@ function copySection() {
   $("#question-list").append(question);
   questionCounter++;
 }
-//= require websocket_rails/main
-
