@@ -68,7 +68,7 @@ tbody tr:not(:last-child) {
 }
 
 tbody tr:hover {
-  background: $bg-color-hover;
+  opacity: 0.8;
 }
 
 input[type="submit"] {
