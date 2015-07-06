@@ -9,6 +9,11 @@
 Category.create!(name: "History", teacher_id: 1)
 Category.create!(name: "Math", teacher_id: 1)
 
+4.times do |c|
+  CategoryGameSessionAssignment.create!(category_id: 1, game_session_id: 1+c)
+  CategoryGameSessionAssignment.create!(category_id: 2, game_session_id: 1+c)
+end
+
 Game.create!(teacher_id: 1, name: "Gameone", icon_id: 1, movement: 1)
 Game.create!(teacher_id: 1, name: "Gametwo", icon_id: 2, movement: 1)
 Game.create!(teacher_id: 1, name: "Gamethree", icon_id: 3, movement: 1)
