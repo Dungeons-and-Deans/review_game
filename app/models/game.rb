@@ -6,6 +6,6 @@ class Game < ActiveRecord::Base
 
   validates :name, presence: true
   validates :teacher_id, presence: true
-  validates :student_icon, presence: true
+  validates :icon_id, presence: true
   validates :movement, numericality: { greater_than: 0 }
 end
