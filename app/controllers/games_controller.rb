@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.where(teacher_id: current_teacher.id)
-    @game_sessions = @games.each {|g| g.game_sessions}
+    @game_sessions = @games.map{|g| g.game_sessions }
   end
 
   def show
