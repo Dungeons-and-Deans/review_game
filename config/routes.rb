@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'class_gameplay/:id/home' => 'class_gameplay#home'
+
   get 'student_gameplay/login'
   post 'student_gameplay/login'
   get 'student_gameplay/logout'
