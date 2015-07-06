@@ -1,7 +1,6 @@
 class StudentGameplayController < ApplicationController
   def login
     if request.post?
-      # password = params[:password]
       group = Group.find_by_password(params[:password]["password"])
       if group
         session[:group_id] = group.id
