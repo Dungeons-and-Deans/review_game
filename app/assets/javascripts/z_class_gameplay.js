@@ -3,6 +3,18 @@
 
 app.classGameplay = {
   dragDrop: function () {
-    $('.draggables').draggable();
+    $('.draggables').draggable({
+      stop: function () {
+        var id = event.target.id;
+        
+        var info = {
+          id: id,
+          top: $('#' + id).offset().top,
+          left: $('#' + id).offset().left
+        }
+        
+        console.log(info);
+      }
+    });
   }
 }
