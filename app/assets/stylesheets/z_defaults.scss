@@ -45,6 +45,14 @@ a:hover {
   color: $link-color-active;
 }
 
+.list li {
+  padding: 0.5rem 2rem;
+  
+  &:not(:last-child) {
+    border-bottom: 1px solid $fg-color;
+  }
+}
+
 form,
 table {
   position: relative;
