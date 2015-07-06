@@ -1,6 +1,6 @@
 <h1>Group Login</h1>
 <p>Login to play.</p>
-  <%= simple_form_for :password, url: student_gameplay_login_path do |f| %>
+  <%= simple_form_for :password, url: student_gameplay_login_path, html: { class: 'login-group' } do |f| %>
     <%= f.input :password %>
     <%= f.button :submit %>
   <% end %>
