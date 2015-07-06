@@ -4,5 +4,6 @@
     <% group.supplies.each do |supply| %>
       <li><%= supply.amount %> <%= supply.name %></li>
     <% end %>
+    <li><%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "/teacher_gameplay/#{@game_session.id}/supply/#{group.id}" %></li>
   </ol>
 <% end %>

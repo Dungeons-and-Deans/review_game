@@ -30,4 +30,8 @@ class GameSession < ActiveRecord::Base
     order[spot]
   end
 
+  def random_question
+    self.categories.sample.questions.sample
+  end
+
 end
