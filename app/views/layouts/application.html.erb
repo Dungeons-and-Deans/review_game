@@ -13,12 +13,14 @@
     <%= image_tag "books.jpg", class: "bg-image" %>
     
     <ul class="nav nav-pills">
-      <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
-      <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
-      <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
-      <% if teacher_signed_in? %>
-        <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout') %>
-      <% end %>
+      <script type="text/html" id="nav-links">
+        <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
+        <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
+        <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
+        <% if teacher_signed_in? %>
+          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout') %>
+        <% end %>
+      </script>
     </ul>
   
     <p class="notice"><%= notice %></p>

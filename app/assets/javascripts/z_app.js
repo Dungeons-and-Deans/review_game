@@ -1,9 +1,5 @@
 var app = {
   
-  loginNoNav: function () {
-    $('.nav').remove();
-  },
-  
   navActive: function (pathname) {
     $('.nav').find('.active').removeClass('active');
     
