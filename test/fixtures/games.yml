@@ -3,12 +3,12 @@
 one:
   teacher: :one
   name: "GameOne"
-  icon_id: 1
+  icon: :one
   movement: 1
 
 
 two:
   teacher: :one
   name: "GameTwo"
-  icon_id: 1
+  icon: :two
   movement: 1
