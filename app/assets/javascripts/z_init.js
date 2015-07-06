@@ -7,6 +7,10 @@ $(function () {
     app.loginNoNav();
   }
   
+  if ($('.login-group').length) {
+    app.loginNoNav();
+  }
+  
   
   
 });

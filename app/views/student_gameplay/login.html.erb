@@ -4,7 +4,7 @@
     <h1>Group Login</h1>
     <p>Login to play.</p>
 
-    <%= form_tag do %>
+    <%= form_tag nil, class: 'login-group' do %>
       <div class='row'>
         <div class='col-md-2'>
           <%= label_tag :password %>
