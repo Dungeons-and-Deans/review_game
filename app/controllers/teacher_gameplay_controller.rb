@@ -20,8 +20,9 @@ class TeacherGameplayController < ApplicationController
     end
   end
 
-  def supplies
+  def groups
     @groups = @game_session.groups
+    @supply = Supply.new
   end
 
   def competition
