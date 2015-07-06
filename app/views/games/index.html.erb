@@ -35,13 +35,15 @@
   </thead>
 
   <tbody>
-    <% @game_sessions.each do |game_session| %>
-      <tr>
-        <td><%= game_session.name %></td>
-        <td><%= game_session.updated_at.strftime("%b %e, %Y") %></td>
-        <td><%= link_to 'Play', "/teacher_gameplay/#{game_session.id}/home" %></td>
-        <td><%= link_to 'Remove', "/game_sessions/#{game_session.id}/destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @games.each do |game| %>
+      <% game.game_sessions.each do |game_session| %>
+        <tr>
+          <td><%= game_session.name %></td>
+          <td><%= game_session.updated_at.strftime("%b %e, %Y") %></td>
+          <td><%= link_to 'Play', "/teacher_gameplay/#{game_session.id}/home" %></td>
+          <td><%= link_to 'Remove', "/game_sessions/#{game_session.id}/destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
