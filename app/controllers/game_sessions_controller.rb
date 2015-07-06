@@ -24,7 +24,7 @@ class GameSessionsController < ApplicationController
 
   def assign_groups
     if @game_session.update(game_session_params)
-      redirect_to "/game_sessions/#{@game_session.id}/groups", notice: 'Game Session was successfully updated.'
+      redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Game Session was successfully updated.'
     else
       render :groups
       flash[:notice] = @game_session.errors

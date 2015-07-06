@@ -10,7 +10,7 @@
     <% @current_group.supplies.each do |s| %>
     <li><%= s.amount %> <%= s.name %></li>
     <% end %>
-    <li><%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "/teacher_gameplay/#{@game_session.id}/supply/#{@current_group.id}" %></li>
+    <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
   </ul></div>
 </div>
 
@@ -23,5 +23,6 @@
 </div>
 
 <div>
+  <h3>Next Question</h3>
   <%= @question.content %>
 </div>

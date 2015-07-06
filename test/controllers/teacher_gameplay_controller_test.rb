@@ -2,8 +2,9 @@ require 'test_helper'
 
 class TeacherGameplayControllerTest < ActionController::TestCase
   setup do
-    sign_in teachers(:three)
+    sign_in teachers(:one)
     @game_session = game_sessions(:one)
+    @current_group = groups(:one)
   end
 
   test "should get home" do
