@@ -4,9 +4,23 @@
   <% @questions.each do |question| %>
     <li><div id="question-container<%= question.id %>"><%= render partial: 'question', locals: {question: question} %></li>
   <% end %>
+  <li><div class="links">
+      <%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %>
+  </div></li>
 </ul>
 
+<div>
+  <%= simple_form_for @category do |f| %>
+    <%= f.error_notification %>
+    <div id="question-list"><div><%= render partial: 'questions_form', locals: { f: f } %></div></div>
+
+    <%= f.button :submit, "Submit Questions" %>
+  <% end %>
+</div>
+
+
+
+
 <div class="links">
-  <%= link_to 'Edit/Add Question', edit_category_path(@category), html_options = { class: "btn btn-default" } %>
   <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
 </div>
