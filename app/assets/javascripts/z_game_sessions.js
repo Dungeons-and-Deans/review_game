@@ -13,7 +13,7 @@ app.gameSession = {
       stop: function (e) {
         var id = e.target.id;
         var groupId = $(this).closest('ul').attr('id');
-        
+
         if (groupId) {
           window.location.pathname = "game_sessions/add_player/" + groupId + "/" + id;
         }
