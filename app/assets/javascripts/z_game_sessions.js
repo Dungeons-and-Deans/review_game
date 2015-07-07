@@ -12,16 +12,17 @@ app.gameSession = {
       revert: 'invalid',
       stop: function () {
         var id = event.target.id;
-        
         var groupId = $(this).closest('ul').attr('id');
         
         if (groupId) {
           console.log(id);
           console.log(groupId);
-          document.location.path = "game_sessions/add_player/" + groupId + "/" + id;
+          
+          console.log("game_sessions/add_player/" + groupId + "/" + id)
+          
+          window.location.path = "game_sessions/add_player/" + groupId + "/" + id;
         }
         
-        // window.location = "http://localhost:3000/game_sessions/add_player/" + groupId + "/" + id
         
         // game_sessions/add_player/:group_id/:student_id
       }
