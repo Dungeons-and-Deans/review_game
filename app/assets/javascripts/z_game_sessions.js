@@ -6,12 +6,11 @@ app.gameSession = {
     $('.groups-students').sortable({
       revert: true
     });
-    
+
     $('.draggables').draggable({
       connectToSortable: '.groups-students',
       revert: 'invalid'
     });
-    
     // $('ul, li').disableSelection();
   }
 }

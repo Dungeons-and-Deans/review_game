@@ -1,0 +1,3 @@
+<%= ff.simple_fields_for :group_assignments, group.group_assignments.build do |fff| %>
+  <%= fff.hidden_field :student_id, value: student.id %>
+<% end %>
