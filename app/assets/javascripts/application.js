@@ -26,7 +26,7 @@
 //
 //= require z_init
 var questionCounter = 1;
-var dispatcher = new WebSocketRails('review-game.herokuapp.com/websocket');
+var dispatcher = new WebSocketRails(window.location.host + "/websocket");
 
 channel = dispatcher.subscribe('group_listen');
 
