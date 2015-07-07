@@ -26,7 +26,7 @@
 //
 //= require z_init
 var questionCounter = 1;
-var dispatcher = new WebSocketRails('localhost:3000/websocket');
+var dispatcher = new WebSocketRails('review-game.herokuapp.com/websocket');
 
 channel = dispatcher.subscribe('group_listen');
 
@@ -35,10 +35,10 @@ channel.bind('coordinates', function(icon) {
   console.log(icon.board_x);
   console.log(icon.board_y);
   console.log(icon.id);
-  
+
   var piece = '.map + #' + id;
   console.log(piece);
-  
+
   $('#' + id).offset( { top: icon.board_y, left: icon.board_x } );
 });
 
