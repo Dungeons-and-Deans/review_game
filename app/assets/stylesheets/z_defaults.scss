@@ -42,7 +42,7 @@ a:hover {
 
 .list li {
   padding: 0.5rem 2rem;
-  
+
   &:not(:last-child) {
     border-bottom: 1px solid $fg-color;
   }
@@ -91,7 +91,7 @@ td, th {
   min-height: 100%;
   min-width: 100%;
   z-index: -100;
-  -webkit-filter: grayscale(100%); 
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.06;
 }

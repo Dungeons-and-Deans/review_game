@@ -2,7 +2,7 @@
 
 <ul class="list">
   <% @questions.each do |question| %>
-    <li><%= question.content %></li>
+    <li><div id="question-container"><%= link_to question.content, "/categories/#{@category.id}/edit_question/#{question.id}", remote: true %></div></li>
   <% end %>
 </ul>
 

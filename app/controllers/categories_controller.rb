@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy, :edit_question, :update_question]
   before_action :authenticate_teacher!
 
   def index
@@ -15,6 +15,17 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def edit_question
+    @question = Question.find(params[:question_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update_question
+    @question = Question.find(params[:question_id])
   end
 
   def create

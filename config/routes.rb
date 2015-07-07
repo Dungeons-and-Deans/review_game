@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resources :students
   resources :categories
 
+  get 'categories/:id/edit_question/:question_id' => 'categories#edit_question'
+  patch 'categories/:id/update_question/:question_id' => 'categories#update_question'
+
   get 'game_sessions/new'
   post 'game_sessions/create'
   get 'game_sessions/:id/groups' => 'game_sessions#groups'
