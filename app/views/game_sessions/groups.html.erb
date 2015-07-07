@@ -8,6 +8,10 @@
   <%= f.button :submit, "Submit" %>
 <% end %>
 
+<% @students.each do |student| %>
+  <div class="draggables"><%= student.full_name %></div>
+<% end %>
+
 <div class="links">
-  <%= link_to 'New Game Scenario', new_game_path %>
+  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
 </div>

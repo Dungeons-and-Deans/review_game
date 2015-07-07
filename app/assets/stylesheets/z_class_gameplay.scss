@@ -5,3 +5,21 @@
 .map{
   width: 100%;
 }
+
+.draggables {
+  &[class~="1"] {
+    color: red;
+  }
+}
+
+.draggables {
+  &[class~="2"] {
+    color: blue;
+  }
+}
+
+.draggables {
+  &[class~="3"] {
+    color: green;
+  }
+}

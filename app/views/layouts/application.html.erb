@@ -18,7 +18,7 @@
         <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
         <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
         <% if teacher_signed_in? %>
-          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout') %>
+          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout btn btn-danger') %>
         <% end %>
       </script>
     </ul>

@@ -1,3 +1,26 @@
 // Place all the styles related to the teacher_gameplay controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// app/views/teacher_gameplay/_scores.html.erb
+
+#scores {
+  position: relative;
+  width: 30rem;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+}
+
+#current-group {
+  position: relative;
+  width: 30rem;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+}
+
+
+#next-question {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+}

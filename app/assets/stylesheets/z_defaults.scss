@@ -23,12 +23,7 @@ h5, h6 {
 }
 
 .links {
-  position: relative;
   text-align: center;
-}
-
-.links a {
-  display: block;
 }
 
 p {
@@ -86,18 +81,7 @@ td, th {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 1rem;
-  display: block;
-  padding: 0.5rem 1rem;
-  background: $button-color;
-  color: $button-color-font;
-  border-radius: 0.3rem;
-  
-  &:hover {
-    background: $button-color-hover;
-    color: $button-color-font;
-    text-decoration: none;
-  }
+  right: 0;
 }
 
 .bg-image {

@@ -3,7 +3,7 @@
   <%= render partial: 'scores' %>
 </div>
 
-<div>
+<div id="current-group">
   <h3>Current Group</h3>
   <div><%= @current_group.name %></div>
   <div><p>Supplies</p><ul>
@@ -22,10 +22,12 @@
   <% end %>
 </div>
 
-<div>
+<div id="next-question">
   <h3>Next Question</h3>
   <%= @question.content %>
 </div>
 
+<div class="links">
 <%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>
 <%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "btn btn-default" %>
+</div>
