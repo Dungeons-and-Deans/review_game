@@ -12,6 +12,12 @@ class Student < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def unassigned?(game_session_id)
+    GameSession.find(game_session_id).groups.each do |id|
+      return if GroupAssignment.where(student_id: self.id).find_by_group_id(id)
+    end
+  end
+
   # private def set_games_won
   #   self.games_won = 0
   # end

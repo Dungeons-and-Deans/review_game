@@ -7,11 +7,11 @@
 
   <%= f.button :submit, "Submit" %>
 <% end %>
-
-<% @students.each do |student| %>
-  <div class="draggables"><%= student.full_name %></div>
-<% end %>
-
+<ul class="groups-students">
+  <% @students.each do |student| %>
+    <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+  <% end %>
+</ul>
 <div class="links">
   <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
 </div>

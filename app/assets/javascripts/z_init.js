@@ -12,4 +12,8 @@ $(function () {
     app.classGameplay.dragDrop();
   }
   
+  if ($('.groups-students').length) {
+    app.gameSession.dragDrop();
+  }
+  
 });
