@@ -1,5 +1,5 @@
 <%= f.simple_fields_for :groups do |ff| %>
-<div class="group-container" id="group<%= "#{ff.object.id}" %>">
+<div class="group-container col-md-4" id="group<%= "#{ff.object.id}" %>">
   <h2>Group</h2>
   <p>Password: <%= ff.object.password %></p>
   <%= ff.input :name, label: "Group Name"%>
