@@ -15,16 +15,8 @@ app.gameSession = {
         var groupId = $(this).closest('ul').attr('id');
         
         if (groupId) {
-          console.log(id);
-          console.log(groupId);
-          
-          console.log("game_sessions/add_player/" + groupId + "/" + id)
-          
-          window.location.path = "game_sessions/add_player/" + groupId + "/" + id;
+          window.location.pathname = "game_sessions/add_player/" + groupId + "/" + id;
         }
-        
-        
-        // game_sessions/add_player/:group_id/:student_id
       }
     });
   }
