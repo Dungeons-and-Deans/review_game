@@ -19,9 +19,9 @@ Game.create!(teacher_id: 1, name: "Gametwo", icon_id: 2, movement: 1)
 Game.create!(teacher_id: 1, name: "Gamethree", icon_id: 3, movement: 1)
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period")
-GameSession.create!(game_id: 1, turn_group_id: 2, name: "Second Period")
-GameSession.create!(game_id: 2, turn_group_id: 1, name: "Third Period")
-GameSession.create!(game_id: 3, turn_group_id: 1, name: "Fouth Period")
+GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period")
+GameSession.create!(game_id: 2, turn_group_id: 5, name: "Third Period")
+GameSession.create!(game_id: 3, turn_group_id: 7, name: "Fouth Period")
 
 Group.create!(game_session_id: 1, name: "groupone", score: 350, password: "password")
 Group.create!(game_session_id: 1, name: "grouptwo", score: 100, password: "password")
@@ -35,6 +35,11 @@ Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "pas
 Icon.create(name: "Bus", description: "fa fa-bus")
 Icon.create(name: "Ship", description: "fa fa-ship")
 Icon.create(name: "Taxi", description: "fa fa-taxi")
+Icon.create(name: "Circle", description: "fa fa-circle")
+Icon.create(name: "Person", description: "fa fa-child")
+Icon.create(name: "Jet", description: "fa fa-fighter-jet")
+Icon.create(name: "Bug", description: "fa fa-bug")
+Icon.create(name: "Flag", description: "fa fa-flag")
 
 Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')

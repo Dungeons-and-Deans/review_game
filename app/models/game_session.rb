@@ -2,7 +2,7 @@ class GameSession < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :group_assignments, through: :groups
   has_many :students, through: :group_assignments
-  has_many :category_game_session_assignments
+  has_many :category_game_session_assignments, dependent: :destroy
   has_many :categories, through: :category_game_session_assignments
   belongs_to :game
 

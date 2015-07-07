@@ -7,4 +7,9 @@ $(function () {
   
   app.navActive($(location).attr('pathname'));
   
+  
+  if ($('.map').length) {
+    app.classGameplay.dragDrop();
+  }
+  
 });
