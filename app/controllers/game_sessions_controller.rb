@@ -19,7 +19,6 @@ class GameSessionsController < ApplicationController
   end
 
   def groups
-    @game_session.groups.each { |group| group.group_assignments.build }
     @students = Student.where(teacher_id: current_teacher.id)
   end
 
@@ -29,6 +28,14 @@ class GameSessionsController < ApplicationController
     else
       render :groups
       flash[:notice] = @game_session.errors
+    end
+  end
+
+  def add_player
+    @group = Group.find(params[:group_id])
+    @student = Student.find(params[:student_id])
+    respond_to do |format|
+      format.js
     end
   end
 

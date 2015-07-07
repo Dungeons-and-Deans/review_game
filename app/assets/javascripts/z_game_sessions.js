@@ -6,7 +6,7 @@ app.gameSession = {
     $('.groups-students').sortable({
       revert: true
     });
-    
+
     $('.draggables').draggable({
       connectToSortable: '.groups-students',
       revert: 'invalid',
@@ -26,6 +26,5 @@ app.gameSession = {
         // game_sessions/add_player/:group_id/:student_id
       }
     });
-    
   }
 }

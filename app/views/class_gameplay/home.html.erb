@@ -4,8 +4,6 @@
   <img src="<%= @map.file_path %>" class="img-responsive">
 </div>
 
-<button onclick="sendMove()">Click me</button>
-
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> <%= player.group_id %> draggables", id="<%= player.id %>"><%= player.student.first_name[0] %></i>
 <% end %>
