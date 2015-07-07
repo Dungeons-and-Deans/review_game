@@ -43,7 +43,7 @@ var board = {
 dispatcher.trigger('movements.move_icon', board);
 }
 
-
-dispatcher.bind('movements.worked', function(icon) {
+channel = dispatcher.subscribe('group_listen');
+channel.bind('coordinates', function(icon) {
   console.log(icon.board_x);
 });
