@@ -9,11 +9,12 @@ app.classGameplay = {
         
         var info = {
           id: id,
-          top: $('#' + id).offset().top,
-          left: $('#' + id).offset().left
+          y: $('#' + id).offset().top,
+          x: $('#' + id).offset().left
         }
         
         console.log(info);
+        dispatcher.trigger('movements.move_icon', info);
       }
     });
   }
