@@ -1,6 +1,4 @@
 <%= ff.simple_fields_for :group_assignments do |fff| %>
   <%= fff.association :student, label_method: :full_name, label: false, include_blank: true %>
   <%= fff.input :_destroy, as: :boolean, label: "Remove Student" %>
-  <%= fff.hidden_field :board_x, value: (1..100).to_a.sample %>
-  <%= fff.hidden_field :board_y, value: (1..100).to_a.sample %>
 <% end %>
