@@ -1,5 +1,0 @@
-<%= ff.simple_fields_for :group_assignments do |fff| %>
-  <%= fff.object.student.full_name if fff.object.student %>
-  <%= fff.hidden_field :student_id %>
-  <%= fff.input :_destroy, as: :boolean, label: "Remove Student" %>
-<% end %>
