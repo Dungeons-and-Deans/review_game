@@ -25,12 +25,25 @@
 //
 //= require z_init
 var questionCounter = 1;
+var dispatcher = new WebSocketRails('localhost:3000/websocket');
 
 function copySection() {
   var question = $("#question-form").parent().clone().html();
-
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
     .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
   $("#question-list").append(question);
   questionCounter++;
 }
+
+function sendMove(){
+var board = {
+  name: 6,
+  completed: false
+  }
+dispatcher.trigger('movements.move_icon', board);
+}
+
+
+dispatcher.bind('movements.worked', function(icon) {
+  console.log(icon.board_x);
+});
