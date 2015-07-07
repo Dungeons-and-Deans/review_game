@@ -3,8 +3,8 @@ class CreateGroupAssignments < ActiveRecord::Migration
     create_table :group_assignments do |t|
       t.integer :student_id
       t.integer :group_id
-      t.integer :board_x
-      t.integer :board_y
+      t.decimal :board_x
+      t.decimal :board_y
 
       t.timestamps null: false
     end
