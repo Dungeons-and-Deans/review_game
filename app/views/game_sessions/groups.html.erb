@@ -7,7 +7,7 @@
 
   <%= f.button :submit, "Submit" %>
 <% end %>
-<ul class="groups-students">
+<ul class="groups-students student-list">
   <% @students.each do |student| %>
     <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
   <% end %>

@@ -54,9 +54,9 @@ table {
   margin: 0 auto 4rem auto;
 }
 
-form {
-  max-width: 40rem;
-}
+// form {
+//   max-width: 40rem;
+// }
 
 tbody tr:not(:last-child) {
   border-bottom: 1px solid $fg-color;
@@ -102,7 +102,14 @@ td, th {
 }
 
 .group-container {
-  padding: 0.5rem 1rem;
+  position: relative;
+  padding: 1rem;
   border: 1px solid black;
-  margin-bottom: 1rem;
+  width: 30rem;
+  display: inline-block;
+}
+
+.student-list {
+  width: 25rem;
+  margin: 0 auto;
 }

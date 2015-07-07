@@ -4,6 +4,7 @@
 app.gameSession = {
   dragDrop: function () {
     $('.groups-students').sortable({
+      tolerance:"pointer",
       revert: true
     });
 
