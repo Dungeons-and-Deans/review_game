@@ -1,7 +1,7 @@
 class IconMovementController < WebsocketRails::BaseController
 
   def move_icon
-    @icon = GroupAssignment.find_by_id(1)
+    @icon = GroupAssignment.find_by_id(message[:id])
     @icon.board_x = message[:x]
     @icon.board_y = message[:y]
     @icon.save

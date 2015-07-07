@@ -33,6 +33,7 @@ channel = dispatcher.subscribe('group_listen');
 channel.bind('coordinates', function(icon) {
   console.log(icon.board_x);
   console.log(icon.board_y);
+  console.log(icon.id);
 });
 
 function copySection() {
