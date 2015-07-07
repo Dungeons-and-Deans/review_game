@@ -9,7 +9,7 @@
 <% end %>
 <ul class="groups-students">
   <% @students.each do |student| %>
-    <li class="draggables"><%= student.full_name %></li>
+    <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
   <% end %>
 </ul>
 <div class="links">
