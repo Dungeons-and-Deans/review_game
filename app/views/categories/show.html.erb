@@ -2,7 +2,7 @@
 
 <ul class="list">
   <% @questions.each do |question| %>
-    <li><div id="question-container"><%= render partial: 'question', locals: {question: question} %></li>
+    <li><div id="question-container<%= question.id %>"><%= render partial: 'question', locals: {question: question} %></li>
   <% end %>
 </ul>
 
