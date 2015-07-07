@@ -19,7 +19,7 @@ class GameSessionsController < ApplicationController
   end
 
   def groups
-    @students = Student.where(teacher_id: current_teacher.id)
+    @students = Student.where(teacher_id: current_teacher.id).select{ |s| s.unassigned?(@game_session.id) }
   end
 
   def assign_groups
