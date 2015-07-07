@@ -3,6 +3,6 @@
 <%= render 'form' %>
 
 <div class="links">
-  <%= link_to 'Show', @category %>
-  <%= link_to 'New Game Scenario', new_game_path %>
+  <%= link_to 'Show', @category, html_options = { class: "btn btn-default" } %>
+  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
 </div>
