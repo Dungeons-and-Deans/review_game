@@ -19,7 +19,7 @@ class GameSessionsController < ApplicationController
   end
 
   def groups
-    @students = Student.where(teacher_id: current_teacher.id)
+    @students = Student.where(teacher_id: current_teacher.id).select{ |s| s.unassigned?(@game_session.id) }
   end
 
   def assign_groups
@@ -32,11 +32,9 @@ class GameSessionsController < ApplicationController
   end
 
   def add_player
-    @group = Group.find(params[:group_id])
-    @student = Student.find(params[:student_id])
-    respond_to do |format|
-      format.js
-    end
+    @game_session = Group.find(params[:group_id]).game_session
+    GroupAssignment.create(group_id: params[:group_id], student_id: params[:student_id])
+    redirect_to "/game_sessions/#{@game_session.id}/groups"
   end
 
   def destroy
