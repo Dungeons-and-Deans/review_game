@@ -31,9 +31,15 @@ var dispatcher = new WebSocketRails('localhost:3000/websocket');
 channel = dispatcher.subscribe('group_listen');
 
 channel.bind('coordinates', function(icon) {
+  var id = icon.id;
   console.log(icon.board_x);
   console.log(icon.board_y);
   console.log(icon.id);
+  
+  var piece = '.map + #' + id;
+  console.log(piece);
+  
+  $('#' + id).offset( { top: icon.board_y, left: icon.board_x } );
 });
 
 function copySection() {

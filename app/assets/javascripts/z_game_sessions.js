@@ -11,7 +11,6 @@ app.gameSession = {
       connectToSortable: '.groups-students',
       revert: 'invalid'
     });
-
     // $('ul, li').disableSelection();
   }
 }
