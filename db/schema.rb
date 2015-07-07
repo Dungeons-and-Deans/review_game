@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150706143807) do
   create_table "group_assignments", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "group_id"
-    t.integer  "board_x"
-    t.integer  "board_y"
+    t.decimal  "board_x"
+    t.decimal  "board_y"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
