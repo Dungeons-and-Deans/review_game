@@ -2,7 +2,7 @@
 
 <ul class="list">
   <% @questions.each do |question| %>
-    <li><div id="question-container"><%= link_to question.content, "/categories/#{@category.id}/edit_question/#{question.id}", remote: true %></div></li>
+    <li><div id="question-container"><%= render partial: 'question', locals: {question: question} %></li>
   <% end %>
 </ul>
 

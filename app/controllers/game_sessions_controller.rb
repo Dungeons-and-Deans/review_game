@@ -34,7 +34,6 @@ class GameSessionsController < ApplicationController
   def add_player
     @game_session = Group.find(params[:group_id]).game_session
     GroupAssignment.assign(params[:group_id], params[:student_id], @game_session.id)
-    #create(group_id: params[:group_id], student_id: params[:student_id])
     redirect_to "/game_sessions/#{@game_session.id}/groups"
   end
 

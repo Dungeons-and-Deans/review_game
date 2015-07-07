@@ -26,6 +26,13 @@ class CategoriesController < ApplicationController
 
   def update_question
     @question = Question.find(params[:question_id])
+    respond_to do |format|
+      if @question.update(question_params)
+        format.js
+      else
+        format.html { render :groups, notice: 'Question failed to be updated.' }
+      end
+    end
   end
 
   def create
@@ -59,4 +66,9 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :teacher_id,
         questions_attributes: [:id, :content, :difficulty_level])
   end
+
+  private def question_params
+    params.require(:question).permit(:content, :difficulty_level)
+  end
+  
 end

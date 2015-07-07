@@ -3,7 +3,7 @@
 <%= simple_form_for @game_session, url: "assign_groups" do |f| %>
   <%= f.error_notification %>
 
-  <%= render partial: 'new_group_form', locals: {f: f} %>
+  <div id="new-group-form-container"><%= render partial: 'new_group_form', locals: {f: f} %></div>
 
   <%= f.button :submit, "Submit" %>
 <% end %>
