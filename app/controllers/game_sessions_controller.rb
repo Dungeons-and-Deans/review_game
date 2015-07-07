@@ -31,6 +31,14 @@ class GameSessionsController < ApplicationController
     end
   end
 
+  def add_player
+    @group = Group.find(params[:group_id])
+    @student = Student.find(params[:student_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     @game_session.destroy
     redirect_to games_url, notice: 'Game was successfully destroyed.'
