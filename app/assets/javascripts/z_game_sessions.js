@@ -3,6 +3,14 @@
 
 app.gameSession = {
   dragDrop: function () {
-    $('.draggables').draggable();
+    $('.groups-students').sortable({
+      revert: true
+    });
+    
+    $('.draggables').draggable({
+      connectToSortable: '.groups-students'
+    });
+    
+    $('ul, li').disableSelection();
   }
 }
