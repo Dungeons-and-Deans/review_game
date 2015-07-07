@@ -28,6 +28,13 @@
 var questionCounter = 1;
 var dispatcher = new WebSocketRails('localhost:3000/websocket');
 
+channel = dispatcher.subscribe('group_listen');
+
+channel.bind('coordinates', function(icon) {
+  console.log(icon.board_x);
+  console.log(icon.board_y);
+});
+
 function copySection() {
   var question = $("#question-form").parent().clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
@@ -35,16 +42,3 @@ function copySection() {
   $("#question-list").append(question);
   questionCounter++;
 }
-
-function sendMove(){
-var board = {
-  name: 6,
-  completed: false
-  }
-dispatcher.trigger('movements.move_icon', board);
-}
-
-channel = dispatcher.subscribe('group_listen');
-channel.bind('coordinates', function(icon) {
-  console.log(icon.board_x);
-});
