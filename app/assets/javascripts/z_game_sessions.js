@@ -8,9 +8,10 @@ app.gameSession = {
     });
     
     $('.draggables').draggable({
-      connectToSortable: '.groups-students'
+      connectToSortable: '.groups-students',
+      revert: 'invalid'
     });
     
-    $('ul, li').disableSelection();
+    // $('ul, li').disableSelection();
   }
 }
