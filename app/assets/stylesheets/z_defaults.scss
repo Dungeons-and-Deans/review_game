@@ -95,3 +95,14 @@ td, th {
   filter: grayscale(100%);
   opacity: 0.06;
 }
+
+.groups-students {
+  border: 1px solid black;
+  min-height: 5rem;
+}
+
+.group-container {
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+}
