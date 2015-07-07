@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Remove the Rack::Lock middleware for websocket_rails
-  config.middleware.delete Rack::Lock
+  #config.middleware.delete Rack::Lock
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
