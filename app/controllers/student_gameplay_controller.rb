@@ -13,6 +13,10 @@ class StudentGameplayController < ApplicationController
 
   def home
     @group = Group.find_by_id(session[:group_id])
+    @game_session = GameSession.find(@group.game_session_id)
+    @map = Map.find_by_game_id(@game_session.game.id)
+    @players = @game_session.group_assignments.where(group_id: @group.id)
+    @icon = @game_session.game.icon
   end
 
   def logout
