@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.map{
-  position: relative;
-  width: 120rem;
-  display: block;
-}
-
 .draggables {
   &[class~="1"] {
     color: red;

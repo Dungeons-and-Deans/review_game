@@ -45,3 +45,22 @@ h5, h6 {
   position: absolute;
   width: 20rem;
 }
+
+.map{
+  position: relative;
+  width: 100rem;
+  display: block;
+}
+
+.group-view-info {
+  background: $gray-light;
+  padding: 2rem;
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.group-view-info p {
+  text-align: center;
+}

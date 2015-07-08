@@ -4,21 +4,22 @@
   <i class="<%= @icon.description %> <%= player.group_id %> draggables", id="<%= player.id %>"><%= player.student.first_name[0] %></i>
 <% end %>
 
-<div>
-  <%= params[:group_id] %>
-  <p><%= @group.name %></p>
-  <p><%= @group.score %> points</p>
+<div class="group-view-info">
+  <h3>Group: <%= params[:group_id] %></h3>
+  <p>Name: <%= @group.name %></p>
+  <p>Score: <%= @group.score %> points</p>
 
-  <ul><h5>Supplies</h5>
+  <ul class="list-group"><h5>Supplies</h5>
     <% @group.supplies.each do |supply|%>
-      <li><%= supply.amount %> <%= supply.name %></li>
+      <li class="list-group-item"><%= supply.amount %> <%= supply.name %></li>
     <% end %>
   </ul>
 
 
-  <ul><h5>Group Members</h5>
+  <h5>Group Members</h5>
+  <ul class="list-group">
     <% @group.students.order(:last_name).each do |student| %>
-      <li>
+      <li class="list-group-item">
         <%= student.full_name %>
         <% if student.active %>
           <i class="fa fa-star"></i>
