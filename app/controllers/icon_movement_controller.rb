@@ -14,6 +14,9 @@ class IconMovementController < WebsocketRails::BaseController
   end
 
   def place_icon
+    @icons = GroupAssignment.where(game_session_id: params[:id])
+    game_channel = params[:id]
+    WebsocketRails[:"group_listen#{game_channel}"].trigger 'initial_placement', @icons
   end
 
 end

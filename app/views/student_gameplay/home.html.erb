@@ -5,7 +5,7 @@
 <% end %>
 
 <div>
-  <%= session[:group_id] %>
+  <%= params[:group_id] %>
   <p><%= @group.name %></p>
   <p><%= @group.score %></p>
   <% @group.supplies.each do |supply|%>

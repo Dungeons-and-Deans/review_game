@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'student_gameplay/login'
   post 'student_gameplay/login'
   get 'student_gameplay/logout'
-  get 'student_gameplay/home'
+  get 'student_gameplay/:id/home/:group_id' =>'student_gameplay#home'
 
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
   get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups'
