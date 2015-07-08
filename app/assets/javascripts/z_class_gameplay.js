@@ -6,15 +6,19 @@ app.classGameplay = {
     $('.draggables').draggable({
       stop: function () {
         var id = event.target.id;
-        
+
         var info = {
           id: id,
           y: $('#' + id).offset().top,
           x: $('#' + id).offset().left
         }
-        
+
         dispatcher.trigger('movements.move_icon', info);
       }
     });
+  },
+
+  sendSession: function () {
+    dispatcher.trigger('movements.initial_placements', parseInt(channelNumber));
   }
 }

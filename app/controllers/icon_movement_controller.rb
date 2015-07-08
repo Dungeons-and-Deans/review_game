@@ -14,10 +14,9 @@ class IconMovementController < WebsocketRails::BaseController
   end
 
   def place_icon
-    # @icons = GroupAssignment.where(game_session_id: params[:id])
-    # game_channel = params[:id]
-    # byebug
-    # WebsocketRails[:"group_listen#{game_channel}"].trigger 'initial_placement', @icons
+    game_channel = message
+    @icons = GroupAssignment.joins("LEFT JOIN groups ON groups.id = group_id and groups.game_session_id = #{game_channel}")
+    WebsocketRails[:"group_listen#{game_channel}"].trigger 'initial_placement', @icons
   end
 
 end
