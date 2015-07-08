@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  devise_for :teachers
+  resources :games
+  resources :students
+  resources :categories
+  resources :questions
+
+  root 'games#index'
+
   get 'class_gameplay/:id/home' => 'class_gameplay#home'
 
   get 'student_gameplay/login'
@@ -14,15 +23,6 @@ Rails.application.routes.draw do
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score'
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score'
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group'
-
-  devise_for :teachers
-  root 'games#index'
-  resources :games
-  resources :students
-  resources :categories
-
-  get 'categories/:id/edit_question/:question_id' => 'categories#edit_question'
-  patch 'categories/:id/update_question/:question_id' => 'categories#update_question'
 
   get 'game_sessions/new'
   post 'game_sessions/create'

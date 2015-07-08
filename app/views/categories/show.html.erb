@@ -1,7 +1,7 @@
 <h3><%= @category.name %></h3>
 
 
-<div id="question-list-container"><%= render partial: 'questions_list' %></div>
+<div id="question-list-container"><%= render partial: '/questions/index' %></div>
 
 
 <div>
@@ -11,7 +11,7 @@
       <div class="links"><%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %></div>
       <div>
         <div id="question-form" class="form-inline">
-          <%= render partial: 'questions_form', locals: { f: f } %>
+          <%= render partial: '/questions/form', locals: { f: f } %>
         </div>
       </div>
     </div>
