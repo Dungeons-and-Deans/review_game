@@ -1,8 +1,0 @@
-<div id="question-edit-form" class="form-inline">
-  <%= simple_form_for @question, url: "/categories/#{@category.id}/update_question/#{@question.id}", remote: true do |f| %>
-    <%= f.input :content, label: false %>
-    <%= f.input :difficulty_level, label: 'Difficulty' %>
-
-    <%= f.button :submit %>
-  <% end %>
-</div>
