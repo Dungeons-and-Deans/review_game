@@ -16,5 +16,10 @@ app.classGameplay = {
         dispatcher.trigger('movements.move_icon', info);
       }
     });
+  },
+  
+  sendSession: function () {
+    console.log(channelNumber);
+    dispatcher.trigger('movements.initial_placements', channelNumber);
   }
 }

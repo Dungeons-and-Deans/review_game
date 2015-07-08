@@ -9,6 +9,7 @@ $(function () {
   
   
   if ($('.map').length) {
+    app.classGameplay.sendSession();
     app.classGameplay.dragDrop();
   }
   
