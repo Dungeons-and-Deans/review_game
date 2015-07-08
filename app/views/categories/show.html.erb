@@ -1,21 +1,5 @@
 <h3><%= @category.name %></h3>
 
+<div id="question-list-container"><%= render partial: '/questions/index' %></div>
 
-<div id="question-list-container"><%= render partial: 'questions_list' %></div>
-
-
-<div>
-  <%= simple_form_for @category, remote: true do |f| %>
-    <%= f.error_notification %>
-    <div id="question-list">
-      <div class="links"><%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %></div>
-      <div>
-        <div id="question-form" class="form-inline">
-          <%= render partial: 'questions_form', locals: { f: f } %>
-        </div>
-      </div>
-    </div>
-
-    <%= f.button :submit, "Submit Questions" %>
-  <% end %>
-</div>
+<div id="form-container"><%= render partial: 'form' %></div>

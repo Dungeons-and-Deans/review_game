@@ -1,20 +1,13 @@
-<%= simple_form_for @category do |f| %>
+<%= simple_form_for @category, remote: true do |f| %>
   <%= f.error_notification %>
-
-  <%= f.input :name, label: 'Category Name' %>
-  <%= f.hidden_field :teacher_id %>
-  <% if @category.id != nil %>
-    <div id='question-list'>
-      <div>
-        <div id="question-form" class="form-inline">
-          <%= render partial: 'questions_form', locals: {f: f} %>
-        </div>
+  <div id="question-list">
+    <div class="links"><%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %></div>
+    <div>
+      <div id="new-question-form" class="form-inline">
+        <%= render partial: '/questions/form', locals: { f: f } %>
       </div>
     </div>
-  <% end %>
-  <%= f.button :submit %>
-<% end %>
+  </div>
 
-<div class="links">
-  <%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %>
-</div>
+  <%= f.button :submit, "Submit Questions" %>
+<% end %>
