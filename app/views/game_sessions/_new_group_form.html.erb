@@ -6,9 +6,9 @@
     <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
   
     <h3>Students</h3>
-    <ul class="groups-students" id="<%= "#{ff.object.id}" %>">
+    <ul class="groups-students list-group" id="<%= "#{ff.object.id}" %>">
       <% ff.object.students.each do |student| %>
-        <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+        <li class="draggables list-group-item" id="<%= student.id %>"><%= student.full_name %></li>
       <% end %>
     </ul>
   </div>
