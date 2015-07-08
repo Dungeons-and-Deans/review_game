@@ -18,6 +18,14 @@ class Student < ActiveRecord::Base
     end
   end
 
+  def active?
+    if self.active
+      "fa fa-star"
+    else
+      "fa fa-frown-o"
+    end
+  end
+
   # private def set_games_won
   #   self.games_won = 0
   # end

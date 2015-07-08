@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score'
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score'
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group'
+  get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active'
 
   get 'game_sessions/new'
   post 'game_sessions/create'
