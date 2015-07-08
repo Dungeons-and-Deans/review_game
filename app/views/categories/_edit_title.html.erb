@@ -1,7 +1,7 @@
-<%= simple_form_for @category, url:  do |f| %>
+<%= simple_form_for @category, url: update_title_category_path(@category), remote: true do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name %>
 
-  <% f.button :submit %>
+  <%= f.button :submit %>
 <% end %>

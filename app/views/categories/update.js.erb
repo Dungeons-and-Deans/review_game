@@ -1,1 +1,2 @@
-$("#form-container").html("<%= render 'form' %>");
+$("#form-container").html("<%= j(render 'form') %>");
+$("#question-list-container").html("<%= j(render partial: '/questions/index') %>");
