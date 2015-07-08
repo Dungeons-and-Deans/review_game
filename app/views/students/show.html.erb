@@ -1,19 +1,19 @@
-<p>
-  <strong>Games won:</strong>
-  <%= @student.games_won %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
-<div class="links">
+<div class="col-md-4 col-md-offset-4">
+  <p>
+    <strong>Games won:</strong>
+    <%= @student.games_won %>
+  </p>
+  
+  <p>
+    <strong>First name:</strong>
+    <%= @student.first_name %>
+  </p>
+  
+  <p>
+    <strong>Last name:</strong>
+    <%= @student.last_name %>
+  </p>
+  
   <%= link_to 'Edit', edit_student_path(@student), html_options = { class: "btn btn-default" } %>
   <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
 </div>
