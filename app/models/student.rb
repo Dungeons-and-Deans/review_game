@@ -20,9 +20,9 @@ class Student < ActiveRecord::Base
 
   def active?
     if self.active
-      "fa fa-star"
+      '<i class="fa fa-star"></i>'
     else
-      "fa fa-frown-o"
+      '<i class="fa fa-frown-o"></i>'
     end
   end
 

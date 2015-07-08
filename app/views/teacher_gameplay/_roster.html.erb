@@ -2,7 +2,7 @@
   <% @game_session.students.order(:last_name).each do |student| %>
     <li>
       <%= student.full_name %>
-      <%= link_to "<i class=" + student.active? + "></i>".html_safe, "/teacher_gameplay/#{@game_session.id}/active/#{student.id}", remote: true %>
+      <%= link_to student.active?.html_safe, "/teacher_gameplay/#{@game_session.id}/active/#{student.id}", remote: true %>
     </li>
   <% end %>
 </ul>
