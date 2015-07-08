@@ -44,7 +44,7 @@ channel.bind('coordinates', function (icon) {
 });
 
 channel.bind('ask_question', function () {
-  $("#question-button").click();
+  $('#questionModal').modal('show');
 });
 
 function copySection() {
