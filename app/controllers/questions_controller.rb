@@ -30,6 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @questions = Question.where(category_id: @question.category.id)
     @question.destroy
     respond_to do |format|
       format.js
