@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :teachers
   resources :games
   resources :students
-  resources :categories
+  resources :categories do
+    member do
+      patch 'update_title'
+    end
+  end
   resources :questions
 
   root 'games#index'

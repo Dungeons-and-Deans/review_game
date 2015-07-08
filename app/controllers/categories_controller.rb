@@ -25,10 +25,23 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
     @questions = Question.where(category_id: @category.id)
+    respond_to do |format|
+      if @category.update(category_params)
+        format.js
+      else
+        format.html { redirect_to @category, notice: 'Category failed to be updated.'}
+      end
+    end
+  end
+
+  def update_title
     respond_to do |format|
       if @category.update(category_params)
         format.js
