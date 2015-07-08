@@ -44,6 +44,13 @@ channel.bind('coordinates', function (icon) {
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
+channel.bind('ask_question', function () {
+  console.log('hi');
+  $("#question-button").click();
+});
+
+
+
 function copySection() {
   var question = $("#new-question-form").parent().clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')

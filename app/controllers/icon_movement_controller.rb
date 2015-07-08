@@ -19,4 +19,9 @@ class IconMovementController < WebsocketRails::BaseController
     WebsocketRails[:"group_listen#{game_channel}"].trigger 'initial_placement', @icons
   end
 
+  def send_question
+    game_channel = message
+    WebsocketRails[:"group_listen#{game_channel}"].trigger 'ask_question'
+  end
+
 end
