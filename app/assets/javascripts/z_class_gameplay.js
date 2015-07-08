@@ -13,7 +13,6 @@ app.classGameplay = {
           x: $('#' + id).offset().left
         }
         
-        console.log(info);
         dispatcher.trigger('movements.move_icon', info);
       }
     });

@@ -1,12 +1,21 @@
 <h3><%= @category.name %></h3>
 
-<ul class="list">
-  <% @questions.each do |question| %>
-    <li><div id="question-container"><%= link_to question.content, "/categories/#{@category.id}/edit_question/#{question.id}", remote: true %></div></li>
-  <% end %>
-</ul>
 
-<div class="links">
-  <%= link_to 'Edit/Add Question', edit_category_path(@category), html_options = { class: "btn btn-default" } %>
-  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
+<div id="question-list-container"><%= render partial: 'questions_list' %></div>
+
+
+<div>
+  <%= simple_form_for @category, remote: true do |f| %>
+    <%= f.error_notification %>
+    <div id="question-list">
+      <div class="links"><%= link_to "New Question", "#", id: "copy_link", onclick: "copySection();" %></div>
+      <div>
+        <div id="question-form" class="form-inline">
+          <%= render partial: 'questions_form', locals: { f: f } %>
+        </div>
+      </div>
+    </div>
+
+    <%= f.button :submit, "Submit Questions" %>
+  <% end %>
 </div>

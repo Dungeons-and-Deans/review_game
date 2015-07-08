@@ -3,15 +3,12 @@
 <%= simple_form_for @game_session, url: "assign_groups" do |f| %>
   <%= f.error_notification %>
 
-  <%= render partial: 'new_group_form', locals: {f: f} %>
+  <div id="new-group-form-container"><%= render partial: 'new_group_form', locals: {f: f} %></div>
 
   <%= f.button :submit, "Submit" %>
 <% end %>
-<ul class="groups-students">
+<ul class="groups-students student-list">
   <% @students.each do |student| %>
     <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
   <% end %>
 </ul>
-<div class="links">
-  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
-</div>

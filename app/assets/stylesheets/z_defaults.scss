@@ -1,20 +1,8 @@
 @import 'z_colors';
 
-body {
-  font-family: sans-serif;
-  background: $bg-color;
-  color: $fg-color;
-  padding: 2rem;
-}
-
-.nav {
-  position: relative;
-}
-
 h1, h2, h3, h4,
 h5, h6 {
   text-align: center;
-  margin-bottom: 4rem;
 }
 
 .alert,
@@ -22,67 +10,41 @@ h5, h6 {
   text-align: center;
 }
 
-.links {
-  text-align: center;
-}
+// .list li:not(:last-child) {
+//   border-bottom: 1px solid $fg-color;
+// }
 
-p {
-  text-align: center;
-  margin-bottom: 1em;
-}
+// form,
+// table {
+//   position: relative;
+//   margin: 0 auto 4rem auto;
+// }
 
-a {
-  color: $link-color;
-  text-decoration: none;
-}
+// form {
+//   max-width: 40rem;
+// }
 
-a:hover {
-  color: $link-color-active;
-}
+// tbody tr:not(:last-child) {
+//   border-bottom: 1px solid $fg-color;
+// }
 
-.list li {
-  padding: 0.5rem 2rem;
+// input[type="submit"] {
+//   display: block;
+//   margin: 0 auto;
+// }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid $fg-color;
-  }
-}
+// td, th {
+//   padding: 0.25em 1em;
+//   text-align: center;
+//   vertical-align: middle;
+// }
 
-form,
-table {
-  position: relative;
-  margin: 0 auto 4rem auto;
-}
-
-form {
-  max-width: 40rem;
-}
-
-tbody tr:not(:last-child) {
-  border-bottom: 1px solid $fg-color;
-}
-
-tbody tr:hover {
-  opacity: 0.7;
-}
-
-input[type="submit"] {
-  display: block;
-  margin: 0 auto;
-}
-
-td, th {
-  padding: 0.25em 1em;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.logout {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
+// .logout {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   right: 0;
+// }
 
 .bg-image {
   position: fixed;
@@ -102,7 +64,10 @@ td, th {
 }
 
 .group-container {
-  padding: 0.5rem 1rem;
   border: 1px solid black;
-  margin-bottom: 1rem;
+}
+
+.student-list {
+  position: fixed;
+  right: 2rem;
 }

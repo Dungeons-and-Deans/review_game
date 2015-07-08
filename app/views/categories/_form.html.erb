@@ -6,7 +6,9 @@
   <% if @category.id != nil %>
     <div id='question-list'>
       <div>
-        <%= render partial: 'questions_form', locals: {f: f} %>
+        <div id="question-form" class="form-inline">
+          <%= render partial: 'questions_form', locals: {f: f} %>
+        </div>
       </div>
     </div>
   <% end %>

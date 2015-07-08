@@ -4,14 +4,15 @@
 app.gameSession = {
   dragDrop: function () {
     $('.groups-students').sortable({
+      tolerance:"pointer",
       revert: true
     });
 
     $('.draggables').draggable({
       connectToSortable: '.groups-students',
       revert: 'invalid',
-      stop: function () {
-        var id = event.target.id;
+      stop: function (e) {
+        var id = e.target.id;
         var groupId = $(this).closest('ul').attr('id');
 
         if (groupId) {

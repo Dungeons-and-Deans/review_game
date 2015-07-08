@@ -9,28 +9,28 @@
   </head>
 
   <body>
-
-    <%= image_tag "books.jpg", class: "bg-image" %>
-
-    <ul class="nav nav-pills">
-      <script type="text/html" id="nav-links">
-        <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
-        <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
-        <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
-        <% if teacher_signed_in? %>
-          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout btn btn-danger') %>
-        <% end %>
-      </script>
-    </ul>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-  <div class="container">
-    <div class="row">
+    
+    <div class="container-fluid">
+      
+      <%= image_tag "books.jpg", class: "bg-image" %>
+  
+      <ul class="nav nav-pills">
+        <script type="text/html" id="nav-links">
+          <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
+          <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
+          <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
+          <% if teacher_signed_in? %>
+            <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout btn btn-danger') %>
+          <% end %>
+        </script>
+      </ul>
+  
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  
       <%= yield %>
+
     </div>
-  </div>
 
   </body>
 

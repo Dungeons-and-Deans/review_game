@@ -26,6 +26,13 @@ class CategoriesController < ApplicationController
 
   def update_question
     @question = Question.find(params[:question_id])
+    respond_to do |format|
+      if @question.update(question_params)
+        format.js
+      else
+        format.html { render :groups, notice: 'Question failed to be updated.' }
+      end
+    end
   end
 
   def create
@@ -39,10 +46,13 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
-    else
-      render :edit
+    @questions = @category.questions
+    respond_to do |format|
+      if @category.update(category_params)
+        format.js
+      else
+        format.html { redirect_to @category, notice: 'Category failed to be updated.'}
+      end
     end
   end
 
@@ -59,4 +69,9 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :teacher_id,
         questions_attributes: [:id, :content, :difficulty_level])
   end
+
+  private def question_params
+    params.require(:question).permit(:content, :difficulty_level)
+  end
+
 end
