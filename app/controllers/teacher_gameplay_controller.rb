@@ -55,6 +55,19 @@ class TeacherGameplayController < ApplicationController
     end
   end
 
+  def active
+    @student = Student.find(params[:student_id])
+    if @student.active
+      @student.update(active: false)
+    else
+      @student.update(active: true)
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private def set_game_session
     @game_session = GameSession.find(params[:id])
   end

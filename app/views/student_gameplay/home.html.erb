@@ -16,7 +16,7 @@
   </ul>
 
 
-  <ol><h5>Group Members</h5>
+  <ul><h5>Group Members</h5>
     <% @group.students.order(:last_name).each do |student| %>
       <li>
         <%= student.full_name %>
@@ -27,7 +27,7 @@
         <% end %>
       </li>
     <% end %>
-  </ol>
+  </ul>
 </div>
 
 <%= render partial: 'question', locals: {question: @question} %>
