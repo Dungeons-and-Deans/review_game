@@ -1,6 +1,6 @@
 <%= simple_form_for @category, remote: true do |f| %>
   <%= f.error_notification %>
-  <div id="question-list">
+  <div id="question-list" class="col-md-6 col-md-offset-3">
     <div class="row">
       <%= link_to "New Question", "#", id: "copy_link", class: "btn btn-default col-md-4 col-md-offset-4", onclick: "copySection();" %>
     </div>
