@@ -5,6 +5,7 @@
 <% end %>
 
 <div class="group-view-info">
+  <%= link_to "Logout", student_gameplay_logout_path, html_options = { class: "btn btn-danger" } %>
   <h3>Group: <%= params[:group_id] %></h3>
   <p>Name: <%= @group.name %></p>
   <p>Score: <%= @group.score %> points</p>
@@ -32,5 +33,3 @@
 </div>
 
 <%= render partial: 'question', locals: {question: @question} %>
-
-<%= link_to "Logout", student_gameplay_logout_path, html_options = { class: "btn btn-default" } %>

@@ -3,7 +3,7 @@ $(function () {
   
   var pathName = $(location).attr('pathname');
 
-  if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName) || /class_gameplay/.test(pathName))) {
+  if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
     $('.nav').html($('#nav-links').html());
   }
 
