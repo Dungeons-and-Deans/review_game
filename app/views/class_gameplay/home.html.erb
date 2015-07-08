@@ -1,8 +1,6 @@
 <%= render partial: 'scores' %>
 
-<div class="map">
-  <img src="<%= @map.file_path %>" class="img-responsive">
-</div>
+<img class="map" src="<%= @map.file_path %>">
 
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> <%= player.group_id %> draggables", id="<%= player.id %>"><%= player.student.first_name[0] %></i>
