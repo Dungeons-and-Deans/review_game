@@ -16,7 +16,6 @@ $(function () {
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
   }
-<<<<<<< HEAD
 
   $("#send-question").on('click', function () {
     console.log('hi');
@@ -27,11 +26,3 @@ $(function () {
 
 
 });
-=======
-  
-  if ($('#category-name').length) {
-
-  }
-  
-});
->>>>>>> afd51df6af6e56f6533067d7dab94de2ba1568d0
