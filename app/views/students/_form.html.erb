@@ -1,4 +1,4 @@
-<%= simple_form_for @student do |f| %>
+<%= simple_form_for @student, html: { class: "col-md-4 col-md-offset-4" } do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :first_name %>
@@ -6,6 +6,6 @@
 
   <%= f.hidden_field :teacher_id %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "col-md-4 col-md-offset-4" %>
 
 <% end %>

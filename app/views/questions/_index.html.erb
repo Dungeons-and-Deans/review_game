@@ -1,5 +1,5 @@
-<ul class="list">
+<ul class="list list-group">
   <% @questions.each do |question| %>
-    <li><div id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></div></li>
+    <li class="list-group-item"><div id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></div></li>
   <% end %>
 </ul>

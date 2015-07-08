@@ -1,4 +1,4 @@
-<%= simple_form_for @game_session, url: 'create' do |f| %>
+<%= simple_form_for @game_session, url: 'create', html: { class: "col-md-4 col-md-offset-4" } do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name %>
@@ -15,5 +15,5 @@
     </div>
   <% end %>
 
-  <%= f.button :submit, 'Create Game Session' %>
+  <%= f.button :submit, 'Create Game Session', class: "col-md-8 col-md-offset-2" %>
 <% end %>
