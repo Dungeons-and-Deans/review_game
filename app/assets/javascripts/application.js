@@ -32,14 +32,16 @@ var channelNumber = pathArray[2];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
 
 channel.bind('initial_placement', function (icons) {
-  console.log(icons);
+  icons.map(function (icon) {
+    $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
+  })
 });
 
 channel.bind('coordinates', function (icon) {
   var id = icon.id;
   var piece = '.map + #' + id;
 
-  $('#' + id).offset( { top: icon.board_y, left: icon.board_x } );
+  $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
 function copySection() {
