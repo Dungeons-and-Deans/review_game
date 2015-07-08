@@ -19,13 +19,6 @@ class QuestionsController < ApplicationController
   def show
   end
 
-  def edit
-    @category = @question.category
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -37,6 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @questions = Question.where(category_id: @question.category.id)
     @question.destroy
     respond_to do |format|
       format.js

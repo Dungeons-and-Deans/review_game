@@ -1,17 +1,15 @@
 <%= f.simple_fields_for :groups do |ff| %>
-<div class="group-container col-md-4" id="group<%= "#{ff.object.id}" %>">
-  <h2>Group</h2>
-  <p>Password: <%= ff.object.password %></p>
-  <%= ff.input :name, label: "Group Name"%>
-  <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
-
-  <h3>Students</h3>
-  <ul class="groups-students" id="<%= "#{ff.object.id}" %>">
-    <% ff.object.students.each do |student| %>
-      <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
-    <% end %>
-  </ul>
-
-</div>
-
+  <div class="group-container col-md-4" id="group<%= "#{ff.object.id}" %>">
+    <h2>Group</h2>
+    <p>Password: <%= ff.object.password %></p>
+    <%= ff.input :name, label: "Group Name"%>
+    <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
+  
+    <h3>Students</h3>
+    <ul class="groups-students list-group" id="<%= "#{ff.object.id}" %>">
+      <% ff.object.students.each do |student| %>
+        <li class="draggables list-group-item" id="<%= student.id %>"><%= student.full_name %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
