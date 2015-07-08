@@ -1,4 +1,4 @@
-<div id="question-form" class="form-inline">
+<div id="new-question-form" class="form-inline">
   <%= f.simple_fields_for :questions, @category.questions.build, remote: true do |ff| %>
 
     <%= ff.input :content, label: false %>

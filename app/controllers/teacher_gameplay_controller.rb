@@ -5,6 +5,10 @@ class TeacherGameplayController < ApplicationController
     @current_group = @game_session.current_group
     @question = @game_session.random_question
     @supply = Supply.new
+
+    @icons = GroupAssignment.where(game_session_id: @game_session.id)
+    game_channel = @game_session.id
+    WebsocketRails[:"group_listen#{game_channel}"].trigger 'initial_placement', @icons
   end
 
   def supply

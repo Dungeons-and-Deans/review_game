@@ -43,7 +43,7 @@ channel.bind('coordinates', function (icon) {
 });
 
 function copySection() {
-  var question = $("#question-form").parent().clone().html();
+  var question = $("#new-question-form").parent().clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
     .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
   $("#question-list").append(question);

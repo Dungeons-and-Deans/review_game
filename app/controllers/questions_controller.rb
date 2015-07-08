@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_teacher!
 
   def new
@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @category = @question.category
     respond_to do |format|
       format.js
     end
