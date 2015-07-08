@@ -31,7 +31,11 @@ var pathArray = window.location.pathname.split( '/' );
 var channelNumber = pathArray[2];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
 
-channel.bind('coordinates', function(icon) {
+channel.bind('initial_placement', function (icons) {
+  console.log(icons);
+});
+
+channel.bind('coordinates', function (icon) {
   var id = icon.id;
   var piece = '.map + #' + id;
 
