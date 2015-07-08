@@ -7,19 +7,27 @@
 <div>
   <%= params[:group_id] %>
   <p><%= @group.name %></p>
-  <p><%= @group.score %></p>
-  <% @group.supplies.each do |supply|%>
-    <p>
-      <%=  supply.name %>
-      <%=  supply.amount %>
-    </p>
-  <% end %>
-  <% @group.students.each do |student| %>
-    <p>
-      <%= student.first_name %>
-      <%= student.last_name %>
-    </p>
-  <% end %>
+  <p><%= @group.score %> points</p>
+
+  <ul><h5>Supplies</h5>
+    <% @group.supplies.each do |supply|%>
+      <li><%= supply.amount %> <%= supply.name %></li>
+    <% end %>
+  </ul>
+
+
+  <ol><h5>Group Members</h5>
+    <% @group.students.order(:last_name).each do |student| %>
+      <li>
+        <%= student.full_name %>
+        <% if student.active %>
+          <i class="fa fa-star"></i>
+        <% else %>
+          <i class="fa fa-frown-o"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
 </div>
 
 <%= render partial: 'question', locals: {question: @question} %>
