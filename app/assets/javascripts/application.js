@@ -39,17 +39,13 @@ channel.bind('initial_placement', function (icons) {
 
 channel.bind('coordinates', function (icon) {
   var id = icon.id;
-  var piece = '.map + #' + id;
 
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
 channel.bind('ask_question', function () {
-  console.log('hi');
   $("#question-button").click();
 });
-
-
 
 function copySection() {
   var question = $("#new-question-form").parent().clone().html();

@@ -1,12 +1,13 @@
 $(function () {
   'use strict';
+  
+  var pathName = $(location).attr('pathname');
 
-  if (!($('.simple_form#new_teacher').length || $('.login-group').length)) {
+  if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
     $('.nav').html($('#nav-links').html());
   }
 
-  app.navActive($(location).attr('pathname'));
-
+  app.navActive(pathName);
 
   if ($('.map').length) {
     app.classGameplay.sendSession();
@@ -16,13 +17,9 @@ $(function () {
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
   }
-
-  $("#send-question").on('click', function () {
-    console.log('hi');
-    var game_session_id = 1
-    dispatcher.trigger('movements.ask_question', game_session_id);
-  });
-
-
+  
+  if (/teacher_gameplay/.test(pathName)) {
+    app.teacherGameplay.nextQuestion();
+  }
 
 });
