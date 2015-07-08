@@ -17,4 +17,8 @@ $(function () {
     app.gameSession.dragDrop();
   }
   
+  if ($('#category-name').length) {
+
+  }
+  
 });

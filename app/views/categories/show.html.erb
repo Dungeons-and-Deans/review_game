@@ -1,5 +1,12 @@
-<h3 id="category-name"><%= @category.name %><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %></h3>
+<h3 id="category-name">
+  <%= @category.name %>
+  <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %>
+</h3>
 
-<div id="question-list-container"><%= render partial: '/questions/index' %></div>
+<div id="question-list-container" class="col-md-8 col-md-offset-2">
+  <%= render partial: '/questions/index' %>
+</div>
 
-<div id="form-container"><%= render partial: 'form' %></div>
+<div id="form-container" class="col-md-6 col-md-offset-3">
+  <%= render partial: 'form' %>
+</div>
