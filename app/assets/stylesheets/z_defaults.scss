@@ -12,6 +12,11 @@ h5, h6 {
 
 .btn {
   margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+li {
+  padding: 0.1rem 0.5rem;
 }
 
 // .list li:not(:last-child) {
@@ -72,6 +77,5 @@ h5, h6 {
 }
 
 .student-list {
-  position: fixed;
-  right: 2rem;
+  position: absolute;
 }
