@@ -46,10 +46,13 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
-    else
-      render :edit
+    @questions = @category.questions
+    respond_to do |format|
+      if @category.update(category_params)
+        format.js
+      else
+        format.html { redirect_to @category, notice: 'Category failed to be updated.'}
+      end
     end
   end
 
@@ -70,5 +73,5 @@ class CategoriesController < ApplicationController
   private def question_params
     params.require(:question).permit(:content, :difficulty_level)
   end
-  
+
 end

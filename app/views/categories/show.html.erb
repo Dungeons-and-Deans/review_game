@@ -1,10 +1,8 @@
 <h3><%= @category.name %></h3>
 
-<ul class="list">
-  <% @questions.each do |question| %>
-    <li><div id="question-container<%= question.id %>"><%= render partial: 'question', locals: {question: question} %></div></li>
-  <% end %>
-</ul>
+
+<div id="question-list-container"><%= render partial: 'questions_list' %></div>
+
 
 <div>
   <%= simple_form_for @category, remote: true do |f| %>
