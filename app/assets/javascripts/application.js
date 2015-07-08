@@ -27,8 +27,9 @@
 //= require z_init
 var questionCounter = 1;
 var dispatcher = new WebSocketRails(window.location.host + "/websocket");
-
-channel = dispatcher.subscribe('group_listen');
+var pathArray = window.location.pathname.split( '/' );
+var channelNumber = pathArray[2];
+channel = dispatcher.subscribe('group_listen' + channelNumber);
 
 channel.bind('coordinates', function(icon) {
   var id = icon.id;
