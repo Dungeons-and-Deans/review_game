@@ -1,7 +1,7 @@
 $(function () {
   'use strict';
   
-  if (!($('.simple_form.new_teacher').length || $('.login-group').length)) {
+  if (!($('.simple_form#new_teacher').length || $('.login-group').length)) {
     $('.nav').html($('#nav-links').html());
   }
   
