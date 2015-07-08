@@ -22,4 +22,6 @@
   <% end %>
 </div>
 
+<%= render partial: 'question', locals: {question: @question} %>
+
 <%= link_to "Logout", student_gameplay_logout_path, html_options = { class: "btn btn-default" } %>
