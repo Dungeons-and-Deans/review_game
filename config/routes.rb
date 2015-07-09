@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   delete 'game_sessions/:id/destroy' => 'game_sessions#destroy'
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups'
   get 'game_sessions/add_player/:group_id/:student_id' => 'game_sessions#add_player'
+  get 'game_sessions/:id/end_game' => 'game_sessions#end_game'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

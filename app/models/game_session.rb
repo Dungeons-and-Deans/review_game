@@ -34,4 +34,8 @@ class GameSession < ActiveRecord::Base
     self.categories.sample.questions.sample
   end
 
+  def finish_game
+
+  end
+
 end
