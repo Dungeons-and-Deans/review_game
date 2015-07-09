@@ -10,4 +10,9 @@ class Group < ActiveRecord::Base
   def new_win
     self.students.each { |s| s.update(games_won: s.games_won + 1) }
   end
+
+  def inactive?
+    self.group_assignments.all? { |g| !g.active }
+  end
+  
 end
