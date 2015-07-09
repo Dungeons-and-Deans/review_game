@@ -32,7 +32,7 @@ var channelNumber = pathArray[2];
 var groupNumber = pathArray[4];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
 channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
-
+console.log(groupNumber)
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
