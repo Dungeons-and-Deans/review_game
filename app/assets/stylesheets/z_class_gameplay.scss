@@ -1,21 +1,3 @@
 // Place all the styles related to the class_gameplay controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.draggables {
-  &[class~="1"] {
-    color: red;
-  }
-}
-
-.draggables {
-  &[class~="2"] {
-    color: blue;
-  }
-}
-
-.draggables {
-  &[class~="3"] {
-    color: green;
-  }
-}
