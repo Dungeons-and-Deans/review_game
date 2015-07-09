@@ -19,7 +19,8 @@ class Student < ActiveRecord::Base
   end
 
   def active?
-    if self.active
+    group_student = GroupAssignment.find_by_student_id(self.id)
+    if group_student.active
       '<i class="fa fa-star"></i>'
     else
       '<i class="fa fa-frown-o"></i>'

@@ -45,7 +45,7 @@ Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')
 
 20.times do |t|
-  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 1, board_y: 1)
+  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 1, board_y: 1, active: [true, false].sample)
 end
 
 5.times do
@@ -58,7 +58,7 @@ end
 
 20.times do
   Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-      teacher_id: 1, games_won: [1, 2, 3].sample, active: [true, false].sample)
+      teacher_id: 1, games_won: [1, 2, 3].sample)
 end
 
 Question.create(content: "Who was the first US president?", difficulty_level: 1,

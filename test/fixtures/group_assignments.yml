@@ -5,9 +5,11 @@ one:
   group: :one
   board_x: 1
   board_y: 1
+  active: true
 
 two:
   student: :two
   group: :one
   board_x: 1
   board_y: 1
+  active: true

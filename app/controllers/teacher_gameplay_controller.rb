@@ -56,7 +56,7 @@ class TeacherGameplayController < ApplicationController
   end
 
   def active
-    @student = Student.find(params[:student_id])
+    @student = GroupAssignment.find(params[:student_id])
     if @student.active
       @student.update(active: false)
     else

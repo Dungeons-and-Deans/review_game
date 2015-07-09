@@ -5,11 +5,10 @@ one:
   games_won: 1
   first_name: "David"
   last_name: "Tennant"
-  active: true
+
 
 two:
   teacher: :one
   games_won: 1
   first_name: "Matt"
   last_name: "Smith"
-  active: true

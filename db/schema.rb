@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150709150702) do
     t.decimal  "board_y"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "active"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -93,7 +94,6 @@ ActiveRecord::Schema.define(version: 20150709150702) do
     t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean  "active"
   end
 
   create_table "supplies", force: :cascade do |t|

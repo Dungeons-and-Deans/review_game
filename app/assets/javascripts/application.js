@@ -38,6 +38,7 @@ channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
+    //$('#' + icon.id).properties(visible, 'true');
   })
 });
 
