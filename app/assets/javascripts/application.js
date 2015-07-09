@@ -29,7 +29,9 @@ var questionCounter = 1;
 var dispatcher = new WebSocketRails(window.location.host + "/websocket");
 var pathArray = window.location.pathname.split( '/' );
 var channelNumber = pathArray[2];
+var groupNumber = pathArray[4];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
+channelTwo = dispatcher.subscribe('group_listen' + groupNumber);
 
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
@@ -43,13 +45,13 @@ channel.bind('coordinates', function (icon) {
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
-channel.bind('ask_question', function () {
+channelTwo.bind('ask_question', function () {
   $('#questionModal').modal('show');
-  
+
   window.setTimeout(function () {
     $('#questionModal').modal('hide')
   }, 5000);
-  
+
 });
 
 function copySection() {
