@@ -31,8 +31,8 @@ var pathArray = window.location.pathname.split( '/' );
 var channelNumber = pathArray[2];
 var groupNumber = pathArray[4];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
-channelTwo = dispatcher.subscribe('group_listen' + groupNumber);
-
+channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
+console.log(groupNumber)
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
@@ -45,7 +45,7 @@ channel.bind('coordinates', function (icon) {
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
-channelTwo.bind('ask_question', function () {
+channelStudentQuestion.bind('ask_question', function () {
   $('#questionModal').modal('show');
 
   window.setTimeout(function () {

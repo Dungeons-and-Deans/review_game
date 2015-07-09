@@ -21,5 +21,6 @@ $(function () {
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.nextQuestion();
   }
+  
 
 });
