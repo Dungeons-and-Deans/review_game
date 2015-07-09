@@ -25,4 +25,10 @@ class IconMovementController < WebsocketRails::BaseController
     WebsocketRails[:"question_listen#{@game_session.turn_group_id}"].trigger 'ask_question'
   end
 
+  def send_competition_question
+    game_channel = message
+    @game_session = GameSession.find(message)
+    WebsocketRails[:"question_listen#{game_channel}"].trigger 'ask_competition_question'
+  end
+
 end

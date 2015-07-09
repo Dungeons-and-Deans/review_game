@@ -4,11 +4,15 @@
 app.teacherGameplay = {
   nextQuestion: function () {
     var groupId = $('.current-group').attr('id');
-    
+
     console.log(groupId);
-    
+
     $('#send-question').on('click', function () {
       dispatcher.trigger('movements.ask_question', channelNumber);
+    });
+
+    $('#send-competition-question').on('click', function () {
+      dispatcher.trigger('movements.ask_competition_question', channelNumber);
     });
   }
 };
