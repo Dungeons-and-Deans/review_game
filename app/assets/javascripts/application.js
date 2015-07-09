@@ -37,9 +37,19 @@ channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
 
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
-    $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
-    //$('#' + icon.id).properties(visible, 'true');
+    $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x });
+    if (icon.active === false) {
+      $('#' + icon.id).hide();
+    }
   })
+});
+
+channel.bind('icon_display', function (icon) {
+  if (icon.active === false) {
+    $('#' + icon.id).hide();
+  } else {
+    $('#' + icon.id).show();
+  }
 });
 
 channel.bind('coordinates', function (icon) {
