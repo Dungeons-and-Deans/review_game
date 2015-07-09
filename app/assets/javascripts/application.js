@@ -23,6 +23,7 @@
 //= require z_teacher_gameplay
 //= require z_class_gameplay
 //= require z_game_sessions
+//= require z_student_gameplay
 //
 //= require z_init
 var questionCounter = 1;
@@ -32,7 +33,6 @@ var channelNumber = pathArray[2];
 var groupNumber = pathArray[4];
 channel = dispatcher.subscribe('group_listen' + channelNumber);
 channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
-console.log(groupNumber)
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
