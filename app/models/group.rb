@@ -6,4 +6,8 @@ class Group < ActiveRecord::Base
 
   accepts_nested_attributes_for :group_assignments, reject_if: :all_blank, allow_destroy: true
 
+
+  def new_win
+    self.students.each { |s| s.update(games_won: s.games_won + 1) }
+  end
 end

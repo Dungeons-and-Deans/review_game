@@ -7,9 +7,16 @@
     <div class="modal-content">
       <div class="modal-body">
         <%= form_for @game_session, url: "/game_sessions/#{@game_session.id}/end_game" do |f| %>
-          <%= f.collection_radio_buttons :winning_group_id, @game_session.groups, :id, :name %>
 
-          <%= f.submit %>
+        <div class="btn-group btn-group-lg" data-toggle="buttons">
+          <% @game_session.groups.each do |group| %>
+            <label class="btn btn-primary">
+              <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
+            </label>
+          <% end %>
+        </div>
+
+          <%= f.submit "Submit" %>
         <% end %>
       </div>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

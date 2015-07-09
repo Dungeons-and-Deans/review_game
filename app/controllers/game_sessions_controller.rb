@@ -45,6 +45,7 @@ class GameSessionsController < ApplicationController
   def end_game
     @game_session.update(game_session_params)
     @group = Group.find(@game_session.winning_group_id)
+    @group.new_win
   end
 
   private def set_game_session
