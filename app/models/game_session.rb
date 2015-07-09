@@ -24,9 +24,11 @@ class GameSession < ActiveRecord::Base
 
   def next_group
     turn = self.turn_group_id
-    order = self.groups.map { |g| g.id unless g.inactive? }
+    order = self.groups.map { |g| g.id }
     spot = order.index(turn)
-    (spot == order.length - 1) ? spot = 0 : spot += 1
+    until !Group.find(order[spot]).inactive?
+      (spot == order.length - 1) ? spot = 0 : spot += 1
+    end
     order[spot]
   end
 
