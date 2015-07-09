@@ -3,9 +3,10 @@ $(function () {
   
   var pathName = $(location).attr('pathname');
 
-  if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
-    $('.nav').html($('#nav-links-teacher').html());
-  }
+  // if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
+  //   $('.nav').html($('#nav-links-teacher').html());
+  //   console.log($('#nav-links-teacher').html());
+  // }
 
   app.navActive(pathName);
 

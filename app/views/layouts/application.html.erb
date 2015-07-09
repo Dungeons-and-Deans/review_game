@@ -15,21 +15,17 @@
 
   <body>
     
-      <ul class="nav nav-pills">
-      </ul>
-      
-      <script type="text/html" id="nav-links-teacher">
-        <li role="presentation" class="home"><%= link_to 'Home', root_path %></li>
-        <li role="presentation" class="roster"><%= link_to 'Roster', students_path %></li>
-        <li role="presentation" class="categories"><%= link_to 'Questions', categories_path %></li>
+      <div class="nav">
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Roster', students_path %>
+        <%= link_to 'Questions', categories_path %>
         <% if teacher_signed_in? %>
-          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, class: 'logout btn btn-danger') %>
+          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %>
         <% end %>
-      </script>
+          
+          <%= link_to "Student Logout", student_gameplay_logout_path %>
+      </div>
       
-      <script type="text/html" id="nav-links-student">
-        <li role="presentation" class="logout"><%= link_to "Logout", student_gameplay_logout_path, html_options = { class: "btn btn-danger" } %></li>
-      </script>
   
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -38,6 +34,6 @@
         <%= yield %>
       </div>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  
   </body>
-
 </html>
