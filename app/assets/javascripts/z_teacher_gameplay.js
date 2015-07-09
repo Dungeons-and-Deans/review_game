@@ -13,7 +13,7 @@ app.teacherGameplay = {
       var ids = [];
       var childs = $("#group-choices").children();
 
-      for (var i = 0, i < childs.length, i++){
+      for (var i = 0; i < childs.length; i++) {
         if (childs[i].classList.contains('active')) {
           ids.push(childs[i].id);
         }
