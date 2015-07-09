@@ -22,5 +22,9 @@ $(function () {
     app.teacherGameplay.nextQuestion();
   }
   
+  if (/student_gameplay/.test(pathName)) {
+    app.studentGameplay.statMenu(); 
+  }
+  
 
 });
