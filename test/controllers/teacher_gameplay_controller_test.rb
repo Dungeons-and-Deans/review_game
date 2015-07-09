@@ -4,7 +4,8 @@ class TeacherGameplayControllerTest < ActionController::TestCase
   setup do
     sign_in teachers(:one)
     @game_session = game_sessions(:one)
-    @current_group = groups(:one)
+    group = Group.create(name: "group1", game_session_id: @game_session.id, score: 100, password: "password")
+    @game_session.update(turn_group_id: group.id)
   end
 
   test "should get home" do
