@@ -11,8 +11,4 @@ class Group < ActiveRecord::Base
     self.students.each { |s| s.update(games_won: s.games_won + 1) }
   end
 
-  def inactive?
-    self.group_assignments.all? { |g| !g.active }
-  end
-  
 end

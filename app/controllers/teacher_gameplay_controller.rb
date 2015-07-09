@@ -56,11 +56,11 @@ class TeacherGameplayController < ApplicationController
   end
 
   def active
-    @student = GroupAssignment.find(params[:student_id])
-    if @student.active
-      @student.update(active: false)
+    @assignment = GroupAssignment.find(params[:student_id])
+    if @assignment.active
+      @assignment.update(active: false)
     else
-      @student.update(active: true)
+      @assignment.update(active: true)
     end
 
     respond_to do |format|
@@ -77,7 +77,7 @@ class TeacherGameplayController < ApplicationController
   end
 
   private def game_session_params
-    params.require(:game_session).permit(:turn_group_id, :name)
+    params.require(:game_session).permit(:turn_group_id, :name, :winning_group_id)
   end
 
   private def supply_params
