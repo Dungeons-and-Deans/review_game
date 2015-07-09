@@ -33,13 +33,13 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @category
+    xhr get: :edit, format: :js
     assert_response :success
   end
 
   test "should update category" do
-    patch :update, id: @category, category: { name: @category.name, teacher_id: @category.teacher_id }
-    assert_redirected_to category_path(assigns(:category))
+    patch :update, format: :js, id: @category, category: { name: @category.name, teacher_id: @category.teacher_id }
+    assert_response :success
   end
 
   test "should destroy category" do

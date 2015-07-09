@@ -5,14 +5,16 @@
 
 <div id="current-group">
   <h3>Current Group</h3>
-  <div><%= @current_group.name %></div>
+  <div><%= @current_group.name if @current_group %></div>
 
   <div><p>Supplies</p><ul>
-    <% @current_group.supplies.each do |s| %>
-    <li><%= s.amount %> <%= s.name %></li>
-    <% end %>
-    <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
-  </ul></div>
+    <% if @current_group %>
+      <% @current_group.supplies.each do |s| %>
+      <li><%= s.amount %> <%= s.name %></li>
+      <% end %>
+      <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
+    </ul></div>
+  <% end %>
 </div>
 
 <div>

@@ -12,8 +12,8 @@ class TeacherGameplayControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get supplies" do
-    get :supplies, id: @game_session.id
+  test "should get groups" do
+    get :groups, id: @game_session.id
     assert_response :success
   end
 
