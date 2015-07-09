@@ -4,7 +4,7 @@ $(function () {
   var pathName = $(location).attr('pathname');
 
   if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
-    $('.nav').html($('#nav-links').html());
+    $('.nav').html($('#nav-links-teacher').html());
   }
 
   app.navActive(pathName);
@@ -20,6 +20,12 @@ $(function () {
   
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.nextQuestion();
+  }
+  
+  if (/student_gameplay/.test(pathName)) {
+    app.studentGameplay.statMenu();
+    
+    $('.nav').html($('#nav-links-student').html());
   }
   
 
