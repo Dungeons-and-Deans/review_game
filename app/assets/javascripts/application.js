@@ -27,12 +27,17 @@
 //= require z_init
 var questionCounter = 1;
 var dispatcher = new WebSocketRails(window.location.host + "/websocket");
+console.log(dispatcher)
 var pathArray = window.location.pathname.split( '/' );
+console.log(pathArray)
 var channelNumber = pathArray[2];
+console.log(channelNumber)
 var groupNumber = pathArray[4];
-channel = dispatcher.subscribe('group_listen' + channelNumber);
-channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
 console.log(groupNumber)
+channel = dispatcher.subscribe('group_listen' + channelNumber);
+console.log(channel)
+channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
+console.log(channelStudentQuestion)
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
