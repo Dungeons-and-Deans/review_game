@@ -31,8 +31,10 @@ var dispatcher = new WebSocketRails(window.location.host + "/websocket");
 var pathArray = window.location.pathname.split( '/' );
 var channelNumber = pathArray[2];
 var groupNumber = pathArray[4];
+
 channel = dispatcher.subscribe('group_listen' + channelNumber);
 channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
+
 channel.bind('initial_placement', function (icons) {
   icons.map(function (icon) {
     $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x })
@@ -60,7 +62,7 @@ channelStudentQuestion.bind('ask_competition_question', function () {
   window.setTimeout(function () {
     $('#questionModal').modal('hide')
   }, 5000);
-  
+
 });
 
 function copySection() {
