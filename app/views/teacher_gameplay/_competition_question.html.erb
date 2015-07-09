@@ -1,10 +1,10 @@
 
-<div class="btn-group" data-toggle="buttons">
+<div class="btn-group" id="group-choices" data-toggle="buttons">
   <% @game_session.groups.each do |group| %>
-    <label class="btn btn-primary">
+    <label class="btn btn-primary" id="<%= group.id %>">
       <input type="checkbox" value="<%= group.id %>" autocomplete="off"> <%= group.name %>
     </label>
   <% end %>
 </div>
 
-<button class="btn btn-default">Send Competition Question</button>
+<button id="send-competition-question" class="btn btn-default">Send Competition Question</button>

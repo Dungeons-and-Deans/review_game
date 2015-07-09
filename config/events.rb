@@ -16,5 +16,6 @@ WebsocketRails::EventMap.describe do
     subscribe :move_icon, :to => IconMovementController, :with_method => :move_icon
     subscribe :initial_placements, :to => IconMovementController, :with_method => :place_icon
     subscribe :ask_question, to: IconMovementController, with_method: :send_question
+    subscribe :ask_competition_question, to: IconMovementController, with_method: :send_competition_question
   end
 end

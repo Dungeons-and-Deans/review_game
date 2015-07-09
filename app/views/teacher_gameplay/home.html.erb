@@ -27,9 +27,9 @@
 
 <div id="next-question">
   <h3>Next Question</h3>
-  <%= @question.content %>
-  <button id="send-question" class="btn btn-default">Send Question</button>
-  <div><%= render partial: 'competition_question' %></div>
+  <div><%= @question.content %></div>
+  <div><button id="send-question" class="btn btn-default">Send Question</button></div>
+  <div id="competition-container"><%= render partial: 'competition_question' %></div>
 </div>
 
 <div id="roster"><%= render partial: 'roster' %></div>

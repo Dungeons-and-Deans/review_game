@@ -54,6 +54,15 @@ channelStudentQuestion.bind('ask_question', function () {
 
 });
 
+channelStudentQuestion.bind('ask_competition_question', function () {
+  $('#questionModal').modal('show');
+
+  window.setTimeout(function () {
+    $('#questionModal').modal('hide')
+  }, 5000);
+  
+});
+
 function copySection() {
   var question = $("#new-question-form").parent().clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
