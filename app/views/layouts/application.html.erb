@@ -2,16 +2,19 @@
 <html>
 
   <head>
+    
     <title>ReviewGame</title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
   </head>
 
   <body>
     
-    <div class="container-fluid">
-      
       <ul class="nav nav-pills">
       </ul>
       
@@ -31,11 +34,10 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       
-      <div class="row">
+      <div class="mdl-grid">
         <%= yield %>
       </div>
-    </div>
-
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
   </body>
 
 </html>
