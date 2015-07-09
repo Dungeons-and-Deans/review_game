@@ -6,17 +6,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <%= form_tag url: "/game_sessions/#{@game_session.id}/end_game" do %>
+        <%= form_for @game_session, url: "/game_sessions/#{@game_session.id}/end_game" do |f| %>
+
+        <div class="btn-group btn-group-lg" data-toggle="buttons">
           <% @game_session.groups.each do |group| %>
-            <%= label_tag group.name %>
-            <%= radio_button_tag 'group_id', group.id %>
+            <label class="btn btn-primary">
+              <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
+            </label>
           <% end %>
+        </div>
+
+          <%= f.submit "Submit" %>
         <% end %>
       </div>
-      <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
     </div>
   </div>
 </div>
