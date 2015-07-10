@@ -35,13 +35,9 @@ class GameSession < ActiveRecord::Base
   end
 
   def random_question
-    next_question = self.categories.sample.questions.sample
+    next_question = self.categories.sample.questions.select{|q| q.difficulty_level > self.min_difficulty }.sample
     self.update(current_question_id: next_question.id)
     next_question
-  end
-
-  def finish_game(group_id)
-
   end
 
 end

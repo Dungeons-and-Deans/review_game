@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(version: 20150710195610) do
     t.integer  "winning_group_id"
     t.integer  "current_question_id"
     t.integer  "icon_id"
-    t.string   "min_difficulty"
-    t.string   "integer"
+    t.integer  "min_difficulty"
   end
 
   create_table "games", force: :cascade do |t|
