@@ -12,7 +12,7 @@ class GameSessionsController < ApplicationController
     @game_session = GameSession.new(game_session_params)
     if @game_session.save
       @game_session.begin_game(params[:category], params[:number_of_groups])
-      redirect_to "/game_sessions/#{@game_session.id}/groups"
+      redirect_to game_session_groups_path(@game_session)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class GameSessionsController < ApplicationController
 
   def assign_groups
     if @game_session.update(game_session_params)
-      redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Game Session was successfully updated.'
+      redirect_to teacher_gameplay_path(@game_session), notice: 'Game Session was successfully updated.'
     else
       render :groups
       flash[:notice] = @game_session.errors
@@ -34,7 +34,7 @@ class GameSessionsController < ApplicationController
   def add_player
     @game_session = Group.find(params[:group_id]).game_session
     GroupAssignment.assign(params[:group_id], params[:student_id], @game_session.id)
-    redirect_to "/game_sessions/#{@game_session.id}/groups"
+    redirect_to game_session_groups_path(@game_session)
   end
 
   def destroy
@@ -53,7 +53,7 @@ class GameSessionsController < ApplicationController
   end
 
   private def game_session_params
-    params.require(:game_session).permit(:game_id, :turn_group_id, :name, :winning_group_id, :icon_id,
+    params.require(:game_session).permit(:game_id, :turn_group_id, :name, :winning_group_id, :icon_id, :min_difficulty,
     category_game_session_assignments_attributes: [:id, :category_id, :_destroy],
     groups_attributes: [:id, :name, :score, :_destroy, :password,
         group_assignments_attributes: [:id, :student_id, :active, :board_x, :board_y, :_destroy]])
