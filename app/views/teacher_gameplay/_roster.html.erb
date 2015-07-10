@@ -18,7 +18,7 @@
         <% @game_session.groups.each do |group| %>
           <td>
             <ul>
-              <% @game_session.students.order(:last_name).each do |student| %>
+              <% group.students.order(:last_name).each do |student| %>
                 <li>
                   <%= student.full_name %>
                   <%= link_to student.active?.html_safe, active_path(@game_session, student), remote: true %>

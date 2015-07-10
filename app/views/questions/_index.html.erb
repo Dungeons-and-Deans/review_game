@@ -10,11 +10,11 @@
 
     <tbody>
       <% @questions.each do |question| %>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric"><div id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></div></td>
-          <td><%= question.difficulty_level %></td>
-          <td><%= question.percent_correct %></td>
-        </tr>
+      <tr>
+        <div id="question-container<%= question.id %>">
+          <%= render partial: '/questions/show', locals: {question: question} %>
+        </div>
+      </tr>
       <% end %>
     </tbody>
   </table>
