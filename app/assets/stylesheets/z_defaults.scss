@@ -11,11 +11,13 @@ h5, h6 {
 }
 
 form {
-  text-align: center;
-  
   & ul {
     text-align: left;
   }
+}
+
+form > label {
+  display: inline;
 }
 
 body > .mdl-grid > a {
