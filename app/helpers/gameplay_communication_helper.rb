@@ -1,0 +1,2 @@
+module GameplayCommunicationHelper
+end

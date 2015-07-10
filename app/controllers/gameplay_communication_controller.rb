@@ -1,4 +1,4 @@
-class IconMovementController < WebsocketRails::BaseController
+class GameplayCommunicationController < WebsocketRails::BaseController
 
   def move_icon
     @icon = GroupAssignment.find_by_id(message[:id])
