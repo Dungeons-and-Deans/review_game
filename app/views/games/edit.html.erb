@@ -1,6 +1,8 @@
-<h1>Editing Game</h1>
+<div class="mdl-cell mdl-cell--12-col">
+  <h1>Editing Game</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @game, html_options = { class: "btn btn-default col-md-2 col-md-offset-5" } %>
-<%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default col-md-2 col-md-offset-5" } %>
+<%= link_to 'Show', @game, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>
+<%= link_to 'New Game Scenario', new_game_path, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>

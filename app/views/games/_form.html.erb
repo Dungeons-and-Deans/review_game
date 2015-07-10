@@ -1,12 +1,14 @@
-<%= simple_form_for @game, html: { class: "col-md-4 col-md-offset-4" } do |f| %>
+<div class="mdl-cell mdl-cell--4-col"></div>
+<%= simple_form_for @game, html: { class: "mdl-cell mdl-cell--4-col" } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
-  <%= f.association :icon %>
-  <%= f.input :movement %>
+  <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.association :icon, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.input :movement, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
   <%= f.hidden_field :teacher_id %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--6-col" %>
 
 <% end %>
+<div class="mdl-cell mdl-cell--4-col"></div>

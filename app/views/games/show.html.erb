@@ -1,19 +1,17 @@
-<div class="col-md-4 col-md-offset-4"
-  <p>
-    <strong>Name:</strong>
-    <%= @game.name %>
-  </p>
+<div class="mdl-cell mdl-cell--4-col"></div>
+<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+  <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text">Name: <%= @game.name %></h1>
+  </div>
   
-  <p>
-    <strong>Student icon:</strong>
-    <i class="<%= @game.icon.description %> fa-2x"></i>
-  </p>
-  
-  <p>
-    <strong>Movement:</strong>
-    <%= @game.movement %>
-  </p>
-
-  <%= link_to 'Edit', edit_game_path(@game), html_options = { class: "btn btn-default" } %>
-  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
+  <div class="mdl-card__supporting-text">
+    Student icon: <i class="<%= @game.icon.description %> fa-2x"></i>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Movement: <%= @game.movement %>
+  </div>
 </div>
+<div class="mdl-cell mdl-cell--4-col"></div>
+
+<%= link_to 'Edit', edit_game_path(@game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>
+<%= link_to 'New Game Scenario', new_game_path, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>

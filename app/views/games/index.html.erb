@@ -3,29 +3,29 @@
 </div>
 
 <div class="mdl-cell mdl-cell--3-col"></div>
-<table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--6-col">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Name</th>
-      <th>Player Icon</th>
-      <th>Movement Allowed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
+  <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--6-col available-games">
+    <thead>
       <tr>
-        <td class="mdl-data-table__cell--non-numeric"><%= game.name %></td>
-        <td><i class="<%= game.icon.description %> fa-2x"></i></td>
-        <td><%= game.movement %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Remove', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="mdl-data-table__cell--non-numeric">Name</th>
+        <th>Player Icon</th>
+        <th>Movement Allowed</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric"><%= game.name %></td>
+          <td><i class="<%= game.icon.description %> fa-2x"></i></td>
+          <td><%= game.movement %></td>
+          <td><%= link_to 'Show', game %></td>
+          <td><%= link_to 'Edit', edit_game_path(game) %></td>
+          <td><%= link_to 'Remove', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <div class="mdl-cell mdl-cell--3-col"></div>
 
 <div class="mdl-cell mdl-cell--12-col">
