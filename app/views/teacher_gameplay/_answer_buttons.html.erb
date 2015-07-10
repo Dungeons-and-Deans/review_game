@@ -1,5 +1,5 @@
 <%= simple_form_for @question, url: "/teacher_gameplay/#{@game_session.id}/next_question/#{@question.id}", remote: true do |f| %>
-  <%= f.hidden_field :right, value: f.object.right + 1 %>
+  <%= f.hidden_field :right, value: f.object.right + 1%>
   <%= f.button :submit, "Correct" %>
 <% end %>
 
