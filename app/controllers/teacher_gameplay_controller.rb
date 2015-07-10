@@ -56,12 +56,15 @@ class TeacherGameplayController < ApplicationController
   end
 
   def active
+
     @assignment = GroupAssignment.find(params[:student_id])
     if @assignment.active
       @assignment.update(active: false)
     else
       @assignment.update(active: true)
     end
+    WebsocketRails[:"group_listen#{params[:id]}"].trigger 'icon_display', @assignment
+
 
     respond_to do |format|
       format.js
