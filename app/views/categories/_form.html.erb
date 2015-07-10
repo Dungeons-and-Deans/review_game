@@ -1,13 +1,13 @@
-<div id="form-container" class="addQuestionsModal mdl-card mdl-shadow--4dp">
+<div id="form-container" class="addQuestionsModal mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
   <%= simple_form_for @category, remote: true do |f| %>
     <%= f.error_notification %>
     <div id="question-list" class="mdl-card__supporting-text">
-        <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored", onclick: "copySection();" %>
+        <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored", onclick: "copySection()" %>
       <div id="new-question-form">
         <%= render partial: '/questions/form', locals: { f: f } %>
       </div>
     </div>
-    <div class="mdl-card__actions">
+    <div class="mdl-card__actions mdl-card--border">
       <%= f.button :submit, "Submit Questions", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
     </div>
   <% end %>

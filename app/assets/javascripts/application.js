@@ -79,7 +79,7 @@ channelStudentQuestion.bind('ask_competition_question', function (questionText) 
 });
 
 function copySection() {
-  var question = $("#new-question-form").parent().clone().html();
+  var question = $("#new-question-form").clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
     .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
   $("#question-list").append(question);
