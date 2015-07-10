@@ -13,9 +13,9 @@ WebsocketRails::EventMap.describe do
   # The above will handle an event triggered on the client like `product.new`.
 
   namespace :movements do
-    subscribe :move_icon, :to => IconMovementController, :with_method => :move_icon
-    subscribe :initial_placements, :to => IconMovementController, :with_method => :place_icon
-    subscribe :ask_question, to: IconMovementController, with_method: :send_question
-    subscribe :ask_competition_question, to: IconMovementController, with_method: :send_competition_question
+    subscribe :move_icon, :to => GameplayCommunicationController, :with_method => :move_icon
+    subscribe :initial_placements, :to => GameplayCommunicationController, :with_method => :place_icon
+    subscribe :ask_question, to: GameplayCommunicationController, with_method: :send_question
+    subscribe :ask_competition_question, to: GameplayCommunicationController, with_method: :send_competition_question
   end
 end

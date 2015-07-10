@@ -1,4 +1,4 @@
-class IconMovementController < WebsocketRails::BaseController
+class GameplayCommunicationController < WebsocketRails::BaseController
 
   def move_icon
     @icon = GroupAssignment.find_by_id(message[:id])
@@ -21,8 +21,9 @@ class IconMovementController < WebsocketRails::BaseController
 
   def send_question
     game_channel = message
-    @game_session = GameSession.find(message)
-    WebsocketRails[:"question_listen#{@game_session.turn_group_id}"].trigger 'ask_question'
+    game_session = GameSession.find(message)
+    question_text = Question.find(game_session.current_question_id).content
+    WebsocketRails[:"question_listen#{game_session.turn_group_id}"].trigger 'ask_question', question_text
   end
 
   def send_competition_question

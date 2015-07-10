@@ -36,8 +36,7 @@ class GameSession < ActiveRecord::Base
 
   def random_question
     next_question = self.categories.sample.questions.sample
-    self.current_question_id = next_question.id
-    self.save
+    self.update(current_question_id: next_question.id)
     next_question
   end
 

@@ -58,7 +58,8 @@ channel.bind('coordinates', function (icon) {
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
-channelStudentQuestion.bind('ask_question', function () {
+channelStudentQuestion.bind('ask_question', function (questionText) {
+  $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');
 
   window.setTimeout(function () {
@@ -67,7 +68,8 @@ channelStudentQuestion.bind('ask_question', function () {
 
 });
 
-channelStudentQuestion.bind('ask_competition_question', function () {
+channelStudentQuestion.bind('ask_competition_question', function (questionText) {
+  $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');
 
   window.setTimeout(function () {
@@ -77,7 +79,7 @@ channelStudentQuestion.bind('ask_competition_question', function () {
 });
 
 function copySection() {
-  var question = $("#new-question-form").parent().clone().html();
+  var question = $("#new-question-form").clone().html();
   question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
     .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
   $("#question-list").append(question);
