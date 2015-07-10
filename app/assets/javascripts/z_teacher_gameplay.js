@@ -11,11 +11,11 @@ app.teacherGameplay = {
 
     $('#send-competition-question').on('click', function () {
       var ids = [];
-      var childs = $("#group-choices").children();
-
-      for (var i = 0; i < childs.length; i++) {
-        if (childs[i].classList.contains('active')) {
-          ids.push(childs[i].id);
+      var checkboxArr = document.querySelectorAll('#group-choices input[type="checkbox"]');
+      
+      for (var i = 0; i < checkboxArr.length; i++) {
+        if (checkboxArr[i].checked === true) {
+          ids.push(checkboxArr[i].value);
         }
       }
 
