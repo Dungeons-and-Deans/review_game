@@ -1,32 +1,28 @@
-<div class="mdl-card__title mdl-card--border">
-  <h3>Players</h3>
-</div>
+<h3>Players</h3>
 
-<div class="mdl-card__supporting-text">
-  <table>
-    <thead>
-      <tr>
-        <% @game_session.groups.each do |group| %>
-        <th><%= group.name %></th>
-        <% end %>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <tr>
-        <% @game_session.groups.each do |group| %>
-          <td>
-            <ul>
-              <% group.students.order(:last_name).each do |student| %>
-                <li>
-                  <%= student.full_name %>
-                  <%= link_to student.active?.html_safe, active_path(@game_session, student), remote: true %>
-                </li>
-              <% end %>
-            </ul>
-          </td>
-        <% end %>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+  <thead>
+    <tr>
+      <% @game_session.groups.each do |group| %>
+      <th class="mdl-data-table__cell--non-numeric"><%= group.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @game_session.groups.each do |group| %>
+        <td class="mdl-data-table__cell--non-numeric">
+          <ul>
+            <% group.students.order(:last_name).each do |student| %>
+              <li>
+                <%= student.full_name %>
+                <%= link_to student.active?.html_safe, active_path(@game_session, student), remote: true %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
