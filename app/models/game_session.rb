@@ -5,6 +5,7 @@ class GameSession < ActiveRecord::Base
   has_many :category_game_session_assignments, dependent: :destroy
   has_many :categories, through: :category_game_session_assignments
   belongs_to :game
+  belongs_to :icon
 
   accepts_nested_attributes_for :groups, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :category_game_session_assignments, allow_destroy: true
@@ -34,13 +35,9 @@ class GameSession < ActiveRecord::Base
   end
 
   def random_question
-    next_question = self.categories.sample.questions.sample
+    next_question = self.categories.sample.questions.select{|q| q.difficulty_level >= self.min_difficulty }.sample
     self.update(current_question_id: next_question.id)
     next_question
-  end
-
-  def finish_game(group_id)
-
   end
 
 end

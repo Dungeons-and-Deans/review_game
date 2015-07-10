@@ -1,9 +1,9 @@
-<div class="mdl-card__title">
-  <h3 class="mdl-card__title-text">Current Group</h3>
+<div class="mdl-card__title mdl-card--border">
+  <h3>Current Group</h3>
 </div>
 <div class="mdl-card__supporting-text">
   <div class="current-group" id="<%= @current_group.id %>">
-    <%= @current_group.name if @current_group %>
+    <h4><%= @current_group.name if @current_group %></h4>
   </div>
   <div class="supplies">
     <h5>Supplies</h5>
@@ -12,6 +12,7 @@
         <% @current_group.supplies.each do |s| %>
         <li><%= s.amount %> <%= s.name %></li>
         <% end %>
+        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="addSupplies">Add</button>
         <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
     </ul>
   </div>

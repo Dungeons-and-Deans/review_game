@@ -24,7 +24,7 @@
       <% @group.students.order(:last_name).each do |student| %>
         <li>
           <%= student.full_name %>
-          <% student.active? %>
+          <%= student.active?.html_safe %>
         </li>
       <% end %>
     </ul>

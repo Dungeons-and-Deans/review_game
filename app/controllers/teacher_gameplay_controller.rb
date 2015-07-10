@@ -12,11 +12,10 @@ class TeacherGameplayController < ApplicationController
 
   def assign_supply
     @supply = Supply.new(supply_params)
-
-    if @supply.save
-      redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Supply was successfully distributed.'
-    else
-      render :supply
+    @supply.save
+    @current_group = @game_session.current_group
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -73,6 +72,7 @@ class TeacherGameplayController < ApplicationController
 
   def next_question
     @question = Question.find(params[:question_id])
+    @question.give_points(@game_session.turn_group_id) if params[:question][:right]
     @question.update(question_params)
     @question = @game_session.random_question
 

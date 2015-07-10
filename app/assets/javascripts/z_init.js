@@ -46,6 +46,10 @@ $(function () {
   $("button#show-question-form").on('click', function () {
     $("#form-container").toggleClass('active');
   });
+  
+  $('button#addSupplies').on('click', function () {
+    $('#suppliesModal').toggleClass('active');
+  })
 
 
 });

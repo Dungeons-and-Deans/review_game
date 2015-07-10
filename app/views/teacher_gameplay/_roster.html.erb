@@ -1,10 +1,9 @@
-<div class="mdl-card mdl-shadow--4dp">
-  <div class="mdl-card__title">
-    <h3>Players</h3>
-  </div>
+<div class="mdl-card__title mdl-card--border">
+  <h3>Players</h3>
+</div>
 
-  <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--6-col">
-
+<div class="mdl-card__supporting-text">
+  <table>
     <thead>
       <tr>
         <% @game_session.groups.each do |group| %>
@@ -12,7 +11,7 @@
         <% end %>
       </tr>
     </thead>
-
+  
     <tbody>
       <tr>
         <% @game_session.groups.each do |group| %>
@@ -29,6 +28,5 @@
         <% end %>
       </tr>
     </tbody>
-
   </table>
 </div>
