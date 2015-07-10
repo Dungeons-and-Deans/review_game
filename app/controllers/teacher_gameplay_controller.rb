@@ -56,15 +56,13 @@ class TeacherGameplayController < ApplicationController
   end
 
   def active
-
-    @assignment = GroupAssignment.find(params[:student_id])
+    @assignment = GroupAssignment.joins("INNER JOIN groups ON groups.id = group_assignments.group_id and group_assignments.student_id = #{params[:student_id]} and groups.game_session_id = #{params[:id]}").last
     if @assignment.active
       @assignment.update(active: false)
     else
       @assignment.update(active: true)
     end
     WebsocketRails[:"group_listen#{params[:id]}"].trigger 'icon_display', @assignment
-
 
     respond_to do |format|
       format.js
