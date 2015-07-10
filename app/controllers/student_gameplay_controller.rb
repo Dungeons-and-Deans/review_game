@@ -1,4 +1,6 @@
 class StudentGameplayController < ApplicationController
+  before_action :logged_in?, only: [:home]
+
   def login
     if request.post?
       group = Group.find_by_password(params[:password]["password"])
@@ -20,6 +22,10 @@ class StudentGameplayController < ApplicationController
 
   def logout
     redirect_to student_gameplay_login_path, notice: "Successfully logged out."
+  end
+
+  private def logged_in?
+
   end
 
 end

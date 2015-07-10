@@ -1,7 +1,5 @@
 <div class="mdl-card mdl-shadow--4dp" id="questionModal">
   <div class="mdl-card__supporting-text">
-    <h2 id="question-text">
-      <%= "question" %>
-    </h2>
+     <h2><%= Question.find(@game_session.current_question_id).content %></h2>
   </div>
 </div>

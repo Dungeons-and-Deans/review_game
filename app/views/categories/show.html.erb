@@ -5,10 +5,8 @@
   </h3>
 </div>
 
-<%= render partial: '/questions/index' %>
+<div id="question-list-container"><%= render partial: '/questions/index' %></div>
 
 <button id="show-question-form" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Questions</button>
 
-<div id="form-container" class="col-md-6 col-md-offset-3">
-  <%= render partial: 'form' %>
-</div>
+<%= render partial: 'form' %>

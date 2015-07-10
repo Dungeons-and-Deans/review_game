@@ -7,7 +7,7 @@ class QuestionsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    xhr :get, :edit, format: :js, id: @question
+    xhr get: :edit, format: :js, id: @question
     assert_response :success
   end
 
