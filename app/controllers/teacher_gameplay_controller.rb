@@ -74,7 +74,10 @@ class TeacherGameplayController < ApplicationController
   def next_question
     @question = Question.find(params[:question_id])
     @question.update(question_params)
-    redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Success.'
+    @question = @game_session.random_question
+    respond_to do |format|
+      format.js
+    end
   end
 
   private def set_game_session

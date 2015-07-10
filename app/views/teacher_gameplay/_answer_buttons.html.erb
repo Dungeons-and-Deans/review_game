@@ -1,9 +1,9 @@
-<%= simple_form_for @question, url: "/teacher_gameplay/#{@game_session.id}/next_question/#{@question.id}" do |f| %>
+<%= simple_form_for @question, url: "/teacher_gameplay/#{@game_session.id}/next_question/#{@question.id}", remote: true do |f| %>
   <%= f.hidden_field :right, value: f.object.right + 1 %>
   <%= f.button :submit, "Correct" %>
 <% end %>
 
-<%= simple_form_for @question, url: "/teacher_gameplay/#{@game_session.id}/next_question/#{@question.id}" do |f| %>
+<%= simple_form_for @question, url: "/teacher_gameplay/#{@game_session.id}/next_question/#{@question.id}", remote: true do |f| %>
   <%= f.hidden_field :wrong, value: f.object.wrong + 1 %>
   <%= f.button :submit, "Incorrect" %>
 <% end %>
