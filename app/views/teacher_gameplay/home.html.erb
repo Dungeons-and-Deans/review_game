@@ -52,6 +52,6 @@
 
 <div id="answer-buttons"><%= render partial: 'answer_buttons' %></div>
 
-<%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>
-<%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "btn btn-default" %>
+<%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "mdl-button mdl-js-button mdl-button--accent" %>
+<%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "mdl-button mdl-js-button mdl-button--accent" %>
 <%= render partial: 'winner' %>
