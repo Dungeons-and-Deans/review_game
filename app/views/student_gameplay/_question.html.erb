@@ -1,12 +1,5 @@
-<div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= question.content %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+<div class="mdl-card mdl-shadow--4dp" id="questionModal">
+  <div class="mdl-card__supporting-text">
+     <h2><%= question.content %></h2>
   </div>
 </div>
