@@ -18,6 +18,11 @@ $(function () {
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
   }
+  
+  if (/categories/.test(pathName)) {
+    app.categories.addQuestions();
+    app.categories.cancelQuestions();
+  }
 
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.sendQuestion();
@@ -37,7 +42,6 @@ $(function () {
     });
     
     
-    
   }
 
   if (/student_gameplay/.test(pathName)) {
@@ -52,9 +56,7 @@ $(function () {
   });
 
   
-  $("button#show-question-form").on('click', function () {
-    $("#form-container").toggleClass('active');
-  });
+
   
   
 

@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 app.teacherGameplay = {
+  
   sendQuestion: function () {
     var groupId = $('.current-group').attr('id');
 
@@ -46,4 +47,5 @@ app.teacherGameplay = {
       $('#suppliesModal').removeClass('active');
     })
   }
+  
 };
