@@ -2,14 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#addQuestionsModal {
+#form-container.addQuestionsModal {
   display: none;
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  max-height: 80%;
+  overflow: auto;
 }
 
-#addQuestionsModal.active {
+#form-container.addQuestionsModal.active {
   display: block;
 }

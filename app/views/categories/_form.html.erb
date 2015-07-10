@@ -1,16 +1,14 @@
-<%= simple_form_for @category, remote: true do |f| %>
-  <%= f.error_notification %>
-  <div id="question-list" class="col-md-6 col-md-offset-3">
-    <div class="row">
-      <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "btn btn-default col-md-4 col-md-offset-4", onclick: "copySection();" %>
-    </div>
-    <div>
+<div id="form-container" class="addQuestionsModal mdl-card mdl-shadow--4dp">
+  <%= simple_form_for @category, remote: true do |f| %>
+    <%= f.error_notification %>
+    <div id="question-list" class="mdl-card__supporting-text">
+        <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored", onclick: "copySection();" %>
       <div id="new-question-form">
         <%= render partial: '/questions/form', locals: { f: f } %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <%= f.button :submit, "Submit Questions", class: "col-md-4 col-md-offset-4" %>
-  </div>
-<% end %>
+    <div class="mdl-card__actions">
+      <%= f.button :submit, "Submit Questions", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+    </div>
+  <% end %>
+</div>
