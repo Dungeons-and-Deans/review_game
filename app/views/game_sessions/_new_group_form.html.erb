@@ -1,8 +1,10 @@
 <%= f.simple_fields_for :groups do |ff| %>
-  <div class="group-container col-md-4" id="group<%= "#{ff.object.id}" %>">
-    <h2>Group</h2>
+  <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="group<%= "#{ff.object.id}" %>">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Group</h2>
+    </div>
     <p>Password: <%= ff.object.password %></p>
-    <%= ff.input :name, label: "Group Name"%>
+    <%= ff.input :name, label: "Group Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
     <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
   
     <h3>Students</h3>

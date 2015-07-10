@@ -1,21 +1,26 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
-<%= simple_form_for @game_session, url: 'create', html: { class: "mdl-cell mdl-cell--4-col" } do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-  <%= f.association :game, label_method: :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-  
-  <div class="form-group mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <label class="mdl-textfield__label">Number of Groups</label>
-    <%= number_field_tag :number_of_groups, nil, min: 1, class: "form-control mdl-textfield__input" %>
+<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+  <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text">New Game Session</h1>
   </div>
-  <% @categories.each do |category| %>
-    <div class="form-group">
-      <label><%= category.name %></label>
-      <%= check_box_tag "category[]", category.id %>
+  <%= simple_form_for @game_session, url: 'create', html: { class: "mdl-card__supporting-text" } do |f| %>
+    <%= f.error_notification %>
+  
+    <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= f.association :game, label_method: :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    
+    <div class="form-group mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <label class="mdl-textfield__label">Number of Groups</label>
+      <%= number_field_tag :number_of_groups, nil, min: 1, class: "form-control mdl-textfield__input" %>
     </div>
+    <% @categories.each do |category| %>
+      <div class="form-group">
+        <label><%= category.name %></label>
+        <%= check_box_tag "category[]", category.id %>
+      </div>
+    <% end %>
+  
+    <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--8-col" %>
   <% end %>
-
-  <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--8-col" %>
-<% end %>
+</div>
 <div class="mdl-cell mdl-cell--4-col"></div>
