@@ -17,6 +17,7 @@ class StudentGameplayController < ApplicationController
     @map = Map.find_by_game_id(@game_session.game.id)
     @players = @game_session.group_assignments.where(group_id: @group.id)
     @icon = @game_session.icon
+    @movement = @game_session.game.movement
   end
 
   def logout

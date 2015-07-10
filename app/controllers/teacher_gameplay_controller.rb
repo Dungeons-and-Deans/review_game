@@ -67,6 +67,7 @@ class TeacherGameplayController < ApplicationController
 
   def next_question
     @question = Question.find(params[:question_id])
+    @question.give_points(@game_session.turn_group_id) if params[:question][:right]
     @question.update(question_params)
     @question = @game_session.random_question
 
