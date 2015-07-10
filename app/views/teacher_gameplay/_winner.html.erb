@@ -1,25 +1,22 @@
-<button type="button" class="choose-winner btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="choose-winner mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-toggle="modal" data-target="#myModal">
   Choose Winner
 </button>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= form_for @game_session, url: "/game_sessions/#{@game_session.id}/end_game" do |f| %>
-
-        <div class="btn-group btn-group-lg" data-toggle="buttons">
-          <% @game_session.groups.each do |group| %>
-            <label class="btn btn-primary">
-              <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
-            </label>
-          <% end %>
-        </div>
-
-          <%= f.submit "Submit" %>
-        <% end %>
-      </div>
-        <button type="button" class="choose-winner-close btn btn-default" data-dismiss="modal">Close</button>
+<div class="mdl-card mdl-shadow--4dp" id="myModal">
+  <div class="mdl-card__supporting-text">
+    <%= form_for @game_session, url: "/game_sessions/#{@game_session.id}/end_game" do |f| %>
+    
+    <div class="btn-group btn-group-lg" data-toggle="buttons">
+      <% @game_session.groups.each do |group| %>
+        <label class="btn btn-primary">
+          <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
+        </label>
+      <% end %>
     </div>
+    
+    <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+    <% end %>
+    
+    <button type="button" class="choose-winner-close mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-dismiss="modal">Close</button>
   </div>
 </div>
