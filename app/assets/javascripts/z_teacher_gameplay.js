@@ -19,6 +19,11 @@ app.teacherGameplay = {
         }
       }
 
+      var info ={
+        ids: ids,
+        gameSession: parseInt(channelNumber)
+      }
+
       dispatcher.trigger('movements.ask_competition_question', info);
       console.log("hello")
     });
