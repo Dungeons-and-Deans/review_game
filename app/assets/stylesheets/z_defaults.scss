@@ -12,6 +12,10 @@ h5, h6 {
 
 form {
   text-align: center;
+  
+  & ul {
+    text-align: left;
+  }
 }
 
 body > .mdl-grid > a {

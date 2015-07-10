@@ -3,15 +3,17 @@
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text">Group</h2>
     </div>
-    <p>Password: <%= ff.object.password %></p>
-    <%= ff.input :name, label: "Group Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
-  
-    <h3>Students</h3>
-    <ul class="groups-students list-group" id="<%= "#{ff.object.id}" %>">
-      <% ff.object.students.each do |student| %>
-        <li class="draggables list-group-item" id="<%= student.id %>"><%= student.full_name %></li>
-      <% end %>
-    </ul>
+    <div class="mdl-card__supporting-text">
+      Password: <%= ff.object.password %>
+      <%= ff.input :name, label: "Group Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+      <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
+    
+      <h3>Students</h3>
+      <ul class="groups-students student-drag-area" id="<%= "#{ff.object.id}" %>">
+        <% ff.object.students.each do |student| %>
+          <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>
