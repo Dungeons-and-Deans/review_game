@@ -6,19 +6,19 @@
   <%= render partial: 'current_group' %>
 </div>
 
-<div class="">
+<div class="mdl-cell mdl-cell--12-col">
   <%= simple_form_for @game_session, url: next_group_path do |f| %>
     <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
 
-    <%= f.button :submit, "Next Turn" %>
+    <%= f.button :submit, "Next Turn", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   <% end %>
 </div>
 
-<div id="next-question">
+<div class="mdl-card mdl-shadow--4dp" id="next-question">
   <%= render partial: 'next_question' %>
 </div>
 
-<div id="roster">
+<div class="mdl-card mdl-shadow--4dp" id="roster">
   <%= render partial: 'roster' %>
 </div>
 

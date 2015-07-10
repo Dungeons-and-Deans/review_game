@@ -12,7 +12,7 @@
         <% @current_group.supplies.each do |s| %>
         <li><%= s.amount %> <%= s.name %></li>
         <% end %>
-        <button type="button" class="btn btn-primary" id="addSupplies">Add</button>
+        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="addSupplies">Add</button>
         <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
     </ul>
   </div>
