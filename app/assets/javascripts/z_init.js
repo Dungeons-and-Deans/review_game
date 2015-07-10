@@ -21,6 +21,14 @@ $(function () {
   
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.nextQuestion();
+    
+    $('button.choose-winner').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
+    
+    $('button.choose-winner-close').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
   }
   
   if (/student_gameplay/.test(pathName)) {
