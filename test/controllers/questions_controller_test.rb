@@ -16,11 +16,6 @@ class QuestionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should get destroy" do
     assert_difference('Question.count', -1) do
       delete :destroy, format: :js, id: @question
