@@ -7,7 +7,7 @@
 </div>
 
 <div class="">
-  <%= simple_form_for @game_session, url: 'next_group' do |f| %>
+  <%= simple_form_for @game_session, url: next_group_path do |f| %>
     <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
 
     <%= f.button :submit, "Next Turn" %>
@@ -27,5 +27,5 @@
 </div>
 
 <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-<%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "mdl-button mdl-js-button mdl-button--accent" %>
+<%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
 <%= render partial: 'winner' %>
