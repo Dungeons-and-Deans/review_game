@@ -4,8 +4,12 @@ one:
   content: "question"
   difficulty_level: 1
   category: :one
+  right: 1
+  wrong: 4
 
 two:
   content: "question2"
   difficulty_level: 1
   category: :two
+  right: 5
+  wrong: 2
