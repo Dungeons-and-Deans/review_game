@@ -44,7 +44,13 @@ class TeacherGameplayController < ApplicationController
 
   def next_group
     if @game_session.update(game_session_params)
-      redirect_to "/teacher_gameplay/#{@game_session.id}/home"
+      @current_group = @game_session.current_group
+      @supply = Supply.new
+      @question = @game_session.random_question
+      respond_to do |format|
+        format.js
+      end
+      # redirect_to "/teacher_gameplay/#{@game_session.id}/home"
     else
       render :home, notice: "Try Again"
     end
