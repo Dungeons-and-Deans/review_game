@@ -1,6 +1,10 @@
-<h1>Available Categories</h1>
+<div class="mdl-cell mdl-cell--12-col">
+  <h3>Available Categories</h3>
+</div>
 
-<table class="table">
+<div class="mdl-cell mdl-cell--4-col"></div>
+
+<table class="mdl-cell mdl-cell--4-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
     <tr>
       <th colspan="2"><%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, new_category_path %></th>
@@ -9,9 +13,11 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to "#{category.name}", category %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= link_to "#{category.name}", category %></td>
         <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<div class="mdl-cell mdl-cell--4-col"></div>

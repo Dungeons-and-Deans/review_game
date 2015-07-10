@@ -1,21 +1,17 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
-<div class="mdl-cell mdl-cell--4-col">
-  <p>
-    <strong>Games won:</strong>
-    <%= @student.games_won %>
-  </p>
-  
-  <p>
-    <strong>First name:</strong>
-    <%= @student.first_name %>
-  </p>
-  
-  <p>
-    <strong>Last name:</strong>
-    <%= @student.last_name %>
-  </p>
-  
-  <%= link_to 'Edit', edit_student_path(@student), html_options = { class: "btn btn-default" } %>
-  <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "btn btn-default" } %>
+
+<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp demo-card-square">
+  <div class="mdl-card__title">
+    <h4><%= @student.first_name %> <%= @student.last_name %></h4>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Games won: <%= @student.games_won %>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= link_to 'Edit', edit_student_path(@student), html_options = { class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" } %>
+  </div>
 </div>
+
 <div class="mdl-cell mdl-cell--4-col"></div>
+
+<%= link_to 'New Game Scenario', new_game_path, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>

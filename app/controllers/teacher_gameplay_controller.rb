@@ -25,10 +25,6 @@ class TeacherGameplayController < ApplicationController
     @supply = Supply.new
   end
 
-  def competition
-    @groups = @game_session.groups
-  end
-
   def edit_score
     @group = Group.find(params[:group_id])
     respond_to do |format|

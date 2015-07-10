@@ -7,17 +7,12 @@ class QuestionsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    xhr get: :edit, format: :js, id: @question
+    xhr :get, :edit, format: :js, id: @question
     assert_response :success
   end
 
   test "should get update" do
     patch :update, format: :js, id: @question, question: { content: @question.content, difficulty_level: 2 }
-    assert_response :success
-  end
-
-  test "should get new" do
-    get :new
     assert_response :success
   end
 

@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups', as: :groups
   get 'teacher_gameplay/:id/supply/:group_id' => 'teacher_gameplay#supply', as: :supply
   post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply', as: :assign_supply
-  get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition', as: :competition
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score', as: :update_score
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group

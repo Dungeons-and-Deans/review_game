@@ -6,7 +6,11 @@ class Question < ActiveRecord::Base
   validates :category_id, presence: true
 
   def percent_correct
-    (self.right.to_f / (self.right.to_f + self.wrong.to_f) * 100).to_i
+    if self.right > 0
+      (self.right.to_f / (self.right.to_f + self.wrong.to_f) * 100).to_i
+    else
+      0
+    end
   end
 
 end

@@ -1,11 +1,13 @@
-<h3 id="category-name">
-  <%= @category.name %>
-  <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %>
-</h3>
-
-<div id="question-list-container" class="col-md-8 col-md-offset-2">
-  <%= render partial: '/questions/index' %>
+<div class="mdl-cell mdl-cell--12-col">
+  <h3 id="category-name">
+    <%= @category.name %>
+    <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %>
+  </h3>
 </div>
+
+<%= render partial: '/questions/index' %>
+
+<button id="show-question-form" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Questions</button>
 
 <div id="form-container" class="col-md-6 col-md-offset-3">
   <%= render partial: 'form' %>
