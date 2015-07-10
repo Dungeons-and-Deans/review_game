@@ -12,12 +12,19 @@
 
     <%= f.button :submit, "Next Turn" %>
   <% end %>
+</div>
 
-</div><%= render partial: 'next_question' %></div>
+</div id="next-question">
+  <%= render partial: 'next_question' %>
+</div>
 
-<div id="roster"><%= render partial: 'roster' %></div>
+<div id="roster">
+  <%= render partial: 'roster' %>
+</div>
 
-<div id="answer-buttons"><%= render partial: 'answer_buttons' %></div>
+<div id="answer-buttons">
+  <%= render partial: 'answer_buttons' %>
+</div>
 
 <%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "mdl-button mdl-js-button mdl-button--accent" %>
 <%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "mdl-button mdl-js-button mdl-button--accent" %>
