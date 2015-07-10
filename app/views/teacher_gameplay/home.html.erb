@@ -1,7 +1,4 @@
-<div id="scores">
-  <h3>Scores</h3>
-  <%= render partial: 'scores' %>
-</div>
+<div id="scores"><%= render partial: 'scores' %></div>
 
 <div id="current-group">
   <h3>Current Group</h3>
@@ -34,8 +31,7 @@
 
 <div id="roster"><%= render partial: 'roster' %></div>
 
-<button class="right">Correct</button>
-<button class="wrong">Incorrect</button>
+<div id="answer-buttons"><%= render partial: 'answer_buttons' %></div>
 
 <div class="links">
 <%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>

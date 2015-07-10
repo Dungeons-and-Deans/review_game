@@ -71,6 +71,12 @@ class TeacherGameplayController < ApplicationController
     end
   end
 
+  def next_question
+    @question = Question.find(params[:question_id])
+    @question.update(question_params)
+    redirect_to "/teacher_gameplay/#{@game_session.id}/home", notice: 'Success.'
+  end
+
   private def set_game_session
     @game_session = GameSession.find(params[:id])
   end
@@ -85,5 +91,9 @@ class TeacherGameplayController < ApplicationController
 
   private def supply_params
     params.require(:supply).permit(:group_id, :name, :amount)
+  end
+
+  private def question_params
+    params.require(:question).permit(:right, :wrong)
   end
 end
