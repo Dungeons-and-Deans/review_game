@@ -6,12 +6,8 @@
   <%= render partial: 'current_group' %>
 </div>
 
-<div class="">
-  <%= simple_form_for @game_session, url: next_group_path do |f| %>
-    <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
-
-    <%= f.button :submit, "Next Turn" %>
-  <% end %>
+<div class="" id="next-turn">
+  <%= render partial: 'next_turn' %>
 </div>
 
 <div id="next-question">
