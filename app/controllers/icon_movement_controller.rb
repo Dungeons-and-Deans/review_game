@@ -27,7 +27,8 @@ class IconMovementController < WebsocketRails::BaseController
   end
 
   def send_competition_question
-    game_session = GameSession.find(message[gameSession])
+    # byebug
+    game_session = GameSession.find(message[:gameSession])
     question_text = Question.find(game_session.current_question_id).content
     group_ids = message[:ids]
     group_ids.length.times do |i|

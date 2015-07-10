@@ -24,6 +24,7 @@ app.teacherGameplay = {
       }
 
       dispatcher.trigger('movements.ask_competition_question', info);
+      console.log("hello")
     });
   }
 };
