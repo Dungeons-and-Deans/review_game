@@ -1,4 +1,4 @@
 class Icon < ActiveRecord::Base
-  has_many :games
+  has_many :game_sessions
 
 end
