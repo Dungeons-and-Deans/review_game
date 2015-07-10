@@ -34,7 +34,10 @@ class GameSession < ActiveRecord::Base
   end
 
   def random_question
-    self.categories.sample.questions.sample
+    next_question = self.categories.sample.questions.sample
+    self.current_question_id = next_question.id
+    self.save
+    next_question
   end
 
   def finish_game(group_id)

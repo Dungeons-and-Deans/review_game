@@ -73,6 +73,7 @@ class TeacherGameplayController < ApplicationController
     @question = Question.find(params[:question_id])
     @question.update(question_params)
     @question = @game_session.random_question
+
     respond_to do |format|
       format.js
     end
