@@ -3,6 +3,8 @@
 
     <%= ff.input :content, label: 'Question' %>
     <%= ff.input :difficulty_level, label: 'Difficulty' %>
+    <%= ff.hidden_field :right, value: 0 %>
+    <%= ff.hidden_field :wrong, value: 0 %>
 
   <% end %>
 </div>
