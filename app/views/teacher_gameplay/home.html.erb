@@ -42,7 +42,7 @@
     <h3 class="mdl-card__title-text">Next Question</h3>
   </div>
   <div class="mdl-card__supporting-text">
-    <div><%= @question.content %></div>
+    <div><%= render partial: 'next_question' %></div>
     <button id="send-question" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Question</button>
     <div id="competition-container"><%= render partial: 'competition_question' %></div>
   </div>
@@ -50,8 +50,7 @@
 
 <div id="roster"><%= render partial: 'roster' %></div>
 
-<button class="right mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Correct</button>
-<button class="wrong mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Incorrect</button>
+<div id="answer-buttons"><%= render partial: 'answer_buttons' %></div>
 
 <%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>
 <%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "btn btn-default" %>

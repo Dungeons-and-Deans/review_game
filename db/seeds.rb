@@ -62,17 +62,17 @@ end
 end
 
 Question.create(content: "Who was the first US president?", difficulty_level: 1,
-  category_id: 1)
+  category_id: 1, right: 0, wrong: 0)
 Question.create(content: "In what year did the Revolutionary war start", difficulty_level: 1,
-  category_id: 1)
+  category_id: 1, right: 0, wrong: 0)
 Question.create(content: "Name two Native American tribes form North Carolina", difficulty_level: 4,
-  category_id: 1)
+  category_id: 1, right: 0, wrong: 0)
 Question.create(content: "What is the pythagorean theorem?", difficulty_level: 3,
-  category_id: 2)
+  category_id: 2, right: 0, wrong: 0)
 Question.create(content: "What is the square root of 25", difficulty_level: 1,
-  category_id: 2)
+  category_id: 2, right: 0, wrong: 0)
 Question.create(content: "Solve for x: x+2=5", difficulty_level: 2,
-  category_id: 2)
+  category_id: 2, right: 0, wrong: 0)
 
 Map.create(game_id: 1, name: "Yellowstone", file_path: "http://yellowstone.net/maps/files/2012/06/yellowstone-map.jpg")
 Map.create(game_id: 2, name: "School Map", file_path: "http://www.ptisd.org/users/0001/docs/ptjh%20map_lockers%20b.jpg")
