@@ -5,7 +5,7 @@
   <% @game_session.groups.each do |group| %>
     <div>
       <%= group.name %>:
-      <span id="update_score">
+      <span id="update_score<%= group.id %>">
         <%= link_to group.score, edit_score_path(@game_session, group), remote: true %>
       </span>
     </div>
