@@ -26,9 +26,12 @@ class IconMovementController < WebsocketRails::BaseController
   end
 
   def send_competition_question
-    message.length.times do |i|
-      game_channel = message[i-1]
-      WebsocketRails[:"question_listen#{game_channel}"].trigger 'ask_competition_question'
+    game_session = GameSession.find(message[:gameSession])
+    question_text = Question.find(game_session.current_question_id).content
+    group_ids = message[:ids]
+    group_ids.length.times do |i|
+      game_channel = group_ids[i-1]
+      WebsocketRails[:"question_listen#{game_channel}"].trigger 'ask_competition_question', question_text
     end
   end
 

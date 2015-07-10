@@ -12,14 +12,15 @@ app.teacherGameplay = {
     $('#send-competition-question').on('click', function () {
       var ids = [];
       var checkboxArr = document.querySelectorAll('#group-choices input[type="checkbox"]');
-      
+
       for (var i = 0; i < checkboxArr.length; i++) {
         if (checkboxArr[i].checked === true) {
           ids.push(checkboxArr[i].value);
         }
       }
 
-      dispatcher.trigger('movements.ask_competition_question', ids);
+      dispatcher.trigger('movements.ask_competition_question', info);
+      console.log("hello")
     });
   }
 };
