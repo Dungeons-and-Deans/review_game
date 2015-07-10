@@ -1,35 +1,15 @@
 @import 'z_colors';
 
-body {
-  background: $off-white;
-}
-
 h1, h2, h3, h4,
 h5, h6 {
   text-align: center;
 }
 
-.alert,
-.notice {
+form {
   text-align: center;
 }
 
-.groups-students {
-  border: 1px solid black;
-  min-height: 5rem;
-}
-
-.group-container {
-  border: 1px solid black;
-}
-
-.student-list {
-  position: absolute;
-  width: 20rem;
-}
-
-.map{
-  position: relative;
-  width: 100rem;
-  display: block;
+body > .mdl-grid > a {
+  text-align: center;
+  margin: 0 auto;
 }

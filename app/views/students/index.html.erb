@@ -1,10 +1,13 @@
+<div class="mdl-cell mdl-cell--12-col">
 <h3>Students</h3>
+</div>
 
-<table class="table">
+<div class="mdl-cell mdl-cell--3-col"></div>
+<table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--6-col">
   <thead>
     <tr>
       <th>Games won</th>
-      <th>Name</th>
+      <th class="mdl-data-table__cell--non-numeric">Name</th>
       <th colspan="2"><%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, new_student_path %></th>
     </tr>
   </thead>
@@ -13,10 +16,11 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.games_won %></td>
-        <td><%= link_to "#{student.first_name} #{student.last_name}", student %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= link_to "#{student.first_name} #{student.last_name}", student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to '<i class="fa fa-user-times"></i>'.html_safe, student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="mdl-cell mdl-cell--3-col"></div>

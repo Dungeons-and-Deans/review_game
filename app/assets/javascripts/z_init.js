@@ -3,9 +3,10 @@ $(function () {
   
   var pathName = $(location).attr('pathname');
 
-  if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
-    $('.nav').html($('#nav-links-teacher').html());
-  }
+  // if (!($('.simple_form#new_teacher').length || $('.login-group').length || /student_gameplay/.test(pathName))) {
+  //   $('.nav').html($('#nav-links-teacher').html());
+  //   console.log($('#nav-links-teacher').html());
+  // }
 
   app.navActive(pathName);
 
@@ -20,6 +21,14 @@ $(function () {
   
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.nextQuestion();
+    
+    $('button.choose-winner').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
+    
+    $('button.choose-winner-close').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
   }
   
   if (/student_gameplay/.test(pathName)) {

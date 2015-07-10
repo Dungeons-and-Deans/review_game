@@ -79,3 +79,12 @@ body.nav-expanded {
 .main-menu {
   color: white;
 }
+
+
+#questionModal {
+  display: none;
+}
+
+#questionModal.active {
+  display: block;
+}

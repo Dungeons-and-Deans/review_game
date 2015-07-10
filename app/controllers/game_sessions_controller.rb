@@ -56,7 +56,7 @@ class GameSessionsController < ApplicationController
     params.require(:game_session).permit(:game_id, :turn_group_id, :name, :winning_group_id,
     category_game_session_assignments_attributes: [:id, :category_id, :_destroy],
     groups_attributes: [:id, :name, :score, :_destroy, :password,
-        group_assignments_attributes: [:id, :student_id, :board_x, :board_y, :_destroy]])
+        group_assignments_attributes: [:id, :student_id, :active, :board_x, :board_y, :_destroy]])
   end
 
 end

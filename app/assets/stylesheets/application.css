@@ -12,17 +12,17 @@
  *
  *= require font-awesome
  *= require jquery-ui
+ *= require scaffolds
+ *
+ *= require material-blue.min
+ *= require z_colors
+ *= require z_defaults
+ *= require z_categories
+ *= require z_games
+ *= require z_students
+ *= require z_class_gameplay
+ *= require z_teacher_gameplay
+ *= require z_student_gameplay
  *
  */
-
-@import "scaffolds";
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "z_colors";
-@import "z_defaults";
-@import "z_categories";
-@import "z_games";
-@import "z_students";
-@import "z_class_gameplay";
-@import "z_teacher_gameplay";
-@import "z_student_gameplay";
+ 

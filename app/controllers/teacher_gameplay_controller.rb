@@ -56,14 +56,14 @@ class TeacherGameplayController < ApplicationController
   end
 
   def active
-    student_group = Group.find_by_game_session_id(params[:id])
-    @student = GroupAssignment.where(student_id: params[:student_id]).first
-    if @student.active
-      @student.update(active: false)
+
+    @assignment = GroupAssignment.find(params[:student_id])
+    if @assignment.active
+      @assignment.update(active: false)
     else
-      @student.update(active: true)
+      @assignment.update(active: true)
     end
-    WebsocketRails[:"group_listen#{student_group.game_session_id}"].trigger 'icon_display', @student
+    WebsocketRails[:"group_listen#{params[:id]}"].trigger 'icon_display', @assignment
 
 
     respond_to do |format|
@@ -80,7 +80,7 @@ class TeacherGameplayController < ApplicationController
   end
 
   private def game_session_params
-    params.require(:game_session).permit(:turn_group_id, :name)
+    params.require(:game_session).permit(:turn_group_id, :name, :winning_group_id)
   end
 
   private def supply_params

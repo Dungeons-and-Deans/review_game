@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require bootstrap-sprockets
 //= require websocket_rails/main
+//= require material.min
 //
 //= require z_app
 //= require z_categories
@@ -59,19 +59,19 @@ channel.bind('coordinates', function (icon) {
 });
 
 channelStudentQuestion.bind('ask_question', function () {
-  $('#questionModal').modal('show');
+  $('#questionModal').toggleClass('active');
 
   window.setTimeout(function () {
-    $('#questionModal').modal('hide')
+    $('#questionModal').toggleClass('active');
   }, 5000);
 
 });
 
 channelStudentQuestion.bind('ask_competition_question', function () {
-  $('#questionModal').modal('show');
+  $('#questionModal').toggleClass('active');
 
   window.setTimeout(function () {
-    $('#questionModal').modal('hide')
+    $('#questionModal').toggleClass('active');
   }, 5000);
 
 });
