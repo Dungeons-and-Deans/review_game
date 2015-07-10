@@ -1,21 +1,21 @@
 <div class="mdl-cell mdl-cell--1-col"></div>
-  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--10-col">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Content</th>
-        <th>Difficulty</th>
-        <th>% Correct</th>
-      </tr>
-    </thead>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--10-col">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Content</th>
+      <th>Difficulty</th>
+      <th>% Correct</th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric"><div id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></div></td>
-          <td><%= question.difficulty_level %></td>
-          <td><%= question.percent_correct %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric"><div id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></div></td>
+        <td><%= question.difficulty_level %></td>
+        <td><%= question.percent_correct %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <div class="mdl-cell mdl-cell--1-col"></div>
