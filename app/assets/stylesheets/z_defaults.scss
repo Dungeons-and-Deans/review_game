@@ -1,1 +1,15 @@
 @import 'z_colors';
+
+h1, h2, h3, h4,
+h5, h6 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+body > .mdl-grid > a {
+  text-align: center;
+  margin: 0 auto;
+}

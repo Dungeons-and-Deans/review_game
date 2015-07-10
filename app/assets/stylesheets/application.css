@@ -12,9 +12,9 @@
  *
  *= require font-awesome
  *= require jquery-ui
- *= require material-blue.min
- *
  *= require scaffolds
+ *
+ *= require material-blue.min
  *= require z_colors
  *= require z_defaults
  *= require z_categories

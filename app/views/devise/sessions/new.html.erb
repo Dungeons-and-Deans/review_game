@@ -7,8 +7,8 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "mdl-cell mdl-cell--4-col" }) do |f| %>
   <%= f.input :email, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" }, required: false, autofocus: true %>
   <%= f.input :password, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" }, required: false %>
-  <%= f.input :remember_me, wrapper_html: { class: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" }, input_html: { class: "mdl-checkbox__input" }, label_html: { class: "mdl-checkbox__label" },  as: :boolean if devise_mapping.rememberable? %>
-  <%= f.button :submit, "Log in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <%= f.button :submit, "Log in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--6-col" %>
 <% end %>
 
 <div class="mdl-cell mdl-cell--4-col"></div>
