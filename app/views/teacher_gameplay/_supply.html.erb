@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-body">
-        <%= simple_form_for @supply, url: "/teacher_gameplay/#{@game_session.id}/assign_supply" do |f| %>
+        <%= simple_form_for @supply, url: assign_supply_path(@game_session) do |f| %>
 
           <%= f.input :amount %>
           <%= f.input :name %>

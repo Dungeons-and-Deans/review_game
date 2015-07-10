@@ -4,8 +4,8 @@
 
 <div class="mdl-card mdl-shadow--4dp" id="myModal">
   <div class="mdl-card__supporting-text">
-    <%= form_for @game_session, url: "/game_sessions/#{@game_session.id}/end_game" do |f| %>
-    
+    <%= form_for @game_session, url: end_game_path(@game_session) do |f| %>
+
     <div class="btn-group btn-group-lg" data-toggle="buttons">
       <% @game_session.groups.each do |group| %>
         <label class="btn btn-primary">
@@ -13,10 +13,10 @@
         </label>
       <% end %>
     </div>
-    
+
     <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
     <% end %>
-    
+
     <button type="button" class="choose-winner-close mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-dismiss="modal">Close</button>
   </div>
 </div>

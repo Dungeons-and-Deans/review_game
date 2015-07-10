@@ -3,40 +3,29 @@
 </div>
 
 <div class="mdl-card mdl-shadow--4dp" id="current-group">
-  <div class="mdl-card__title">
-    <h3 class="mdl-card__title-text">Current Group</h3>
-  </div>
-  <div class="class="mdl-card__supporting-text">
-    <div class="current-group" id="<%= @current_group.id %>">
-      <%= @current_group.name if @current_group %>
-    </div>
-    <div class="supplies">
-      Supplies
-      <ul>
-        <% if @current_group %>
-          <% @current_group.supplies.each do |s| %>
-          <li><%= s.amount %> <%= s.name %></li>
-          <% end %>
-          <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
-      </ul>
-    </div>
-  <% end %>
-  </div>
+  <%= render partial: 'current_group' %>
 </div>
 
 <div class="">
-  <%= simple_form_for @game_session, url: 'next_group' do |f| %>
+  <%= simple_form_for @game_session, url: next_group_path do |f| %>
     <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
 
     <%= f.button :submit, "Next Turn" %>
   <% end %>
-  
-</div><%= render partial: 'next_question' %></div>
+</div>
 
-<div id="roster"><%= render partial: 'roster' %></div>
+</div id="next-question">
+  <%= render partial: 'next_question' %>
+</div>
 
-<div id="answer-buttons"><%= render partial: 'answer_buttons' %></div>
+<div id="roster">
+  <%= render partial: 'roster' %>
+</div>
 
-<%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "mdl-button mdl-js-button mdl-button--accent" %>
-<%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "mdl-button mdl-js-button mdl-button--accent" %>
+<div id="answer-buttons">
+  <%= render partial: 'answer_buttons' %>
+</div>
+
+<%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+<%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
 <%= render partial: 'winner' %>
