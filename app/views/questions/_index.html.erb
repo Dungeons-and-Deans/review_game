@@ -10,11 +10,7 @@
 
     <tbody>
       <% @questions.each do |question| %>
-      <tr>
-        <div id="question-container<%= question.id %>">
-          <%= render partial: '/questions/show', locals: {question: question} %>
-        </div>
-      </tr>
+          <tr id="question-container<%= question.id %>"><%= render partial: '/questions/show', locals: {question: question} %></tr>
       <% end %>
     </tbody>
   </table>
