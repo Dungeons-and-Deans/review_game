@@ -1,21 +1,12 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add</button>
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= simple_form_for @supply, url: assign_supply_path(@game_session) do |f| %>
-
-          <%= f.input :amount %>
-          <%= f.input :name %>
-          <%= f.hidden_field :group_id, value: id %>
-
-          <%= f.button :submit, "Assign" %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+<div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
+  <div class="mdl-card__supporting-text">
+    <h2 id="question-text">
+      <%= simple_form_for @supply, url: assign_supply_path(@game_session) do |f| %>
+        <%= f.input :amount %>
+        <%= f.input :name %>
+        <%= f.hidden_field :group_id, value: id %>
+        <%= f.button :submit, "Assign" %>
+      <% end %>
+    </h2>
   </div>
 </div>
