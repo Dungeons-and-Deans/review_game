@@ -2,13 +2,15 @@
 // All this logic will automatically be available in application.js.
 
 app.teacherGameplay = {
-  nextQuestion: function () {
+  sendQuestion: function () {
     var groupId = $('.current-group').attr('id');
 
     $('#send-question').on('click', function () {
       dispatcher.trigger('movements.ask_question', channelNumber);
     });
-
+  },
+  
+  sendCompQuestion: function () {
     $('#send-competition-question').on('click', function () {
       var ids = [];
       var checkboxArr = document.querySelectorAll('#group-choices input[type="checkbox"]');
@@ -27,5 +29,21 @@ app.teacherGameplay = {
       dispatcher.trigger('movements.ask_competition_question', info);
       console.log("hello")
     });
+  },
+  
+  addSupplies: function () {
+    $('#addSupplies').on('click', function (e) {
+      
+      console.log('hi');
+      $('#suppliesModal').addClass('active');
+    })
+  },
+  
+  assignSupplies: function () {
+    $('#assignSupplies').on('click', function (e) {
+      
+      console.log('hi');
+      $('#suppliesModal').removeClass('active');
+    })
   }
 };

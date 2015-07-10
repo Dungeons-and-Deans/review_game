@@ -20,7 +20,13 @@ $(function () {
   }
 
   if (/teacher_gameplay/.test(pathName)) {
-    app.teacherGameplay.nextQuestion();
+    app.teacherGameplay.sendQuestion();
+    
+    app.teacherGameplay.sendCompQuestion();
+    
+    app.teacherGameplay.addSupplies();
+    
+    app.teacherGameplay.assignSupplies();
 
     $('button.choose-winner').on('click', function () {
       $('#myModal').toggleClass('active');
@@ -29,6 +35,9 @@ $(function () {
     $('button.choose-winner-close').on('click', function () {
       $('#myModal').toggleClass('active');
     });
+    
+    
+    
   }
 
   if (/student_gameplay/.test(pathName)) {
@@ -47,9 +56,7 @@ $(function () {
     $("#form-container").toggleClass('active');
   });
   
-  $('button#addSupplies').on('click', function () {
-    $('#suppliesModal').toggleClass('active');
-  })
+  
 
 
 });
