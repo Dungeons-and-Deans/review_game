@@ -1,5 +1,10 @@
-
-<h3>Next Question</h3>
-<div><%= @question.content %></div>
-<div><button id="send-question" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Question</button></div>
-<div id="competition-container"><%= render partial: 'competition_question' %></div>
+<div class="mdl-card mdl-shadow--4dp" id="next-question">
+  <div class="mdl-card__title">
+    <h3 class="mdl-card__title-text">Next Question</h3>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <div><%= @question.content %></div>
+    <div><button id="send-question" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Question</button></div>
+    <div id="competition-container"><%= render partial: 'competition_question' %></div>
+  </div>
+</div>
