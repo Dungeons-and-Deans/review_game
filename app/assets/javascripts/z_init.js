@@ -42,5 +42,10 @@ $(function () {
     $("#answer-buttons").show();
   });
 
+  $("#form-container").hide();
+  $("#show-question-form").on('click', function () {
+    $("#form-container").show();
+  });
+
 
 });
