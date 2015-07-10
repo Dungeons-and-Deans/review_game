@@ -3,25 +3,7 @@
 </div>
 
 <div class="mdl-card mdl-shadow--4dp" id="current-group">
-  <div class="mdl-card__title">
-    <h3 class="mdl-card__title-text">Current Group</h3>
-  </div>
-  <div class="class="mdl-card__supporting-text">
-    <div class="current-group" id="<%= @current_group.id %>">
-      <%= @current_group.name if @current_group %>
-    </div>
-    <div class="supplies">
-      Supplies
-      <ul>
-        <% if @current_group %>
-          <% @current_group.supplies.each do |s| %>
-          <li><%= s.amount %> <%= s.name %></li>
-          <% end %>
-          <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
-      </ul>
-    </div>
-  <% end %>
-  </div>
+  <%= render partial: 'current_group' %>
 </div>
 
 <div class="">
@@ -30,7 +12,7 @@
 
     <%= f.button :submit, "Next Turn" %>
   <% end %>
-  
+
 </div><%= render partial: 'next_question' %></div>
 
 <div id="roster"><%= render partial: 'roster' %></div>
