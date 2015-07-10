@@ -1,8 +1,12 @@
-<div class="mdl-cell mdl-cell--12-col">
-  <h1>Editing Game</h1>
+<div class="mdl-cell mdl-cell--4-col"></div>
+<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+  <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text">Editing Game</h1>
+  </div>
+  
+  <%= render 'form' %>
 </div>
-
-<%= render 'form' %>
+<div class="mdl-cell mdl-cell--4-col"></div>
 
 <%= link_to 'Show', @game, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>
 <%= link_to 'New Game Scenario', new_game_path, html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %>
