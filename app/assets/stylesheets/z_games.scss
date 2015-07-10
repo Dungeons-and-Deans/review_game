@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .available-games td:nth-child(2),
-.available-games td:nth-child(3) {
+.available-games td:nth-child(3),
+.available-games th:nth-child(2),
+.available-games th:nth-child(3) {
   text-align: center;
 }
