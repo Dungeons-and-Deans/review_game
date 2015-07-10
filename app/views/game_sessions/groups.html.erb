@@ -3,16 +3,20 @@
 </div>
 
 
-<%= simple_form_for @game_session, url: "assign_groups", html: { class: "mdl-cell mdl-cell--12-col" } do |f| %>
+<%= simple_form_for @game_session, url: "assign_groups", html: { class: "mdl-cell mdl-cell--8-col" } do |f| %>
   <%= f.error_notification %>
   <%= render partial: 'new_group_form', locals: {f: f} %>
   <%= f.button :submit, "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
 <% end %>
 
-<div class="mdl-card mdl-shadow--4dp">
-<ul class="groups-students">
-  <% @students.each do |student| %>
-    <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
-  <% end %>
-</ul>
+<div class="mdl-cell mdl-cell--4-col"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-card mdl-shadow--4dp class-list">
+  <div class="mdl-card__supporting-text">
+    <ul class="groups-students">
+      <% @students.each do |student| %>
+        <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
