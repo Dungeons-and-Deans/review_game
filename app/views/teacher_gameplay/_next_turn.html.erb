@@ -1,4 +1,6 @@
-<%= simple_form_for @game_session, url: next_group_path(@game_session), remote: true  do |f| %>
-  <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
-  <%= f.button :submit, "Next Turn", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" %>
-<% end %>
+<div class="mdl-card mdl-shadow--4dp">
+  <%= simple_form_for @game_session, url: next_group_path(@game_session), remote: true  do |f| %>
+    <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
+    <%= f.button :submit, "Next Turn", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" %>
+  <% end %>
+</div>

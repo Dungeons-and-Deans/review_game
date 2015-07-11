@@ -1,13 +1,15 @@
-<div>
-  <h3>Scores</h3>
-</div>
-<div>
-  <% @game_session.groups.each do |group| %>
-    <div>
-      <%= group.name %>:
-      <span id="update_score<%= group.id %>">
-        <%= link_to group.score, edit_score_path(@game_session, group), remote: true %>
-      </span>
-    </div>
-  <% end %>
+<div class="mdl-card mdl-shadow--4dp">
+  <div class="mdl-card__title">
+    <h3>Scores</h3>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <% @game_session.groups.each do |group| %>
+      <div>
+        <%= group.name %>:
+        <span id="update_score<%= group.id %>">
+          <%= link_to group.score, edit_score_path(@game_session, group), remote: true %>
+        </span>
+      </div>
+    <% end %>
+  </div>
 </div>
