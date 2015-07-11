@@ -1,22 +1,24 @@
-<button type="button" class="choose-winner mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+<button type="button" class="choose-winner mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
   Choose Winner
 </button>
 
-<div class="mdl-card mdl-shadow--4dp" id="myModal">
-  <div class="mdl-card__supporting-text">
-    <%= form_for @game_session, url: end_game_path(@game_session) do |f| %>
+<div class="mdl-shadow--4dp" id="myModal">
 
-    <div class="btn-group btn-group-lg" data-toggle="buttons">
-      <% @game_session.groups.each do |group| %>
-        <label class="btn btn-primary">
-          <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
-        </label>
-      <% end %>
-    </div>
+  <h3>Choose Winner</h3>
+  
+  <%= form_for @game_session, url: end_game_path(@game_session) do |f| %>
 
-    <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  <div>
+    <% @game_session.groups.each do |group| %>
+      <label class="btn btn-primary">
+        <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
+      </label>
     <% end %>
-
-    <button type="button" class="choose-winner-close mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
   </div>
+
+  <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  <% end %>
+
+  <button type="button" class="choose-winner-close mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-dismiss="modal">Close</button>
+
 </div>

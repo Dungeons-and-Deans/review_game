@@ -47,6 +47,18 @@ app.teacherGameplay = {
       
       $('#suppliesModal').removeClass('active');
     })
+  },
+  
+  chooseWinner: function () {
+    $('button.choose-winner').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
+  },
+  
+  closeWinner: function () {
+    $('button.choose-winner-close').on('click', function () {
+      $('#myModal').toggleClass('active');
+    });
   }
   
 };
