@@ -35,6 +35,7 @@ app.teacherGameplay = {
   addSupplies: function () {
     $('#addSupplies').on('click', function (e) {
       e.stopPropagation();
+
       
       $('#suppliesModal').addClass('active');
     })
