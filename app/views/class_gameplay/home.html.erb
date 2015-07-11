@@ -1,7 +1,7 @@
 <%= render partial: 'scores' %>
-<p id='turn-group'>
+<div id='turn-group'>
   It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
-</p>
+</div>
 
 <img class="map" src="<%= @map.file_path %>">
 

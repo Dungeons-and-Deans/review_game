@@ -58,6 +58,10 @@ channel.bind('coordinates', function (icon) {
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
 });
 
+channel.bind('turn_display', function (groupName) {
+  $('#turn-group').text("It is curently " + groupName + "'s turn");
+});
+
 channelStudentQuestion.bind('ask_question', function (questionText) {
   $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');

@@ -12,9 +12,9 @@
 
     <p>Name: <%= @group.name %></p>
     <p>Score: <%= @group.score %> points</p>
-    <p id='turn-group'>
+    <div id='turn-group'>
       It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
-    </p>
+    </div>
 
     <ul class="list-unstyled"><h5>Supplies</h5>
       <% @group.supplies.each do |supply|%>

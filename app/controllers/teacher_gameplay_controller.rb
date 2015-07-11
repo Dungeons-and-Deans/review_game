@@ -54,6 +54,8 @@ class TeacherGameplayController < ApplicationController
     else
       render :home, notice: "Try Again"
     end
+    turn_group_name = Group.find(@game_session.turn_group_id).name
+    WebsocketRails[:"group_listen#{@game_session.id}"].trigger 'turn_display', turn_group_name
   end
 
   def active
