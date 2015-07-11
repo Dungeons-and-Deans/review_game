@@ -3,14 +3,16 @@
 <div class="current-group" id="<%= @current_group.id %>">
   <h4><%= @current_group.name if @current_group %></h4>
 </div>
+
 <div class="supplies">
   <h5>Supplies</h5>
-    <ul>
-      <% if @current_group %>
-        <% @current_group.supplies.each do |s| %>
+  <ul>
+    <% if @current_group %>
+      <% @current_group.supplies.each do |s| %>
         <li><%= s.amount %> <%= s.name %></li>
-        <% end %>
+      <% end %>
         <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
-    </ul>
-  </div>
-<% end %>
+    <% end %>
+  </ul>
+</div>
+
