@@ -4,7 +4,9 @@
 app.categories = {
   
   addQuestions: function () {
-    $('#show-question-form').on('click', function () {
+    $('#show-question-form').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       
       console.log('hi');
       $('#form-container').toggleClass('active');
@@ -14,12 +16,13 @@ app.categories = {
   cancelQuestions: function () {
     $('#exitAddQuestions').on('click', function (e) {
       e.preventDefault();
+      e.stopPropagation();
       
       $('#form-container textarea.text').val('');
       $('#form-container input.numeric.integer').val('');
       
       $('#form-container').toggleClass('active');
     })
-  }
+  },
 
 };
