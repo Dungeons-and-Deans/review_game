@@ -1,16 +1,10 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
 
-<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
-  <div class="mdl-card__title">
-    <h1 class="mdl-card__title-text">Group Login</h1>
-  </div>
-  <div class="mdl-card__supporting-text">
-  Login to play
-  <%= simple_form_for :password, url: student_gameplay_login_path, html: { class: 'login-group' } do |f| %>
-    <%= f.input :password, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-  <% end %>
-  </div>
-</div>
+<%= simple_form_for :password, url: student_gameplay_login_path, html: { class: 'mdl-cell mdl-cell--4-col' } do |f| %>
+  <h3>Group Login</h3>
+  <h4>Login to play</h4>
+  <%= f.input :password, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.button :submit, "Login", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+<% end %>
 
 <div class="mdl-cell mdl-cell--4-col"></div>
