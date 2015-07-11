@@ -9,6 +9,11 @@ h5, h6 {
   padding: 2rem;
 }
 
+.icon {
+  position: absolute;
+  z-index: 100;
+}
+
 .notice,
 .alert {
   text-align: center;
