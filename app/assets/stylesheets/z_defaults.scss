@@ -41,9 +41,7 @@ body > .mdl-grid > a {
 }
 
 #map-container {
-  position: relative;
-    width: 25%;
-    padding-bottom: 25%;
-    float: left;
-    height: 0;
+  position: absolute;
+  left: 0;
+  top: 10rem;
 }

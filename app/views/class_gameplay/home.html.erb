@@ -1,10 +1,12 @@
-
-<%= render partial: 'scores' %>
-<div id='turn-group'>
-  It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
+<div class="mdl-cell mdl-cell--4-col"></div>
+<div class="mdl-cell mdl-cell--4-col">
+  <%= render partial: 'scores' %>
+  <div id='turn-group'>
+    It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
+  </div>
 </div>
-
-<div id="map-container">
+<div class="mdl-cell mdl-cell--4-col"></div>
+<div id='map-container'>
   <img class="map" src="<%= @map.file_path %>">
 </div>
 
