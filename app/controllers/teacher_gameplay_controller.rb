@@ -40,6 +40,7 @@ class TeacherGameplayController < ApplicationController
         format.html { render :home, notice: 'Score failed to be updated.' }
       end
     end
+    WebsocketRails[:"group_listen#{@group.game_session_id}"].trigger 'update_score', @group
   end
 
   def next_group

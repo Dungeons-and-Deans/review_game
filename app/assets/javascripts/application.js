@@ -62,6 +62,10 @@ channel.bind('turn_display', function (groupName) {
   $('#turn-group').text("It is curently " + groupName + "'s turn");
 });
 
+channel.bind('update_score', function (group) {
+  $('#score-group' + group.id).text(group.name + " " + group.score);
+});
+
 channelStudentQuestion.bind('ask_question', function (questionText) {
   $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');
