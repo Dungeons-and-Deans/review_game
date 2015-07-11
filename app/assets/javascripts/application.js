@@ -27,8 +27,8 @@
 //= require z_students
 //= require z_teacher_gameplay
 //
-//= require z_init
-var questionCounter = 1;
+//= require zz_init
+
 var dispatcher = new WebSocketRails(window.location.host + "/websocket");
 var pathArray = window.location.pathname.split( '/' );
 var channelNumber = pathArray[2];
@@ -87,11 +87,3 @@ channelStudentQuestion.bind('ask_competition_question', function (questionText) 
   }, 5000);
 
 });
-
-function copySection() {
-  var question = $("#new-question-form").clone().html();
-  question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
-    .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
-  $("#question-list").append(question);
-  questionCounter++;
-}

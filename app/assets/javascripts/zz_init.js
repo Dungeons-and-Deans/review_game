@@ -22,7 +22,7 @@ $(function () {
   if (/categories/.test(pathName)) {
     app.categories.addQuestions();
     app.categories.cancelQuestions();
-    app.categories.submitQuestions();
+    app.categories.addQuestion();
   }
 
   if (/teacher_gameplay/.test(pathName)) {
