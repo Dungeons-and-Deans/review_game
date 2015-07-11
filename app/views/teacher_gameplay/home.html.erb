@@ -1,29 +1,30 @@
-<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
   <div id="scores">
     <%= render partial: 'scores' %>
   </div>
 </div>
 
-<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
   <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add</button>
 </div>
 
-<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
-  <div id="next-turn">
-    <%= render partial: 'next_turn' %>
-  </div>
-</div>
-
-<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>
 </div>
 
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+  <div id="next-turn">
+    <%= render partial: 'next_turn' %>
+  </div>
+  <%= render partial: 'winner' %>
+</div>
+
+<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
   <div class="mdl-cell mdl-cell--1-col"></div>
   <div class="mdl-cell mdl-cell--10-col" id="roster">
     <%= render partial: 'roster' %>
@@ -37,4 +38,3 @@
 
 <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
 <%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-<%= render partial: 'winner' %>
