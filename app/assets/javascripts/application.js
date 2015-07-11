@@ -18,12 +18,14 @@
 //
 //= require z_app
 //= require z_categories
-//= require z_games
-//= require z_students
-//= require z_teacher_gameplay
 //= require z_class_gameplay
 //= require z_game_sessions
+//= require z_games
+//= require z_icon_movement
+//= require z_questions
 //= require z_student_gameplay
+//= require z_students
+//= require z_teacher_gameplay
 //
 //= require z_init
 var questionCounter = 1;
