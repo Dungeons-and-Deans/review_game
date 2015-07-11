@@ -34,16 +34,16 @@ app.teacherGameplay = {
   
   addSupplies: function () {
     $('#addSupplies').on('click', function (e) {
+      e.stopPropagation();
       
-      console.log('hi');
       $('#suppliesModal').addClass('active');
     })
   },
   
   assignSupplies: function () {
     $('#assignSupplies').on('click', function (e) {
+      e.stopPropagation();
       
-      console.log('hi');
       $('#suppliesModal').removeClass('active');
     })
   }
