@@ -20,5 +20,6 @@ app.gameSession = {
         }
       }
     });
+
   }
 }

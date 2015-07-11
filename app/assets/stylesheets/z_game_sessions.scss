@@ -10,3 +10,16 @@
 .group-assignment-forms {
   padding: 2rem;
 }
+
+.student-drag-area {
+  position: relative;
+}
+
+.drag-instructions {
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
