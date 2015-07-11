@@ -1,4 +1,6 @@
-<img class="map" src="<%= @map.file_path %>">
+<div id="map-container">
+  <img class="map" src="<%= @map.file_path %>">
+</div>
 
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> <%= player.group_id %> draggables", id="<%= player.id %>"><%= player.student.first_name[0] %></i>

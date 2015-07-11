@@ -30,3 +30,11 @@ body > .mdl-grid > a {
   max-width: 70rem;
   min-width: 70rem;
 }
+
+#map-container {
+  position: relative;
+    width: 25%;
+    padding-bottom: 25%;
+    float: left;
+    height: 0;
+}
