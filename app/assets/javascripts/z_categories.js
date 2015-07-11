@@ -8,7 +8,6 @@ app.categories = {
       e.preventDefault();
       e.stopPropagation();
       
-      console.log('hi');
       $('#form-container').toggleClass('active');
     });
   },
@@ -24,5 +23,22 @@ app.categories = {
       $('#form-container').toggleClass('active');
     })
   },
+  
+  addQuestion: function () {
+    var questionCounter = 1;
+    
+    $('#copy_link').on('click', function (e) {
+      e.stopPropagation();
+      
+      var question = $("#new-question-form").clone().html();
+        question = question
+          .replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
+          .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
+        $("#question-list").append(question);
+      
+      questionCounter++;
+    })
+    
+  }
 
 };

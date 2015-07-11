@@ -2,7 +2,7 @@
   <%= simple_form_for @category, remote: true do |f| %>
     <%= f.error_notification %>
     <div id="question-list">
-        <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored", onclick: "copySection()" %>
+        <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="exitAddQuestions">X</button>
       <div id="new-question-form">
         <%= render partial: '/questions/form', locals: { f: f } %>

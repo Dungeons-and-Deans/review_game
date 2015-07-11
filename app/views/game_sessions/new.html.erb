@@ -1,13 +1,12 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
-<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
-  <div class="mdl-card__title">
-    <h1 class="mdl-card__title-text">New Game Session</h1>
-  </div>
-  <%= simple_form_for @game_session, url: 'create', html: { class: "mdl-card__supporting-text" } do |f| %>
+
+  <%= simple_form_for @game_session, url: 'create', html: { class: "mdl-cell mdl-cell--4-col mdl-shadow--4dp" } do |f| %>
+    <h3>New Game Session</h1>
+    
     <%= f.error_notification %>
 
     <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.input :min_difficulty %>
+    <%= f.input :min_difficulty, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
     <%= f.association :icon, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
     <%= f.association :game, label_method: :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
@@ -25,5 +24,5 @@
 
     <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--8-col" %>
   <% end %>
-</div>
+
 <div class="mdl-cell mdl-cell--4-col"></div>

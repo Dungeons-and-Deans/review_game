@@ -28,7 +28,6 @@ app.teacherGameplay = {
       }
 
       dispatcher.trigger('movements.ask_competition_question', info);
-      console.log("hello")
     });
   },
   
@@ -58,6 +57,12 @@ app.teacherGameplay = {
   closeWinner: function () {
     $('button.choose-winner-close').on('click', function () {
       $('#myModal').toggleClass('active');
+    });
+  },
+  
+  answerButtons: function () {
+    $("#send-question").on('click', function () {
+      $("#answerButtonsModal").toggleClass('active');
     });
   }
   
