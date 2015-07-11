@@ -1,6 +1,8 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
 <div class="mdl-cell mdl-cell--4-col">
-  <%= render partial: 'scores' %>
+  <ul>
+    <%= render partial: 'scores' %>
+  </ul>
   <div id='turn-group'>
     It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
   </div>

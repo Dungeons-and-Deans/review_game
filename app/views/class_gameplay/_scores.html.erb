@@ -1,11 +1,9 @@
-<div>
+
   <% @game_session.groups.each do |group| %>
-    <span id='score-group<%= group.id %>'>
-      <%= group.name %>
-      <%= group.score %>
-    </span>
-    <% unless group == @game_session.groups.last %>
-      <i class="fa fa-star"></i>
-    <% end %>
+    <li>
+      <div class="mdl-badge" data-badge="" id='score-group<%= group.id %>'>
+        <%= group.name %> -
+        <%= group.score %>
+      </div>
+    </li>
   <% end %>
-</div>
