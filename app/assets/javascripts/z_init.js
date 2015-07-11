@@ -32,6 +32,7 @@ $(function () {
     app.teacherGameplay.assignSupplies();
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
+    app.teacherGameplay.answerButtons();
     
   }
 
@@ -41,15 +42,7 @@ $(function () {
     $('.nav').html($('#nav-links-student').html());
   }
 
-  $("#answer-buttons").hide();
-  $("#send-question").on('click', function () {
-    $("#answer-buttons").show();
-  });
 
-  
-
-  
-  
 
 
 });
