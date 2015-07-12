@@ -12,9 +12,19 @@ class SuppliesController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
+    respond_to do |format|
+      if @supply.update(supply_params)
+        format.js
+      else
+        format.html { render :groups, notice: 'Question failed to be updated.' }
+      end
+    end
   end
 
   def destroy

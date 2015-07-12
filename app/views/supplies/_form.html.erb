@@ -1,12 +1,7 @@
-<div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
-  <div class="mdl-card__supporting-text">
-    <h2 id="question-text">
-      <%= simple_form_for supply = Supply.new, url: supply_path(@game_session), remote: true do |f| %>
-        <%= f.input :amount, wrapper_html: { class: "mdl-textfield mdl-js-textfield" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-        <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-        <%= f.hidden_field :group_id, value: id %>
-        <%= f.button :submit, "Assign", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "assignSupplies" %>
-      <% end %>
-    </h2>
-  </div>
-</div>
+
+<%= simple_form_for supply, url: (supply.new_record? ? supply_path(@game_session) : update_supply_path(@game_session, supply)), remote: true do |f| %>
+  <%= f.input :amount, wrapper_html: { class: "mdl-textfield mdl-js-textfield" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.hidden_field :group_id, value: id %>
+  <%= f.button :submit, "Assign", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "assignSupplies" %>
+<% end %>

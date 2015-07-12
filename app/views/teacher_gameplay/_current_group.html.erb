@@ -9,9 +9,17 @@
   <ul>
     <% if @current_group %>
       <% @current_group.supplies.each do |s| %>
-        <li><%= s.amount %> <%= s.name %></li>
+        <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
       <% end %>
-        <li><%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %></li>
+        <li>
+          <div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
+            <div class="mdl-card__supporting-text">
+              <h2 id="question-text">
+                <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
+              </h2>
+            </div>
+          </div>
+        </li>
     <% end %>
   </ul>
 </div>
