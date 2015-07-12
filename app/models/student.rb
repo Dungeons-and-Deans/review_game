@@ -18,9 +18,9 @@ class Student < ActiveRecord::Base
     end
   end
 
-  def active?
-    group_student = GroupAssignment.find_by_student_id(self.id)
-    if group_student.active
+  def active?(group)
+    group_student = GroupAssignment.where(student_id: self.id, group_id: group).last
+    if group_student.active == true
       '<i class="fa fa-star"></i>'
     else
       '<i class="fa fa-frown-o"></i>'

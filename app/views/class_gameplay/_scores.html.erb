@@ -1,9 +1,13 @@
-
+<div class='score-board mdl-shadow--4dp'>
+  <h4>Score</h4>
   <% @game_session.groups.each do |group| %>
     <li>
-      <div class="mdl-badge" data-badge="" id='score-group<%= group.id %>'>
-        <%= group.name %> -
-        <%= group.score %>
-      </div>
+        <div id='score-group<%= group.id %>'>
+          <h6>
+            <%= group.name %> -
+            <%= group.score %>
+          </h6>
+        </div>
     </li>
   <% end %>
+</div>

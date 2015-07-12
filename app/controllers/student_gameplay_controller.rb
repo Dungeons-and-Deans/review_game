@@ -5,6 +5,7 @@ class StudentGameplayController < ApplicationController
       group = Group.find_by_password(params[:password]["password"])
       if group
         redirect_to student_gameplay_path(group.game_session, group), notice: "Logged in."
+        session[:group_id] = group.id
       else
         flash.now[:notice] = "Incorrect Password"
       end
@@ -21,6 +22,7 @@ class StudentGameplayController < ApplicationController
   end
 
   def logout
+    session[:group_id] = nil
     redirect_to student_gameplay_login_path, notice: "Successfully logged out."
   end
 
