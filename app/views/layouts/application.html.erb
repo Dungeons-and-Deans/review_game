@@ -2,36 +2,38 @@
 <html>
 
   <head>
-    
+
     <title>ReviewGame</title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+
   </head>
 
   <body>
-    
-      <div class="nav">
+
+    <div class="nav">
+      <% if session[:group_id] %>
+        <%= link_to "Student Logout", student_gameplay_logout_path %>
+      <% else %>
         <%= link_to 'Home', root_path %>
         <%= link_to 'Roster', students_path %>
         <%= link_to 'Questions', categories_path %>
         <% if teacher_signed_in? %>
           <%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %>
         <% end %>
-          
-          <%= link_to "Student Logout", student_gameplay_logout_path %>
-      </div>
-      
-  
+      <% end %>
+    </div>
+
+
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      
+
       <div class="mdl-grid">
         <%= yield %>
       </div>
-    
+
   </body>
 </html>
