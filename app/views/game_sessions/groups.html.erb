@@ -10,12 +10,5 @@
   </ul>
 </div>
 
-<%= simple_form_for @game_session, url: "assign_groups", html: { class: "mdl-cell mdl-cell--10-col" } do |f| %>
-  <%= f.error_notification %>
-  <%= render partial: 'new_group_form', locals: {f: f} %>
-  <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--5-col"></div>
-  <%= f.button :submit, "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--2-col" %>
-  <div class="mdl-cell mdl-cell--5-col"></div>
-  </div>
-<% end %>
+
+<div id="new-group-form-container"><%= render partial: 'new_group_form' %></div>

@@ -34,7 +34,9 @@ class GameSessionsController < ApplicationController
   def add_player
     @game_session = Group.find(params[:group_id]).game_session
     GroupAssignment.assign(params[:group_id], params[:student_id], @game_session.id)
-    redirect_to game_session_groups_path(@game_session)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy

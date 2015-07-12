@@ -16,7 +16,13 @@ app.gameSession = {
         var groupId = $(this).closest('ul').attr('id');
 
         if (groupId) {
-          window.location.pathname = "game_sessions/add_player/" + groupId + "/" + id;
+          $.ajax({
+            url: "/game_sessions/add_player/" + groupId + "/" + id,
+            type: "POST",
+            success: function(data) {
+              $("#new-group-form-container").html(data)
+            }
+          });
         }
       }
     });
