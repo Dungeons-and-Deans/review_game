@@ -1,22 +1,32 @@
-<div class="mdl-grid">
-<%= f.simple_fields_for :groups do |ff| %>
-  <div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp group-assignment-forms" id="group<%= "#{ff.object.id}" %>">
+<%= simple_form_for @game_session, url: "assign_groups", html: { class: "mdl-cell mdl-cell--10-col" } do |f| %>
+  <%= f.error_notification %>
 
-      <h3>Group</h3>
+  <div class="mdl-grid">
+  <%= f.simple_fields_for :groups do |ff| %>
+    <div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp group-assignment-forms" id="group<%= "#{ff.object.id}" %>">
+
+        <h3>Group</h3>
 
 
-      Password: <%= ff.object.password %>
-      <%= ff.input :name, label: "Group Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-      <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
-    
-      <h4>Students</h4>
-      
-      <ul class="groups-students student-drag-area" id="<%= "#{ff.object.id}" %>">
-        <% ff.object.students.each do |student| %>
-          <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
-        <% end %>
-      </ul>
+        Password: <%= ff.object.password %>
+        <%= ff.input :name, label: "Group Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+        <%= ff.input :_destroy, as: :boolean, label: "Remove Group" %>
 
+        <h4>Students</h4>
+
+        <ul class="groups-students student-drag-area" id="<%= "#{ff.object.id}" %>">
+          <% ff.object.students.each do |student| %>
+            <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+          <% end %>
+        </ul>
+
+    </div>
+  <% end %>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--5-col"></div>
+    <%= f.button :submit, "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--2-col" %>
+    <div class="mdl-cell mdl-cell--5-col"></div>
   </div>
 <% end %>
-</div>
