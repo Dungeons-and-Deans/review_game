@@ -14,7 +14,7 @@ class GroupAssignment < ActiveRecord::Base
     end
     num_of_members = Group.find(group_id).students.count + 0
     x = ((possible_groups.index(group_id.to_i)) * 200) + (num_of_members * 30)
-    GroupAssignment.create(group_id: group_id, student_id: student_id, board_x: x, board_y: 1200)
+    GroupAssignment.create(group_id: group_id, student_id: student_id, board_x: x, board_y: 1200, active: true)
   end
 
 end
