@@ -21,8 +21,6 @@ Rails.application.routes.draw do
 
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home', as: :teacher_gameplay
   get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups', as: :groups
-  get 'teacher_gameplay/:id/supply/:group_id' => 'teacher_gameplay#supply', as: :supply
-  post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply', as: :assign_supply
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score', as: :update_score
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
@@ -36,6 +34,13 @@ Rails.application.routes.draw do
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups
   post 'game_sessions/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
   patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
+
+
+
+  post 'supplies/:id/create' => 'supplies#create', as: :supply
+  get 'supplies/:id/edit/:supply_id' => 'supplies#edit', as: :edit_supply
+  patch 'supplies/:id/update/:supply_id' => 'supplies#update', as: :update_supply
+  delete 'supplies/:id/destroy/:supply_id' => 'supplies#destroy', as: :destroy_supply
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

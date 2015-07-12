@@ -18,7 +18,7 @@ $(function () {
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
   }
-  
+
   if (/categories/.test(pathName)) {
     app.categories.addQuestions();
     app.categories.cancelQuestions();
@@ -33,7 +33,7 @@ $(function () {
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.answerButtons();
-    
+
   }
 
   if (/student_gameplay/.test(pathName)) {
@@ -41,8 +41,6 @@ $(function () {
 
     $('.nav').html($('#nav-links-student').html());
   }
-
-
 
 
 });

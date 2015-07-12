@@ -11,8 +11,7 @@
       <% @current_group.supplies.each do |s| %>
         <li><%= s.amount %> <%= s.name %></li>
       <% end %>
-        <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
+        <li><%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %></li>
     <% end %>
   </ul>
 </div>
-

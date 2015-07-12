@@ -6,18 +6,6 @@ class TeacherGameplayController < ApplicationController
     @question = @game_session.random_question
   end
 
-  def supply
-  end
-
-  def assign_supply
-    @supply = Supply.new(supply_params)
-    @supply.save
-    @current_group = @game_session.current_group
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def groups
     @groups = @game_session.groups
     @supply = Supply.new
@@ -50,7 +38,6 @@ class TeacherGameplayController < ApplicationController
       respond_to do |format|
         format.js
       end
-      # redirect_to "/teacher_gameplay/#{@game_session.id}/home"
     else
       render :home, notice: "Try Again"
     end
