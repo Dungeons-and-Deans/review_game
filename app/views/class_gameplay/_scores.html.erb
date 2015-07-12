@@ -2,8 +2,9 @@
   <h4>Score</h4>
   <% @game_session.groups.each do |group| %>
     <li>
-        <div id='score-group<%= group.id %>'>
+
           <h6>
+            <div id='score-group<%= group.id %>'>
             <%= group.name %> -
             <%= group.score %>
           </h6>

@@ -17,9 +17,7 @@
             <% group.students.order(:last_name).each do |student| %>
               <li>
                 <%= student.full_name %>
-
                 <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
-
               </li>
             <% end %>
           </ul>

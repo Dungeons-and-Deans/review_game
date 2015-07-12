@@ -8,9 +8,9 @@
 
 <nav>
   <a href="#" id="nav-close">X</a>
-  
+
   <ul class="list-unstyled main-content">
-    
+
     <h4>Group: <%= params[:group_id] %></h4>
     <div>
       <span class="stat-title">Name:</span> <%= @group.name %>
@@ -21,24 +21,24 @@
     <div id='turn-group'>
       It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
     </div>
-    
+
     <h4>Supplies</h4>
     <ul class="list-unstyled">
       <% @group.supplies.each do |supply|%>
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>
     </ul>
-    
+
     <h4>Group Members</h4>
     <ul class="list-unstyled">
       <% @group.students.order(:last_name).each do |student| %>
         <li>
           <%= student.full_name %>
-          <%= student.active?.html_safe %>
+          <%= student.active?(@group.id).html_safe %>
         </li>
       <% end %>
     </ul>
-    
+
   </ul>
 </nav>
 
