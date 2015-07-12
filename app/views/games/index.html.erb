@@ -42,7 +42,7 @@
       <th class="mdl-data-table__cell--non-numeric">Game</th>
       <th>Last Active Date</th>
       <th class="mdl-data-table__cell--non-numeric">Winner</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -56,6 +56,7 @@
           <td><%= game_session.updated_at.strftime("%b %e, %Y") %></td>
           <td class="mdl-data-table__cell--non-numeric"><%= Group.find(game_session.winning_group_id).name if game_session.winning_group_id %></td>
           <td><%= link_to 'Play', teacher_gameplay_path(game_session) %></td>
+          <td><%= link_to 'Groups', game_session_groups_path(game_session) %></td>
           <td><%= link_to 'Remove', delete_game_session_path(game_session), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
