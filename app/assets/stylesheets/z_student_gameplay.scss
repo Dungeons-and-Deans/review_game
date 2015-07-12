@@ -4,27 +4,19 @@
 
 // app/views/student_gameplay.html.erb
 a.nav-expander {
-  background: none repeat scroll 0 0 #000000;
+  background: none repeat scroll 0 0 #617D8A;
   color: #FFFFFF;
   display: block;
   font-size: 1em;
-  height: 5rem;
-  margin-right: 0;
-  padding: 1em 1.6em 2em;
+  padding: 1rem;
   position: absolute;
   right: 0;
   text-decoration: none;
   text-transform: uppercase;
   top: 0;
   transition: right 0.3s ease-in-out 0s;
-  width: 130px;
+  width: 6rem;
   z-index: 12;
-
-  transition: right 0.3s ease-in-out 0s;
-  -webkit-transition: right 0.3s ease-in-out 0s;
-  -moz-transition: right 0.3s ease-in-out 0s;
-  -o-transition: right 0.3s ease-in-out 0s;
-
 }
 
 a.nav-expander:hover {
@@ -36,25 +28,22 @@ a.nav-expander.fixed {
 }
 
 .nav-expanded a.nav-expander.fixed {
-    right: 20em;
+  right: 16rem;
+  width: 10rem;
 }
 
 nav {
-  background: #2d2f33;
+  background: #617D8A;
   display: block;
   height: 100%;
   overflow: auto;
   position: fixed;
-  right: -20em;
-  font-size: 15px;
+  right: -20rem;
+  font-size: 1em;
   top: 0;
-  width: 20em;
+  width: 20rem;
   z-index: 2000;
-
   transition: right 0.3s ease-in-out 0s;
-  -webkit-transition: right 0.3s ease-in-out 0s;
-  -moz-transition: right 0.3s ease-in-out 0s;
-  -o-transition: right 0.3s ease-in-out 0s;
 
 }
 .nav-expanded nav {
@@ -63,21 +52,27 @@ nav {
 
 body.nav-expanded {
   margin-left: 0em;
-  transition: right 0.4s ease-in-out 0s;
-  -webkit-transition: right 0.4s ease-in-out 0s;
-  -moz-transition: right 0.4s ease-in-out 0s;
-  -o-transition: right 0.4s ease-in-out 0s;
+  transition: right 0.3s ease-in-out 0s;
 }
 
 #nav-close {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  padding-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 1rem;
 }
 
-.main-menu {
+.main-content {
+  margin-top: 4rem;
   color: white;
+  padding: 0 2rem;
+}
+
+.stat-title {
+  font-size: 1.6em;
 }
 
 
