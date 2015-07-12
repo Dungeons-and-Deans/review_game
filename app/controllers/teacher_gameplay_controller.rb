@@ -4,7 +4,6 @@ class TeacherGameplayController < ApplicationController
   def home
     @current_group = @game_session.current_group
     @question = @game_session.random_question
-    @supply = Supply.new
   end
 
   def supply
