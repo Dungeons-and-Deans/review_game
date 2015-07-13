@@ -13,6 +13,12 @@ app.classGameplay = {
           x: $('#' + id).offset().left
         }
 
+        var glow = $('#' + id);
+        glow.addClass('glow');
+        window.setTimeout(function () {
+          glow.removeClass('glow');
+        }, 1000);
+
         dispatcher.trigger('movements.move_icon', info);
       }
     });
