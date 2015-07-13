@@ -33,6 +33,7 @@ $(function () {
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.answerButtons();
+    app.notes.addNotes();
 
   }
 

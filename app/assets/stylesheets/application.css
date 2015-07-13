@@ -22,6 +22,7 @@
  *= require z_game_sessions
  *= require z_gameplay_communication
  *= require z_games
+ *= require z_notes
  *= require z_questions
  *= require z_student_gameplay
  *= require z_students

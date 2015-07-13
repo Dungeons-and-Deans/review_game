@@ -5,12 +5,8 @@
       <li><%= n.content %></li>
     <% end %>
     <li>
-      <div class="mdl-card mdl-shadow--4dp" id="notesModal">
-        <div class="mdl-card__supporting-text">
-          <h2>
-            <%= render partial: '/notes/form', locals: { id: @current_group.id, note: Note.new } %>
-          </h2>
-        </div>
+      <div>
+        <%= render partial: '/notes/form', locals: { id: @current_group.id, note: Note.new } %>
       </div>
     </li>
   </ul>
