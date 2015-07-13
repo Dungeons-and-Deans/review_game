@@ -8,7 +8,7 @@
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>
     </ol>
-    <h4>Notes</h4>
+    <%= render partial: '/notes/index', locals: { group: group } %>
     <ol>
       <% group.notes.each do |note| %>
         <li><%= note.content %></li>
