@@ -15,7 +15,25 @@ top.card {
 }
 
 .mid.card {
-  padding: 2rem 5rem;
+  padding: 4rem 6rem;
+}
+
+.mid.card div {
+  position: relative;
+}
+
+button#addNotes {
+  position: absolute;
+  right: 0;
+}
+
+#group-choices {
+  margin: 2rem 0;
+}
+
+button#send-competition-question {
+  position: absolute;
+  right: 0;
 }
 
 #myModal {
