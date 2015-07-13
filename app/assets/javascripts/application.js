@@ -26,6 +26,7 @@
 //= require z_questions
 //= require z_student_gameplay
 //= require z_students
+//= require z_supplies
 //= require z_teacher_gameplay
 //
 //= require zz_init
