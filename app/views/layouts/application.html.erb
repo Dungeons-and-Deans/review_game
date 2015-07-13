@@ -13,27 +13,47 @@
   </head>
 
   <body>
-
-    <div class="nav">
-      <% if session[:group_id] %>
-        <%= link_to "Student Logout", student_gameplay_logout_path %>
-      <% else %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'Roster', students_path %>
-        <%= link_to 'Questions', categories_path %>
-        <% if teacher_signed_in? %>
-          <%= link_to('Logout', destroy_teacher_session_path, :method => :delete) %>
-        <% end %>
-      <% end %>
-    </div>
-
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-      <div class="mdl-grid">
-        <%= yield %>
+    
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">ReviewGame</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <% if session[:group_id] %>
+              <%= link_to "Student Logout", student_gameplay_logout_path, :class => "mdl-navigation__link" %>
+            <% else %>
+              <% if teacher_signed_in? %>
+                <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, :class => "mdl-navigation__link") %>
+              <% end %>
+            <% end %>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">ReviewGame</span>
+        <nav class="mdl-navigation">
+          <%= link_to 'Home', root_path, :class => "mdl-navigation__link" %>
+          <%= link_to 'Roster', students_path, :class => "mdl-navigation__link" %>
+          <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link" %>
+        </nav>
       </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          
+          <div class="notice"><%= notice %></div>
+          <div class="alert"><%= alert %></div>
+    
+          <div class="mdl-grid">
+            <%= yield %>
+          </div>
+          
+        </div>
+      </main>
+    </div>
 
   </body>
 </html>
