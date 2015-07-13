@@ -4,7 +4,7 @@
 
 <div class="mdl-cell mdl-cell--12-col mdl-grid game-card-container">
 <% @games.each do |game| %>
-  <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp game-card">
+  <div class="mdl-cell mdl-cell--3-col mdl-shadow--4dp game-card">
     <div class="remove-game"><%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <span><%= game.name %></span>
     <div class="game-container"><a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a></div>
