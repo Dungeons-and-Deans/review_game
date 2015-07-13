@@ -1,6 +1,6 @@
 <% @groups.each do |group| %>
-  <div class="group">
-    <div><%= group.name %></div>
+  <div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+    <h3><%= group.name %></h3>
     <div><%= group.score %> points</div>
     <h4>Supplies</h4>
     <ol>
@@ -9,12 +9,8 @@
       <% end %>
     </ol>
     <%= render partial: '/notes/index', locals: { group: group } %>
-    <ol>
-      <% group.notes.each do |note| %>
-        <li><%= note.content %></li>
-      <% end %>
-    </ol>
   </div>
 <% end %>
+
 
 <%= link_to 'Main Game', teacher_gameplay_path(@game_session) %>
