@@ -97,7 +97,7 @@ class TeacherGameplayController < ApplicationController
 
   private def active_list
     group_list = []
-    group = Group.find(session[:group_id])
+    group = Group.find(@assignment.group_id)
     group.students.order(:last_name).each do |student|
       group_list << "#{student.full_name} #{student.active?(group.id)}"
     end
