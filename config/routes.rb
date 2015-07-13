@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   get 'pages/home'
+  get 'faq' => 'pages#faq'
+  get 'help' => 'pages#help'
+
   root 'pages#home'
+
 
   resources :notes
   devise_for :teachers
