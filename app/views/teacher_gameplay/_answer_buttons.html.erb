@@ -1,11 +1,15 @@
 <div id="answerButtonsModal" class="mdl-shadow--4dp">
-  <%= simple_form_for @question, url: next_question_path(@game_session, @question), remote: true do |f| %>
-    <%= f.hidden_field :right, value: f.object.right + 1%>
-    <%= f.button :submit, "Correct", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "button-correct" %>
-  <% end %>
-  
-  <%= simple_form_for @question, url: next_question_path(@game_session, @question), remote: true do |f| %>
-    <%= f.hidden_field :wrong, value: f.object.wrong + 1 %>
-    <%= f.button :submit, "Incorrect", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "button-incorrect" %>
-  <% end %>
+  <div id="correct">
+    <%= simple_form_for @question, url: next_question_path(@game_session, @question), remote: true do |f| %>
+      <%= f.hidden_field :right, value: f.object.right + 1%>
+      <%= f.button :submit, "Correct", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "button-correct" %>
+    <% end %>
+  </div>
+
+  <div id="incorrect">
+    <%= simple_form_for @question, url: next_question_path(@game_session, @question), remote: true do |f| %>
+      <%= f.hidden_field :wrong, value: f.object.wrong + 1 %>
+      <%= f.button :submit, "Incorrect", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect", id: "button-incorrect" %>
+    <% end %>
+  </div>
 </div>
