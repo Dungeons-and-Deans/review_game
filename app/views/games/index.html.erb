@@ -6,12 +6,9 @@
 
 <% @games.each do |game| %>
   <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp card game-container">
-    <h6>
-      <%= game.name %>
-      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_game_path(game) %>
-      <%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </h6>
-    <img class="preview" src="<%= game.maps.first.file_path %>">
+    <h6><%= game.name %></h6>
+    <a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a>
+    <div class="remove-game"><%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %></div>
   </div>
 <% end %>
 

@@ -18,5 +18,9 @@
 }
 
 .game-container {
-  overflow: hidden;
+  overflow: scroll;
+}
+
+.remove-game {
+  float: right;
 }

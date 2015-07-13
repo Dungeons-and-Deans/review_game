@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    
+
     <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
       <header class="mdl-layout__header mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
@@ -24,7 +24,7 @@
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <% if session[:group_id] %>
-              <%= link_to "Student Logout", student_gameplay_logout_path, :class => "mdl-navigation__link" %>
+              <%= link_to("Student Logout", student_gameplay_logout_path, :class => "mdl-navigation__link") %>
             <% else %>
               <% if teacher_signed_in? %>
                 <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, :class => "mdl-navigation__link") %>
@@ -45,14 +45,14 @@
       <% end %>
       <main class="mdl-layout__content">
         <div class="page-content">
-          
+
           <div class="notice"><%= notice %></div>
           <div class="alert"><%= alert %></div>
-    
+
           <div class="mdl-grid">
             <%= yield %>
           </div>
-          
+
         </div>
       </main>
     </div>
