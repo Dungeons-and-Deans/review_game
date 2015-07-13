@@ -27,7 +27,7 @@
     </div>
 
     <h4>Supplies</h4>
-    <ul class="list-unstyled">
+    <ul id='supply-list' class="list-unstyled">
       <% @group.supplies.each do |supply|%>
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>

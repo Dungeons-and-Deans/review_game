@@ -88,3 +88,10 @@ channelStudentQuestion.bind('ask_competition_question', function (questionText) 
   }, 5000);
 
 });
+
+channel.bind('turn_display', function (supplies) {
+  $('#supply-list').empty();
+  supplies.map(function (supply) {
+    $('#supply-list"').append('<li>' + supply.amount + ' ' + supply.name + '</li>');
+  }
+});
