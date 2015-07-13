@@ -1,6 +1,1 @@
-<h1>Editing Note</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+$('#notes').html("<%= j(render partial: '/notes/form', locals: { note: @note, id: @note.group.id }) %>");
