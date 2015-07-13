@@ -59,6 +59,12 @@ channel.bind('coordinates', function (icon) {
   var id = icon.id;
 
   $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
+
+  var glow = $('#' + id);
+  glow.addClass('glow');
+  window.setTimeout(function () {
+    glow.removeClass('glow');
+  }, 1000);
 });
 
 channel.bind('turn_display', function (groupName) {
