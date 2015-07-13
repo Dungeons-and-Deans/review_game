@@ -66,6 +66,7 @@ channel.bind('turn_display', function (groupName) {
 
 channel.bind('update_score', function (group) {
   $('#score-group' + group.id).text(group.name + " " + group.score);
+  $('#score-line' + group.id).text(group.score + "points");
 });
 
 channelStudentQuestion.bind('ask_question', function (questionText) {

@@ -13,10 +13,14 @@
 
     <h4>Group: <%= params[:group_id] %></h4>
     <div>
-      <span class="stat-title">Name:</span> <%= @group.name %>
+      <span class="stat-title">Name:</span>
+      <%= @group.name %>
     </div>
     <div>
-      <span class="stat-title">Score:</span> <%= @group.score %> points
+      <span class="stat-title">Score:</span>
+      <div id="score-line<%= params[:group_id] %>">
+        <%= @group.score %> points
+      </div>
     </div>
     <div id='turn-group'>
       It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
