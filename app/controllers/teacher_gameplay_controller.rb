@@ -75,6 +75,10 @@ class TeacherGameplayController < ApplicationController
     end
   end
 
+  def send_message
+
+  end
+
   private def set_game_session
     @game_session = GameSession.find(params[:id])
   end

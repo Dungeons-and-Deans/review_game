@@ -24,6 +24,6 @@
   <% end %>
 </div>
 
-<div id="notes">
+<div id="notes<%= @current_group.id %>">
   <%= render partial: '/notes/index', locals: { group: @current_group } %>
 </div>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   get 'pages/home'
+  get 'faq' => 'pages#faq'
+  get 'help' => 'pages#help'
+
+  root 'pages#home'
+
 
   resources :notes
   devise_for :teachers
@@ -12,8 +17,6 @@ Rails.application.routes.draw do
     end
   end
   resources :questions
-
-  root 'games#index'
 
   get 'class_gameplay/:id/home' => 'class_gameplay#home', as: :class_gameplay
 
@@ -29,6 +32,7 @@ Rails.application.routes.draw do
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
   get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active', as: :active
   patch 'teacher_gameplay/:id/next_question/:question_id' => 'teacher_gameplay#next_question', as: :next_question
+  post 'teacher_gameplay/send_message', as: :send_message
 
   get 'game_sessions/:game_id/new' => 'game_sessions#new', as: :new_game_session
   post 'game_sessions/:game_id/create' => 'game_sessions#create', as: :create_game_session
