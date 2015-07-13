@@ -4,28 +4,16 @@
 
 <div class="mdl-cell mdl-cell--4-col"></div>
 
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--4-col available-games">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Name</th>
-      <th>Movement Allowed</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><%= game.name %></td>
-        <td><%= game.movement %></td>
-        <td>
-          <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_game_path(game) %>
-          <%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @games.each do |game| %>
+  <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp card game-container">
+    <h6>
+      <%= game.name %>
+      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_game_path(game) %>
+      <%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </h6>
+    <img class="preview" src="<%= game.maps.first.file_path %>">
+  </div>
+<% end %>
 
 <div class="mdl-cell mdl-cell--4-col"></div>
 
