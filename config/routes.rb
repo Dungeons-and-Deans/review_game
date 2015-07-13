@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'pages/home'
+  root 'pages#home'
 
   resources :notes
   devise_for :teachers
@@ -12,8 +13,6 @@ Rails.application.routes.draw do
     end
   end
   resources :questions
-
-  root 'games#index'
 
   get 'class_gameplay/:id/home' => 'class_gameplay#home', as: :class_gameplay
 
