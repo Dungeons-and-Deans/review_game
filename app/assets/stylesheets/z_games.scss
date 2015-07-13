@@ -19,8 +19,13 @@
 
 .game-container {
   overflow: scroll;
+  text-align: center;
 }
 
 .remove-game {
   float: right;
+}
+
+.title {
+  text-align: center;
 }
