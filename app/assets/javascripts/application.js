@@ -89,7 +89,7 @@ channelStudentQuestion.bind('ask_competition_question', function (questionText) 
 
 });
 
-channel.bind('turn_display', function (supplies) {
+channelStudentQuestion.bind('update_supplies', function (supplies) {
   $('#supply-list').empty();
   supplies.map(function (supply) {
     $('#supply-list"').append('<li>' + supply.amount + ' ' + supply.name + '</li>');
