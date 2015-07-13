@@ -1,3 +1,7 @@
+body {
+  background: #FAFAFA;
+}
+
 h1, h2, h3, h4,
 h5, h6 {
   text-align: center;
@@ -46,4 +50,12 @@ ul {
 
 .glow {
     text-shadow: 0 0 3rem yellow;
+}
+
+
+#footnotes_debug {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  right: 0;
 }
