@@ -1,7 +1,8 @@
 <div class="btn-group" id="group-choices">
   <% @game_session.groups.each do |group| %>
-    <label class="btn btn-primary" id="<%= group.id %>">
-      <input type="checkbox" value="<%= group.id %>" autocomplete="off"> <%= group.name %>
+    <label class="mdl-checkbox mdl-js-checkbox" id="<%= group.id %>">
+      <input type="checkbox" class="mdl-checkbox__input" value="<%= group.id %>" autocomplete="off">
+      <span class="mdl-checkbox__label"><%= group.name %></span>
     </label>
   <% end %>
 </div>
