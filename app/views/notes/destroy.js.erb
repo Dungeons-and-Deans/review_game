@@ -1,1 +1,1 @@
-$('#notes').html("<%= j(render partial: '/notes/index', locals: { group: @current_group }) %>");
+$('#notes<%= @current_group.id %>').html("<%= j(render partial: '/notes/index', locals: { group: @current_group }) %>");

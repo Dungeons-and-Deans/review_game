@@ -4,17 +4,17 @@
       <%= render partial: 'next_turn' %>
     </div>
   </div>
-  
+
   <div class="mdl-cell mdl-cell--8-col teacher-header">
     <div id="scores">
       <%= render partial: 'scores' %>
     </div>
   </div>
-  
+
   <div class="mdl-cell mdl-cell--2-col teacher-header">
     <%= render partial: 'winner' %>
   </div>
-  
+
   <div class="mdl-grid mdl-cell mdl-cell--12-col teacher-header">
     <div class="mdl-cell mdl-cell--6-col">
     <%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
@@ -58,3 +58,5 @@
 <div id="answer-buttons">
   <%= render partial: 'answer_buttons' %>
 </div>
+
+<%= render partial: 'send_message' %>

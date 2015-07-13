@@ -1,0 +1,7 @@
+<%= form_tag url: send_message_path do %>
+  <%= label_tag :message %>
+  <%= text_area_tag :message %>
+
+  <%= label_tag :group %>
+  <%= select_tag :group, options_from_collection_for_select(@game_session.groups, "id", "name"), include_blank: true %>
+<% end %>
