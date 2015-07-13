@@ -57,6 +57,7 @@ class TeacherGameplayController < ApplicationController
       format.js
     end
     WebsocketRails[:"group_listen#{params[:id]}"].trigger 'icon_display', @assignment
+    active_list
   end
 
   def next_question
@@ -93,4 +94,14 @@ class TeacherGameplayController < ApplicationController
   private def question_params
     params.require(:question).permit(:right, :wrong)
   end
+
+  private def active_list
+    group_list = []
+    group = Group.find(session[:group_id])
+    group.students.order(:last_name).each do |student|
+      group_list << "#{student.full_name} #{student.active?(group.id)}"
+    end
+    WebsocketRails[:"question_listen#{group.id}"].trigger 'group_list', group_list
+  end
+
 end

@@ -34,7 +34,7 @@
     </ul>
 
     <h4>Group Members</h4>
-    <ul class="list-unstyled">
+    <ul id="group-list"class="list-unstyled">
       <% @group.students.order(:last_name).each do |student| %>
         <li>
           <%= student.full_name %>
