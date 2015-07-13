@@ -2,9 +2,16 @@
   <div class="group">
     <div><%= group.name %></div>
     <div><%= group.score %> points</div>
+    <h4>Supplies</h4>
     <ol>
       <% group.supplies.each do |supply| %>
         <li><%= supply.amount %> <%= supply.name %></li>
+      <% end %>
+    </ol>
+    <h4>Notes</h4>
+    <ol>
+      <% group.notes.each do |note| %>
+        <li><%= note.content %></li>
       <% end %>
     </ol>
   </div>

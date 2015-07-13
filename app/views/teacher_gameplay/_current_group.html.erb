@@ -5,21 +5,25 @@
 </div>
 
 <div class="supplies">
-  <h5>Supplies</h5>
-  <ul>
-    <% if @current_group %>
+  <% if @current_group %>
+    <h5>Supplies</h5>
+    <ul>
       <% @current_group.supplies.each do |s| %>
         <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
       <% end %>
         <li>
           <div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
             <div class="mdl-card__supporting-text">
-              <h2 id="question-text">
+              <h2>
                 <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
               </h2>
             </div>
           </div>
         </li>
-    <% end %>
-  </ul>
+      </ul>
+  <% end %>
+</div>
+
+<div id="notes">
+  <%= render partial: '/notes/index' %>
 </div>

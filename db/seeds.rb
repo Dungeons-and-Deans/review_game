@@ -77,3 +77,9 @@ Question.create(content: "Solve for x: x+2=5", difficulty_level: 2,
 Map.create(game_id: 1, name: "Yellowstone", file_path: "http://yellowstone.net/maps/files/2012/06/yellowstone-map.jpg")
 Map.create(game_id: 2, name: "School Map", file_path: "http://www.ptisd.org/users/0001/docs/ptjh%20map_lockers%20b.jpg")
 Map.create(game_id: 3, name: "USA", file_path: "https://www.superteacherworksheets.com/graphics1920x1080/1920-usa-blank.jpg")
+
+
+Group.all.each do |group|
+  Note.create(content: Faker::Lorem.sentence, group_id: group.id)
+  Note.create(content: Faker::Lorem.sentence, group_id: group.id)
+end
