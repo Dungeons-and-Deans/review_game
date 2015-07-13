@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'pages/home'
+
   resources :notes
   devise_for :teachers
   resources :games
