@@ -52,7 +52,7 @@ class SuppliesController < ApplicationController
 
   private def send_supplies
     current_group = @game_session.current_group
-    supplies = Supply.where(:group_id current_group)
-    WebsocketRails[:"question_listen#{current_group}"].trigger 'update_supplies', supplies
+    supplies = Supply.where(group_id: current_group.id)
+    WebsocketRails[:"question_listen#{current_group.id}"].trigger 'update_supplies', supplies
   end
 end
