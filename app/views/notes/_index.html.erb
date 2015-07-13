@@ -10,7 +10,9 @@
     <% end %>
     <li>
       <div>
-        <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
+        <div id="notesModal" class="mdl-shadow--4dp">
+          <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
+        </div>
       </div>
     </li>
   </ul>
