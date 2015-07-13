@@ -28,8 +28,8 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active', as: :active
   patch 'teacher_gameplay/:id/next_question/:question_id' => 'teacher_gameplay#next_question', as: :next_question
 
-  get 'game_sessions/new', as: :new_game_session
-  post 'game_sessions/create', as: :create_game_session
+  get 'game_sessions/:game_id/new' => 'game_sessions#new', as: :new_game_session
+  post 'game_sessions/:game_id/create' => 'game_sessions#create', as: :create_game_session
   get 'game_sessions/:id/groups' => 'game_sessions#groups', as: :game_session_groups
   delete 'game_sessions/:id/destroy' => 'game_sessions#destroy', as: :delete_game_session
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups

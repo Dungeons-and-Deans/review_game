@@ -2,14 +2,14 @@
 
   <%= simple_form_for @game_session, url: 'create', html: { class: "mdl-cell mdl-cell--4-col form-padding" } do |f| %>
     <h3>New Game Session</h1>
-    
+
     <%= f.error_notification %>
 
     <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
     <%= f.input :min_difficulty, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
     <%= f.association :icon, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.association :game, label_method: :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= f.hidden_field :game_id %>
 
     <div class="form-group mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <label class="mdl-textfield__label">Number of Groups</label>
