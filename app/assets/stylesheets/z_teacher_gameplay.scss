@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+span.group-name {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
 .card {
   position: relative;
 }
@@ -15,7 +20,21 @@ top.card {
 }
 
 .mid.card {
-  padding: 2rem 5rem;
+  padding: 4rem 6rem;
+}
+
+button#addNotes {
+  position: absolute;
+  right: 6rem;
+}
+
+#group-choices {
+  margin: 2rem 0;
+}
+
+button#send-competition-question {
+  position: absolute;
+  right: 0;
 }
 
 #myModal {

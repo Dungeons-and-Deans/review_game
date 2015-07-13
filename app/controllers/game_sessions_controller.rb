@@ -3,7 +3,7 @@ class GameSessionsController < ApplicationController
   before_action :authenticate_teacher!
 
   def new
-    @game_session = GameSession.new
+    @game_session = GameSession.new(game_id: params[:game_id])
     @game_session.category_game_session_assignments.build
     @categories = Category.where(teacher_id: current_teacher.id)
   end
