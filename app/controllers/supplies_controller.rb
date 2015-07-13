@@ -28,6 +28,11 @@ class SuppliesController < ApplicationController
   end
 
   def destroy
+    @id = params[:supply_id]
+    @supply.destroy
+    respond_to do |format|
+      format.js
+    end
   end
 
   private def set_supply
