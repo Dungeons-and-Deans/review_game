@@ -8,7 +8,7 @@
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>
     </ol>
-    <%= render partial: '/notes/index', locals: { group: group } %>
+    <div id="notes<%= group.id %>"><%= render partial: '/notes/index', locals: { group: group } %></div>
   </div>
 <% end %>
 
