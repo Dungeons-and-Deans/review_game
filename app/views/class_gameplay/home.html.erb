@@ -1,6 +1,10 @@
-<%= render partial: 'scores' %>
-<div id='turn-group'>
-  It is currently <%= Group.find(@game_session.turn_group_id).name %>'s turn.
+<div class='score-board mdl-cell mdl-cell--12-col mdl-shadow--4dp'>
+  <%= render partial: 'scores' %>
+  <h6>
+    <div id='turn-group'>
+        Turn: <%= Group.find(@game_session.turn_group_id).name %>
+    </div>
+  </h6>
 </div>
 
 <div id='map-container'>
