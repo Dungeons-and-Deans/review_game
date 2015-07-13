@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_group, only: [:create, :update, :destroy]
 
   def new
     @note = Note.new
@@ -10,7 +11,6 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
-    @current_group = @note.group
 
     respond_to do |format|
       if @note.save
@@ -41,6 +41,10 @@ class NotesController < ApplicationController
   private
     def set_note
       @note = Note.find(params[:id])
+    end
+
+    def set_current_group
+      @current_group = @note.group
     end
 
     def note_params
