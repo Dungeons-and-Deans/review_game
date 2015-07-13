@@ -2,20 +2,16 @@
   <h3>Available Game Scenarios</h3>
 </div>
 
-<div class="mdl-cell mdl-cell--4-col"></div>
-
+<div class="mdl-cell mdl-cell--12-col mdl-grid game-card-container">
 <% @games.each do |game| %>
-  <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp card">
-    <div class="mdl-card__title title">
-      <span><%= game.name %></span>
-      <span><%= link_to 'Start New', new_game_session_path(game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %></span>
-    </div>
-    <div class="game-container"><a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a></div>
+  <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp game-card">
     <div class="remove-game"><%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <span><%= game.name %></span>
+    <div class="game-container"><a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a></div>
+    <span><%= link_to 'Start New', new_game_session_path(game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %></span>
   </div>
 <% end %>
-
-<div class="mdl-cell mdl-cell--4-col"></div>
+</div>
 
 <div class="mdl-cell mdl-cell--12-col">
   <h3>Current Games</h3>

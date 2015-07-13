@@ -3,6 +3,9 @@
 <div class="question-content">
   <h4><%= @question.content %></h4>
 </div>
+<div>
+  <h5>Answer: <%= @question.answer %></h5>
+</div>
 
 <div id="competition-container">
   <%= render partial: 'competition_question' %>

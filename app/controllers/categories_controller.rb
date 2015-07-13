@@ -62,7 +62,7 @@ class CategoriesController < ApplicationController
 
   private def category_params
     params.require(:category).permit(:name, :teacher_id,
-        questions_attributes: [:id, :content, :difficulty_level, :right, :wrong])
+        questions_attributes: [:id, :content, :difficulty_level, :right, :wrong, :answer])
   end
 
 end
