@@ -1,6 +1,6 @@
 <div>
   <% @game_session.groups.each do |group| %>
-    <%= group.name %>:
+    <span class="group-name"><%= group.name %>:</span>
     <span id="update_score<%= group.id %>" class="score">
       <%= link_to group.score, edit_score_path(@game_session, group), class: "mdl-button mdl-js-button mdl-button--accent", remote: true %>
     </span>
