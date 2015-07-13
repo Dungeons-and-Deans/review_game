@@ -3,12 +3,10 @@
 one:
   teacher: :one
   name: "GameOne"
-  icon: :one
   movement: 1
 
 
 two:
   teacher: :one
   name: "GameTwo"
-  icon: :two
   movement: 1

@@ -7,11 +7,14 @@
 }
 
 .score-board {
-  width: auto;
+  max-width: 17rem;;
   align-text: center;
-  position: relative;
   margin: 1rem auto;
   padding: 0.5rem 2rem;
+  position: absolute;
+  right: 2.5rem;
+  top: 7rem;
+  position: fixed;
 }
 
 .score-group {
@@ -19,4 +22,8 @@
   position: relative;
   margin: 1rem auto;
   padding: 0.5rem 2rem;
+}
+
+#turn-group {
+  align-text: center;
 }

@@ -1,11 +1,10 @@
-<div class='score-board mdl-cell mdl-cell--12-col mdl-shadow--4dp'>
-  <h4>Group Scores</h4>
-  <h6>
-    <% @game_session.groups.each do |group| %>
-      <span class='score-group' id='score-group<%= group.id %>'>
-        <%= group.name %> -
-        <%= group.score %>
-      </span>
-    <% end %>
-  </h6>
-</div>
+
+<h4>Group Scores</h4>
+<h6>
+  <% @game_session.groups.each do |group| %>
+    <div id='score-group<%= group.id %>'>
+      <%= group.name %> -
+      <%= group.score %>
+    </div>
+  <% end %>
+</h6>

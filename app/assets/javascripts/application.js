@@ -62,7 +62,7 @@ channel.bind('coordinates', function (icon) {
 });
 
 channel.bind('turn_display', function (groupName) {
-  $('#turn-group').text("It is curently " + groupName + "'s turn");
+  $('#turn-group').text("Turn: " + groupName);
 });
 
 channel.bind('update_score', function (group) {
