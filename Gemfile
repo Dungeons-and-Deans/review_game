@@ -59,7 +59,7 @@ group :development, :test do
   gem 'byebug'
 
   # Use footnotes for debugging in browser
-  gem 'rails-footnotes', '~> 4.0'
+  # gem 'rails-footnotes', '~> 4.0'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
