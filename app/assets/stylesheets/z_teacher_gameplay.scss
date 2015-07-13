@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+span.group-name {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
 .card {
   position: relative;
 }
@@ -18,13 +23,9 @@ top.card {
   padding: 4rem 6rem;
 }
 
-.mid.card div {
-  position: relative;
-}
-
 button#addNotes {
   position: absolute;
-  right: 0;
+  right: 6rem;
 }
 
 #group-choices {
