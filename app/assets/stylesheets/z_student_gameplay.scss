@@ -13,7 +13,7 @@ a.nav-expander {
   right: 0;
   text-decoration: none;
   text-transform: uppercase;
-  top: 0;
+  top: 6rem;
   transition: right 0.3s ease-in-out 0s;
   width: 6rem;
   z-index: 12;
@@ -40,7 +40,7 @@ nav.student-stats {
   position: fixed;
   right: -20rem;
   font-size: 1em;
-  top: 0;
+  top: 6rem;
   width: 20rem;
   z-index: 2000;
   transition: right 0.3s ease-in-out 0s;

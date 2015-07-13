@@ -14,8 +14,8 @@
 
   <body>
     
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">ReviewGame</span>
@@ -33,14 +33,16 @@
           </nav>
         </div>
       </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">ReviewGame</span>
-        <nav class="mdl-navigation">
-          <%= link_to 'Home', root_path, :class => "mdl-navigation__link" %>
-          <%= link_to 'Roster', students_path, :class => "mdl-navigation__link" %>
-          <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link" %>
-        </nav>
-      </div>
+      <% if teacher_signed_in? %>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">ReviewGame</span>
+          <nav class="mdl-navigation">
+            <%= link_to 'Home', root_path, :class => "mdl-navigation__link" %>
+            <%= link_to 'Roster', students_path, :class => "mdl-navigation__link" %>
+            <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link" %>
+          </nav>
+        </div>
+      <% end %>
       <main class="mdl-layout__content">
         <div class="page-content">
           
