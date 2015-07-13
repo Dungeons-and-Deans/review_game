@@ -1,11 +1,9 @@
-<div id="notesModal" class="mdl-shadow--4dp">
-  <%= simple_form_for note, remote: true do |f| %>
-    <%= f.error_notification %>
-  
-    <%= f.input :content, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.hidden_field :group_id, value: id %>
-  
-    <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" %>
-  
-  <% end %>
-</div>
+<%= simple_form_for note, remote: true do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :content, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.hidden_field :group_id, value: id %>
+
+  <%= f.button :submit, "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" %>
+
+<% end %>
