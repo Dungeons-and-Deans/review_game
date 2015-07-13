@@ -6,6 +6,18 @@
   text-align: center;
 }
 
+.card {
+  position: relative;
+}
+
+top.card {
+  padding: 2rem;
+}
+
+.mid.card {
+  padding: 2rem 5rem;
+}
+
 #myModal {
   background: #FFFFFF;
   display: none;
