@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :notes
   devise_for :teachers
   resources :games
   resources :students
