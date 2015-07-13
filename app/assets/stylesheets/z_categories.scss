@@ -24,5 +24,10 @@
 
 div#new-question-form > input {
   position: absolute;
-  
+
+}
+
+.form-inline div {
+  display: inline-block;
+  float: left;
 }
