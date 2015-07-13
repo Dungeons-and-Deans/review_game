@@ -2,6 +2,7 @@
   <%= f.simple_fields_for :questions, @category.questions.build, remote: true do |ff| %>
 
     <%= ff.input :content, label: 'Question', wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= ff.input :answer %>
     <%= ff.input :difficulty_level, label: 'Difficulty', wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input", min: 1 }, label_html: { class: "mdl-textfield__label" } %>
     <%= ff.hidden_field :right, value: 0 %>
     <%= ff.hidden_field :wrong, value: 0 %>
