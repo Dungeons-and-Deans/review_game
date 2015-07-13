@@ -1,7 +1,7 @@
-<% if @current_group %>
+<% if group %>
   <h5>Notes</h5>
   <ul>
-    <% @current_group.notes.each do |n| %>
+    <% group.notes.each do |n| %>
       <li>
         <%= n.content %>
         <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_note_path(n), remote: true %>
@@ -12,7 +12,7 @@
       <div class="mdl-card mdl-shadow--4dp" id="notesModal">
         <div class="mdl-card__supporting-text">
           <h2>
-            <%= render partial: '/notes/form', locals: { id: @current_group.id, note: Note.new } %>
+            <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
           </h2>
         </div>
       </div>
