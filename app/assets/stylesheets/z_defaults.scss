@@ -59,3 +59,58 @@ ul {
   left: 0;
   right: 0;
 }
+
+
+.draggables {
+  &[class~="1"] {
+    color: red;
+  }
+}
+
+.draggables {
+  &[class~="2"] {
+    color: blue;
+  }
+}
+
+.draggables {
+  &[class~="3"] {
+    color: green;
+  }
+}
+
+.draggables {
+  &[class~="4"] {
+    color: orange;
+  }
+}
+
+.draggables {
+  &[class~="5"] {
+    color: teal;
+  }
+}
+
+.draggables {
+  &[class~="6"] {
+    color: aqua;
+  }
+}
+
+.draggables {
+  &[class~="7"] {
+    color: yellow;
+  }
+}
+
+.draggables {
+  &[class~="8"] {
+    color: greenyellow;
+  }
+}
+
+.draggables {
+  &[class~="9"] {
+    color: pink;
+  }
+}
