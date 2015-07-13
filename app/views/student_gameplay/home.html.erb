@@ -6,10 +6,10 @@
   <i class="<%= @icon.description %> <%= player.group_id %> draggables icon", id="<%= player.id %>"><%= player.student.first_name[0] %></i>
 <% end %>
 
-<nav>
+<nav class="student-stats">
   <a href="#" id="nav-close">X</a>
 
-  <ul class="list-unstyled main-content">
+  <ul class="list-unstyled stat-main-content">
 
     <h4>Group: <%= params[:group_id] %></h4>
     <div>

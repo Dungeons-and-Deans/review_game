@@ -32,7 +32,7 @@ a.nav-expander.fixed {
   width: 10rem;
 }
 
-nav {
+nav.student-stats {
   background: #617D8A;
   display: block;
   height: 100%;
@@ -65,7 +65,7 @@ body.nav-expanded {
   padding: 1rem;
 }
 
-.main-content {
+.stat-main-content {
   margin-top: 4rem;
   color: white;
   padding: 0 2rem;
