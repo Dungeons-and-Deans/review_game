@@ -4,7 +4,7 @@
 
       <%= f.input :content, label: false %>
       <%= f.input :answer, label: false %>
-      <%= f.input :difficulty_level, label: 'Difficulty' %>
+      <input class="mdl-slider mdl-js-slider" type="range" min="1" max="10" value="<%= @question.difficulty_level %>" tabindex="0" name="question[difficulty_level]" id="question_difficulty_level"/>
 
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
