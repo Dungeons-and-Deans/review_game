@@ -1,15 +1,16 @@
-<h2>Forgot your password?</h2>
+<div class="mdl-cell mdl-cell--4-col"></div>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "mdl-cell mdl-cell--4-col form-padding" }) do |f| %>
+  <h3>Forgot your password?</h3>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, input_html: { placeholder: 'Enter email' }, required: true, autofocus: true %>
-  </div>
-
+  
+  <%= f.input :email, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" }, required: true %>
+  
   <div class="form-actions">
-    <%= f.button :submit, "Reset Password" %>
+    <%= f.button :submit, "Reset Password", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   </div>
 <% end %>
+
+<div class="mdl-cell mdl-cell--4-col"></div>
 
 <%= render "devise/shared/links" %>
