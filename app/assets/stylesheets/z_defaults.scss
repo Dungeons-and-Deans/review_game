@@ -23,6 +23,7 @@ table.table {
   position: relative;
   
   & .slider-title {
+    white-space: nowrap;
     position: absolute;
     bottom: 0;
     left: 50%;
