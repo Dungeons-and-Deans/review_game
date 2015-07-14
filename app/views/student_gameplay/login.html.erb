@@ -2,7 +2,6 @@
 
 <%= simple_form_for :password, url: student_gameplay_login_path, html: { class: "mdl-cell mdl-cell--4-col form-padding" } do |f| %>
   <h3>Group Login</h3>
-  <h4>Login to play</h4>
   <%= f.input :password, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
   <%= f.button :submit, "Login", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
 <% end %>

@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home-img {
+// app/views/pages/home.html.erb
+
+.pages-title {
+  text-align: center;
+}
+
+.pages-img {
   background-image: url("black-and-white-game-match-chess.jpg");
   top: 0;
   right: 0;
@@ -14,7 +20,7 @@
   opacity: 0.1;
 }
 
-.home-links div {
+.pages-links div {
   text-align: center;
   display: block;
   margin-bottom: 2rem;
