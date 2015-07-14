@@ -1,4 +1,4 @@
-<div class="mdl-cell mdl-cell--12-col">
+<div class="mdl-cell mdl-cell--12-col center">
   <h3>Available Game Scenarios</h3>
 </div>
 
@@ -8,12 +8,12 @@
     <div class="remove-game"><%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <span><%= game.name %></span>
     <div class="game-container"><a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a></div>
-    <span><%= link_to 'Start New', new_game_session_path(game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %></span>
+    <span><%= link_to 'Start New Game', new_game_session_path(game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent" } %></span>
   </div>
 <% end %>
 </div>
 
-<div class="mdl-cell mdl-cell--12-col">
+<div class="mdl-cell mdl-cell--12-col center">
   <h3>Current Games</h3>
 </div>
 
