@@ -3,6 +3,6 @@
     <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_question_path(question), remote: true %>
     <%= link_to '<i class="fa fa-times"></i>'.html_safe, question, method: :delete, remote: true, data: { confirm: 'Are you sure?' }  %>
   </td>
-  <td><%= question.answer %></td>
+  <td class="mdl-data-table__cell--non-numeric"><%= question.answer %></td>
   <td><%= question.difficulty_level %></td>
   <td><%= question.percent_correct %></td>

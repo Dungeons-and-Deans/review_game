@@ -15,6 +15,27 @@ form input[type="submit"] {
   margin-top: 2rem;
 }
 
+table.table {
+  width: 100%;
+}
+
+.slider {
+  position: relative;
+  
+  & .slider-title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  & input {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+  }
+}
+
 .icon {
   position: absolute;
   z-index: 100;
