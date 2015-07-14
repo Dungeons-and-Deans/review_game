@@ -7,11 +7,17 @@ app.studentGameplay = {
       e.preventDefault();
       $('body').toggleClass('nav-expanded');
     });
-    
+
     $('#nav-close').on('click', function (e) {
       e.preventDefault();
       $('body').removeClass('nav-expanded');
     });
+  },
+
+  closeMessage: function () {
+    $('button.message-close').on('click', function () {
+      $('#messageModal').toggleClass('active');
+    });
   }
-  
+
 };
