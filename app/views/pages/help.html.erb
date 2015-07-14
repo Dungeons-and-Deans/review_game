@@ -1,1 +1,46 @@
-<h1>Help</h1>
+<div>
+  <h1>Help</h1>
+  <div>
+    <h3>Getting Started</h3>
+    <p>To get ready to play a ClassQuest game with your students, you will need to</p>
+    <ol>
+      <li>1. Set up your student roster.</li>
+      <li>2. Enter questions for the game.</li>
+      <li>3. Start a new game session.</li>
+    <ol>
+
+    <h5>Set Up Your Roster</h5>
+      <p>Head over to the <%= link_to 'roster', students_path %> page.
+        Enter in the names of each student that will be playing a game with you.
+        These students can be edited later.  Students do not have their own
+        accounts.</p>
+
+    <h5>Enter Questions For The Game</h5>
+      <p>First make a new category to contain your questions in on the
+        <%= link_to 'new category', new_category_path %> page.  Categories are
+        important because when you start a new game, you select the categories
+        that the game can pull questions from.<p>
+      <p>After you have made a category, add questions to that category.  Include
+        a difficulty level from 1-10.  This difficulty level can be used later to
+        limit what questions are used in a game. Answers will be seen by you but
+        not by the students.<p>
+
+    <h5>Start A New Game Session</h5>
+      <p>On the home page, you can see the games that you have available.  Choose
+        the one that looks the most fun and click "Start New Game".<p>
+      <p>Enter in
+        <ol>
+          <li>The name of the game session. This could be a title for the game,
+            the name of the period that is playing, or another identifier.</li>
+          <li>The minimum question difficulty that the students will receive in this game.</li>
+          <li>The icon shape that will represent each player.</li>
+          <li>The number of groups that the class will be divided in to.
+            Many teachers find that 4-6 groups allows all students to participate
+            without having too long of a time interval between turns.</li>
+          <li>The categories that you would like players in this game to receive
+            questions from.</li>
+        </ol>
+        All of this information can be changed later.
+      </p>
+  </div>
+</div>

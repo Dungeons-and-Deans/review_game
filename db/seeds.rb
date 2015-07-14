@@ -14,7 +14,7 @@ Category.create!(name: "Math", teacher_id: 1)
   CategoryGameSessionAssignment.create!(category_id: 2, game_session_id: 1+c)
 end
 
-Game.create!(teacher_id: 1, name: "Yellowstone", movement: 1,
+Game.create!(name: "Yellowstone", movement: 1,
     story: "You are a wolf.  Your group members are your pack.  Your mission is to dominante Yellowstone.",
     closing: "Congratulations, you are the most successful wolf pack. Your genes will live on in the ecosystem.")
 Game.create!(name: "Waterballoon Fight", movement: 1,
