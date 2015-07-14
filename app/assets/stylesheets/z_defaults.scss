@@ -24,14 +24,14 @@ table.table {
   
   & .slider-title {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
   
   & input {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
   }
 }
