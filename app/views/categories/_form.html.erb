@@ -1,7 +1,7 @@
-<div id="form-container" class="addQuestionsModal mdl-cell mdl-cell--8-col mdl-shadow--4dp">
-  <%= simple_form_for @category, html: { class: "mdl-grid" }, remote: true do |f| %>
+<div id="form-container" class="addQuestionsModal mdl-cell mdl-cell--9-col mdl-shadow--4dp">
+  <%= simple_form_for @category, html: { class: "" }, remote: true do |f| %>
     <%= f.error_notification %>
-    <div id="question-list" class="mdl-cell mdl-cell--12-col">
+    <div id="question-list" class="">
         <%= link_to 'Add <i class="fa fa-plus"></i>'.html_safe, "#", id: "copy_link", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="exitAddQuestions">X</button>
       <div id="new-question-form">
