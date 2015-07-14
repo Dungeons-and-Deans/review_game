@@ -14,3 +14,5 @@
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> <%= player.group_id %> draggables icon", id="<%= player.id %>"><%= player.student.first_name[0] %></i>
 <% end %>
+
+<%= render partial: 'games/story_modal' %>
