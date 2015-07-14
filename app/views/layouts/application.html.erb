@@ -3,7 +3,7 @@
 
   <head>
 
-    <title>ReviewGame</title>
+    <title>ClassQuest</title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -18,7 +18,7 @@
       <header class="mdl-layout__header mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title">ReviewGame</span>
+          <span class="mdl-layout-title">ClassQuest</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
@@ -37,7 +37,7 @@
         <div class="mdl-layout__drawer">
           <span class="mdl-layout-title">ReviewGame</span>
           <nav class="mdl-navigation">
-            <%= link_to 'Home', root_path, :class => "mdl-navigation__link" %>
+            <%= link_to 'Home', games_path, :class => "mdl-navigation__link" %>
             <%= link_to 'Roster', students_path, :class => "mdl-navigation__link" %>
             <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link" %>
           </nav>
