@@ -1,0 +1,8 @@
+<%= simple_form_for @category do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.hidden_field :teacher_id %>
+
+  <div><%= f.button :submit, "Submit", id: "submitQuestions" %></div>
+<% end %>
