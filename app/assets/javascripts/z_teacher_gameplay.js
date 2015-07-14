@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 app.teacherGameplay = {
-  
+
   sendQuestion: function () {
     var groupId = $('.current-group').attr('id');
 
@@ -10,7 +10,7 @@ app.teacherGameplay = {
       dispatcher.trigger('movements.ask_question', channelNumber);
     });
   },
-  
+
   sendCompQuestion: function () {
     $('#send-competition-question').on('click', function () {
       var ids = [];
@@ -30,40 +30,46 @@ app.teacherGameplay = {
       dispatcher.trigger('movements.ask_competition_question', info);
     });
   },
-  
+
   addSupplies: function () {
     $('#addSupplies').on('click', function (e) {
       e.stopPropagation();
 
-      
+
       $('#suppliesModal').addClass('active');
     })
   },
-  
+
   assignSupplies: function () {
     $('#assignSupplies').on('click', function (e) {
       e.stopPropagation();
-      
+
       $('#suppliesModal').removeClass('active');
     })
   },
-  
+
   chooseWinner: function () {
     $('button.choose-winner').on('click', function () {
       $('#myModal').toggleClass('active');
     });
   },
-  
+
   closeWinner: function () {
     $('button.choose-winner-close').on('click', function () {
       $('#myModal').toggleClass('active');
     });
   },
-  
+
   answerButtons: function () {
     $("#send-question").on('click', function () {
       $("#answerButtonsModal").toggleClass('active');
     });
+  },
+
+  sendMessage: function () {
+    $("#send-message").on('click', function () {
+      $("#sendMessageModal").toggleClass('active');
+    })
   }
-  
+
 };

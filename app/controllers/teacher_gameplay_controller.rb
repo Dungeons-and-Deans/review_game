@@ -76,7 +76,10 @@ class TeacherGameplayController < ApplicationController
   end
 
   def send_message
-
+    @message = params[:message_text]
+    respond_to do |format|
+      format.js
+    end
   end
 
   private def set_game_session
