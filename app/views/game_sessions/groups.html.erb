@@ -3,7 +3,7 @@
 </div>
 
 <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp class-list">
-  <ul class="groups-students">
+  <ul class="groups-students" id="0">
     <% @students.each do |student| %>
       <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
     <% end %>

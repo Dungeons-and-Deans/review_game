@@ -23,7 +23,7 @@ class Student < ActiveRecord::Base
     if group_student.active == true
       '<i class="fa fa-star"></i>'
     else
-      '<i class="fa fa-frown-o"></i>'
+      '<i class="fa fa-times"></i>'
     end
   end
 
