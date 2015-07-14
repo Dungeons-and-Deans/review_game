@@ -23,6 +23,7 @@
 //= require z_games
 //= require z_icon_movement
 //= require z_notes
+//= require z_pages
 //= require z_questions
 //= require z_student_gameplay
 //= require z_students
@@ -117,4 +118,11 @@ channelStudentQuestion.bind('update_supplies', function (supplies) {
   supplies.map(function (supply) {
     $('#supply-list').append('<li>' + supply.amount + ' ' + supply.name + '</li>');
   });
+});
+
+channelStudentQuestion.bind('send_message', function (message_text) {
+  $('#message-text-container').text(message_text);
+
+  $('#messageModal').toggleClass('active');
+
 });

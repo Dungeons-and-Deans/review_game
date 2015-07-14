@@ -26,6 +26,12 @@ form input[type="submit"] {
   text-align: center;
 }
 
+.shared-links div {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 form {
   & ul {
     text-align: left;

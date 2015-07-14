@@ -34,6 +34,7 @@ $(function () {
   if (/student_gameplay/.test(pathName)) {
     app.studentGameplay.statMenu();
     app.studentGameplay.answerCompetition();
+    app.studentGameplay.closeMessage();
 
   }
 

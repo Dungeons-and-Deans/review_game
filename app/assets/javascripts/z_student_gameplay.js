@@ -17,8 +17,13 @@ app.studentGameplay = {
 
   answerCompetition: function () {
     $('#answer-competition').on('click', function () {
-
       dispatcher.trigger('movements.answer_competition_question', groupNumber);
+    });
+  },
+
+  closeMessage: function () {
+    $('button.message-close').on('click', function () {
+      $('#messageModal').toggleClass('active');
     });
   }
 
