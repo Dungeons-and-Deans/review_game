@@ -71,6 +71,12 @@ app.teacherGameplay = {
     $("#send-message").on('click', function () {
       $("#sendMessageModal").toggleClass('active');
     })
+  },
+
+  storyModal: function () {
+    $("button.story-close").on('click', function () {
+      $("#storyModal").toggleClass('inactive');
+    });
   }
 
 };

@@ -27,6 +27,7 @@ $(function () {
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.answerButtons();
     app.teacherGameplay.sendMessage();
+    app.teacherGameplay.storyModal();
     app.notes.addNotes();
 
   }
