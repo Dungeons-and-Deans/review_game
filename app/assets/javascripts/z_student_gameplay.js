@@ -4,6 +4,8 @@
 app.studentGameplay = {
 
   statMenu: function () {
+    $('body').toggleClass('nav-expanded');
+    
     $('#nav-expander').on('click', function (e) {
       e.preventDefault();
       $('body').toggleClass('nav-expanded');

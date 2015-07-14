@@ -23,10 +23,6 @@ a.nav-expander:hover {
   cursor: pointer;
 }
 
-a.nav-expander.fixed {
-  position: fixed;
-}
-
 .nav-expanded a.nav-expander.fixed {
   right: 16rem;
   width: 10rem;
@@ -37,7 +33,7 @@ nav.student-stats {
   display: block;
   height: 100%;
   overflow: auto;
-  position: fixed;
+  position: absolute;
   right: -20rem;
   font-size: 1em;
   top: 64px;
