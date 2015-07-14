@@ -18,6 +18,7 @@ app.studentGameplay = {
   answerCompetition: function () {
     $('#answer-competition').on('click', function () {
       dispatcher.trigger('movements.answer_competition_question', groupNumber);
+      $('#answer-competition').hide();
     });
   },
 
