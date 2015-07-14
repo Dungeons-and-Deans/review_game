@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'faq' => 'pages#faq'
   get 'help' => 'pages#help'
 
-  root 'games#index'
+  root 'pages#home'
 
 
   resources :notes
