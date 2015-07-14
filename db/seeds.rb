@@ -16,13 +16,13 @@ end
 
 Game.create!(teacher_id: 1, name: "Yellowstone", movement: 1,
     story: "You are a wolf.  Your group members are your pack.  Your mission is to dominante Yellowstone.",
-    closing: "Congratulations, group, you are the most successful wolf pack. Your genes will live on in the ecosystem.")
+    closing: "Congratulations, you are the most successful wolf pack. Your genes will live on in the ecosystem.")
 Game.create!(name: "Waterballoon Fight", movement: 1,
     story: "Today, you can run wild in the school.  Someone brought waterballoons.  If you get wet, you are out!",
-    closing: "Congratulations, group, you are the best at avoiding water balloons!")
+    closing: "Congratulations, you are the best at avoiding water balloons!")
 Game.create!(name: "America Map", movement: 1,
     story: "A story",
-    closing: "Congratulations, group")
+    closing: "Congratulations!!")
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1)
 GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1)

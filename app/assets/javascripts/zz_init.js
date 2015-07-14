@@ -18,7 +18,7 @@ $(function () {
     app.categories.addQuestion();
   }
 
-  if (/teacher_gameplay/.test(pathName) || /student_gameplay/.test(pathName) || /class_gameplay/.test(pathName)) {
+  if (/student_gameplay/.test(pathName) || /class_gameplay/.test(pathName)) {
     app.teacherGameplay.storyModal();
   }
 
@@ -30,7 +30,7 @@ $(function () {
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.answerButtons();
-    app.teacherGameplay.sendMessage();    
+    app.teacherGameplay.sendMessage();
     app.notes.addNotes();
 
   }
