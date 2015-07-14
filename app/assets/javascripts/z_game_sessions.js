@@ -19,7 +19,7 @@ app.gameSession = {
             url: "/game_sessions/add_player/" + groupId + "/" + id,
             type: "POST",
             success: function(data) {
-              $("#new-group-form-container").html(data)
+              $("#new-group-form-container").html(data);
             }
           });
         }
