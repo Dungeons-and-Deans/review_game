@@ -1,6 +1,6 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "mdl-cell mdl-cell--4-col form-padding" }) do |f| %>
+<div class="mdl-cell mdl-cell--4-col">
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form-centering" }) do |f| %>
   <h3>Forgot your password?</h3>
   <%= f.error_notification %>
   
@@ -10,6 +10,7 @@
     <%= f.button :submit, "Reset Password", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   </div>
 <% end %>
+</div>
 
 <div class="mdl-cell mdl-cell--4-col"></div>
 

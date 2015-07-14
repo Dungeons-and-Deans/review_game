@@ -1,6 +1,7 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "mdl-cell mdl-cell--4-col form-padding" }) do |f| %>
+<div class="mdl-cell mdl-cell--4-col">
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-centering" }) do |f| %>
   <h3>Log in</h3>
   <%= f.input :email, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" }, required: false %>
   <%= f.input :password, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" }, required: false %>
@@ -10,7 +11,7 @@
   </label>
   <%= f.button :submit, "Log in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
 <% end %>
-
+</div>
 <div class="mdl-cell mdl-cell--4-col"></div>
 
 <div class="mdl-cell mdl-cell--12-col shared-links">
