@@ -1,19 +1,17 @@
 <div class="mdl-cell mdl-cell--12-col">
-  <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col"></div>
-    <h3 id="category-name" class="mdl-cell mdl-cell--3-col">
-      <%= @category.name %>
-    </h3>
-  <div class="mdl-cell mdl-cell--1-col">
-    <h5><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %></h5>
-  </div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
+  <h3 id="category-name">
+    <%= @category.name %>
+  </h3>
+  <h5><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_category_path(@category), remote: true %></h5>
 </div>
 
-<div id="question-list-container" class="mdl-grid">
-  <%= render partial: '/questions/index' %>
-</div>
+<div class="mdl-cell mdl-cell--12-col">
 
+    <div id="question-list-container" class="mdl-grid">
+      <%= render partial: '/questions/index' %>
+    </div>
+
+</div>
 <button id="show-question-form" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Questions</button>
 
 <div id="question-form-container"><%= render partial: 'form' %></div>
