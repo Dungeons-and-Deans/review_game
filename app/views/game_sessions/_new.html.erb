@@ -1,14 +1,14 @@
 <div id="newGameSessionModal" class="mdl-shadow--4dp">
 
-  <%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "mdl-cell mdl-cell--4-col form-padding" } do |f| %>
+  <%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "mdl-cell mdl-cell--8-col form-padding" } do |f| %>
     <h3>New Game Session</h1>
 
     <%= f.error_notification %>
 
-    <%= f.input :name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.input :min_difficulty, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= f.input :name, label: "Game Session Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= f.input :min_difficulty, label: "Minimum Question Difficulty Level", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
-    <%= f.association :icon, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= f.association :icon, label: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
     <%= f.hidden_field :game_id %>
 
     <div class="form-group mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -17,8 +17,8 @@
     </div>
     <% @categories.each do |category| %>
       <div class="form-group">
-        <label><%= category.name %></label>
         <%= check_box_tag "category[]", category.id %>
+        <label><%= category.name %></label>
       </div>
     <% end %>
 
