@@ -36,4 +36,9 @@ class GameplayCommunicationController < WebsocketRails::BaseController
     end
   end
 
+  def answer_competition_question
+    group = Group.find(message)
+    WebsocketRails[:"group_listen#{group.game_session_id}"].trigger 'list_competition_group', group
+  end
+
 end
