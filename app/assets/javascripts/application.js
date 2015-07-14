@@ -90,7 +90,6 @@ channelStudentQuestion.bind('ask_question', function (questionText) {
 });
 
 channel.bind('list_competition_group', function (group) {
-  console.log("do list")
   $('#list-competition-answers').append("<li>" + group.name + "</li>");
 });
 

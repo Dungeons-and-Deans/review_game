@@ -29,6 +29,8 @@ app.teacherGameplay = {
 
       dispatcher.trigger('movements.ask_competition_question', info);
       $('#list-competition-answers').empty();
+      $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
+
     });
   },
 
