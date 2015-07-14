@@ -28,6 +28,7 @@ app.teacherGameplay = {
       }
 
       dispatcher.trigger('movements.ask_competition_question', info);
+      $('#list-competition-answers').empty();
     });
   },
 

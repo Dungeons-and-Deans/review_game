@@ -79,6 +79,7 @@ channel.bind('update_score', function (group) {
 });
 
 channelStudentQuestion.bind('ask_question', function (questionText) {
+  $('#answer-competition').hide()
   $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');
 
@@ -88,7 +89,14 @@ channelStudentQuestion.bind('ask_question', function (questionText) {
 
 });
 
+channel.bind('list_competition_group', function (group) {
+  console.log("do list")
+  $('#list-competition-answers').append("<li>" + group.name + "</li>");
+});
+
+
 channelStudentQuestion.bind('ask_competition_question', function (questionText) {
+  $('#answer-competition').show()
   $('#question-text').text(questionText);
   $('#questionModal').toggleClass('active');
 

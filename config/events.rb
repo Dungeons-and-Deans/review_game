@@ -17,5 +17,6 @@ WebsocketRails::EventMap.describe do
     subscribe :initial_placements, :to => GameplayCommunicationController, :with_method => :place_icon
     subscribe :ask_question, to: GameplayCommunicationController, with_method: :send_question
     subscribe :ask_competition_question, to: GameplayCommunicationController, with_method: :send_competition_question
+    subscribe :answer_competition_question, to: GameplayCommunicationController, with_method: :answer_competition_question
   end
 end
