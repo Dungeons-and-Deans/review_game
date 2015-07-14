@@ -45,7 +45,7 @@ Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')
 
 20.times do |t|
-  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 1, board_y: 1, active: [true, false].sample)
+  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 500, board_y: 500, active: [true, false].sample)
 end
 
 5.times do
