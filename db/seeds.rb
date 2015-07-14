@@ -15,8 +15,8 @@ Category.create!(name: "Math", teacher_id: 1)
 end
 
 Game.create!(teacher_id: 1, name: "Gameone", movement: 1)
-Game.create!(teacher_id: 1, name: "Gametwo", movement: 1)
-Game.create!(teacher_id: 1, name: "Gamethree", movement: 1)
+Game.create!(name: "Gametwo", movement: 1)
+Game.create!(name: "Gamethree", movement: 1)
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1)
 GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1)
@@ -45,7 +45,7 @@ Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
     password: 'testtest', password_confirmation: 'testtest')
 
 20.times do |t|
-  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 1, board_y: 1, active: [true, false].sample)
+  GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 500, board_y: 500, active: [true, false].sample)
 end
 
 5.times do

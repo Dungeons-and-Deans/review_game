@@ -3,7 +3,8 @@ class GamesController < ApplicationController
   before_action :authenticate_teacher!
 
   def index
-    @games = Game.where(teacher_id: current_teacher.id)
+    @teacher = Teacher.find(current_teacher.id)
+    @games = @teacher.available_games
   end
 
   def show
