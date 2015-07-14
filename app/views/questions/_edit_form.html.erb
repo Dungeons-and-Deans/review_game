@@ -1,12 +1,13 @@
 <td colspan="4">
-  <div id="question-form" class="form-inline">
-    <%= simple_form_for @question, remote: true do |f| %>
+  <div id="question-form">
+    <%= simple_form_for @question, html: { class: "mdl-grid" }, remote: true do |f| %>
 
-      <%= f.input :content, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-      <%= f.input :answer, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-      <p class="slider"><input class="mdl-slider mdl-js-slider" type="range" min="1" max="10" value="<%= @question.difficulty_level %>" tabindex="0" name="question[difficulty_level]" id="question_difficulty_level"/></p>
-
-      <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+      <%= f.input :content, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo mdl-cell mdl-cell--4-col" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+      <%= f.input :answer, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo mdl-cell mdl-cell--4-col" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+      <input class="mdl-slider mdl-js-slider mdl-cell mdl-cell--2-col" type="range" min="1" max="10" value="<%= @question.difficulty_level %>" tabindex="0" name="question[difficulty_level]" id="question_difficulty_level"/>
+      <div class="mdl-cell mdl-cell--2-col">
+        <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+      </div>
     <% end %>
   </div>
 </td>
