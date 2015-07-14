@@ -23,6 +23,7 @@
 //= require z_games
 //= require z_icon_movement
 //= require z_notes
+//= require z_pages
 //= require z_questions
 //= require z_student_gameplay
 //= require z_students
