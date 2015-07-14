@@ -11,6 +11,11 @@ h5, h6 {
   padding: 0 4.5%;
 }
 
+form input[type="submit"] {
+  display: block;
+  margin: 2rem auto 0 auto;
+}
+
 .icon {
   position: absolute;
   z-index: 100;
