@@ -1,14 +1,18 @@
+<div class="mdl-cell mdl-cell--12-col">
 <h1>Class Quest</h1>
-<p>Page to route users to their Login</p>
-
-<p>
-<div>
-  <%= link_to "Student Login", student_gameplay_login_path %>
 </div>
-</p>
 
-<p>
-<div>
- <%= link_to('Teacher Login', new_teacher_session_path)  %>
+<div class="home-img"></div>
+
+<div class="mdl-cell mdl-cell--4-col home-title"></div>
+
+<div class="mdl-cell mdl-cell--4-col home-title home-links">
+  <div>
+    <%= link_to('Teacher Login', new_teacher_session_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored")  %>
+  </div>
+  <div>
+    <%= link_to "Student Login", student_gameplay_login_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  </div>
 </div>
-</p>
+
+<div class="mdl-cell mdl-cell--4-col home-title"></div>
