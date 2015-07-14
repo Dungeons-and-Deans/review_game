@@ -80,6 +80,7 @@ class TeacherGameplayController < ApplicationController
     respond_to do |format|
       format.js
     end
+    WebsocketRails[:"question_listen#{params[:group]}"].trigger 'send_message', @message
   end
 
   private def set_game_session

@@ -111,3 +111,10 @@ channelStudentQuestion.bind('update_supplies', function (supplies) {
     $('#supply-list').append('<li>' + supply.amount + ' ' + supply.name + '</li>');
   });
 });
+
+channelStudentQuestion.bind('send_message', function (message_text) {
+  $('#message-text-container').text(message_text);
+
+  $('#messageModal').toggleClass('active');
+
+});
