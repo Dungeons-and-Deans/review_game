@@ -15,8 +15,8 @@ Category.create!(name: "Math", teacher_id: 1)
 end
 
 Game.create!(teacher_id: 1, name: "Gameone", movement: 1)
-Game.create!(teacher_id: 1, name: "Gametwo", movement: 1)
-Game.create!(teacher_id: 1, name: "Gamethree", movement: 1)
+Game.create!(name: "Gametwo", movement: 1)
+Game.create!(name: "Gamethree", movement: 1)
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1)
 GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1)

@@ -4,6 +4,6 @@ class Game < ActiveRecord::Base
   belongs_to :teacher
 
   validates :name, presence: true
-  validates :teacher_id, presence: true
   validates :movement, numericality: { greater_than: 0 }
+
 end
