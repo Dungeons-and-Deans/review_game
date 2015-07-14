@@ -123,3 +123,15 @@ button#send-competition-question {
 #storyModal.inactive {
   display: none;
 }
+
+#newGameSessionModal {
+  text-align: center;
+  background: #FFFFFF;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  z-index: 5;
+}

@@ -3,9 +3,14 @@ class GameSessionsController < ApplicationController
   before_action :authenticate_teacher!
 
   def new
-    @game_session = GameSession.new(game_id: params[:game_id])
+    @game = Game.find(params[:game_id])
+    @game_session = GameSession.new(game_id: @game.id)
     @game_session.category_game_session_assignments.build
     @categories = Category.where(teacher_id: current_teacher.id)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create

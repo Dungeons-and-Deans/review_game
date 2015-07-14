@@ -1,6 +1,6 @@
-<div class="mdl-cell mdl-cell--4-col"></div>
+<div id="newGameSessionModal" class="mdl-shadow--4dp">
 
-  <%= simple_form_for @game_session, url: 'create', html: { class: "mdl-cell mdl-cell--4-col form-padding" } do |f| %>
+  <%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "mdl-cell mdl-cell--4-col form-padding" } do |f| %>
     <h3>New Game Session</h1>
 
     <%= f.error_notification %>
@@ -25,4 +25,4 @@
     <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   <% end %>
 
-<div class="mdl-cell mdl-cell--4-col"></div>
+</div>
