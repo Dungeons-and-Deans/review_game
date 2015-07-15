@@ -1,5 +1,7 @@
+@import 'z_colors';
+
 body {
-  background: #FAFAFA;
+  background: $body;
 }
 
 .center {
@@ -13,6 +15,10 @@ body {
 
 form input[type="submit"] {
   margin-top: 2rem;
+}
+
+.modal-card {
+  padding: 1rem 2rem;
 }
 
 table.table {
