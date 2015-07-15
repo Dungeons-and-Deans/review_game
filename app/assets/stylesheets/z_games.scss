@@ -38,12 +38,13 @@
 
 #newGameSessionModal {
   text-align: left;
-  background: #FFFFFF;
+  background-color: $modal-bg;
   display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
   padding: 2rem;
   z-index: 5;
 }
@@ -62,14 +63,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.storyModal {
-  background: $modal-fg;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 #storyModal.inactive {
