@@ -107,3 +107,9 @@ button#send-competition-question {
 #sendMessageModal.active {
   display: block;
 }
+
+#sendMessageModal select {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 0;
+}
