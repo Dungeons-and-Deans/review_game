@@ -1,4 +1,4 @@
-<div id="answerButtonsModal" class="mdl-shadow--4dp">
+<div id="answerButtonsModal" class="mdl-shadow--4dp modal">
   <div class="mdl-card__supporting-text modal-fg">
     <div id="correct">
       <%= simple_form_for @question, url: next_question_path(@game_session, @question, @current_group.id), remote: true do |f| %>
@@ -14,4 +14,5 @@
       <% end %>
     </div>
   </div>
+  <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
 </div>

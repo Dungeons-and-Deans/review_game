@@ -6,4 +6,12 @@ class Game < ActiveRecord::Base
   validates :name, presence: true
   validates :movement, numericality: { greater_than: 0 }
 
+  def available_game_sessions(id)
+    if self.teacher_id.nil?
+      GameSession.where(teacher_id: id)
+    else
+      self.game_sessions
+    end
+  end
+
 end

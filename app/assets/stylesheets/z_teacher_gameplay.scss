@@ -94,14 +94,15 @@ button#send-competition-question {
 
 #sendMessageModal {
   text-align: center;
-  background: #FFFFFF;
+  background-color: $modal-bg;
   display: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
   padding: 2rem;
-  z-index: 5;
 }
 
 #sendMessageModal.active {

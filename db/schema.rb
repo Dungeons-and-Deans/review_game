@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714145410) do
+ActiveRecord::Schema.define(version: 20150715210813) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150714145410) do
     t.integer  "current_question_id"
     t.integer  "icon_id"
     t.integer  "min_difficulty"
+    t.integer  "teacher_id"
   end
 
   create_table "games", force: :cascade do |t|
