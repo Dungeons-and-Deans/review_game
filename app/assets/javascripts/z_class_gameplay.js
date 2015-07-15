@@ -4,23 +4,28 @@
 app.classGameplay = {
   dragDrop: function () {
     $('.draggables').draggable({
-      stop: function () {
-        var id = event.target.id;
+      containment: ('#map-container'),
 
-        var info = {
-          id: id,
-          y: $('#' + id).offset().top,
-          x: $('#' + id).offset().left
-        }
+        stop: function () {
+          var id = event.target.id;
+          if ($('#' + id).length) {
 
-        var glow = $('#' + id);
-        glow.addClass('glow');
-        window.setTimeout(function () {
-          glow.removeClass('glow');
-        }, 1000);
+            var info = {
+              id: id,
+              y: $('#' + id).offset().top,
+              x: $('#' + id).offset().left
+            }
 
-        dispatcher.trigger('movements.move_icon', info);
-      }
+            var glow = $('#' + id);
+            glow.addClass('glow');
+            window.setTimeout(function () {
+              glow.removeClass('glow');
+            }, 1000);
+
+            dispatcher.trigger('movements.move_icon', info);
+          } else {
+          revert: true;
+        }}
     });
   },
 

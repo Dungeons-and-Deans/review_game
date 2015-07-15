@@ -27,7 +27,7 @@ table.table {
 
 .slider {
   position: relative;
-  
+
   & .slider-title {
     white-space: nowrap;
     position: absolute;
@@ -35,7 +35,7 @@ table.table {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   & input {
     position: absolute;
     top: 0;
@@ -147,3 +147,8 @@ ul {
     color: pink;
   }
 }
+
+i {
+   cursor: pointer;
+   cursor: hand;
+   }
