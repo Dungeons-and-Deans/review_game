@@ -17,8 +17,14 @@ form input[type="submit"] {
   margin-top: 2rem;
 }
 
-.modal-card {
+.modal-fg {
+  background: $modal-fg;
+  position: absolute;
   padding: 1rem 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 }
 
 table.table {
