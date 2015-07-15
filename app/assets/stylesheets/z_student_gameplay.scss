@@ -17,6 +17,7 @@ a.nav-expander {
   transition: right 0.3s ease-in-out 0s;
   width: 6rem;
   z-index: 12;
+  border-bottom-left-radius: 20px;
 }
 
 a.nav-expander:hover {
@@ -26,6 +27,7 @@ a.nav-expander:hover {
 .nav-expanded a.nav-expander.fixed {
   right: 16rem;
   width: 10rem;
+  border-bottom-left-radius: 20px;
 }
 
 nav.student-stats {
@@ -40,6 +42,7 @@ nav.student-stats {
   width: 20rem;
   z-index: 2000;
   transition: right 0.3s ease-in-out 0s;
+  border-bottom-left-radius: 20px;
 
 }
 .nav-expanded nav {
