@@ -1,30 +1,24 @@
-<div id="newGameSessionModal" class="mdl-cell mdl-cell--4-col mdl-shadow--4dp modal">
 
-  <%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "form-centering" } do |f| %>
-    <h3>New Game Session</h1>
+<%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "form-centering" } do |f| %>
+  <h3>New Game Session</h1>
 
-    <%= f.error_notification %>
+  <%= f.error_notification %>
 
-    <%= f.input :name, label: "Game Session Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.input :min_difficulty, label: "Minimum Question Difficulty Level", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.input :name, label: false, placeholder: "Game Session Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.input :min_difficulty, label: false, placeholder: "Minimum Question Difficulty Level", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
-    <%= f.association :icon, label: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-    <%= f.hidden_field :game_id %>
+  <%= f.association :icon, label: false, prompt: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.hidden_field :game_id %>
 
-    <div class="form-group mdl-textfield mdl-js-textfield textfield-demo">
-      <%= number_field_tag :number_of_groups, 2, min: 1, class: "form-control mdl-textfield__input" %>
-      <label class="mdl-textfield__label">Number of Groups</label>
+  <div class="form-group mdl-textfield mdl-js-textfield textfield-demo">
+    <%= number_field_tag :number_of_groups, nil, min: 1, class: "form-control mdl-textfield__input", placeholder: "Number of Groups" %>
+  </div>
+  <% @categories.each do |category| %>
+    <div class="form-group">
+      <%= check_box_tag "category[]", category.id %>
+      <label><%= category.name %></label>
     </div>
-    <% @categories.each do |category| %>
-      <div class="form-group">
-        <%= check_box_tag "category[]", category.id %>
-        <label><%= category.name %></label>
-      </div>
-    <% end %>
-
-    <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   <% end %>
 
-  <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
-
-</div>
+  <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+<% end %>

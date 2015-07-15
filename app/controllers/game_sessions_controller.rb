@@ -19,7 +19,7 @@ class GameSessionsController < ApplicationController
       @game_session.begin_game(params[:category], params[:number_of_groups])
       redirect_to game_session_groups_path(@game_session)
     else
-      render :new
+      redirect_to games_path, notice: "Game session failed to be created."
     end
   end
 

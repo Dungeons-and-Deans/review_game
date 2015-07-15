@@ -7,6 +7,11 @@ class GameSession < ActiveRecord::Base
   belongs_to :game
   belongs_to :icon
 
+  validates :name, presence: true
+  validates :icon_id, presence: true
+  validates :game_id, presence: true
+  validates :min_difficulty, presence: true
+
   accepts_nested_attributes_for :groups, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :category_game_session_assignments, allow_destroy: true
 
