@@ -62,6 +62,7 @@ class TeacherGameplayController < ApplicationController
 
   def next_question
     @question = Question.find(params[:question_id])
+    @current_group = @game_session.current_group
     if params[:question][:right]
       group = Group.find(params[:group_id])
       @question.give_points(group.id)
