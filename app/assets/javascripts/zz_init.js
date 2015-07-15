@@ -29,6 +29,7 @@ $(function () {
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.sendMessage();
+    app.teacherGameplay.chooseCorrect();
     app.notes.addNotes();
 
   }
