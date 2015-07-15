@@ -37,7 +37,7 @@
 #newGameSessionModal {
   text-align: left;
   background: #FFFFFF;
-  display: block;
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,6 +46,6 @@
   z-index: 5;
 }
 
-#newGameSessionModal.inactive {
-  display: none;
+#newGameSessionModal.active {
+  display: block;
 }
