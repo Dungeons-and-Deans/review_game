@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'z_colors';
+
 .available-games td:nth-child(2),
 .available-games th:nth-child(2) {
   text-align: center;
@@ -37,7 +39,7 @@
 #newGameSessionModal {
   text-align: left;
   background: #FFFFFF;
-  display: none;
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,6 +48,30 @@
   z-index: 5;
 }
 
-#newGameSessionModal.active {
+#new-game-container {
+  display: none;
+}
+
+#new-game-container.active {
   display: block;
+}
+
+#storyModal {
+  background-color: $modal-bg;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.storyModal {
+  background: $modal-fg;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#storyModal.inactive {
+  display: none;
 }
