@@ -1,7 +1,7 @@
 <div id="new-question-form" class="mdl-grid mdl-cell mdl-cell--12-col">
   <%= f.simple_fields_for :questions, @category.questions.build, remote: true do |ff| %>
 
-    <%= ff.input :content, label: "Enter Question Here", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+    <%= ff.input :content, label: "Enter Question Here", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col" }, input_html: { class: "mdl-textfield__input text-input" }, label_html: { class: "mdl-textfield__label" } %>
     <%= ff.input :answer, label: "Enter Answer Here", wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
     <div class="mdl-cell mdl-cell--4-col slider">
       <div class="slider-title">Question Difficulty Level</div>
