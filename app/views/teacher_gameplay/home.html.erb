@@ -1,28 +1,26 @@
 <div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
-  <div class="mdl-cell mdl-cell--2-col teacher-header">
-    <div id="next-turn">
-      <%= render partial: 'next_turn' %>
-      <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
+  <div class="mdl-cell mdl-cell--6-col teacher-header">
+    <div id="game-header">
+      <%= @game_session.name %>
     </div>
   </div>
-
-  <div class="mdl-cell mdl-cell--8-col teacher-header">
+  <div class="mdl-cell mdl-cell--6-col teacher-header">
     <div id="scores">
       <%= render partial: 'scores' %>
     </div>
   </div>
-
-  <div class="mdl-cell mdl-cell--2-col teacher-header">
-    <%= render partial: 'winner' %>
+</div>
+<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
+  <div class="mdl-cell mdl-cell--6-col teacher-header">
+    <div id="teacher-nav">
+      <div>
+        <%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+        <%= link_to 'Teacher View', teacher_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+        <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+      </div>
+    </div>
   </div>
-
-  <div class="mdl-grid mdl-cell mdl-cell--12-col teacher-header">
-    <div class="mdl-cell mdl-cell--6-col">
-    <%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-    </div>
-    <div class="mdl-cell mdl-cell--6-col">
-    <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-    </div>
+  <div class="mdl-cell mdl-cell--6-col teacher-header">
   </div>
 </div>
 
@@ -32,6 +30,7 @@
   </div>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
+    <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
 <div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp mid card">
@@ -47,6 +46,11 @@
     <ul id="list-competition-answers">
     </ul>
   </div>
+  <div class="mdl-cell mdl-cell--2-col teacher-header">
+    <div id="next-turn">
+      <%= render partial: 'next_turn' %>
+    </div>
+  </div>
 </div>
 
 <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
@@ -56,6 +60,13 @@
   </div>
 <div class="mdl-cell mdl-cell--1-col"></div>
 </div>
+
+<div class="mdl-cell mdl-cell--2-col teacher-header">
+  <%= render partial: 'winner' %>
+</div>
+
+
+
 
 <div id="answer-buttons">
   <%= render partial: 'answer_buttons' %>
