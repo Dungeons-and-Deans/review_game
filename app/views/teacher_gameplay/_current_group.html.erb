@@ -18,7 +18,7 @@
         <% end %>
       <% end %>
           <li>
-            <div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
+            <div class="mdl-card mdl-shadow--4dp modal" id="suppliesModal">
               <div class="mdl-card__supporting-text">
                 <h2>
                   <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>

@@ -21,7 +21,7 @@ class Student < ActiveRecord::Base
   def active?(group)
     group_student = GroupAssignment.where(student_id: self.id, group_id: group).last
     if group_student.active == true
-      '<i class="fa fa-star"></i>'
+      '<i class="fa fa-star-o"></i>'
     else
       '<i class="fa fa-times"></i>'
     end
