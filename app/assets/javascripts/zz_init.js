@@ -24,12 +24,10 @@ $(function () {
 
   if (/teacher_gameplay/.test(pathName)) {
     app.teacherGameplay.sendQuestion();
-    app.teacherGameplay.sendCompQuestion();
     app.teacherGameplay.addSupplies();
     app.teacherGameplay.assignSupplies();
     app.teacherGameplay.chooseWinner();
     app.teacherGameplay.closeWinner();
-    app.teacherGameplay.answerButtons();
     app.teacherGameplay.sendMessage();
     app.notes.addNotes();
 

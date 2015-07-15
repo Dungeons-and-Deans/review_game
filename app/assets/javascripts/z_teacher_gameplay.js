@@ -4,15 +4,7 @@
 app.teacherGameplay = {
 
   sendQuestion: function () {
-    var groupId = $('.current-group').attr('id');
-
     $('#send-question').on('click', function () {
-      dispatcher.trigger('movements.ask_question', channelNumber);
-    });
-  },
-
-  sendCompQuestion: function () {
-    $('#send-competition-question').on('click', function () {
       var ids = [];
       var checkboxArr = document.querySelectorAll('#group-choices input[type="checkbox"]');
 
@@ -22,15 +14,20 @@ app.teacherGameplay = {
         }
       }
 
-      var info ={
+      var info = {
         ids: ids,
         gameSession: parseInt(channelNumber)
       }
 
-      dispatcher.trigger('movements.ask_competition_question', info);
-      $('#list-competition-answers').empty();
-      $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
-
+      if (ids.length > 1) {
+        dispatcher.trigger('movements.ask_competition_question', info);
+        $('#list-competition-answers').empty();
+        $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
+      } else {
+        var groupId = ids[0];
+        dispatcher.trigger('movements.ask_question', channelNumber);
+        $("#answerButtonsModal").toggleClass('active');
+      };
     });
   },
 
@@ -63,12 +60,6 @@ app.teacherGameplay = {
     });
   },
 
-  answerButtons: function () {
-    $("#send-question").on('click', function () {
-      $("#answerButtonsModal").toggleClass('active');
-    });
-  },
-
   sendMessage: function () {
     $("#send-message").on('click', function () {
       $("#sendMessageModal").toggleClass('active');
@@ -79,6 +70,7 @@ app.teacherGameplay = {
     $("button.story-close").on('click', function () {
       $("#storyModal").toggleClass('inactive');
     });
-  }
+  },
+
 
 };
