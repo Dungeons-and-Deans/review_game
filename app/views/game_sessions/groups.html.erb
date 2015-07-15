@@ -4,12 +4,12 @@
 </div>
 
 <div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp class-list">
+  <div><h6>Drag and drop students to assign to a team.</h6></div>
   <ul class="groups-students" id="0">
     <% @students.each do |student| %>
       <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
     <% end %>
   </ul>
-  <div id="dragInfo"><h4>Drag and drop students to assign to a team.</h4></div>
 </div>
 
 <div class="mdl-cell mdl-cell--10-col">
