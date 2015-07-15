@@ -1,13 +1,13 @@
 <div class="mdl-cell mdl-cell--4-col"></div>
 
-<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp demo-card-square">
-  <div class="mdl-card__title">
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+  <div>
     <h4><%= @student.first_name %> <%= @student.last_name %></h4>
   </div>
-  <div class="mdl-card__supporting-text">
+  <div>
     Games won: <%= @student.games_won %>
   </div>
-  <div class="mdl-card__actions mdl-card--border">
+  <div>
     <%= link_to 'Edit', edit_student_path(@student), html_options = { class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" } %>
   </div>
 </div>
