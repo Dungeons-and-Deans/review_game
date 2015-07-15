@@ -67,10 +67,12 @@ body.nav-expanded {
   margin-top: 4rem;
   color: white;
   padding: 0 2rem;
+  position: relative;
 }
 
 .stat-title {
   font-size: 1.6em;
+  margin-top: 2rem;
 }
 
 #questionModal {

@@ -13,17 +13,27 @@
 
   <ul class="list-unstyled stat-main-content">
 
-    <div>
-      <span class="stat-title">
+    <div class="stat-title">
+      <span>
         <%= @group.name %>
       </span>
+      <ul id="group-list"class="list-unstyled">
+        <% @group.students.order(:last_name).each do |student| %>
+          <li>
+            <%= student.active?(@group.id).html_safe %>
+            <%= student.full_name %>
+          </li>
+        <% end %>
+      </ul>
     </div>
-    <div>
-      <span class="stat-title" id="score-line<%= params[:group_id] %>">
+    <div class="stat-title" id="score-line<%= params[:group_id] %>">
+      <span>
         <%= @group.score %> points
       </span>
     </div>
-    <span class="stat-title">Supplies:</span>
+    <div class="stat-title">
+      <span>Supplies:</span>
+    </div>
     <ul id='supply-list' class="list-unstyled">
       <% if @group.supplies.length == 0 %>
         <li>
@@ -33,16 +43,6 @@
         <% @group.supplies.each do |supply|%>
           <li><%= supply.amount %> <%= supply.name %></li>
         <% end %>
-      <% end %>
-    </ul>
-
-    <span class="stat-title">Team Members</span>
-    <ul id="group-list"class="list-unstyled">
-      <% @group.students.order(:last_name).each do |student| %>
-        <li>
-          <%= student.full_name %>
-          <%= student.active?(@group.id).html_safe %>
-        </li>
       <% end %>
     </ul>
     <div id='turn-group'>
