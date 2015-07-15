@@ -17,7 +17,9 @@
     <li>
       <div>
         <div id="notesModal" class="mdl-shadow--4dp modal">
-          <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
+          <div class="modal-fg modal-card">
+            <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
+          </div>
         </div>
       </div>
     </li>
