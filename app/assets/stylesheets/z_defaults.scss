@@ -149,6 +149,17 @@ ul {
 }
 
 i {
+
+  &.draggables {
    cursor: pointer;
    cursor: hand;
-   }
+   text-shadow: 2px 2px 0px #000;
+  }
+}
+
+i {
+
+  &.draggables.glow {
+      text-shadow: 0rem 0rem 1rem #1194f6;
+  }
+}
