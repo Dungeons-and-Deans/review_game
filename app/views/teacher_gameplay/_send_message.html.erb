@@ -1,4 +1,4 @@
-<div id="sendMessageModal" class="mdl-shadow--4dp">
+<div id="sendMessageModal" class="mdl-shadow--4dp modal">
   <%= form_tag send_message_path(@game_session), remote: true do %>
     <%= label_tag :message_text %>
     <%= text_area_tag :message_text %>
@@ -8,4 +8,6 @@
 
     <%= submit_tag 'Send' %>
   <% end %>
+  <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+
 </div>
