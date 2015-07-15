@@ -83,12 +83,13 @@ body.nav-expanded {
   width: 100%;
 }
 
-.questionModal {
+.modal-fg {
   background: $modal-fg;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 100;
 }
 
 #questionModal.active {
@@ -101,14 +102,6 @@ body.nav-expanded {
   position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.messageModal {
-  background: $modal-fg;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 #messageModal.active {

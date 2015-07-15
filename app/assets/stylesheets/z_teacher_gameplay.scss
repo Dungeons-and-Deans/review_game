@@ -1,6 +1,7 @@
 // Place all the styles related to the teacher_gameplay controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'z_colors';
 
 .teacher-header {
   text-align: center;
@@ -21,11 +22,6 @@ top.card {
 
 .mid.card {
   padding: 4rem 6rem;
-}
-
-button#addNotes {
-  position: absolute;
-  right: 6rem;
 }
 
 #group-choices {
@@ -53,12 +49,14 @@ button#send-competition-question {
 }
 
 #suppliesModal {
+  background-color: $modal-bg;
   display: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
   z-index: 5;
+  top: 0;
+  left: 0;
 }
 
 #suppliesModal.active {
