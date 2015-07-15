@@ -8,18 +8,25 @@
   <% if @current_group %>
     <h5>Supplies</h5>
     <ul>
-      <% @current_group.supplies.each do |s| %>
-        <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
-      <% end %>
+      <% if  @current_group.supplies.length == 0 %>
         <li>
-          <div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
-            <div class="mdl-card__supporting-text">
-              <h2>
-                <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
-              </h2>
-            </div>
-          </div>
+          No Supplies Added
         </li>
+      <% else %>
+        <% @current_group.supplies.each do |s| %>
+          <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
+        <% end %>
+      <% end %>
+          <li>
+            <div class="mdl-card mdl-shadow--4dp" id="suppliesModal">
+              <div class="mdl-card__supporting-text">
+                <h2>
+                  <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
+                </h2>
+              </div>
+            </div>
+          </li>
+
       </ul>
   <% end %>
 </div>
