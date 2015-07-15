@@ -72,5 +72,10 @@ app.teacherGameplay = {
     });
   },
 
+  chooseCorrect: function () {
+    $('#list-competition-answers').delegate('button.correct', 'click', function() {
+      console.log("hi")
+    });
+  }
 
 };

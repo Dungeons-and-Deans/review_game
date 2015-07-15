@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
   get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active', as: :active
-  patch 'teacher_gameplay/:id/next_question/:question_id' => 'teacher_gameplay#next_question', as: :next_question
+  patch 'teacher_gameplay/:id/next_question/:question_id/:group_id' => 'teacher_gameplay#next_question', as: :next_question
   post 'teacher_gameplay/:id/send_message' => 'teacher_gameplay#send_message', as: :send_message
 
   get 'game_sessions/:game_id/new' => 'game_sessions#new', as: :new_game_session
