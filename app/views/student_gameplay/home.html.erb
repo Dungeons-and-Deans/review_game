@@ -23,8 +23,14 @@
     </div>
     <span class="stat-title">Supplies:</span>
     <ul id='supply-list' class="list-unstyled">
-      <% @group.supplies.each do |supply|%>
-        <li><%= supply.amount %> <%= supply.name %></li>
+      <% if @group.supplies.length == 0 %>
+        <li>
+          No Supplies Added
+        </li>
+      <% else %>
+        <% @group.supplies.each do |supply|%>
+          <li><%= supply.amount %> <%= supply.name %></li>
+        <% end %>
       <% end %>
     </ul>
 

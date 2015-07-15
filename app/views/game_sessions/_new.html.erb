@@ -12,7 +12,7 @@
     <%= f.hidden_field :game_id %>
 
     <div class="form-group mdl-textfield mdl-js-textfield textfield-demo">
-      <%= number_field_tag :number_of_groups, nil, min: 1, class: "form-control mdl-textfield__input" %>
+      <%= number_field_tag :number_of_groups, 2, min: 1, class: "form-control mdl-textfield__input" %>
       <label class="mdl-textfield__label">Number of Groups</label>
     </div>
     <% @categories.each do |category| %>
