@@ -42,4 +42,5 @@ $(function () {
 
   }
 
+  app.gameSession.modalClose();
 });

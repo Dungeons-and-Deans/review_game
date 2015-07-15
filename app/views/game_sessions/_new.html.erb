@@ -1,4 +1,4 @@
-<div id="newGameSessionModal" class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+<div id="newGameSessionModal" class="mdl-cell mdl-cell--4-col mdl-shadow--4dp modal">
 
   <%= simple_form_for @game_session, url: create_game_session_path(@game), html: { class: "form-centering" } do |f| %>
     <h3>New Game Session</h1>
@@ -24,5 +24,7 @@
 
     <%= f.button :submit, 'Create Game Session', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   <% end %>
+
+  <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
 
 </div>
