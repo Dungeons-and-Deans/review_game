@@ -12,9 +12,9 @@
   </thead>
   <tbody>
     <% @categories.each do |category| %>
-      <tr>
+      <tr id="category<%= category.id %>">
         <td class="mdl-data-table__cell--non-numeric"><%= link_to "#{category.name}", category %></td>
-        <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
       </tr>
     <% end %>
   </tbody>
