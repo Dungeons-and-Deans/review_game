@@ -1,15 +1,15 @@
 <h3>Players</h3>
-<div class="mdl-cell mdl-cell--2-col teacher-header">
+<div class="mdl-cell mdl-cell--2-col">
   <%= render partial: 'winner' %>
 </div>
 
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--4dp mdl-cell mdl-cell--12-col">
   <thead>
     <tr>
       <% @game_session.groups.each do |group| %>
       <th class="mdl-data-table__cell--non-numeric"><%= group.name %></th>
       <% end %>
-      <th>Legend</th>
+      <th class="mdl-data-table__cell--non-numeric">Legend</th>
     </tr>
   </thead>
 
@@ -27,7 +27,7 @@
           </ul>
         </td>
       <% end %>
-      <td>
+      <td class="mdl-data-table__cell--non-numeric">
         <ul>
           <li><i class="fa fa-star-o">Active Player</i></li>
           <li><i class="fa fa-times">Inactive Player</i></li>

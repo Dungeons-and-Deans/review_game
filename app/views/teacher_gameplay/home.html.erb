@@ -1,13 +1,9 @@
-<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
-  <div class="mdl-cell mdl-cell--6-col teacher-header">
-    <div id="game-header">
-      <%= @game_session.name %>
-    </div>
+<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp card">
+  <div id="game-header">
+    <%= @game_session.name %>
   </div>
-  <div class="mdl-cell mdl-cell--6-col teacher-header">
-    <div id="scores">
-      <%= render partial: 'scores' %>
-    </div>
+  <div id="scores">
+    <%= render partial: 'scores' %>
   </div>
 </div>
 <div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
@@ -29,7 +25,7 @@
   </div>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp mid">
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
@@ -38,7 +34,7 @@
     <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp mid card">
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>
@@ -53,7 +49,7 @@
   </div>
 </div>
 
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
+<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp">
   <div class="mdl-cell mdl-cell--1-col"></div>
   <div class="mdl-cell mdl-cell--10-col" id="roster">
     <%= render partial: 'roster' %>

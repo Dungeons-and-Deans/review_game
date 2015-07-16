@@ -10,3 +10,9 @@
 <div id="competition-container">
   <%= render partial: 'competition_question' %>
 </div>
+
+<div>
+  <%= simple_form_for @question, url: next_question_path(@game_session, @question, @current_group.id), html: { id: 'competition-question-form', remote: true} do |f| %>
+    <%= f.hidden_field :right, value: f.object.right + 1%>
+  <% end %>
+</div>

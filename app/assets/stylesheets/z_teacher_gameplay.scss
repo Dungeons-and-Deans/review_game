@@ -3,25 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
-.teacher-header {
-  text-align: center;
+.group-links {
+  display: inline-block;
 }
 
 span.group-name {
   font-size: 1.2em;
   text-transform: uppercase;
-}
-
-.card {
-  position: relative;
-}
-
-top.card {
-  padding: 2rem;
-}
-
-.mid.card {
-  padding: 4rem 6rem;
 }
 
 #group-choices {

@@ -21,7 +21,6 @@ app.teacherGameplay = {
 
       if (ids.length > 1) {
         dispatcher.trigger('movements.ask_competition_question', info);
-        $('#list-competition-answers').empty();
         $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
       } else {
         var groupId = ids[0];
@@ -74,6 +73,12 @@ app.teacherGameplay = {
 
   chooseCorrect: function () {
     $('#list-competition-answers').delegate('button.correct', 'click', function() {
+      var url = $('#competition-question-form').attr('action');
+      var group = $(this).closest('button').attr('id');
+      var new_url = url.slice(0, -1) + group;
+
+      $('#competition-question-form').attr('action', new_url);
+      $('#competition-question-form').submit();
     });
   }
 
