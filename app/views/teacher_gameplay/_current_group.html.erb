@@ -1,33 +1,31 @@
 
 <div class="current-group" id="<%= @current_group.id %>">
-  <h3><%= @current_group.name if @current_group %></h3>
+  <h3><%= @current_group.name %></h3>
 </div>
 
 <div class="supplies">
-  <% if @current_group %>
-    <h5>Supplies</h5>
-    <ul>
-      <% if @current_group.supplies.length == 0 %>
-        <li>
-          No Supplies Added
-        </li>
-      <% else %>
-        <% @current_group.supplies.each do |s| %>
-          <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
-        <% end %>
+  <h5>Supplies</h5>
+  <ul>
+    <% if @current_group.supplies.length == 0 %>
+      <li>
+        No Supplies Added
+      </li>
+    <% else %>
+      <% @current_group.supplies.each do |s| %>
+        <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
       <% end %>
-          <li>
-            <div class="mdl-card mdl-shadow--4dp modal" id="suppliesModal">
-              <div class="mdl-card__supporting-text modal-fg">
-                <h2>
-                  <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
-                </h2>
-              </div>
-            </div>
-          </li>
-
-      </ul>
-  <% end %>
+    <% end %>
+    <li>
+      <div class="mdl-card mdl-shadow--4dp modal" id="suppliesModal">
+        <div class="mdl-card__supporting-text modal-fg mdl-cell--4-col">
+          <h2>
+            <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
+          </h2>
+          <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
 
 <div id="notes<%= @current_group.id %>">

@@ -7,8 +7,16 @@
   <h5>Answer: <%= @question.answer %></h5>
 </div>
 
-<div id="competition-container">
-  <%= render partial: 'competition_question' %>
+<div>
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="btn-group mdl-cell mdl-cell--1-col" id="group-choices">
+    <% @game_session.groups.each do |group| %>
+      <div>
+        <input type="checkbox" value="<%= group.id %>" autocomplete="off">
+        <span><%= group.name %></span>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div>
