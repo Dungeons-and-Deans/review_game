@@ -5,7 +5,8 @@
 
 #group-links,
 .group-link,
-#next-turn {
+#next-turn,
+#roster {
   display: inline-block;
   position: relative;
 }
@@ -17,6 +18,12 @@ span.group-name {
 
 #group-choices {
   margin: 2rem 0;
+}
+
+.choose-winner {
+  position: absolute;
+  top: 1.8rem;
+  right: 0.5rem;
 }
 
 button#send-competition-question {
