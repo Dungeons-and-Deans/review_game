@@ -13,10 +13,11 @@ app.gameSession = {
       stop: function (e) {
         var id = e.target.id;
         var groupId = $(this).closest('ul').attr('id');
+        var gameSessionId = $('.session-name')[0].id;
 
         if (groupId) {
           $.ajax({
-            url: "/game_sessions/add_player/" + groupId + "/" + id,
+            url: "/game_sessions/" + gameSessionId + "/add_player/" + groupId + "/" + id,
             type: "POST",
             success: function(data) {
               $("#new-group-form-container").html(data);
