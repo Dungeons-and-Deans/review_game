@@ -2,13 +2,6 @@
 <div class="current-group" id="<%= @current_group.id %>">
   <h3><%= @current_group.name if @current_group %></h3>
 </div>
-<% if @current_group.group_turn? %>
-  <div class="mdl-cell mdl-cell--2-col teacher-header">
-    <div id="next-turn">
-      <%= render partial: '/teacher_gameplay/next_turn' %>
-    </div>
-  </div>
-<% end %>
 
 <div class="supplies">
   <% if @current_group %>
