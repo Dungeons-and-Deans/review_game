@@ -1,5 +1,5 @@
 <div id="answerButtonsModal" class="mdl-shadow--4dp modal">
-  <div class="mdl-card__supporting-text modal-fg">
+  <div class="mdl-card__supporting-text modal-fg mdl-cell--2-col">
     <div id="correct">
       <%= simple_form_for @question, url: next_question_path(@game_session, @question, @current_group.id), remote: true do |f| %>
         <%= f.hidden_field :right, value: f.object.right + 1%>

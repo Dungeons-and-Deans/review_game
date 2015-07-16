@@ -1,5 +1,5 @@
-<div id="sendMessageModal" class="mdl-cell mdl-cell--8-col modal">
-  <div class="mdl-card__supporting-text modal-fg">
+<div id="sendMessageModal" class="mdl-cell mdl-cell--12-col modal">
+  <div class="mdl-card__supporting-text modal-fg mdl-cell--4-col">
     <%= form_tag send_message_path(@game_session, group), remote: true, :class => "mdl-grid" do %>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--6-col">
         <%= text_area_tag :message_text, nil, class: "mdl-textfield__input" %>
