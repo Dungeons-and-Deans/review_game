@@ -8,7 +8,7 @@ class Game < ActiveRecord::Base
 
   def available_game_sessions(id)
     if self.teacher_id.nil?
-      GameSession.where(teacher_id: id)
+      GameSession.where(teacher_id: id).where(game_id: self.id)
     else
       self.game_sessions
     end
