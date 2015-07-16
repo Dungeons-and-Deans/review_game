@@ -3,8 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
-.group-link {
+#group-links,
+.group-link,
+#next-turn {
   display: inline-block;
+  position: relative;
 }
 
 span.group-name {
