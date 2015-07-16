@@ -6,22 +6,14 @@
     <%= render partial: 'scores' %>
   </div>
 </div>
-<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp">
-  <div class="mdl-cell mdl-cell--6-col">
-    <div id="teacher-nav">
-      <div>
-        <%= render partial: 'group_links' %>
-          <div class="mdl-cell mdl-cell--2-col">
-            <div id="next-turn">
-              <%= render partial: '/teacher_gameplay/next_turn' %>
-            </div>
-          </div>
 
-        <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp card">
+  <div id="teacher-nav">
+    <%= render partial: 'group_links' %>
+      <div id="next-turn">
+        <%= render partial: '/teacher_gameplay/next_turn' %>
       </div>
-    </div>
-  </div>
-  <div class="mdl-cell mdl-cell--6-col">
+    <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
   </div>
 </div>
 
