@@ -24,10 +24,10 @@ Game.create!(name: "America Map", movement: 1,
     story: "A story",
     closing: "Congratulations!!")
 
-GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1)
-GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1)
-GameSession.create!(game_id: 2, turn_group_id: 5, name: "Third Period", icon_id: 6, min_difficulty: 1)
-GameSession.create!(game_id: 3, turn_group_id: 7, name: "Fouth Period", icon_id: 7, min_difficulty: 1)
+GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1, teacher_id: 1)
+GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1, teacher_id: 1)
+GameSession.create!(game_id: 2, turn_group_id: 5, name: "Third Period", icon_id: 6, min_difficulty: 1, teacher_id: 1)
+GameSession.create!(game_id: 3, turn_group_id: 7, name: "Fouth Period", icon_id: 7, min_difficulty: 1, teacher_id: 1)
 
 Group.create!(game_session_id: 1, name: "groupone", score: 350, password: "password")
 Group.create!(game_session_id: 1, name: "grouptwo", score: 100, password: "password")

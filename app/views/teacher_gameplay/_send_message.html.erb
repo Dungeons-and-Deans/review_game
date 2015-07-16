@@ -1,19 +1,20 @@
 <div id="sendMessageModal" class="mdl-cell mdl-cell--8-col modal">
-  <%= form_tag send_message_path(@game_session), remote: true, :class => "mdl-grid" do %>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--6-col">
-      <%= text_area_tag :message_text, nil, class: "mdl-textfield__input" %>
-      <%= label_tag :enter_message_here, nil, class: "mdl-textfield__label" %>
-    </div>
+  <div class="mdl-card__supporting-text modal-fg">
+    <%= form_tag send_message_path(@game_session), remote: true, :class => "mdl-grid" do %>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--6-col">
+        <%= text_area_tag :message_text, nil, class: "mdl-textfield__input" %>
+        <%= label_tag :enter_message_here, nil, class: "mdl-textfield__label" %>
+      </div>
 
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--4-col">
-      <%= select_tag :group, options_from_collection_for_select(@game_session.groups, "id", "name"), include_blank: true, class: "mdl-textfield__input" %>
-      <%= label_tag :group, nil, class: "mdl-textfield__label" %>
-    </div>
-    
-    <div class="mdl-cell mdl-cell--2-col">
-      <%= submit_tag 'Send', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-    </div>
-  <% end %>
-  <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--4-col">
+        <%= select_tag :group, options_from_collection_for_select(@game_session.groups, "id", "name"), include_blank: true, class: "mdl-textfield__input" %>
+        <%= label_tag :group, nil, class: "mdl-textfield__label" %>
+      </div>
 
+      <div class="mdl-cell mdl-cell--2-col">
+        <%= submit_tag 'Send', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+      </div>
+    <% end %>
+    <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+  </div>
 </div>

@@ -14,7 +14,7 @@
 </div>
 
 <div class="mdl-cell mdl-cell--12-col center">
-  <h3>Current Games</h3>
+  <h3>Games In Progress</h3>
 </div>
 
 <div class="mdl-cell mdl-cell--2-col"></div>
@@ -33,7 +33,7 @@
 
   <tbody>
     <% @games.each do |game| %>
-      <% game.game_sessions.each do |game_session| %>
+      <% game.available_game_sessions(@teacher.id).each do |game_session| %>
         <tr>
           <td class="mdl-data-table__cell--non-numeric"><%= game_session.name %></td>
           <td><i class="<%= game_session.icon.description %> fa-2x"></i></td>

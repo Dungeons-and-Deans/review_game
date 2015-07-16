@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
   get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active', as: :active
-  patch 'teacher_gameplay/:id/next_question/:question_id' => 'teacher_gameplay#next_question', as: :next_question
+  patch 'teacher_gameplay/:id/next_question/:question_id/:group_id' => 'teacher_gameplay#next_question', as: :next_question
   post 'teacher_gameplay/:id/send_message' => 'teacher_gameplay#send_message', as: :send_message
 
   get 'game_sessions/:game_id/new' => 'game_sessions#new', as: :new_game_session
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   get 'game_sessions/:id/groups' => 'game_sessions#groups', as: :game_session_groups
   delete 'game_sessions/:id/destroy' => 'game_sessions#destroy', as: :delete_game_session
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups
-  post 'game_sessions/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
+  post 'game_sessions/:id/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
   patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
 
 

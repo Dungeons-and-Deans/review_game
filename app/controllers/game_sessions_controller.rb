@@ -1,5 +1,5 @@
 class GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:groups, :assign_groups, :destroy, :end_game]
+  before_action :set_game_session, only: [:groups, :assign_groups, :destroy, :end_game, :add_player]
   before_action :authenticate_teacher!
 
   def new
@@ -37,7 +37,6 @@ class GameSessionsController < ApplicationController
   end
 
   def add_player
-    @game_session = Group.find(params[:group_id]).game_session
     GroupAssignment.assign(params[:group_id], params[:student_id], @game_session.id)
     respond_to do |format|
       format.js
