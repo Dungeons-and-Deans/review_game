@@ -66,7 +66,7 @@ channel.bind('coordinates', function (icon) {
   glow.addClass('glow');
   window.setTimeout(function () {
     glow.removeClass('glow');
-  }, 1000);
+  }, 100);
 });
 
 channel.bind('turn_display', function (groupName) {

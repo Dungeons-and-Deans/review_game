@@ -34,17 +34,29 @@
     <div class="stat-title">
       <span>Supplies:</span>
     </div>
-    <ul id='supply-list' class="list-unstyled">
-      <% if @group.supplies.length == 0 %>
-        <li>
-          No Supplies Added
-        </li>
-      <% else %>
-        <% @group.supplies.each do |supply|%>
-          <li><%= supply.amount %> <%= supply.name %></li>
+    <table id='supply-list' class="list-unstyled">
+      <tbody>
+        <% if @group.supplies.length == 0 %>
+          <tr>
+            <td>
+              No Supplies Added
+            </td>
+          </tr>
+        <% else %>
+          <% @group.supplies.each do |supply|%>
+            <tr>
+              <td>
+                <%= supply.amount %>
+              </td>
+            <td>&nbsp;</td>
+              <td>
+                <%= supply.name %>
+              </td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </tbody>
+    </table>
     <div id='turn-group'>
       Turn: <%= Group.find(@game_session.turn_group_id).name %>
     </div>
