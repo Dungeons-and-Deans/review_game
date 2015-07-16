@@ -20,4 +20,8 @@ class Group < ActiveRecord::Base
     self.id == GameSession.find(self.game_session_id).turn_group_id
   end
 
+  def this_turn?
+    "<i class='fa fa-bookmark'></i>" if self.group_turn?
+  end
+
 end
