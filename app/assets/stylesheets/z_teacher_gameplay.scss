@@ -121,6 +121,11 @@ button#send-competition-question {
   left: 0;
 }
 
+#sendMessageModal form div {
+  display: block;
+  width: 100%;
+}
+
 form.edit_group {
   display: inline-block;
   width: 13rem;
