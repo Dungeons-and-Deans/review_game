@@ -5,11 +5,11 @@ class SuppliesController < ApplicationController
   def create
     @supply = Supply.new(supply_params)
     @supply.save
-    @current_group = @game_session.this_groups_turn
+    @current_group = Group.find(params[:group_id])
     respond_to do |format|
       format.js
     end
-    send_supplies
+    send_supplies(@current_group)
   end
 
   def edit
@@ -19,6 +19,7 @@ class SuppliesController < ApplicationController
   end
 
   def update
+    current_group = Group.find(@supply.group_id)
     respond_to do |format|
       if @supply.update(supply_params)
         format.js
@@ -26,16 +27,17 @@ class SuppliesController < ApplicationController
         format.html { render :groups, notice: 'Supply failed to be updated.' }
       end
     end
-    send_supplies
+    send_supplies(current_group)
   end
 
   def destroy
+    current_group = Group.find(@supply.group_id)
     @id = params[:supply_id]
     @supply.destroy
     respond_to do |format|
       format.js
     end
-    send_supplies
+    send_supplies(current_group)
   end
 
   private def set_supply
@@ -50,8 +52,7 @@ class SuppliesController < ApplicationController
     params.require(:supply).permit(:group_id, :name, :amount)
   end
 
-  private def send_supplies
-    current_group = @game_session.this_groups_turn
+  private def send_supplies(current_group)
     supplies = Supply.where(group_id: current_group.id)
     WebsocketRails[:"question_listen#{current_group.id}"].trigger 'update_supplies', supplies
   end

@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
 
 
-  post 'supplies/:id/create' => 'supplies#create', as: :supply
+  post 'supplies/:id/create/:group_id' => 'supplies#create', as: :supply
   get 'supplies/:id/edit/:supply_id' => 'supplies#edit', as: :edit_supply
   patch 'supplies/:id/update/:supply_id' => 'supplies#update', as: :update_supply
   delete 'supplies/:id/destroy/:supply_id' => 'supplies#destroy', as: :delete_supply
