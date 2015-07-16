@@ -11,11 +11,11 @@
   <div class="mdl-cell mdl-cell--2-col"></div>
   <div class="btn-group" id="group-choices">
     <% @game_session.groups.each do |group| %>
-      <div class="block">
+      <div>
         <% if group == @game_session.this_groups_turn %>
-          <input type="checkbox" value="<%= group.id %>" autocomplete="off" checked>
+          <input class="box" id="box<%= group.id %>" type="checkbox" value="<%= group.id %>" autocomplete="off" checked>
         <% else %>
-          <input type="checkbox" value="<%= group.id %>" autocomplete="off">
+          <input class="box" id="box<%= group.id %>" type="checkbox" value="<%= group.id %>" autocomplete="off">
         <% end %>
         <label><%= group.name %></label>
       </div>
