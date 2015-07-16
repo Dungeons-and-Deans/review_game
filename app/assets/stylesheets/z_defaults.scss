@@ -7,7 +7,7 @@ body {
 body a {
   text-decoration: none;
   
-  &:hover {
+  &:hover:not(.button) {
     text-decoration: underline;
   }
 }
