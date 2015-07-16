@@ -12,13 +12,14 @@
 </div>
 
 <div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div id="next-turn">
+    <%= render partial: '/teacher_gameplay/next_turn' %>
+  </div>
   <%= render partial: 'group_links' %>
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
-  <div id="next-turn">
-    <%= render partial: '/teacher_gameplay/next_turn' %>
-  </div>
+  
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
     <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
