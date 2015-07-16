@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require websocket_rails/main
 //= require material.min
+//= require sketch
 //
 //= require z_app
 //= require z_categories

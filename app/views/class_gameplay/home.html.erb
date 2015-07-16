@@ -8,7 +8,17 @@
 </div>
 
 <div id='map-container'>
-  <img class="map" src="<%= @map.file_path %>">
+
+  <div class="tools">
+    <a href="#tools_sketch" data-tool="marker">Marker</a>
+    <a href="#tools_sketch" data-tool="eraser">Eraser</a>
+  </div>
+  <canvas class="map" id="tools_sketch" width="900" height="900" style="background: url('<%= @map.file_path %>') no-repeat center center;"></canvas>
+  <script type="text/javascript">
+    $(function() {
+      $('#tools_sketch').sketch({defaultColor: "#ff0"});
+    });
+  </script>
 </div>
 
 <% @players.each do |player| %>
