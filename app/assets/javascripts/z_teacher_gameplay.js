@@ -49,13 +49,13 @@ app.teacherGameplay = {
 
   chooseWinner: function () {
     $('button.choose-winner').on('click', function () {
-      $('#myModal').toggleClass('active');
+      $('#winnerModal').toggleClass('active');
     });
   },
 
   closeWinner: function () {
     $('button.choose-winner-close').on('click', function () {
-      $('#myModal').toggleClass('active');
+      $('#winnerModal').toggleClass('active');
     });
   },
 

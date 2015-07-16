@@ -41,5 +41,5 @@ $(function () {
 
   }
 
-  app.gameSession.modalClose();
+  app.modalClose();
 });

@@ -27,13 +27,6 @@ app.gameSession = {
       }
     });
 
-  },
-
-  modalClose: function () {
-    $('button.close-modal').on('click', function (e) {
-      e.preventDefault();
-      $(this).closest('.modal').removeClass('active');
-    });
   }
 
 }
