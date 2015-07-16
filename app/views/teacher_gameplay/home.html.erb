@@ -1,13 +1,10 @@
 <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
-  <div id="game-header" class="mdl-cell mdl-cell--3-col">
+  <div id="game-header" class="mdl-cell mdl-cell--4-col">
     <h3><%= @game_session.name %></h3>
-  </div>
-  <div id="scores" class="mdl-cell mdl-cell--6-col">
-    <%= render partial: 'scores' %>
-  </div>
-
-  <div id="teacher-nav" class="mdl-cell mdl-cell--2-col">
     <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+  </div>
+  <div id="scores" class="mdl-cell mdl-cell--8-col">
+    <%= render partial: 'scores' %>
   </div>
 </div>
 
