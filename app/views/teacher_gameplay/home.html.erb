@@ -13,18 +13,18 @@
 <div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
   <div class="mdl-cell mdl-cell--6-col teacher-header">
     <div id="teacher-nav">
-      <div>
+      <div id="group-tabs">
         <%= render partial: 'group_links' %>
-          <div class="mdl-cell mdl-cell--2-col teacher-header">
-            <div id="next-turn">
-              <%= render partial: '/teacher_gameplay/next_turn' %>
-            </div>
-          </div>
-    
-        <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
       </div>
+      <div class="mdl-cell mdl-cell--2-col teacher-header">
+        <div id="next-turn">
+          <%= render partial: '/teacher_gameplay/next_turn' %>
+        </div>
+      </div>
+      <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
     </div>
   </div>
+</div>
   <div class="mdl-cell mdl-cell--6-col teacher-header">
   </div>
 </div>
