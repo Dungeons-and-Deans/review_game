@@ -27,10 +27,6 @@ span.group-name {
   margin: 2rem 0;
 }
 
-.choose-winner {
-
-}
-
 .edit-score-container {
   width: 5rem;
 }
@@ -38,6 +34,10 @@ span.group-name {
 button#send-competition-question {
   position: absolute;
   right: 0;
+}
+
+.choose-winner {
+  text-align: right;
 }
 
 #winnerModal {
