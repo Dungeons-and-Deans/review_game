@@ -8,7 +8,7 @@
 </div>
 
 <div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp card">
-  <div id="teacher-nav">
+  <div id="teacher-nav" class="mdl-grid mdl-cell--12-col">
     <%= render partial: 'group_links' %>
       <div id="next-turn">
         <%= render partial: '/teacher_gameplay/next_turn' %>
@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
@@ -26,7 +26,7 @@
     <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>

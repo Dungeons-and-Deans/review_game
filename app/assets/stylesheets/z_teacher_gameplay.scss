@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
+.group-links {
+  display: inline-block;
+}
+
 span.group-name {
   font-size: 1.2em;
   text-transform: uppercase;

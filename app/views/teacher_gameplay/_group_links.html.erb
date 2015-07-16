@@ -1,5 +1,5 @@
 <% @game_session.groups.each do |group| %>
-  <div>
-    <%= link_to "#{group.name}", current_group_path(@game_session.id,group.id), remote: true %>
+  <div class="group-link">
+    <%= link_to "#{group.name}", current_group_path(@game_session.id,group.id), class: "mdl-button mdl-js-button mdl-button--raised", remote: true %>
   </div>
 <% end %>
