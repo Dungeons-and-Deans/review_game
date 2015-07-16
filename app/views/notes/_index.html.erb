@@ -16,10 +16,10 @@
     <% end %>
     <li>
       <div>
-        <div id="notesModal" class="mdl-shadow--4dp modal">
-          <div class="modal-fg modal-card mdl-cell--4-col">
+        <div id="notesModal" class="modal">
+          <div class="modal-fg modal-card mdl-cell--3-col">
             <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
-            <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+            <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-margin">Close</button>
           </div>
         </div>
       </div>

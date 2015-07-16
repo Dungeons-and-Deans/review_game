@@ -24,10 +24,10 @@
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <% if session[:group_id] %>
-              <%= link_to("Student Logout", student_gameplay_logout_path, :class => "mdl-navigation__link") %>
+              <%= link_to("Student Logout", student_gameplay_logout_path, :class => "mdl-navigation__link button") %>
             <% else %>
               <% if teacher_signed_in? %>
-                <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, :class => "mdl-navigation__link") %>
+                <%= link_to('Logout', destroy_teacher_session_path, :method => :delete, :class => "mdl-navigation__link button") %>
               <% end %>
             <% end %>
           </nav>
@@ -37,10 +37,10 @@
         <div class="mdl-layout__drawer">
           <span class="mdl-layout-title">ReviewGame</span>
           <nav class="mdl-navigation">
-            <%= link_to 'Games', games_path, :class => "mdl-navigation__link" %>
-            <%= link_to 'Roster', students_path, :class => "mdl-navigation__link" %>
-            <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link" %>
-            <%= link_to 'Help', help_path, :class => "mdl-navigation__link" %>
+            <%= link_to 'Games', games_path, :class => "mdl-navigation__link button" %>
+            <%= link_to 'Roster', students_path, :class => "mdl-navigation__link button" %>
+            <%= link_to 'Questions', categories_path, :class => "mdl-navigation__link button" %>
+            <%= link_to 'Help', help_path, :class => "mdl-navigation__link button" %>
           </nav>
         </div>
       <% end %>
