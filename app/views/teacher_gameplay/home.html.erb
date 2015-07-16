@@ -1,33 +1,27 @@
-<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp card">
-  <div id="game-header">
-    <%= @game_session.name %>
+<div class="mdl-grid mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div id="game-header" class="mdl-cell mdl-cell--6-col">
+    <h3><%= @game_session.name %></h3>
   </div>
-  <div id="scores">
+  <div id="scores" class="mdl-cell mdl-cell--6-col">
     <%= render partial: 'scores' %>
   </div>
 </div>
-<div class="mdl-grid mdl-cell--12-col mdl-shadow--4dp top card">
-  <div class="mdl-cell mdl-cell--6-col teacher-header">
-    <div id="teacher-nav">
-      <div id="group-tabs">
-        <%= render partial: 'group_links' %>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col teacher-header">
-        <div id="next-turn">
-          <%= render partial: '/teacher_gameplay/next_turn' %>
-        </div>
-      </div>
-      <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-    </div>
-  </div>
-</div>
-  <div class="mdl-cell mdl-cell--6-col teacher-header">
+
+<div class="mdl-grid mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div id="teacher-nav" class="mdl-grid mdl-cell mdl-cell--12-col">
+    
+    <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+
   </div>
 </div>
 
 <div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <%= render partial: 'group_links' %>
   <div id="current-group">
     <%= render partial: 'current_group' %>
+  </div>
+  <div id="next-turn">
+    <%= render partial: '/teacher_gameplay/next_turn' %>
   </div>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
