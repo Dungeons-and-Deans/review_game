@@ -14,8 +14,8 @@
   <div class="mdl-cell mdl-cell--6-col teacher-header">
     <div id="teacher-nav">
       <div>
-        <%= link_to "All Group Stats", groups_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
-        <%= link_to 'Teacher View', teacher_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+        <%= render partial: 'group_links' %>
+        
         <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
       </div>
     </div>

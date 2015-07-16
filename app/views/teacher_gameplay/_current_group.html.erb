@@ -1,18 +1,20 @@
 
 <div class="current-group" id="<%= @current_group.id %>">
-  <h3><%= @current_group.name if @current_group %>'s Turn</h3>
+  <h3><%= @current_group.name if @current_group %></h3>
 </div>
-<div class="mdl-cell mdl-cell--2-col teacher-header">
-  <div id="next-turn">
-    <%= render partial: 'next_turn' %>
+<% if @current_group.group_turn? %>
+  <div class="mdl-cell mdl-cell--2-col teacher-header">
+    <div id="next-turn">
+      <%= render partial: 'next_turn' %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="supplies">
   <% if @current_group %>
     <h5>Supplies</h5>
     <ul>
-      <% if  @current_group.supplies.length == 0 %>
+      <% if @current_group.supplies.length == 0 %>
         <li>
           No Supplies Added
         </li>

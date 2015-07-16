@@ -16,4 +16,8 @@ class Group < ActiveRecord::Base
     self.group_assignments.any? { |g| g.active }
   end
 
+  def group_turn?
+    self.id == GameSession.find(self.game_session_id).turn_group_id
+  end
+
 end

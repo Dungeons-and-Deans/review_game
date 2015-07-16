@@ -6,9 +6,16 @@ class TeacherGameplayController < ApplicationController
     @question = @game_session.random_question
   end
 
-  def groups
-    @groups = @game_session.groups
+  def group_links
+    @game_session
+  end
+
+  def current_group
+    @current_group = Group.find(params[:group_id])
     @supply = Supply.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def edit_score

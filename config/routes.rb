@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'student_gameplay/logout'
   get 'student_gameplay/:id/home/:group_id' =>'student_gameplay#home', as: :student_gameplay
 
+  get 'teacher_gameplay/:id/current_group/:group_id' => 'teacher_gameplay#current_group', as: :current_group
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home', as: :teacher_gameplay
   post 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
   get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups', as: :groups
