@@ -1,8 +1,8 @@
 
 <%= simple_form_for @group, url: update_score_path(@game_session, @group), remote: true do |f| %>
 
-  <%= f.input :score, label: false %>
+  <%= f.input :score, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo edit-score-container" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
-  <%= f.button :submit, "Update" %>
+  <%= f.button :submit, "Update", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
 
 <% end %>
