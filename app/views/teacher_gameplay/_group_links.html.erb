@@ -1,5 +1,8 @@
 <% @game_session.groups.each do |group| %>
   <div class="group-link">
+    <% if group == @game_session.this_groups_turn %>
+      <i class="fa fa-bookmark"></i>
+    <% end %>
     <%= link_to "#{group.name}", current_group_path(@game_session.id,group.id), class: "mdl-button mdl-js-button mdl-button--raised", remote: true %>
   </div>
 <% end %>

@@ -5,7 +5,7 @@
   <div id="scores" class="mdl-cell mdl-cell--6-col">
     <%= render partial: 'scores' %>
   </div>
-  
+
   <div id="teacher-nav" class="mdl-cell mdl-cell--2-col">
     <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
   </div>
@@ -15,11 +15,11 @@
   <div id="next-turn">
     <%= render partial: '/teacher_gameplay/next_turn' %>
   </div>
-  <%= render partial: 'group_links' %>
+  <div id="group-links"><%= render partial: 'group_links' %></div>
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
-  
+
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
     <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
