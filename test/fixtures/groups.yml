@@ -4,8 +4,10 @@ one:
   game_session: :one
   name: "GroupOne"
   score: 1
+  password: "password"
 
 two:
   game_session: :one
   name: "GroupTwo"
   score: 2
+  password: "password"

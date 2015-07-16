@@ -1,31 +1,52 @@
-<div id="scores">
-  <h3>Scores</h3>
-  <%= render partial: 'scores' %>
+<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp card">
+  <div id="game-header" class="mdl-cell mdl-cell--4-col">
+    <h3><%= @game_session.name %></h3>
+    <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent" %>
+  </div>
+  <div id="scores" class="mdl-cell mdl-cell--8-col">
+    <%= render partial: 'scores' %>
+  </div>
 </div>
 
-<div>
-  <h3>Current Group</h3>
-  <div><%= @current_group.name %></div>
-  <div><p>Supplies</p><ul>
-    <% @current_group.supplies.each do |s| %>
-    <li><%= s.amount %> <%= s.name %></li>
-    <% end %>
-    <li><%= render partial: 'supply', locals: { id: @current_group.id } %></li>
-  </ul></div>
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div id="group-links">
+    <%= render partial: 'group_links' %>
+  </div>
+  <div id="next-turn">
+    <%= render partial: '/teacher_gameplay/next_turn' %>
+  </div>
+  <div id="current-group">
+    <%= render partial: 'current_group' %>
+  </div>
+
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
+    <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
-<div>
-  <%= simple_form_for @game_session, url: 'next_group' do |f| %>
-    <%= f.hidden_field :turn_group_id, value: @game_session.next_group %>
-
-    <%= f.button :submit, "Next Turn" %>
-  <% end %>
+<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div id="next-question">
+    <%= render partial: 'next_question' %>
+  </div>
+  <div>
+    <button id="send-question" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Send Question
+    </button>
+  </div>
+  <div>
+    <ul id="list-competition-answers">
+    </ul>
+  </div>
 </div>
 
-<div>
-  <h3>Next Question</h3>
-  <%= @question.content %>
+<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+  <div class="mdl-cell mdl-cell--1-col"></div>
+  <div class="mdl-cell mdl-cell--10-col" id="roster">
+    <%= render partial: 'roster' %>
+  </div>
+  <div class="mdl-cell mdl-cell--1-col"></div>
 </div>
 
-<%= link_to "Open Class View", "/class_gameplay/#{@game_session.id}/home", class: "btn btn-default" %>
-<%= link_to "All Group Stats", "/teacher_gameplay/#{@game_session.id}/groups", class: "btn btn-default" %>
+<div id="answer-buttons">
+  <%= render partial: 'answer_buttons' %>
+</div>

@@ -1,0 +1,38 @@
+<div class="mdl-cell mdl-cell--12-col">
+  <h3>Players</h3>
+  <%= render partial: 'winner' %>
+</div>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+  <thead>
+    <tr>
+      <% @game_session.groups.each do |group| %>
+      <th class="mdl-data-table__cell--non-numeric"><%= group.name %></th>
+      <% end %>
+      <th class="mdl-data-table__cell--non-numeric">Legend</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @game_session.groups.each do |group| %>
+        <td class="mdl-data-table__cell--non-numeric">
+          <ul>
+            <% group.students.order(:last_name).each do |student| %>
+              <li>
+                <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
+                <%= student.full_name %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      <% end %>
+      <td class="mdl-data-table__cell--non-numeric">
+        <ul>
+          <li><i class="fa fa-star-o">Active Player</i></li>
+          <li><i class="fa fa-times">Inactive Player</i></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

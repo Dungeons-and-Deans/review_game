@@ -1,0 +1,3 @@
+<%= link_to "#{s.amount} #{s.name}", edit_supply_path(@game_session, s), remote: true %>
+
+<%= link_to '<i class="fa fa-times"></i>'.html_safe, delete_supply_path(@game_session, s), method: :delete, remote: true %>

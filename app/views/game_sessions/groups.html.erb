@@ -1,17 +1,22 @@
-<h1><%= @game_session.game.name %> <%= @game_session.id %></h1>
-
-<%= simple_form_for @game_session, url: "assign_groups" do |f| %>
-  <%= f.error_notification %>
-
-  <%= render partial: 'new_group_form', locals: {f: f} %>
-
-  <%= f.button :submit, "Submit" %>
-<% end %>
-
-<% @students.each do |student| %>
-  <div class="draggables"><%= student.full_name %></div>
-<% end %>
-
-<div class="links">
-  <%= link_to 'New Game Scenario', new_game_path %>
+<div class="mdl-cell mdl-cell--12-col">
+  <h3 class="session-name" id="<%= @game_session.id %>">Game Session Name: <%= @game_session.name %></h3>
+  <ul>
+    <li>Each team will sign in during the game using the passwords below.</li>
+  </ul>
 </div>
+
+<div class="mdl-cell mdl-cell--2-col mdl-shadow--4dp class-list">
+  <div><h6>Drag and drop students to assign to a team.</h6></div>
+  <ul class="groups-students" id="0">
+    <% @students.each do |student| %>
+      <li class="draggables" id="<%= student.id %>"><%= student.full_name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="mdl-cell mdl-cell--10-col">
+  <div id="new-group-form-container">
+    <%= render partial: 'new_group_form' %>
+  </div>
+</div>
+<div id="footnotes_holder"></div>

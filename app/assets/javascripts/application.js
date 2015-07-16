@@ -13,23 +13,115 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require bootstrap-sprockets
+//= require websocket_rails/main
+//= require material.min
 //
 //= require z_app
 //= require z_categories
-//= require z_games
-//= require z_students
-//= require z_teacher_gameplay
 //= require z_class_gameplay
+//= require z_game_sessions
+//= require z_games
+//= require z_icon_movement
+//= require z_notes
+//= require z_pages
+//= require z_questions
+//= require z_student_gameplay
+//= require z_students
+//= require z_supplies
+//= require z_teacher_gameplay
 //
-//= require z_init
-var questionCounter = 1;
+//= require zz_init
 
-function copySection() {
-  var question = $("#question-form").parent().clone().html();
+var dispatcher = new WebSocketRails(window.location.host + "/websocket");
+var pathArray = window.location.pathname.split( '/' );
+var channelNumber = pathArray[2];
+var groupNumber = pathArray[4];
 
-  question = question.replace(/\[[0-9]+\]/g, '[' + questionCounter + ']')
-    .replace(/_[0-9]+_/g, '_' + questionCounter + '_');
-  $("#question-list").append(question);
-  questionCounter++;
-}
+channel = dispatcher.subscribe('group_listen' + channelNumber);
+channelStudentQuestion = dispatcher.subscribe('question_listen' + groupNumber);
+
+channel.bind('initial_placement', function (icons) {
+  icons.map(function (icon) {
+    $('#' + icon.id).offset({ top: icon.board_y, left: icon.board_x });
+    if (icon.active === false) {
+      $('#' + icon.id).hide();
+    }
+  })
+});
+
+channel.bind('icon_display', function (icon) {
+  if (icon.active === false) {
+    $('#' + icon.id).hide();
+  } else {
+    $('#' + icon.id).show();
+  }
+});
+
+channel.bind('coordinates', function (icon) {
+  var id = icon.id;
+
+  $('i#' + id).offset({ top: icon.board_y, left: icon.board_x });
+
+  var glow = $('#' + id);
+  glow.addClass('glow');
+  window.setTimeout(function () {
+    glow.removeClass('glow');
+  }, 300);
+});
+
+channel.bind('turn_display', function (groupName) {
+  $('#turn-group').text("Turn: " + groupName);
+});
+
+channel.bind('update_score', function (group) {
+  $('#score-group' + group.id).text(group.name + " " + group.score);
+  $('#score-line' + group.id).text(group.score + "points");
+});
+
+channelStudentQuestion.bind('ask_question', function (questionText) {
+  $('#answer-competition').hide()
+  $('#question-text').text(questionText);
+  $('#questionModal').toggleClass('active');
+
+  window.setTimeout(function () {
+    $('#questionModal').toggleClass('active');
+  }, 5000);
+
+});
+
+channel.bind('list_competition_group', function (group) {
+  $('#list-competition-answers').append("<li><button class='correct' id='" + group.id + "'><i class='fa fa-check'>Correct</i></button> " + group.name + "</li>");
+});
+
+
+channelStudentQuestion.bind('ask_competition_question', function (questionText) {
+  $('#answer-competition').show()
+  $('#question-text').text(questionText);
+  $('#questionModal').toggleClass('active');
+
+  window.setTimeout(function () {
+    $('#questionModal').toggleClass('active');
+  }, 5000);
+
+});
+
+channelStudentQuestion.bind('group_list', function (groupList) {
+  $('#group-list').empty();
+  groupList.map(function (group) {
+    $('#group-list').append("<li>" + group + "</li>");
+  });
+});
+
+channelStudentQuestion.bind('update_supplies', function (supplies) {
+  $('#supply-list').empty();
+  supplies.map(function (supply) {
+    $('#supply-list').append('<li>' + supply.amount + ' ' + supply.name + '</li>');
+  });
+});
+
+channelStudentQuestion.bind('send_message', function (message_text) {
+  $('#message-text-container').text(message_text);
+
+  $('#messageModal').toggleClass('active');
+
+});

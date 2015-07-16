@@ -8,4 +8,9 @@ class Teacher < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+  def available_games
+    Game.where(teacher_id: [self.id, nil]) 
+  end
 end

@@ -1,3 +1,127 @@
 // Place all the styles related to the teacher_gameplay controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'z_colors';
+
+#group-links,
+.group-link,
+#next-turn,
+#roster {
+  display: inline-block;
+  position: relative;
+}
+
+.group-link {
+  margin-right: 0.5rem;
+}
+
+span.group-name {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+#group-choices {
+  margin: 2rem 0;
+}
+
+.choose-winner {
+  position: absolute;
+  top: 1.8rem;
+  right: 0.5rem;
+}
+
+.edit-score-container {
+  width: 8rem;
+}
+
+button#send-competition-question {
+  position: absolute;
+  right: 0;
+}
+
+#winnerModal {
+  background-color: $modal-bg;
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+}
+
+#winnerModal.active {
+  display: block;
+}
+
+#suppliesModal {
+  background-color: $modal-bg;
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
+}
+
+#suppliesModal.active {
+  display: block;
+}
+
+#answerButtonsModal {
+  text-align: center;
+  background-color: $modal-bg;
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+}
+
+#answerButtonsModal.active {
+  display: block;
+}
+
+#button-correct {
+  background: #1976D2;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+}
+
+#button-incorrect {
+  background: #E65100;
+  color: #FFFFFF;
+}
+
+#sendMessageModal {
+  text-align: center;
+  background-color: $modal-bg;
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+}
+
+#sendMessageModal.active {
+  display: block;
+}
+
+#sendMessageModal select {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 0;
+}
+
+#edit_group_1 {
+  display: inline-block;
+  width: 50px;
+}

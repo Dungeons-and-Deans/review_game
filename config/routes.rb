@@ -1,31 +1,56 @@
 Rails.application.routes.draw do
-  get 'class_gameplay/:id/home' => 'class_gameplay#home'
+
+  get 'pages/home'
+  get 'faq' => 'pages#faq'
+  get 'help' => 'pages#help'
+
+  root 'pages#home'
+
+
+  resources :notes
+  devise_for :teachers
+  resources :games
+  resources :students
+  resources :categories do
+    member do
+      patch 'update_title'
+    end
+  end
+  resources :questions
+
+  get 'class_gameplay/:id/home' => 'class_gameplay#home', as: :class_gameplay
 
   get 'student_gameplay/login'
   post 'student_gameplay/login'
   get 'student_gameplay/logout'
-  get 'student_gameplay/home'
+  get 'student_gameplay/:id/home/:group_id' =>'student_gameplay#home', as: :student_gameplay
 
-  get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
-  get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups'
-  get 'teacher_gameplay/:id/supply/:group_id' => 'teacher_gameplay#supply'
-  post 'teacher_gameplay/:id/assign_supply' => 'teacher_gameplay#assign_supply'
-  get 'teacher_gameplay/:id/competition' => 'teacher_gameplay#competition'
-  patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score'
-  get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score'
-  patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group'
+  get 'teacher_gameplay/:id/current_group/:group_id' => 'teacher_gameplay#current_group', as: :current_group
+  get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home', as: :teacher_gameplay
+  post 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
+  get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups', as: :groups
+  patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score', as: :update_score
+  get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
+  patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
+  get 'teacher_gameplay/:id/active/:student_id' => 'teacher_gameplay#active', as: :active
+  patch 'teacher_gameplay/:id/next_question/:question_id/:group_id' => 'teacher_gameplay#next_question', as: :next_question
+  post 'teacher_gameplay/:id/send_message/:group_id' => 'teacher_gameplay#send_message', as: :send_message
 
-  devise_for :teachers
-  root 'games#index'
-  resources :games
-  resources :students
-  resources :categories
+  get 'game_sessions/:game_id/new' => 'game_sessions#new', as: :new_game_session
+  post 'game_sessions/:game_id/create' => 'game_sessions#create', as: :create_game_session
+  get 'game_sessions/:id/groups' => 'game_sessions#groups', as: :game_session_groups
+  delete 'game_sessions/:id/destroy' => 'game_sessions#destroy', as: :delete_game_session
+  patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups
+  post 'game_sessions/:id/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
+  patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
 
-  get 'game_sessions/new'
-  post 'game_sessions/create'
-  get 'game_sessions/:id/groups' => 'game_sessions#groups'
-  delete 'game_sessions/:id/destroy' => 'game_sessions#destroy'
-  patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups'
+
+
+  post 'supplies/:id/create/:group_id' => 'supplies#create', as: :supply
+  get 'supplies/:id/edit/:supply_id' => 'supplies#edit', as: :edit_supply
+  patch 'supplies/:id/update/:supply_id' => 'supplies#update', as: :update_supply
+  delete 'supplies/:id/destroy/:supply_id' => 'supplies#destroy', as: :delete_supply
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

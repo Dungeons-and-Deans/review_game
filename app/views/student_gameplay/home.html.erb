@@ -1,22 +1,77 @@
-<h1>StudentGameplay#home</h1>
-<p>Find me in app/views/student_gameplay/home.html.erb</p>
-
-<div>
-  <%= session[:group_id] %>
-  <p><%= @group.name %></p>
-  <p><%= @group.score %></p>
-  <% @group.supplies.each do |supply|%>
-    <p>
-      <%=  supply.name %>
-      <%=  supply.amount %>
-    </p>
-  <% end %>
-  <% @group.students.each do |student| %>
-    <p>
-      <%= student.first_name %>
-      <%= student.last_name %>
-    </p>
-  <% end %>
+<div id="map-container">
+  <img class="map" src="<%= @map.file_path %>">
 </div>
 
-<%= link_to "Logout", student_gameplay_logout_path %>
+<% @players.each do |player| %>
+  <i class="<%= @icon.description %> fa-2x <%= player.group_id %> draggables icon", id="<%= player.id %>">
+    <%= player.student.first_name[0] %><%= player.student.last_name[0] %>
+  </i>
+<% end %>
+
+<nav class="student-stats nav-expanded">
+  <a href="#" id="nav-close">X</a>
+
+  <ul class="list-unstyled stat-main-content">
+
+    <div class="stat-title">
+      <span>
+        <%= @group.name %>
+      </span>
+      <ul id="group-list"class="list-unstyled">
+        <% @group.students.order(:last_name).each do |student| %>
+          <li>
+            <%= student.active?(@group.id).html_safe %>
+            <%= student.full_name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="stat-title" id="score-line<%= params[:group_id] %>">
+      <span>
+        <%= @group.score %> points
+      </span>
+    </div>
+    <div class="stat-title">
+      <span>Supplies:</span>
+    </div>
+    <table id='supply-list' class="list-unstyled">
+      <tbody>
+        <% if @group.supplies.length == 0 %>
+          <tr>
+            <td>
+              No Supplies Added
+            </td>
+          </tr>
+        <% else %>
+          <% @group.supplies.each do |supply|%>
+            <tr>
+              <td>
+                <%= supply.amount %>
+              </td>
+            <td>&nbsp;</td>
+              <td>
+                <%= supply.name %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <div id='turn-group'>
+      Turn: <%= Group.find(@game_session.turn_group_id).name %>
+    </div>
+
+  </ul>
+</nav>
+
+<div class="navbar-header pull-right">
+  <a id="nav-expander" class="nav-expander fixed">
+    STATS &nbsp;<i class="fa fa-bars fa-lg white"></i>
+  </a>
+</div>
+
+
+<%= render partial: 'question', locals: {question: @game_session} %>
+<%= render partial: 'message' %>
+<%= render partial: 'games/story_modal' %>
+<div id="footnotes_holder"></div>

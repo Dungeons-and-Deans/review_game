@@ -1,19 +1,15 @@
-<p>
-  <strong>Games won:</strong>
-  <%= @student.games_won %>
-</p>
+<div class="mdl-cell mdl-cell--4-col"></div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
-<div class="links">
-  <%= link_to 'Edit', edit_student_path(@student) %>
-  <%= link_to 'New Game Scenario', new_game_path %>
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+  <div>
+    <h4><%= @student.first_name %> <%= @student.last_name %></h4>
+  </div>
+  <div>
+    Games won: <%= @student.games_won %>
+  </div>
+  <div>
+    <%= link_to 'Edit', edit_student_path(@student), html_options = { class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" } %>
+  </div>
 </div>
+
+<div class="mdl-cell mdl-cell--4-col"></div>

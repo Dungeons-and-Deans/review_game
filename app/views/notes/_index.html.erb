@@ -1,0 +1,28 @@
+<% if group %>
+  <h5>Notes</h5>
+  <ul>
+    <% if group.notes.length == 0 %>
+      <li>
+        No Notes Added
+      </li>
+    <% else %>
+      <% group.notes.each do |n| %>
+        <li id="note<%= n.id %>">
+          <%= n.content %>
+          <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_note_path(n), remote: true %>
+          <%= link_to '<i class="fa fa-times"></i>'.html_safe, n, method: :delete, remote: true %>
+        </li>
+      <% end %>
+    <% end %>
+    <li>
+      <div>
+        <div id="notesModal" class="mdl-shadow--4dp modal">
+          <div class="modal-fg modal-card mdl-cell--4-col">
+            <%= render partial: '/notes/form', locals: { id: group.id, note: Note.new } %>
+            <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+<% end %>

@@ -1,0 +1,35 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require jquery-ui
+ *= require scaffolds
+ *
+ *= require material-blue.min
+ *
+ *= require z_colors
+ *= require z_defaults
+ *= require z_categories
+ *= require z_class_gameplay
+ *= require z_game_sessions
+ *= require z_gameplay_communication
+ *= require z_games
+ *= require z_notes
+ *= require z_pages
+ *= require z_questions
+ *= require z_student_gameplay
+ *= require z_students
+ *= require z_supplies
+ *= require z_teacher_gameplay
+ *
+ */
+ 

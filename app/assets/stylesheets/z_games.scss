@@ -1,3 +1,70 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'z_colors';
+
+.available-games td:nth-child(2),
+.available-games th:nth-child(2) {
+  text-align: center;
+}
+
+.current-games td:nth-child(2),
+.current-games th:nth-child(2) {
+  text-align: center;
+}
+
+.game-card {
+  position: relative;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin: 0 auto;
+}
+
+.preview {
+  height: 12rem;
+}
+
+.game-container {
+  overflow: scroll;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.remove-game {
+  position: absolute;
+  right: 1.5rem;
+}
+
+
+#newGameSessionModal {
+  text-align: left;
+  background-color: $modal-bg;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  z-index: 5;
+}
+
+#new-game-container {
+  display: none;
+}
+
+#new-game-container.active {
+  display: block;
+}
+
+#storyModal {
+  background-color: $modal-bg;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#storyModal.inactive {
+  display: none;
+}

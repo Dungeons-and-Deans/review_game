@@ -1,55 +1,61 @@
-<h1>Available Game Scenarios</h1>
+<div class="mdl-cell mdl-cell--12-col center">
+  <h3>Available Game Scenarios</h3>
+</div>
 
-<table>
+<div class="mdl-cell mdl-cell--12-col mdl-grid game-card-container">
+  <% @games.each do |game| %>
+    <div class="mdl-cell mdl-cell--3-col mdl-shadow--4dp game-card">
+      <div class="remove-game"><%= link_to '<i class="fa fa-times"></i>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <span><%= game.name %></span>
+      <div class="game-container"><a href="<%= edit_game_path(game) %>"><img class="preview" src="<%= game.maps.first.file_path %>"></a></div>
+      <span><%= link_to 'Start New Game', new_game_session_path(game), html_options = { class: "mdl-button mdl-js-button mdl-button--accent", remote: true } %></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="mdl-cell mdl-cell--12-col center">
+  <h3>Games In Progress</h3>
+</div>
+
+<div class="mdl-cell mdl-cell--2-col"></div>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--4dp mdl-cell mdl-cell--8-col current-games">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Player Icon</th>
-      <th>Movement Allowed</th>
+      <th class="mdl-data-table__cell--non-numeric">Name</th>
+      <th class="mdl-data-table__cell--non-numeric">Player Icon</th>
+      <th class="mdl-data-table__cell--non-numeric">Game</th>
+      <th>Last Active Date</th>
+      <th class="mdl-data-table__cell--non-numeric">Winner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %></td>
-        <td><i class="<%= game.icon.description %> fa-2x"></i></td>
-        <td><%= game.movement %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Remove', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>Current Games</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Game</th>
-      <th>Last Active Date</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <% game.game_sessions.each do |game_session| %>
+      <% game.available_game_sessions(@teacher.id).each do |game_session| %>
         <tr>
-          <td><%= game_session.name %></td>
-          <td><%= game.name %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= game_session.name %></td>
+          <td><i class="<%= game_session.icon.description %> fa-2x"></i></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= game.name %></td>
           <td><%= game_session.updated_at.strftime("%b %e, %Y") %></td>
-          <td><%= link_to 'Play', "/teacher_gameplay/#{game_session.id}/home" %></td>
-          <td><%= link_to 'Remove', "/game_sessions/#{game_session.id}/destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= Group.find(game_session.winning_group_id).name if game_session.winning_group_id %></td>
+          <td><%= link_to 'Play', teacher_gameplay_path(game_session) %></td>
+          <td><%= link_to 'Groups', game_session_groups_path(game_session) %></td>
+          <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, delete_game_session_path(game_session), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<div class="links">
-  <%= link_to 'Start New Game', '/game_sessions/new' %>
+<div class="mdl-cell mdl-cell--2-col"></div>
+
+<div id="new-game-container" class="modal">
+  <div id="newGameSessionModal" class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+    <div class="modal-fg modal-card">
+      <div id="new-game-form"></div>
+      <button type="button" class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-dismiss="modal">Close</button>
+    </div>
+  </div>
 </div>

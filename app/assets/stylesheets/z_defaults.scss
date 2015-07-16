@@ -1,113 +1,171 @@
 @import 'z_colors';
 
 body {
-  font-family: sans-serif;
-  background: $bg-color;
-  color: $fg-color;
-  padding: 2rem;
+  background: $body;
 }
 
-.nav {
-  position: relative;
-}
-
-h1, h2, h3, h4,
-h5, h6 {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.alert,
-.notice {
+.center {
   text-align: center;
 }
 
-.links {
-  position: relative;
-  text-align: center;
-}
-
-.links a {
-  display: block;
-}
-
-p {
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-a {
-  color: $link-color;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $link-color-active;
-}
-
-.list li {
-  padding: 0.5rem 2rem;
-  
-  &:not(:last-child) {
-    border-bottom: 1px solid $fg-color;
-  }
-}
-
-form,
-table {
-  position: relative;
-  margin: 0 auto 4rem auto;
-}
-
-form {
-  max-width: 40rem;
-}
-
-tbody tr:not(:last-child) {
-  border-bottom: 1px solid $fg-color;
-}
-
-tbody tr:hover {
-  opacity: 0.7;
-}
-
-input[type="submit"] {
-  display: block;
+.form-centering {
+  width: 20rem;
   margin: 0 auto;
 }
 
-td, th {
-  padding: 0.25em 1em;
-  text-align: center;
-  vertical-align: middle;
+.login-button {
+  margin-top: 1rem;
 }
 
-.logout {
+.modal-fg {
+  background: $modal-fg;
   position: absolute;
+  padding: 1rem 2rem;
   top: 50%;
-  transform: translateY(-50%);
-  right: 1rem;
-  display: block;
-  padding: 0.5rem 1rem;
-  background: $button-color;
-  color: $button-color-font;
-  border-radius: 0.3rem;
-  
-  &:hover {
-    background: $button-color-hover;
-    color: $button-color-font;
-    text-decoration: none;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+table.table {
+  width: 100%;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.slider {
+  position: relative;
+
+  & .slider-title {
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  & input {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
-.bg-image {
-  position: fixed;
-  top: 0;
+.icon {
+  position: absolute;
+  z-index: 100;
+}
+
+.notice,
+.alert {
+  text-align: center;
+}
+
+.shared-links div {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form {
+  & ul {
+    text-align: left;
+  }
+}
+
+.map {
+  position: relative;
+  max-width: 70rem;
+  min-width: 70rem;
+}
+
+#map-container {
+  position: absolute;
   left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  z-index: -100;
-  -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%);
-  opacity: 0.06;
+  top: 7rem;
+}
+
+.glow {
+    text-shadow: 0rem 0rem 1rem #1194f6;
+}
+
+
+#footnotes_debug {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  right: 0;
+}
+
+
+.draggables {
+  &[class~="1"] {
+    color: red;
+  }
+}
+
+.draggables {
+  &[class~="2"] {
+    color: blue;
+  }
+}
+
+.draggables {
+  &[class~="3"] {
+    color: green;
+  }
+}
+
+.draggables {
+  &[class~="4"] {
+    color: orange;
+  }
+}
+
+.draggables {
+  &[class~="5"] {
+    color: teal;
+  }
+}
+
+.draggables {
+  &[class~="6"] {
+    color: aqua;
+  }
+}
+
+.draggables {
+  &[class~="7"] {
+    color: yellow;
+  }
+}
+
+.draggables {
+  &[class~="8"] {
+    color: greenyellow;
+  }
+}
+
+.draggables {
+  &[class~="9"] {
+    color: pink;
+  }
+}
+
+i {
+
+  &.draggables {
+   cursor: pointer;
+   cursor: hand;
+   text-shadow: 2px 2px 0px #000;
+  }
+}
+
+i {
+
+  &.draggables.glow {
+      text-shadow: 0rem 0rem 1rem #1194f6;
+  }
 }

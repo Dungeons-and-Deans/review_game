@@ -1,13 +1,16 @@
 <% @groups.each do |group| %>
-  <div class="group">
-    <div><%= group.name %></div>
+  <div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+    <h3><%= group.name %></h3>
     <div><%= group.score %> points</div>
+    <h4>Supplies</h4>
     <ol>
       <% group.supplies.each do |supply| %>
         <li><%= supply.amount %> <%= supply.name %></li>
       <% end %>
     </ol>
+    <div id="notes<%= group.id %>"><%= render partial: '/notes/index', locals: { group: group } %></div>
   </div>
 <% end %>
 
-<%= link_to 'Main Game', "/teacher_gameplay/#{@game_session.id}/home"%>
+
+<%= link_to 'Main Game', teacher_gameplay_path(@game_session) %>

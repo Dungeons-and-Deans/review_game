@@ -1,0 +1,30 @@
+<h3>Next Question</h3>
+
+<div class="question-content">
+  <h4><%= @question.content %></h4>
+</div>
+<div>
+  <h5>Answer: <%= @question.answer %></h5>
+</div>
+
+<div>
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="btn-group" id="group-choices">
+    <% @game_session.groups.each do |group| %>
+      <div>
+        <% if group == @game_session.this_groups_turn %>
+          <input class="box" id="box<%= group.id %>" type="checkbox" value="<%= group.id %>" autocomplete="off" checked>
+        <% else %>
+          <input class="box" id="box<%= group.id %>" type="checkbox" value="<%= group.id %>" autocomplete="off">
+        <% end %>
+        <label><%= group.name %></label>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= simple_form_for @question, url: next_question_path(@game_session, @question, @current_group.id), html: { id: 'competition-question-form', remote: true} do |f| %>
+    <%= f.hidden_field :right, value: f.object.right + 1%>
+  <% end %>
+</div>

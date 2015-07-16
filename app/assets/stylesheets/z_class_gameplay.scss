@@ -1,25 +1,29 @@
 // Place all the styles related to the class_gameplay controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.map{
-  width: 100%;
+.mdl-badge {
+  width: 100px;
+  align-text: center;
 }
 
-.draggables {
-  &[class~="1"] {
-    color: red;
-  }
+.score-board {
+  max-width: 17rem;;
+  align-text: center;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  right: 2.5rem;
+  top: 7rem;
+  position: fixed;
 }
 
-.draggables {
-  &[class~="2"] {
-    color: blue;
-  }
+.score-group {
+  align-text: center;
+  position: relative;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
 }
 
-.draggables {
-  &[class~="3"] {
-    color: green;
-  }
+#turn-group {
+  margin-top: 2rem;
 }

@@ -1,15 +1,9 @@
 var app = {
-  
-  navActive: function (pathname) {
-    $('.nav').find('.active').removeClass('active');
-    
-    if (pathname.length === 1 || (/game/.test(pathname))) {
-      $('.nav .home').addClass('active');
-    } else if (/students/.test(pathname)) {
-      $('.nav .roster').addClass('active');
-    } else if (/categories/.test(pathname)) {
-      $('.nav .categories').addClass('active');
-    }
+  modalClose: function () {
+    $('body').on('click', 'button.close-modal', function (e) {
+      e.preventDefault();
+      
+      $(this).closest('.modal').removeClass('active');
+    });
   }
-  
 };

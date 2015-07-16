@@ -1,8 +1,0 @@
-<h3>Choose the groups to receive this question</h3>
-
-<%= form_tag do %>
-  <% @groups.each do |group| %>
-    <div><%= group.name %> <%= check_box_tag :group %></div>
-  <% end %>
-  <%= submit_tag %>
-<% end %>

@@ -1,0 +1,8 @@
+<%= simple_form_for @category, url: update_title_category_path(@category), remote: true do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input text-input" }, label_html: { class: "mdl-textfield__label" } %>
+  <div>
+    <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  </div>
+<% end %>

@@ -2,35 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// app/views/categories/index.html.erb
-
-.categories-table th a {
-  display: block;
-  padding: 0.25rem 0;
-  background: $button-color;
-  color: $button-color-font;
-  border-radius: 0.3rem;
-  
-  &:hover {
-    background: $button-color-hover;
-    color: $button-color-font;
-    text-decoration: none;
-  }
+#category-name {
+  display: inline-block;
 }
 
-.categories-table td:first-child {
-  text-align: left;
+#category-name-edit {
+  display: inline-block;
 }
 
-// app/views/categories/_questions_form.html.erb
-
-#question-form {
-  position: relative;
+#form-container.addQuestionsModal {
+  background: #FFFFFF;
+  display: none;
+  position: absolute;
+  top: 8rem;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 1rem;
+  max-height: 40rem;
+  overflow: auto;
+  padding: 2rem;
 }
 
-#question-form input.numeric.integer {
-  width: 8rem;
+#form-container.addQuestionsModal.active {
+  display: block;
+}
+
+#exitAddQuestions {
+  float: right;
+}
+
+div#new-question-form > input {
+  position: absolute;
+
+}
+
+.form-inline div {
+  display: inline-block;
+  float: left;
 }

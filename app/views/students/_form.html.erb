@@ -1,11 +1,13 @@
-<%= simple_form_for @student do |f| %>
+<div class="mdl-cell mdl-cell--4-col"></div>
+<%= simple_form_for @student, html: { class: "mdl-cell mdl-cell--4-col form-centering" } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
+  <%= f.input :first_name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.input :last_name, wrapper_html: { class: "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
   <%= f.hidden_field :teacher_id %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
 
 <% end %>
+<div class="mdl-cell mdl-cell--4-col"></div>

@@ -5,11 +5,17 @@ class GameSession < ActiveRecord::Base
   has_many :category_game_session_assignments, dependent: :destroy
   has_many :categories, through: :category_game_session_assignments
   belongs_to :game
+  belongs_to :icon
+
+  validates :name, presence: true
+  validates :icon_id, presence: true
+  validates :game_id, presence: true
+  validates :min_difficulty, presence: true
 
   accepts_nested_attributes_for :groups, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :category_game_session_assignments, allow_destroy: true
 
-  def current_group
+  def this_groups_turn
     Group.find_by_id(self.turn_group_id)
   end
 
@@ -24,14 +30,19 @@ class GameSession < ActiveRecord::Base
 
   def next_group
     turn = self.turn_group_id
-    order = self.groups.map {|g| g.id}
-    spot = order.index(turn)
-    (spot == order.length - 1) ? spot = 0 : spot += 1
+    order = self.groups.map { |g| g.id }
+    start = order.index(turn)
+    (start == order.length - 1) ? spot = 0 : spot = start + 1
+    until Group.find(order[spot]).active? || spot == start
+      (spot == order.length - 1) ? spot = 0 : spot += 1
+    end
     order[spot]
   end
 
   def random_question
-    self.categories.sample.questions.sample
+    next_question = self.categories.sample.questions.select{|q| q.difficulty_level >= self.min_difficulty }.sample
+    self.update(current_question_id: next_question.id)
+    next_question
   end
 
 end

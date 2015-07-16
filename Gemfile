@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use Bootstrap
-gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Font Awesome
@@ -15,7 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+# Use for websockets
+gem 'websocket-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Use jquery ui
@@ -60,7 +59,7 @@ group :development, :test do
   gem 'byebug'
 
   # Use footnotes for debugging in browser
-  gem 'rails-footnotes', '~> 4.0'
+  # gem 'rails-footnotes', '~> 4.0'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

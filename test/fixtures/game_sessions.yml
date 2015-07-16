@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  name: "game"
   game: :one
   turn_group_id: 1
+  icon: :one
 
 two:
+  name: "game2"
   game: :one
   turn_group_id: 2
+  icon: :one

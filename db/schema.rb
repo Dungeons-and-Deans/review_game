@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706143807) do
+ActiveRecord::Schema.define(version: 20150715210813) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -30,27 +30,34 @@ ActiveRecord::Schema.define(version: 20150706143807) do
   create_table "game_sessions", force: :cascade do |t|
     t.integer  "game_id"
     t.integer  "turn_group_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "name"
+    t.integer  "winning_group_id"
+    t.integer  "current_question_id"
+    t.integer  "icon_id"
+    t.integer  "min_difficulty"
+    t.integer  "teacher_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.integer  "teacher_id"
     t.string   "name"
-    t.string   "icon_id"
     t.integer  "movement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "story"
+    t.text     "closing"
   end
 
   create_table "group_assignments", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "group_id"
-    t.integer  "board_x"
-    t.integer  "board_y"
+    t.decimal  "board_x"
+    t.decimal  "board_y"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "active"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -77,12 +84,22 @@ ActiveRecord::Schema.define(version: 20150706143807) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
-    t.string   "content"
+    t.text     "content"
     t.integer  "difficulty_level"
     t.integer  "category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "right"
+    t.integer  "wrong"
+    t.text     "answer"
   end
 
   create_table "students", force: :cascade do |t|
@@ -92,7 +109,6 @@ ActiveRecord::Schema.define(version: 20150706143807) do
     t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean  "active"
   end
 
   create_table "supplies", force: :cascade do |t|

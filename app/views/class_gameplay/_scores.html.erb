@@ -1,8 +1,10 @@
-<div>
+
+<h4>Group Scores</h4>
+<h6>
   <% @game_session.groups.each do |group| %>
-    <span><%= group.name %> <%= group.score %></span>
-    <% unless group == @game_session.groups.last %>
-      <i class="fa fa-star"></i>
-    <% end %>
+    <div id='score-group<%= group.id %>'>
+      <%= group.name %> -
+      <%= group.score %>
+    </div>
   <% end %>
-</div>
+</h6>
