@@ -5,7 +5,7 @@ class SuppliesController < ApplicationController
   def create
     @supply = Supply.new(supply_params)
     @supply.save
-    @current_group = @game_session.current_group
+    @current_group = @game_session.this_groups_turn
     respond_to do |format|
       format.js
     end
@@ -51,7 +51,7 @@ class SuppliesController < ApplicationController
   end
 
   private def send_supplies
-    current_group = @game_session.current_group
+    current_group = @game_session.this_groups_turn
     supplies = Supply.where(group_id: current_group.id)
     WebsocketRails[:"question_listen#{current_group.id}"].trigger 'update_supplies', supplies
   end

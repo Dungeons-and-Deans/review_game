@@ -15,7 +15,7 @@ class GameSession < ActiveRecord::Base
   accepts_nested_attributes_for :groups, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :category_game_session_assignments, allow_destroy: true
 
-  def current_group
+  def this_groups_turn
     Group.find_by_id(self.turn_group_id)
   end
 

@@ -2,7 +2,7 @@ class TeacherGameplayController < ApplicationController
   before_action :set_game_session
 
   def home
-    @current_group = @game_session.current_group
+    @current_group = @game_session.this_groups_turn
     @question = @game_session.random_question
   end
 
@@ -39,7 +39,7 @@ class TeacherGameplayController < ApplicationController
 
   def next_group
     if @game_session.update(game_session_params)
-      @current_group = @game_session.current_group
+      @current_group = @game_session.this_groups_turn
       @supply = Supply.new
       @question = @game_session.random_question
       respond_to do |format|
@@ -69,7 +69,7 @@ class TeacherGameplayController < ApplicationController
 
   def next_question
     @question = Question.find(params[:question_id])
-    @current_group = @game_session.current_group
+    @current_group = @game_session.this_groups_turn
     if params[:question][:right]
       group = Group.find(params[:group_id])
       @question.give_points(group.id)
