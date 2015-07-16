@@ -115,7 +115,7 @@ class TeacherGameplayController < ApplicationController
     group_list = []
     group = Group.find(@assignment.group_id)
     group.students.order(:last_name).each do |student|
-      group_list << "#{student.full_name} #{student.active?(group.id)}"
+      group_list << "#{student.active?(group.id)} #{student.full_name}"
     end
     WebsocketRails[:"question_listen#{group.id}"].trigger 'group_list', group_list
   end
