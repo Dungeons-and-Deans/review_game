@@ -13,8 +13,9 @@
 
     <div>
       <% @game_session.groups.each do |group| %>
-        <label class="btn btn-primary">
-          <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off"><%= group.name %>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+          <input type="radio" value="<%= group.id %>" name="game_session[winning_group_id]" class="mdl-radio__button" id="game_session_winning_group_id_<%= group.id %>" autocomplete="off">
+          <span class="mdl-radio__label"><%= group.name %></span>
         </label>
       <% end %>
     </div>
