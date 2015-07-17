@@ -1,5 +1,5 @@
 
-<%= simple_form_for @group, url: update_score_path(@game_session, @group), remote: true do |f| %>
+<%= simple_form_for @current_group, url: update_score_path(@game_session, @current_group), remote: true do |f| %>
 
   <%= f.input :score, label: false, wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo edit-score-container" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 

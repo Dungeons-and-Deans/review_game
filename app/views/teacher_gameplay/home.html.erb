@@ -1,14 +1,16 @@
 <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp topcard">
-  <div id="game-header" class="mdl-cell mdl-cell--4-col">
+  <div id="game-header">
     <h3><%= @game_session.name %></h3>
-    <%= link_to "Open Class View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %>
   </div>
-  <div id="scores" class="mdl-cell mdl-cell--8-col">
-    <%= render partial: 'scores' %>
+  <div class="link">
+    <h6><%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %></h6>
   </div>
 </div>
 
 <div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+  <div class="bookmark">
+    <i class="fa fa-bookmark"></i> denotes the current group that will be sent the next question
+  </div>
   <div id="group-links">
     <%= render partial: 'group_links' %>
   </div>
@@ -18,10 +20,9 @@
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
-
-    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
-    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
-    <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
+  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
+  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
+  <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
 <div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
@@ -34,7 +35,8 @@
     </button>
   </div>
   <div>
-    <ul id="list-competition-answers">
+    <ul
+      id="list-competition-answers">
     </ul>
   </div>
 </div>

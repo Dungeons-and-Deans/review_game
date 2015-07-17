@@ -4,12 +4,12 @@
 
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> fa-2x <%= player.group_id %> draggables icon", id="<%= player.id %>">
-    <%= player.student.first_name[0] %><%= player.student.last_name[0] %>
+    <%= player.student.first_name[0] %>
   </i>
 <% end %>
 
 <nav class="student-stats nav-expanded">
-  <a href="#" id="nav-close">X</a>
+  <a class="href="#" id="nav-close">X</a>
 
   <ul class="list-unstyled stat-main-content">
 
@@ -65,7 +65,7 @@
 </nav>
 
 <div class="navbar-header pull-right">
-  <a id="nav-expander" class="nav-expander fixed">
+  <a id="nav-expander" class="nav-expander fixed button">
     STATS &nbsp;<i class="fa fa-bars fa-lg white"></i>
   </a>
 </div>
