@@ -49,10 +49,11 @@ table.table {
 
 .topcard {
   position: relative;
+  padding: 0 4rem;
   
   & .link {
     position: absolute;
-    right: 0;
+    right: 4rem;
   }
 }
 
