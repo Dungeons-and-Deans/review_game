@@ -3,14 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
-.group-navigation {
-  background: #1A237E;
+div.column-1 {
+  overflow: auto;
+  height: 100%;
+  background: #354152;
   color: #FFFFFF;
   
   & a {
     color: #FFFFFF;
     
   }
+}
+
+div.column-2 {
+  overflow: auto;
+  height: 100%;
+}
+
+div.column-3 {
+  overflow: auto;
+  height: 50rem;
 }
 
 .bookmark {
