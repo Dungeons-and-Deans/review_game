@@ -6,7 +6,7 @@ body {
 
 body a {
   text-decoration: none;
-  
+
   &:hover:not(.button) {
     text-decoration: underline;
   }
@@ -187,5 +187,5 @@ i {
 }
 
 canvas {
-   background-size: contain !important;
+   background-size: cover !important;
 }

@@ -10,13 +10,26 @@
 <div id='map-container'>
 
   <div class="tools">
-    <a href="#tools_sketch" data-tool="marker">Marker</a>
-    <a href="#tools_sketch" data-tool="eraser">Eraser</a>
+    <a href="#mapSketch" data-color="#000000" title="Black">Black</a>
+    <a href="#mapSketch" data-color="#ff0000" title="Red">Red</a>
+    <a href="#mapSketch" data-color="#00ff00" title="Green">Green</a>
+    <a href="#mapSketch" data-color="#f39c12" title="Orange">Orange</a>
+    <a href="#mapSketch" data-color="#0000ff" title="Blue">Blue</a>
+    <a href="#mapSketch" data-color="#ffff00" title="Yellow">Yellow</a>
+    <a href="#mapSketch" data-color="#00ffff" title="Cyan">Cyan</a>
+    <a href="#mapSketch" data-color="#ffffff" title="Eraser">Eraser</a>
+
+    <a href="#mapSketch" data-size="3">Small</a>
+		<a href="#mapSketch" data-size="9">Medium</a>
+		<a href="#mapSketch" data-size="30">Large</a>
+		<a href="#mapSketch" data-size="60">Huge</a>
+    <a href="#mapSketch" data-tool="eraser">Clear Canvas</a>
+    <a href="#mapSketch" data-download='png'>Save</a>
   </div>
-  <canvas class="map" id="tools_sketch" width="900" height="900" style="background: url('<%= @map.file_path %>') no-repeat center center;"></canvas>
+  <canvas class="map" id="mapSketch" width="900" height="900" style="background: url('<%= @map.file_path %>') no-repeat center center;"></canvas>
   <script type="text/javascript">
     $(function() {
-      $('#tools_sketch').sketch({defaultColor: "#ff0"});
+      $('#mapSketch').sketch();
     });
   </script>
 </div>
