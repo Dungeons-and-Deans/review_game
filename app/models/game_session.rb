@@ -1,4 +1,6 @@
 class GameSession < ActiveRecord::Base
+  has_attached_file :canvas
+
   has_many :groups, dependent: :destroy
   has_many :group_assignments, through: :groups
   has_many :students, through: :group_assignments
