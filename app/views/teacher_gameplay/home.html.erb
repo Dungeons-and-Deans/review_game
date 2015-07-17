@@ -1,4 +1,4 @@
-<div class="mdl-cell mdl-cell--12-col topcard">
+<div class="mdl-cell mdl-cell--12-col">
   <div id="game-header">
     <h3><%= @game_session.name %></h3>
   </div>
@@ -7,15 +7,17 @@
   </div>
 </div>
 
-<div class="mdl-cell mdl-cell--3-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--2-col group-navigation">
   <div class="bookmark">
     <i class="fa fa-bookmark"></i> denotes the current group that will be sent the next question
   </div>
   <div id="group-links">
-    <%= render partial: 'group_links' %>
+    <ul>
+      <%= render partial: 'group_links' %>
+    </ul>
   </div>
 </div>
-<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--4-col">
   <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
     Send Message
   </button>
@@ -25,7 +27,7 @@
   <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
 </div>
 
-<div class="mdl-cell mdl-cell--5-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--5-col">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>

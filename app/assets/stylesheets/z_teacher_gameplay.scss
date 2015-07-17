@@ -3,11 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
-#group-links,
-.group-link,
-#next-turn,
-#roster {
-  display: inline-block;
+.group-navigation {
+  background: #1A237E;
+  color: #FFFFFF;
+  
+  & a {
+    color: #FFFFFF;
+    
+  }
 }
 
 .bookmark {
@@ -15,7 +18,7 @@
 }
 
 .group-link {
-  margin-right: 0.2rem;
+  padding: 0.5rem 2rem;
 }
 
 span.group-name {
