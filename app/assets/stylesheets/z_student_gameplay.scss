@@ -11,7 +11,7 @@ a.nav-expander {
   display: block;
   font-size: 1em;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   top: 64px;
   right: 0;
   text-decoration: none;
@@ -35,7 +35,7 @@ nav.student-stats {
   display: block;
   height: 100%;
   overflow: auto;
-  position: absolute;
+  position: fixed;
   right: -20rem;
   font-size: 1em;
   top: 64px;
@@ -78,9 +78,11 @@ body.nav-expanded {
 #questionModal {
   background-color: $modal-bg;
   display: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #questionModal.active {
@@ -90,9 +92,11 @@ body.nav-expanded {
 #messageModal {
   background-color: $modal-bg;
   display: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #messageModal.active {
