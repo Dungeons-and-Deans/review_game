@@ -19,22 +19,23 @@ class TeacherGameplayController < ApplicationController
   end
 
   def edit_score
-    @group = Group.find(params[:group_id])
+    @current_group = Group.find(params[:group_id])
     respond_to do |format|
       format.js
     end
   end
 
   def update_score
-    @group = Group.find(params[:group_id])
+    @game_session
+    @current_group = Group.find(params[:group_id])
     respond_to do |format|
-      if @group.update(group_params)
+      if @current_group.update(group_params)
         format.js
       else
         format.html { render :home, notice: 'Score failed to be updated.' }
       end
     end
-    WebsocketRails[:"group_listen#{@group.game_session_id}"].trigger 'update_score', @group
+    WebsocketRails[:"group_listen#{@current_group.game_session_id}"].trigger 'update_score', @current_group
   end
 
   def next_group
