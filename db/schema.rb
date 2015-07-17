@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20150717145227) do
     t.integer  "icon_id"
     t.integer  "min_difficulty"
     t.integer  "teacher_id"
-    t.string   "canvas"
     t.string   "canvas_file_name"
     t.string   "canvas_content_type"
     t.integer  "canvas_file_size"

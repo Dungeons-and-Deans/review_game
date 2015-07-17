@@ -29,6 +29,8 @@ var __slice = Array.prototype.slice;
   };
   Sketch = (function() {
     function Sketch(el, opts) {
+      var sketch = this;
+
       this.el = el;
       this.canvas = $(el);
       this.context = el.getContext('2d');
@@ -44,6 +46,19 @@ var __slice = Array.prototype.slice;
       this.tool = this.options.defaultTool;
       this.actions = [];
       this.action = [];
+
+      if (this.options.img) {
+        var img = new Image();
+        img.crossOrigin = 'anonymous';
+
+        img.onload = function () {
+          sketch.redraw();
+        }
+
+        img.src = this.options.img;
+        this.img = img;
+      }
+
       this.canvas.bind('click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel', this.onEvent);
       if (this.options.toolLinks) {
         $('body').delegate("a[href=\"#" + (this.canvas.attr('id')) + "\"]", 'click', function(e) {
@@ -118,6 +133,11 @@ var __slice = Array.prototype.slice;
       this.el.width = this.canvas.width();
       this.context = this.el.getContext('2d');
       sketch = this;
+
+      if (this.img) {
+        this.context.drawImage(this.img, 0, 0);
+      }
+
       $.each(this.actions, function() {
         if (this.tool) {
           return $.sketch.tools[this.tool].draw.call(sketch, this);

@@ -29,12 +29,32 @@
       <a href="#mapSketch" data-download='png'><i class="fa fa-save fa-2x" style="color: black;"></i></a>
     </span>
   </div>
+
   <canvas class="map" id="mapSketch" width="900" height="900" style="background: url('<%= @map.file_path %>') no-repeat center center;"></canvas>
+
   <script type="text/javascript">
     $(function() {
-      $('#mapSketch').sketch();
+      var hasImg = <%= @game_session.canvas.file? %>;
+      var imgSrc = "<%= j(@game_session.canvas.url) %>";
+
+      $('#mapSketch').sketch({ img: hasImg ? imgSrc : undefined });
     });
   </script>
+
+  <% if @game_session.canvas.file? %>
+    <script>
+      $(function() {
+
+      });
+    </script>
+  <% end %>
+
+
+  <% if @game_session.canvas.file? %>
+    <%= image_tag @game_session.canvas.url %>
+  <% end %>
+
+
 </div>
 
 <% @players.each do |player| %>
