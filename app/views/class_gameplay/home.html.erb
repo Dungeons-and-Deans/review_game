@@ -10,19 +10,24 @@
 <div id='map-container'>
 
   <div class="tools">
-    <a href="#mapSketch" data-color="#000000" title="Black"><i class="fa fa-paint-brush fa-2x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-color="#ff0000" title="Red"><i class="fa fa-paint-brush fa-2x" style="color: red;"></i></a>
-    <a href="#mapSketch" data-color="#00ff00" title="Green"><i class="fa fa-paint-brush fa-2x" style="color: #00ff00;"></i></a>
-    <a href="#mapSketch" data-color="#f39c12" title="Orange"><i class="fa fa-paint-brush fa-2x" style="color: #f39c12;"></i></a>
-    <a href="#mapSketch" data-color="#0000ff" title="Blue"><i class="fa fa-paint-brush fa-2x" style="color: #0000ff;"></i></a>
-    <a href="#mapSketch" data-color="#ffff00" title="Yellow"><i class="fa fa-paint-brush fa-2x" style="color: #DBE300;"></i></a>
-    <a href="#mapSketch" data-color="#00ffff" title="Cyan"><i class="fa fa-paint-brush fa-2x" style="color: #00ffff;"></i></a>
-    <a href="#mapSketch" data-size="3"><i class="fa fa-pencil fa-2x" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="9"><i class="fa fa-circle" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="30"><i class="fa fa-circle fa-2x" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="60"><i class="fa fa-circle fa-3x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-tool="eraser"><i class="fa fa-eraser fa-2x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-download='png'><i class="fa fa-save fa-2x" style="color: black;"></i></a>
+    <span>
+      <a href="#mapSketch" data-color="#000000" title="Black"><i class="fa fa-paint-brush fa-2x" style="color: black;"></i></a>
+      <a href="#mapSketch" data-color="#ff0000" title="Red"><i class="fa fa-paint-brush fa-2x" style="color: red;"></i></a>
+      <a href="#mapSketch" data-color="#00ff00" title="Green"><i class="fa fa-paint-brush fa-2x" style="color: #00ff00;"></i></a>
+      <a href="#mapSketch" data-color="#f39c12" title="Orange"><i class="fa fa-paint-brush fa-2x" style="color: #f39c12;"></i></a>
+      <a href="#mapSketch" data-color="#0000ff" title="Blue"><i class="fa fa-paint-brush fa-2x" style="color: #0000ff;"></i></a>
+      <a href="#mapSketch" data-color="#DBE300" title="Yellow"><i class="fa fa-paint-brush fa-2x" style="color: #DBE300;"></i></a>
+      <a href="#mapSketch" data-color="#00ffff" title="Cyan"><i class="fa fa-paint-brush fa-2x" style="color: #00ffff;"></i></a>
+    </span>
+    <span> </span>
+    <span>
+      <a href="#mapSketch" data-size="3"><i class="fa fa-pencil fa-2x" style="color: black;"></i></a>
+  		<a href="#mapSketch" data-size="9"><i class="fa fa-circle" style="color: black;"></i></a>
+  		<a href="#mapSketch" data-size="30"><i class="fa fa-circle fa-2x" style="color: black;"></i></a>
+  		<a href="#mapSketch" data-size="60"><i class="fa fa-circle fa-3x" style="color: black;"></i></a>
+      <a href="#mapSketch" data-tool="eraser"><i class="fa fa-eraser fa-2x" style="color: black;"></i></a>
+      <a href="#mapSketch" data-download='png'><i class="fa fa-save fa-2x" style="color: black;"></i></a>
+    </span>
   </div>
   <canvas class="map" id="mapSketch" width="900" height="900" style="background: url('<%= @map.file_path %>') no-repeat center center;"></canvas>
   <script type="text/javascript">

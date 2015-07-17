@@ -131,8 +131,6 @@ var __slice = Array.prototype.slice;
           this.startPainting();
           break;
         case 'mouseup':
-        case 'mouseout':
-        case 'mouseleave':
         case 'touchend':
         case 'touchcancel':
           this.stopPainting();
