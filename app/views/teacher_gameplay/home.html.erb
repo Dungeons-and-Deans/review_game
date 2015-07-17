@@ -7,25 +7,25 @@
   </div>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--3-col mdl-shadow--4dp card">
   <div class="bookmark">
     <i class="fa fa-bookmark"></i> denotes the current group that will be sent the next question
   </div>
   <div id="group-links">
     <%= render partial: 'group_links' %>
   </div>
-  <div id="next-turn">
-    <%= render partial: '/teacher_gameplay/next_turn' %>
-  </div>
+</div>
+<div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp card">
+  <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    Send Message
+  </button>
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
   <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
-  <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--5-col mdl-shadow--4dp card">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>
@@ -39,15 +39,17 @@
       id="list-competition-answers">
     </ul>
   </div>
-</div>
-
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp">
-  <div class="mdl-cell mdl-cell--1-col"></div>
-  <div class="mdl-cell mdl-cell--10-col" id="roster">
+  <div id="roster">
     <%= render partial: 'roster' %>
   </div>
-  <div class="mdl-cell mdl-cell--1-col"></div>
 </div>
+
+<%= render partial: 'winner' %>
+<div id="next-turn">
+  <%= render partial: '/teacher_gameplay/next_turn' %>
+</div>
+
+
 
 <div id="answer-buttons">
   <%= render partial: 'answer_buttons' %>
