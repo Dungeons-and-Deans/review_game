@@ -1,5 +1,6 @@
 class GameSession < ActiveRecord::Base
   has_attached_file :canvas
+  do_not_validate_attachment_file_type :canvas
 
   has_many :groups, dependent: :destroy
   has_many :group_assignments, through: :groups

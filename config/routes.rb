@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups
   post 'game_sessions/:id/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
   patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
+  patch 'game_sessions/:id/update_map' => 'game_sessions#update_map'
 
 
 

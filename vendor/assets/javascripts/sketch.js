@@ -72,7 +72,16 @@ var __slice = Array.prototype.slice;
         format = "jpeg";
       }
       mime = "image/" + format;
-      return window.open(this.el.toDataURL(mime));
+      var savedImage = this.el.toDataURL(mime)
+      var id = 1
+
+      $.ajax({
+        type: "PATCH",
+        url: "/game_sessions/" + id + "/update_map",
+        dataType: "json",
+        data: {game_session: { canvas: savedImage, canvas_content_type: "png", canvas_file_name: id }},
+      });
+
     };
     Sketch.prototype.set = function(key, value) {
       this[key] = value;

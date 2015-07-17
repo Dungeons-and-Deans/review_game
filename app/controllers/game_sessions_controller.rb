@@ -1,5 +1,5 @@
 class GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:groups, :assign_groups, :destroy, :end_game, :add_player]
+  before_action :set_game_session, only: [:groups, :assign_groups, :destroy, :end_game, :add_player, :update_map]
   before_action :authenticate_teacher!
 
   def new
@@ -54,13 +54,21 @@ class GameSessionsController < ApplicationController
     @group.new_win
   end
 
+  def update_map
+    @game_session.update(game_session_params)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private def set_game_session
     @game_session = GameSession.find(params[:id])
   end
 
   private def game_session_params
     params.require(:game_session).permit(:game_id, :turn_group_id, :name,
-        :winning_group_id, :icon_id, :min_difficulty, :canvas,
+        :winning_group_id, :icon_id, :min_difficulty, :canvas, :canvas_file_name, :canvas_content_type,
         category_game_session_assignments_attributes: [:id, :category_id, :_destroy],
         groups_attributes: [:id, :name, :score, :_destroy, :password,
         group_assignments_attributes: [:id, :student_id, :active, :board_x, :board_y, :_destroy]])
