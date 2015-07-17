@@ -90,7 +90,7 @@ channelStudentQuestion.bind('ask_question', function (questionText) {
 });
 
 channel.bind('list_competition_group', function (group) {
-  $('#list-competition-answers').append("<li><button class='correct' id='" + group.id + "'><i class='fa fa-check'>Correct</i></button> " + group.name + "</li>");
+  $('#list-competition-answers').append("<li><button class='correct mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' id='" + group.id + "'><i class='fa fa-check'>Correct</i></button> " + group.name + "</li>");
 });
 
 

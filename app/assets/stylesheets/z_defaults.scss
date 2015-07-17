@@ -48,7 +48,13 @@ table.table {
 }
 
 .topcard {
-  padding: 1rem 4rem;
+  position: relative;
+  padding: 0 4rem;
+  
+  & .link {
+    position: absolute;
+    right: 4rem;
+  }
 }
 
 .slider {
@@ -71,7 +77,17 @@ table.table {
 
 .icon {
   position: absolute;
+  background: rgba(255, 255, 255, 0.7);
   z-index: 100;
+  border: 2px solid gray;
+  padding: 0.2rem;
+  border-radius: 15%;
+  box-shadow: 1px 1px 1px 1px #000;
+  cursor: pointer;
+  
+  &.glow {
+    box-shadow: 0rem 0rem 1rem #1194f6;
+  }
 }
 
 .notice,
@@ -167,21 +183,5 @@ form {
 .draggables {
   &[class~="9"] {
     color: pink;
-  }
-}
-
-i {
-
-  &.draggables {
-   cursor: pointer;
-   cursor: hand;
-   text-shadow: 2px 2px 0px #000;
-  }
-}
-
-i {
-
-  &.draggables.glow {
-      text-shadow: 0rem 0rem 1rem #1194f6;
   }
 }
