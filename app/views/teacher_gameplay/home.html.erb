@@ -1,10 +1,9 @@
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp topcard">
-  <div id="game-header" class="mdl-cell mdl-cell--4-col">
+<div class="mdl-grid mdl-cell mdl-cell--12-col topcard">
+  <div id="game-header">
     <h3><%= @game_session.name %></h3>
-    <%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %>
   </div>
-  <div id="scores" class="mdl-cell mdl-cell--8-col">
-    <%= render partial: 'scores' %>
+  <div class="link">
+    <h6><%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %></h6>
   </div>
 </div>
 

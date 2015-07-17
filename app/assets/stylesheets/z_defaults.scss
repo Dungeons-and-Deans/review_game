@@ -48,7 +48,12 @@ table.table {
 }
 
 .topcard {
-  padding: 1rem 4rem;
+  position: relative;
+  
+  & .link {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .slider {
