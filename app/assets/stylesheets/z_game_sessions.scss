@@ -9,6 +9,14 @@
 
 .group-assignment-forms {
   padding: 2rem;
+  position: relative;
+}
+
+.add-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .student-drag-area {
