@@ -1,10 +1,10 @@
 <div class="mdl-cell mdl-cell--12-col">
   <div id="game-header">
-    <h3><%= @game_session.name %></h3>
+    <%= @game_session.name %>
   </div>
-  <div class="link">
-    <h6><%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %></h6>
-  </div>
+  <span class="link">
+    <%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %>
+  </span>
 </div>
 
 <div class="mdl-cell mdl-cell--2-col column-1">

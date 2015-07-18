@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
+#game-header {
+  display: inline-block;
+  font-size: 2em;
+  padding: 1rem;
+}
+
 div.column-1 {
   overflow: auto;
   top: 0;
