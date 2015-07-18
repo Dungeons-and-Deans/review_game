@@ -71,12 +71,14 @@ class TeacherGameplayController < ApplicationController
   def next_question
     @question = Question.find(params[:question_id])
     @current_group = @game_session.this_groups_turn
-    if params[:question][:right]
-      group = Group.find(params[:group_id])
-      @question.give_points(group.id)
-      WebsocketRails[:"group_listen#{group.game_session_id}"].trigger 'update_score', group
+    if params[:question]
+      @question.update(question_params)
+      if params[:question][:right]
+        group = Group.find(params[:group_id])
+        @question.give_points(group.id)
+        WebsocketRails[:"group_listen#{group.game_session_id}"].trigger 'update_score', group
+      end
     end
-    @question.update(question_params)
     @question = @game_session.random_question
 
     respond_to do |format|
