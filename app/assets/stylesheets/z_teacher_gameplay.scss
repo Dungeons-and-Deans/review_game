@@ -44,7 +44,10 @@ div.teacher-footer {
   
   &.active-group {
     background: $body;
-    color: $blue-primary;
+    
+    & a {
+      color: $blue-primary;
+    }
   }
 }
 

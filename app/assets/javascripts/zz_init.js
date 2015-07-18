@@ -31,6 +31,7 @@ $(function () {
     app.teacherGameplay.sendMessage();
     app.teacherGameplay.chooseCorrect();
     app.notes.addNotes();
+    app.teacherGameplay.highlightGroup();
 
   }
 

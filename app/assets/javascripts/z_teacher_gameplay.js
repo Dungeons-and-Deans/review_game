@@ -80,6 +80,13 @@ app.teacherGameplay = {
       $('#competition-question-form').attr('action', new_url);
       $('#competition-question-form').submit();
     });
+  },
+  
+  highlightGroup: function () {
+    $('#group-links').on('click', '.group-link', function () {
+      $('.group-link').removeClass('active-group');
+      $(this).addClass('active-group');
+    })
   }
 
 };
