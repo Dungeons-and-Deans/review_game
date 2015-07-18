@@ -14,16 +14,25 @@ div.column-1 {
   top: 0;
   bottom: 0;
   margin-left: -8px;
-  background: #354152;
+  background: $gray-blue;
   color: #FFFFFF;
 
   & a {
     display: block;
     color: #FFFFFF;
+    padding: 0.5rem 2rem;
     
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.group-link.active-group {
+  background: $body;
+
+  & a {
+    color: $blue-primary;
   }
 }
 
@@ -43,8 +52,13 @@ div.column-3 {
   padding: 0 2rem;
 }
 
+div#roster {
+  border-top: 1px solid $gray-blue;
+  margin-top: 2rem;
+}
+
 div.teacher-footer {
-  background: #354152;
+  background: $gray-blue;
   padding: 2rem 4rem;
   position: fixed;
   right: 0;
@@ -56,17 +70,11 @@ div.teacher-footer {
   margin: 1rem 0;
 }
 
-.group-link,
+
 .bookmark {
   padding: 0.5rem 2rem;
 
-  &.active-group {
-    background: $body;
-
-    & a {
-      color: $blue-primary;
-    }
-  }
+  
 }
 
 span.group-name {
