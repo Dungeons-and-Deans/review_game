@@ -10,10 +10,10 @@ div.column-1 {
   margin-left: -8px;
   background: #354152;
   color: #FFFFFF;
-  
+
   & a {
     color: #FFFFFF;
-    
+
   }
 }
 
@@ -41,10 +41,10 @@ div.teacher-footer {
 .group-link,
 .bookmark {
   padding: 0.5rem 2rem;
-  
+
   &.active-group {
     background: $body;
-    
+
     & a {
       color: $blue-primary;
     }

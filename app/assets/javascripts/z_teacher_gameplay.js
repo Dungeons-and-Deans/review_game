@@ -22,6 +22,7 @@ app.teacherGameplay = {
       if (ids.length > 1) {
         dispatcher.trigger('movements.ask_competition_question', info);
         $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
+        $('#list-competition-answers').append("<li><button class='end mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect'><i class='fa fa-times'>End Question</i></button></li>");
       } else {
         var groupId = ids[0];
         dispatcher.trigger('movements.ask_question', channelNumber);
@@ -81,18 +82,30 @@ app.teacherGameplay = {
       $('#competition-question-form').submit();
     });
   },
-  
+
+  chooseNoGroup: function () {
+    $('#list-competition-answers').delegate('button.end', 'click', function() {
+      var url = $('#competition-question-form').attr('action');
+
+      $.ajax({
+        url: url,
+        type: "PATCH",
+      });
+
+    });
+  },
+
   highlightGroup: function () {
     var currentGroupId = $('div.current-group').attr('id');
     var links = $('.group-link a');
-    
+
     for (var i = 0; i < links.length; i++) {
       if (links[i].href.split('/').pop() === currentGroupId) {
         $(links[i].closest('li')).addClass('active-group');
       }
     }
     
-    $('#group-links').on('click', '.group-link a', function () {
+    $('#group-links').on('click', '.group-link', function () {
       $('.group-link').removeClass('active-group');
       $(this).addClass('active-group');
     })

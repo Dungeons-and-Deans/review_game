@@ -30,6 +30,7 @@ $(function () {
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.sendMessage();
     app.teacherGameplay.chooseCorrect();
+    app.teacherGameplay.chooseNoGroup();
     app.notes.addNotes();
     app.teacherGameplay.highlightGroup();
 
