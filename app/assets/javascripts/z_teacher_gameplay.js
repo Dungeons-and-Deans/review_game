@@ -117,7 +117,6 @@ app.teacherGameplay = {
     
     $(document).ready(function () {
         $('#group-links').on('groups', function () {
-          console.log(nextGroup);
           
           for (var i = 0; i < links.length; i++) {
             if (links[i].href.split('/').pop() === nextGroup) {
@@ -131,10 +130,3 @@ app.teacherGameplay = {
   }
 
 };
-
-
-// $(document).ready(function(){
-//     $('body').on('show', function() {
-//         d3JSON();
-//     });
-// });
