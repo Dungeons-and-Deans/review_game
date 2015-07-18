@@ -5,7 +5,9 @@
 
 div.column-1 {
   overflow: auto;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  margin-left: -8px;
   background: #354152;
   color: #FFFFFF;
   
@@ -36,8 +38,14 @@ div.teacher-footer {
   margin-bottom: 1rem;
 }
 
-.group-link {
+.group-link,
+.bookmark {
   padding: 0.5rem 2rem;
+  
+  &.active-group {
+    background: $body;
+    color: $blue-primary;
+  }
 }
 
 span.group-name {
