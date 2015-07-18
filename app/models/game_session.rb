@@ -19,6 +19,14 @@ class GameSession < ActiveRecord::Base
     Group.find_by_id(self.turn_group_id)
   end
 
+  def check_for_group_names
+    self.groups.each do |g|
+      if g.name.empty?
+        g.update(name: "#{Faker::Commerce.product_name}s")
+      end
+    end
+  end
+
   def begin_game(categories, num_of_groups)
     make_category_assignments(categories)
     make_groups(num_of_groups)

@@ -38,6 +38,7 @@ class GameSessionsController < ApplicationController
 
   def assign_groups
     if @game_session.update(game_session_params)
+      @game_session.check_for_group_names
       redirect_to teacher_gameplay_path(@game_session), notice: 'Game Session was successfully updated.'
     else
       render :groups
