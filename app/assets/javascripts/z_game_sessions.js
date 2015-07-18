@@ -30,7 +30,8 @@ app.gameSession = {
   },
 
   addGroup: function () {
-    $('#new-group-form-container').delegate('button.add-group', 'click', function() {
+    $('#new-group-form-container').delegate('button.add-group', 'click', function(e) {
+      e.preventDefault();
       var id = $('button.add-group')[0].id;
 
       $.ajax({
