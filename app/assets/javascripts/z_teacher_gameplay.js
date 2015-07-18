@@ -92,10 +92,11 @@ app.teacherGameplay = {
       }
     }
     
-    $('#group-links').on('click', '.group-link', function () {
+    $('#group-links').on('click', '.group-link a', function () {
       $('.group-link').removeClass('active-group');
       $(this).addClass('active-group');
     })
+    
   }
 
 };
