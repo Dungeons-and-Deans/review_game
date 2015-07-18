@@ -2,7 +2,7 @@
   <ul>
     <h3>Players</h3>
     <% @game_session.groups.each do |group| %>
-      <%= group.name %>
+      <h5><%= group.name %></h5>
       <% group.students.order(:last_name).each do |student| %>
         <li>
           <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
