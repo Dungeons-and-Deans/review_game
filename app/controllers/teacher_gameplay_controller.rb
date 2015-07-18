@@ -88,6 +88,7 @@ class TeacherGameplayController < ApplicationController
 
   def send_message
     @message = params[:message_text]
+    @current_group = Group.find(params[:group_id])
     respond_to do |format|
       format.js
     end
