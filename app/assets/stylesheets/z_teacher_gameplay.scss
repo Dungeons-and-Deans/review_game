@@ -19,7 +19,7 @@ div.column-1 {
     display: block;
     color: #FFFFFF;
     padding: 0.5rem 2rem;
-    
+
     &:hover {
       text-decoration: none;
     }
@@ -72,7 +72,7 @@ div.teacher-footer {
 .bookmark {
   padding: 0.5rem 2rem;
 
-  
+
 }
 
 span.group-name {
@@ -103,6 +103,10 @@ button#send-competition-question {
 }
 
 .next-turn {
+  float: left;
+}
+
+.choose-winner {
   float: right;
 }
 
