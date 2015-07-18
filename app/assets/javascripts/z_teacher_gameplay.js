@@ -61,7 +61,7 @@ app.teacherGameplay = {
   },
 
   sendMessage: function () {
-    $("#send-message").on('click', function () {
+    $(".column-2").on('click', '#send-message', function () {
       $("#sendMessageModal").toggleClass('active');
     })
   },
