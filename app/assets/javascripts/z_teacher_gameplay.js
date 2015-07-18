@@ -32,7 +32,7 @@ app.teacherGameplay = {
   },
 
   addSupplies: function () {
-    $('#addSupplies').on('click', function (e) {
+    $('.column-2').on('click', '#addSupplies', function (e) {
       e.stopPropagation();
 
 
