@@ -98,6 +98,7 @@ app.teacherGameplay = {
   highlightGroup: function () {
     var currentGroupId = $('div.current-group').attr('id');
     var links = $('.group-link a');
+    var nextGroup;
 
     for (var i = 0; i < links.length; i++) {
       if (links[i].href.split('/').pop() === currentGroupId) {
@@ -108,8 +109,32 @@ app.teacherGameplay = {
     $('#group-links').on('click', '.group-link', function () {
       $('.group-link').removeClass('active-group');
       $(this).addClass('active-group');
-    })
+    });
+    
+    $('#next-turn').on('click', '.next-turn', function () {
+      nextGroup = $('#next-turn #game_session_turn_group_id').attr('value');
+    });
+    
+    $(document).ready(function () {
+        $('#group-links').on('groups', function () {
+          console.log(nextGroup);
+          
+          for (var i = 0; i < links.length; i++) {
+            if (links[i].href.split('/').pop() === nextGroup) {
+              $(links[i].closest('li')).addClass('blah');
+            }
+          }
+      
+        })
+      })
     
   }
 
 };
+
+
+// $(document).ready(function(){
+//     $('body').on('show', function() {
+//         d3JSON();
+//     });
+// });

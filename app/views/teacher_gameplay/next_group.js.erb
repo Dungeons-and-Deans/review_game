@@ -1,6 +1,6 @@
 $("#next-turn").html("<%= j(render partial: 'next_turn', locals: { game_session: @game_session}) %>");
 $('#current-group').html("<%= j(render partial: 'current_group', locals: { current_group: @current_group}) %>");
-$('#group-links').html("<%= j(render partial: 'group_links') %>");
+$('#group-links').html("<%= j(render partial: 'group_links') %>").trigger('groups');
 $('.box').prop('checked', false);
 $('#box<%= @current_group.id %>').prop('checked', true);
 $('#answer-buttons').html("<%= j(render partial: 'answer_buttons') %>")
