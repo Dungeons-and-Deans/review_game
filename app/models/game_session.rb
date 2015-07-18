@@ -22,7 +22,7 @@ class GameSession < ActiveRecord::Base
   def check_for_group_names
     self.groups.each do |g|
       if g.name.empty?
-        g.update(name: "#{Faker::Commerce.product_name}s")
+        g.update(name: "#{Faker::Commerce.product_name}".pluralize)
       end
     end
   end
