@@ -25,18 +25,17 @@ Game.create!(name: "America Map", movement: 1,
     closing: "Congratulations!!")
 
 GameSession.create!(game_id: 1, turn_group_id: 1, name: "First Period", icon_id: 4, min_difficulty: 1, teacher_id: 1)
-GameSession.create!(game_id: 1, turn_group_id: 3, name: "Second Period", icon_id: 5, min_difficulty: 1, teacher_id: 1)
 GameSession.create!(game_id: 2, turn_group_id: 5, name: "Third Period", icon_id: 6, min_difficulty: 1, teacher_id: 1)
 GameSession.create!(game_id: 3, turn_group_id: 7, name: "Fouth Period", icon_id: 7, min_difficulty: 1, teacher_id: 1)
 
-Group.create!(game_session_id: 1, name: "groupone", score: 350, password: "password")
-Group.create!(game_session_id: 1, name: "grouptwo", score: 100, password: "password")
-Group.create!(game_session_id: 2, name: "groupthree", score: 50, password: "password")
-Group.create!(game_session_id: 2, name: "groupfour", score: 70, password: "password")
-Group.create!(game_session_id: 3, name: "groupfive", score: 0, password: "password")
-Group.create!(game_session_id: 3, name: "groupsix", score: 0, password: "password")
-Group.create!(game_session_id: 4, name: "groupseven", score: 200, password: "password")
-Group.create!(game_session_id: 4, name: "groupeight", score: 200, password: "password")
+Group.create!(game_session_id: 1, name: "Leopards", score: 350, password: "password1")
+Group.create!(game_session_id: 1, name: "Lions", score: 100, password: "password2")
+Group.create!(game_session_id: 1, name: "Tigers", score: 50, password: "password3")
+Group.create!(game_session_id: 2, name: "Bobcats", score: 70, password: "password4")
+Group.create!(game_session_id: 2, name: "Ocelots", score: 0, password: "password5")
+Group.create!(game_session_id: 2, name: "Cheetahs", score: 0, password: "password6")
+Group.create!(game_session_id: 3, name: "Jaguars", score: 200, password: "password7")
+Group.create!(game_session_id: 3, name: "Mountain Lions", score: 200, password: "password8")
 
 Icon.create(name: "Bus", description: "fa fa-bus")
 Icon.create(name: "Ship", description: "fa fa-ship")
@@ -47,19 +46,19 @@ Icon.create(name: "Jet", description: "fa fa-fighter-jet")
 Icon.create(name: "Bug", description: "fa fa-bug")
 Icon.create(name: "Flag", description: "fa fa-flag")
 
-Teacher.create!(first_name: "Test", last_name: "Tester", email: "test@test.com",
-    password: 'testtest', password_confirmation: 'testtest')
+Teacher.create!(first_name: "Anna", last_name: "Bedell", email: "anna@classquest.com",
+    password: 'password', password_confirmation: 'password')
 
 20.times do |t|
   GroupAssignment.create!(student_id: t+1, group_id: (1..8).to_a.sample, board_x: 500, board_y: 500, active: [true, false].sample)
 end
 
 5.times do
-  Supply.create(name: "stick", amount: (1..5).to_a.sample, group_id: (1..8).to_a.sample)
-  Supply.create(name: "apple", amount: (1..5).to_a.sample, group_id: (1..8).to_a.sample)
-  Supply.create(name: "walkie-talkie", amount: 2, group_id: (1..8).to_a.sample)
-  Supply.create(name: "water balloon", amount: (10..50).to_a.sample, group_id: (1..8).to_a.sample)
-  Supply.create(name: "money", amount: (50..100).to_a.sample, group_id: (1..8).to_a.sample)
+  Supply.create(name: "sticks", amount: (1..5).to_a.sample, group_id: (1..8).to_a.sample)
+  Supply.create(name: "apples", amount: (1..5).to_a.sample, group_id: (1..8).to_a.sample)
+  Supply.create(name: "walkie-talkies", amount: 2, group_id: (1..8).to_a.sample)
+  Supply.create(name: "water balloons", amount: (10..50).to_a.sample, group_id: (1..8).to_a.sample)
+  Supply.create(name: "gold", amount: (50..100).to_a.sample, group_id: (1..8).to_a.sample)
 end
 
 20.times do
