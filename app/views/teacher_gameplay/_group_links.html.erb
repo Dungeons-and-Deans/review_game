@@ -1,5 +1,5 @@
 <ul>
 <% @game_session.groups.each do |group| %>
-  <li class="group-link"><%= link_to "#{group.this_turn?} #{group.name} #{group.score}".html_safe, current_group_path(@game_session.id,group.id), remote: true %></li>
+  <li class="group-link" id="group<%= group.id %>"><%= link_to "#{group.this_turn?} #{group.name} #{group.score}".html_safe, current_group_path(@game_session.id,group.id), remote: true %></li>
 <% end %>
 </ul>

@@ -3,4 +3,5 @@ $('#current-group').html("<%= j(render partial: 'current_group', locals: { curre
 $('#group-links').html("<%= j(render partial: 'group_links') %>");
 $('.box').prop('checked', false);
 $('#box<%= @current_group.id %>').prop('checked', true);
-$('#answer-buttons').html("<%= j(render partial: 'answer_buttons') %>")
+$('#answer-buttons').html("<%= j(render partial: 'answer_buttons') %>");
+$('#group<%= @current_group.id %>').addClass('active-group');
