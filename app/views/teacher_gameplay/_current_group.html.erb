@@ -11,7 +11,11 @@
 </div>
 
 <div class="supplies">
-  <h5>Supplies</h5>
+  <h5>Supplies
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button-margin" id="addSupplies">
+      <i class="fa fa-plus"></i> Add
+    </button>
+  </h5>
   <ul>
     <% if @current_group.supplies.length == 0 %>
       <li>
@@ -33,9 +37,6 @@
       </div>
     </li>
   </ul>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button-margin" id="addSupplies">
-    Add Supply
-  </button>
 </div>
 
 
