@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get 'teacher_gameplay/:id/current_group/:group_id' => 'teacher_gameplay#current_group', as: :current_group
   get 'teacher_gameplay/:id/home' => 'teacher_gameplay#home', as: :teacher_gameplay
   post 'teacher_gameplay/:id/home' => 'teacher_gameplay#home'
-  get 'teacher_gameplay/:id/groups' => 'teacher_gameplay#groups', as: :groups
   patch 'teacher_gameplay/:id/update_score/:group_id' => 'teacher_gameplay#update_score', as: :update_score
   get 'teacher_gameplay/:id/edit_score/:group_id' => 'teacher_gameplay#edit_score', as: :edit_score
   patch 'teacher_gameplay/:id/next_group' => 'teacher_gameplay#next_group', as: :next_group
@@ -43,6 +42,7 @@ Rails.application.routes.draw do
   patch 'game_sessions/:id/assign_groups' => 'game_sessions#assign_groups', as: :assign_groups
   post 'game_sessions/:id/add_player/:group_id/:student_id' => 'game_sessions#add_player', as: :add_player
   patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
+  get 'game_sessions/:id/add_group' => 'game_sessions#add_group'
 
 
 

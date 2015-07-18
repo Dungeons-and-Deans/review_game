@@ -10,6 +10,7 @@ $(function () {
 
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
+    app.gameSession.addGroup();
   }
 
   if (/categories/.test(pathName)) {

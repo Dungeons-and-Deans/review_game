@@ -20,12 +20,20 @@ class GameSession < ActiveRecord::Base
   end
 
   def begin_game(categories, num_of_groups)
+    make_category_assignments(categories)
+    make_groups(num_of_groups)
+    self.save
+    self.update(turn_group_id: self.groups.first.id)
+  end
+
+  def make_category_assignments(categories)
     categories.each do |c|
       CategoryGameSessionAssignment.create(game_session_id: self.id, category_id: c)
     end
+  end
+
+  def make_groups(num_of_groups)
     num_of_groups.to_i.abs.times { self.groups.build(password: SecureRandom.hex(4), score: 0) }
-    self.save
-    self.update(turn_group_id: self.groups.first.id)
   end
 
   def next_group

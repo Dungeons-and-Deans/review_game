@@ -27,6 +27,18 @@ app.gameSession = {
       }
     });
 
-  }
+  },
+
+  addGroup: function () {
+    $('#new-group-form-container').delegate('button.add-group', 'click', function() {
+      var id = $('button.add-group')[0].id;
+
+      $.ajax({
+        url: "/game_sessions/" + id + "/add_group",
+        type: "GET",
+      });
+
+    });
+  },
 
 }
