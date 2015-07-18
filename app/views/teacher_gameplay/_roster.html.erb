@@ -1,6 +1,10 @@
 <div class="mdl-grid mdl-cell mdl-cell--12-col">
   <ul>
     <h3>Players</h3>
+    <ul> Legend
+      <li><i class="fa fa-star-o">&nbsp;Active Player</i></li>
+      <li><i class="fa fa-times">&nbsp;Inactive Player</i></li>
+    </ul>
     <% @game_session.groups.each do |group| %>
       <h5><%= group.name %></h5>
       <% group.students.order(:last_name).each do |student| %>
@@ -10,9 +14,5 @@
         </li>
       <% end %>
     <% end %>
-  </ul>
-  <ul> Legend
-    <li><i class="fa fa-star-o">Active Player</i></li>
-    <li><i class="fa fa-times">Inactive Player</i></li>
   </ul>
 </div>

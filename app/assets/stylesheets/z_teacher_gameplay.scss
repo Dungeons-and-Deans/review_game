@@ -20,10 +20,19 @@ div.column-1 {
   & a {
     display: block;
     color: #FFFFFF;
+    padding: 0.5rem 2rem;
     
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.group-link.active-group {
+  background: $body;
+
+  & a {
+    color: $blue-primary;
   }
 }
 
@@ -61,17 +70,11 @@ div.teacher-footer {
   margin: 1rem 0;
 }
 
-.group-link,
+
 .bookmark {
   padding: 0.5rem 2rem;
 
-  &.active-group {
-    background: $body;
-
-    & a {
-      color: $blue-primary;
-    }
-  }
+  
 }
 
 span.group-name {
