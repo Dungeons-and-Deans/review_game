@@ -96,54 +96,14 @@ app.teacherGameplay = {
   },
 
   highlightGroup: function () {
-    // var currentGroupId = $('div.current-group').attr('id');
-    // console.log(currentGroupId);
+    var currentGroupId = $('div.current-group').attr('id');
+    var links = $('.group-link a');
 
-    // var links = $('.group-link');
-    // console.log(links);
-
-    // for (var key in links) {
-    //   var a = links.find('a')[key];
-    //   console.log(a);
-
-    //   console.log(a.href.split('/').pop());
-
-
-    //   if (a.href.split('/').pop() === currentGroupId) {
-    //     console.log(links.addClass('blah'));
-    //     a.closest('li').addClass('testing');
-    //   }
-    // }
-
-    // for (var i = 0; i < links.length; i++) {
-    //   console.log(links.find('a')[i].href.split('/').pop());
-
-    //   links[i].addClass('blah');
-    // }
-
-    // console.log(links.find('a'));
-
-    // for (var i = 0; i < links.length; i++) {
-    //   if (links[i].href.split('/').pop() === currentGroupId) {
-    //     console.log(links[i].closest('li'));
-
-    //     console.log($(this));
-
-    //     // $(this).closest('li').addClass('blah');
-
-    //     console.log(links[i].closest('li'));
-
-    //   }
-    // }
-
-    // for (var i = 0; i < links.length; i++) {
-    //   if (links[i].href.split('/').pop() === currentGroupId) {
-
-    //   }
-
-    //   console.log();
-    // }
-
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].href.split('/').pop() === currentGroupId) {
+        $(links[i].closest('li')).addClass('active-group');
+      }
+    }
     $('#group-links').on('click', '.group-link', function () {
       $('.group-link').removeClass('active-group');
       $(this).addClass('active-group');
