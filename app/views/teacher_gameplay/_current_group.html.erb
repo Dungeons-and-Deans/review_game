@@ -2,7 +2,7 @@
 <div class="current-group" id="<%= @current_group.id %>">
   <h3><%= "#{@current_group.name}: " %>
     <span id="update_score<%= @current_group.id %>" class="scores">
-    <%= render partial: '/teacher_gameplay/scores' %>
+      <%= render partial: '/teacher_gameplay/scores' %>
     </span>
   </h3>
   <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
@@ -13,7 +13,7 @@
 <div class="supplies">
   <h5>Supplies
     <button type="button" id="addSupplies">
-      <i class="fa fa-plus"></i> Add
+      <i class="fa fa-plus"></i> ADD
     </button>
   </h5>
   <ul>
