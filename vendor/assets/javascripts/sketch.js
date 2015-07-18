@@ -59,7 +59,7 @@ var __slice = Array.prototype.slice;
         this.img = img;
       }
 
-      this.canvas.bind('click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel', this.onEvent);
+      this.canvas.bind('click mousedown mouseup mousemove touchstart touchmove touchend touchcancel', this.onEvent);
       if (this.options.toolLinks) {
         $('body').delegate("a[href=\"#" + (this.canvas.attr('id')) + "\"]", 'click', function(e) {
           var $canvas, $this, key, sketch, _i, _len, _ref;
@@ -88,7 +88,7 @@ var __slice = Array.prototype.slice;
       }
       mime = "image/" + format;
       var savedImage = this.el.toDataURL(mime)
-      var id = 1
+      var id = $("#map-container")[0].getAttribute('value');
 
       $.ajax({
         type: "PATCH",
