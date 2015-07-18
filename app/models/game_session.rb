@@ -41,7 +41,8 @@ class GameSession < ActiveRecord::Base
   end
 
   def make_groups(num_of_groups)
-    num_of_groups.to_i.abs.times { self.groups.build(password: SecureRandom.hex(4), score: 0) }
+    num = num_of_groups.to_i > 0 ? num_of_groups : 1
+    num.times { self.groups.build(password: SecureRandom.hex(4), score: 0) }
   end
 
   def next_group
