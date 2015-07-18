@@ -18,8 +18,12 @@ div.column-1 {
   color: #FFFFFF;
 
   & a {
+    display: block;
     color: #FFFFFF;
-
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
