@@ -1,18 +1,35 @@
 <div class="mdl-grid mdl-cell mdl-cell--12-col">
-  <ul>
-    <h3>Players</h3>
-    <ul> Legend
-      <li><i class="fa fa-star-o">&nbsp;Active Player</i></li>
-      <li><i class="fa fa-times">&nbsp;Inactive Player</i></li>
-    </ul>
-    <% @game_session.groups.each do |group| %>
-      <h5><%= group.name %></h5>
-      <% group.students.order(:last_name).each do |student| %>
-        <li>
-          <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
-          <%= student.full_name %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
+  <h3>Players</h3>
+  <table>
+    <thead>
+      <tr colspan="3">
+        <ul id="legend"> Legend
+          <li><i class="fa fa-star-o">&nbsp;Active Player</i></li>
+          <li><i class="fa fa-times">&nbsp;Inactive Player</i></li>
+        </ul>
+      </tr>
+    </thead>
+
+      <tbody>
+        <% @game_session.groups.each_slice(2) do |twogroups| %>
+          <tr>
+            <% twogroups.each do |group| %>
+              <td class="roster-row"><h5><%= group.name %></h5></td>
+            <% end %>
+          </tr>
+          <tr>
+            <% twogroups.each do |group| %>
+              <td class="roster-row">
+                <% group.students.order(:last_name).each do |student| %>
+                  <li>
+                    <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
+                    <%= student.full_name %>
+                  </li>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>
