@@ -42,4 +42,10 @@ app.gameSession = {
     });
   },
 
+  removePlaceholder: function () {
+    $(".dropdown").change(function () {
+        $(this).removeClass("placeholder");
+    });
+  },
+
 }

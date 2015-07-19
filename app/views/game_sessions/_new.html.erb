@@ -6,7 +6,7 @@
 
   <%= f.input :name, label: false, placeholder: "Game Session Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
-  <%= f.association :icon, label: false, prompt: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
+  <%= f.association :icon, label: false, prompt: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input placeholder dropdown" }, label_html: { class: "mdl-textfield__label" } %>
   <%= f.hidden_field :game_id %>
 
   <div class="form-group mdl-textfield mdl-js-textfield textfield-demo">

@@ -44,5 +44,6 @@ $(function () {
 
   }
 
+  app.gameSession.removePlaceholder();
   app.modalClose();
 });
