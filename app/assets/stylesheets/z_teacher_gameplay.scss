@@ -156,15 +156,28 @@ button#send-competition-question {
   display: block;
 }
 
+#close-answer-buttons {
+  background-color: $blue-primary;
+  color: white;
+  vertical-align: top;
+  display: block;
+}
+
 #button-correct {
-  background: #1976D2;
+  background: #056E4E;
   color: #FFFFFF;
   margin-bottom: 2rem;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
 }
 
 #button-incorrect {
-  background: #E65100;
+  background: #B50421;
   color: #FFFFFF;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
 }
 
 #sendMessageModal {
@@ -204,4 +217,8 @@ form.edit_group {
   color: white;
   vertical-align: middle;
   padding: 4px;
+}
+
+#group-links {
+  text-align: right;
 }
