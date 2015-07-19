@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     @category = Category.create(teacher_id: current_teacher.id,
         name: "Click the pencil to edit title name.")
     Question.create!(category_id: @category.id, content: "Click the pencil to edit
-        questions.", difficulty_level: 1, right: 0, wrong: 0, answer: "Enter the answer here.")
+        questions.", difficulty_level: 1, right: 0, wrong: 0)
 
     redirect_to @category
   end
