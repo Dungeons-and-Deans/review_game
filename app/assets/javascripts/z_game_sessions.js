@@ -43,9 +43,9 @@ app.gameSession = {
   },
 
   removePlaceholder: function () {
-    $(".dropdown").change(function () {
-        $(this).removeClass("placeholder");
-    });
+    $('#newGameSessionModal').on('change', '.select', function () {
+      $('.dropdown').removeClass('placeholder');
+    })
   },
 
 }
