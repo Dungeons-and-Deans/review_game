@@ -1,5 +1,7 @@
 <% if group %>
-  <h5>Notes</h5>
+  <h5>Notes
+    <button type="button" class="add-button" id="addNotes"><i class="fa fa-plus"></i> ADD</button>
+  </h5>
   <ul>
     <% if group.notes.length == 0 %>
       <li>

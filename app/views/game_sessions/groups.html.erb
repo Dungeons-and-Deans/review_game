@@ -1,8 +1,11 @@
 <div class="mdl-cell mdl-cell--12-col">
   <h3 class="session-name" id="<%= @game_session.id %>">Game Session Name: <%= @game_session.name %></h3>
+  <h5>
+    Player Icon: <span id="icon"><i class="<%= @game_session.icon.description %>"></i> </span>
+    Minimum difficulty of questions: <span id="min-diff"><%= @game_session.min_difficulty %></span>
+    Question categories: <span id="question-categories"><%= @game_session.categories.map {|c| c.name }.join(", ") %></span></h5>
   <ul>
     <li>Each team will sign in during the game using the passwords below.</li>
-    <li>Hit the submit button below the groups to create the teams.</li>
   </ul>
 </div>
 

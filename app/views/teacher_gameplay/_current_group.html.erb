@@ -2,13 +2,20 @@
 <div class="current-group" id="<%= @current_group.id %>">
   <h3><%= "#{@current_group.name}: " %>
     <span id="update_score<%= @current_group.id %>" class="scores">
-    <%= render partial: 'scores' %>
+      <%= render partial: '/teacher_gameplay/scores' %>
     </span>
   </h3>
+  <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    Send Message
+  </button>
 </div>
 
 <div class="supplies">
-  <h5>Supplies</h5>
+  <h5>Supplies
+    <button type="button" class="add-button" id="addSupplies">
+      <i class="fa fa-plus"></i> ADD
+    </button>
+  </h5>
   <ul>
     <% if @current_group.supplies.length == 0 %>
       <li>
@@ -31,6 +38,7 @@
     </li>
   </ul>
 </div>
+
 
 <div id="notes<%= @current_group.id %>">
   <%= render partial: '/notes/index', locals: { group: @current_group } %>

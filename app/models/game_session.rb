@@ -22,13 +22,30 @@ class GameSession < ActiveRecord::Base
     Group.find_by_id(self.turn_group_id)
   end
 
+  def check_for_group_names
+    self.groups.each do |g|
+      if g.name.empty?
+        g.update(name: "#{Faker::Commerce.product_name}".pluralize)
+      end
+    end
+  end
+
   def begin_game(categories, num_of_groups)
+    make_category_assignments(categories)
+    make_groups(num_of_groups)
+    self.save
+    self.update(turn_group_id: self.groups.first.id)
+  end
+
+  def make_category_assignments(categories)
     categories.each do |c|
       CategoryGameSessionAssignment.create(game_session_id: self.id, category_id: c)
     end
-    num_of_groups.to_i.abs.times { self.groups.build(password: SecureRandom.hex(4), score: 0) }
-    self.save
-    self.update(turn_group_id: self.groups.first.id)
+  end
+
+  def make_groups(num_of_groups)
+    num = num_of_groups.to_i > 0 ? num_of_groups : 1
+    num.times { self.groups.build(password: SecureRandom.hex(4), score: 0) }
   end
 
   def next_group

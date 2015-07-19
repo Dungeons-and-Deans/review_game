@@ -1,31 +1,28 @@
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp topcard">
+<div class="mdl-cell mdl-cell--12-col">
   <div id="game-header">
-    <h3><%= @game_session.name %></h3>
+    <%= @game_session.name %>
   </div>
-  <div class="link">
-    <h6><%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %></h6>
-  </div>
+  <span class="link">
+    <%= link_to "Projector View", class_gameplay_path(@game_session), class: "mdl-button mdl-js-button mdl-button--accent button" %>
+  </span>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--2-col column-1">
   <div class="bookmark">
-    <i class="fa fa-bookmark"></i> denotes the current group that will be sent the next question
+    <i class="fa fa-bookmark"></i> denotes the group currently taking a turn.
   </div>
   <div id="group-links">
     <%= render partial: 'group_links' %>
   </div>
-  <div id="next-turn">
-    <%= render partial: '/teacher_gameplay/next_turn' %>
-  </div>
+</div>
+
+<div class="mdl-cell mdl-cell--5-col column-2">
   <div id="current-group">
     <%= render partial: 'current_group' %>
   </div>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addSupplies">Add Supply</button>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="addNotes">Add Note</button>
-  <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Send Message</button>
 </div>
 
-<div class="mdl-cell mdl-cell--6-col mdl-shadow--4dp card">
+<div class="mdl-cell mdl-cell--5-col column-3">
   <div id="next-question">
     <%= render partial: 'next_question' %>
   </div>
@@ -39,14 +36,16 @@
       id="list-competition-answers">
     </ul>
   </div>
-</div>
-
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-shadow--4dp">
-  <div class="mdl-cell mdl-cell--1-col"></div>
-  <div class="mdl-cell mdl-cell--10-col" id="roster">
+  <div id="roster">
     <%= render partial: 'roster' %>
   </div>
-  <div class="mdl-cell mdl-cell--1-col"></div>
+</div>
+
+<div class="teacher-footer">
+  <div id="next-turn">
+    <%= render partial: '/teacher_gameplay/next_turn' %>
+  </div>
+  <%= render partial: 'winner' %>
 </div>
 
 <div id="answer-buttons">

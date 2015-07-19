@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = Student.new(teacher_id: current_teacher.id)
+    @student = Student.new(teacher_id: current_teacher.id, games_won: 0)
   end
 
   def edit

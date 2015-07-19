@@ -10,6 +10,7 @@ $(function () {
 
   if ($('.groups-students').length) {
     app.gameSession.dragDrop();
+    app.gameSession.addGroup();
   }
 
   if (/categories/.test(pathName)) {
@@ -30,7 +31,9 @@ $(function () {
     app.teacherGameplay.closeWinner();
     app.teacherGameplay.sendMessage();
     app.teacherGameplay.chooseCorrect();
+    app.teacherGameplay.chooseNoGroup();
     app.notes.addNotes();
+    app.teacherGameplay.highlightGroup();
 
   }
 

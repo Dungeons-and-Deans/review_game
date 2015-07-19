@@ -3,19 +3,76 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'z_colors';
 
-#group-links,
-.group-link,
-#next-turn,
-#roster {
+#game-header {
   display: inline-block;
+  font-size: 2em;
+  padding: 1rem;
+}
+
+div.column-1 {
+  height: 80vh;
+  margin-left: -8px;
+  background: $gray-blue;
+  color: #FFFFFF;
+
+  & a {
+    display: block;
+    color: #FFFFFF;
+    padding: 0.5rem 2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.group-link.active-group {
+  background: $body;
+
+  & a {
+    color: $blue-primary;
+  }
+}
+
+div.column-1 li {
+  margin-left: 1rem;
+}
+
+div.column-2 {
+  overflow: auto;
+  height: 80vh;
+  padding: 0 2rem;
+}
+
+div.column-3 {
+  overflow: auto;
+  max-height: 80vh;
+  padding: 0 2rem;
+}
+
+div#roster {
+  border-top: 1px solid $gray-blue;
+  margin-top: 2rem;
+}
+
+div.teacher-footer {
+  background: $gray-blue;
+  padding: 2rem 4rem;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .bookmark {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
-.group-link {
-  margin-right: 0.2rem;
+
+.bookmark {
+  padding: 0.5rem 2rem;
+
+
 }
 
 span.group-name {
@@ -45,8 +102,12 @@ button#send-competition-question {
   right: 0;
 }
 
+.next-turn {
+  float: left;
+}
+
 .choose-winner {
-  text-align: right;
+  float: right;
 }
 
 #winnerModal {
@@ -95,15 +156,28 @@ button#send-competition-question {
   display: block;
 }
 
+#close-answer-buttons {
+  background-color: $blue-primary;
+  color: white;
+  vertical-align: top;
+  display: block;
+}
+
 #button-correct {
-  background: #1976D2;
+  background: #056E4E;
   color: #FFFFFF;
   margin-bottom: 2rem;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
 }
 
 #button-incorrect {
-  background: #E65100;
+  background: #B50421;
   color: #FFFFFF;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
 }
 
 #sendMessageModal {
@@ -136,4 +210,27 @@ button#send-competition-question {
 form.edit_group {
   display: inline-block;
   width: 13rem;
+}
+
+.add-button {
+  background-color: $blue-primary;
+  color: white;
+  vertical-align: middle;
+  padding: 4px;
+}
+
+#group-links {
+  text-align: right;
+}
+
+.roster-row {
+  padding-right: 40px;
+}
+
+#legend {
+  padding-left: 85px;
+}
+
+#players {
+  margin-top: 0;
 }

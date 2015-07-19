@@ -4,7 +4,7 @@
 app.notes = {
   
   addNotes: function () {
-    $('#addNotes').on('click', function (e) {
+    $('.column-2').on('click', '#addNotes', function (e) {
       e.stopPropagation();
       
       $('#notesModal').addClass('active');

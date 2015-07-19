@@ -121,6 +121,7 @@ channelStudentQuestion.bind('update_supplies', function (supplies) {
 });
 
 channelStudentQuestion.bind('send_message', function (message_text) {
+  console.log("hi")
   $('#message-text-container').text(message_text);
 
   $('#messageModal').toggleClass('active');

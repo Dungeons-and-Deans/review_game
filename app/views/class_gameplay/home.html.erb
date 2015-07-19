@@ -47,7 +47,14 @@
 
 <% @players.each do |player| %>
   <i class="<%= @icon.description %> fa-2x <%= player.group_id %> draggables icon", id="<%= player.id %>" >
-    <%= player.student.first_name[0] %>
+    <span class="first-letter"><%= player.student.first_name[0] %></span>
+    <% player.group.students.each do |s|  %>
+      <% if s.first_name[0] == player.student.first_name[0] && s != player.student %>
+        <span class="last-letter"><%= player.student.last_name[0] %></span>
+        <% break %>
+      <% end %>
+    <% end %>
+
   </i>
 <% end %>
 

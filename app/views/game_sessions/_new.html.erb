@@ -5,7 +5,6 @@
   <%= f.error_notification %>
 
   <%= f.input :name, label: false, placeholder: "Game Session Name", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
-  <%= f.input :min_difficulty, label: false, placeholder: "Minimum Question Difficulty Level", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
 
   <%= f.association :icon, label: false, prompt: "Player Icon", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
   <%= f.hidden_field :game_id %>
@@ -13,6 +12,8 @@
   <div class="form-group mdl-textfield mdl-js-textfield textfield-demo">
     <%= number_field_tag :number_of_groups, nil, min: 1, class: "form-control mdl-textfield__input", placeholder: "Number of Groups" %>
   </div>
+  <span>Pick the minimum difficulty of questions and one or more categories of questions to be given to the players.</span>
+  <%= f.input :min_difficulty, label: false, placeholder: "Minimum Question Difficulty Level", wrapper_html: { class: "mdl-textfield mdl-js-textfield textfield-demo" }, input_html: { class: "mdl-textfield__input" }, label_html: { class: "mdl-textfield__label" } %>
   <% @categories.each do |category| %>
     <div class="form-group">
       <%= check_box_tag "category[]", category.id %>
