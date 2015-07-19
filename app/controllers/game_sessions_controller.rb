@@ -25,6 +25,9 @@ class GameSessionsController < ApplicationController
   def create
     @game_session = GameSession.new(game_session_params)
     if @game_session.save
+      unless @game_session.game.teacher_id
+        @game_session.update(teacher_id: current_teacher.id)
+      end
       @game_session.begin_game(params[:category], params[:number_of_groups])
       redirect_to game_session_groups_path(@game_session)
     else
