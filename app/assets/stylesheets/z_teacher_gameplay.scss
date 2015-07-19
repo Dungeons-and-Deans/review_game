@@ -157,8 +157,8 @@ button#send-competition-question {
 #close-answer-buttons {
   background-color: $blue-primary;
   color: white;
-  vertical-align: top;
   display: block;
+  float: right;
 }
 
 #button-correct {
