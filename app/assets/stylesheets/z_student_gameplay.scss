@@ -18,7 +18,8 @@ a.nav-expander {
   text-transform: uppercase;
   transition: right 0.3s ease-in-out 0s;
   width: 6rem;
-  z-index: 12;
+  z-index: 10;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 a.nav-expander:hover {

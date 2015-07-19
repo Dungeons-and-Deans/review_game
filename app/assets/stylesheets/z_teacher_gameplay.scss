@@ -10,10 +10,11 @@
 }
 
 div.column-1 {
-  height: 70vh;
+  height: 80vh;
   margin-left: -8px;
   background: $gray-blue;
   color: #FFFFFF;
+  border-radius: 0 0.5rem 0 0;
 
   & a {
     display: block;
@@ -35,7 +36,8 @@ div.column-1 {
 }
 
 div.column-1 li {
-  margin-left: 1rem;
+  margin-left: 2rem;
+  border-radius: 0.5rem -10rem 0 0.5rem;
 }
 
 div.column-2 {
