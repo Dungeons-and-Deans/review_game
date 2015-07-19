@@ -30,12 +30,14 @@
   float: right;
 }
 
-div#new-question-form > input {
-  position: absolute;
-
-}
-
 .form-inline div {
   display: inline-block;
   float: left;
+}
+
+#new-question-form textarea {
+  border: none;
+  width: 100%;
+  outline: 0;
+  font-size: 1em;
 }
