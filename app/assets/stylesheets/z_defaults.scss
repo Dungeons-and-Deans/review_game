@@ -84,6 +84,7 @@ table.table {
   border-radius: 15%;
   box-shadow: 1px 1px 1px 1px #000;
   cursor: pointer;
+  text-shadow: 1px 1px 1px black;
 
   &.glow {
     box-shadow: 0rem 0rem 1rem #1194f6;
