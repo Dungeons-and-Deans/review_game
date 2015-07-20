@@ -3,3 +3,4 @@ $('#next-question').html("<%= j(render partial: 'next_question') %>");
 $('.scores').html("<%= j(render partial: 'scores') %>");
 $('#list-competition-answers').empty();
 $('#group-links').html("<%= j(render partial: 'group_links') %>");
+$('#group<%= @current_group.id %>').addClass('active-group');
