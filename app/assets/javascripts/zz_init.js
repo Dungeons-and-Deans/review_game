@@ -46,4 +46,14 @@ $(function () {
 
   app.gameSession.removePlaceholder();
   app.modalClose();
+  
+  
+  var map = $('img.map');
+  var canvas = $('canvas');
+  
+  canvas.attr({
+    width: map.width(),
+    height: map.height()
+  });
+  
 });
