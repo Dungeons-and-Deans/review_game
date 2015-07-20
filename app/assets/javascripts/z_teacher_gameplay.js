@@ -22,7 +22,7 @@ app.teacherGameplay = {
       if (ids.length > 1) {
         dispatcher.trigger('movements.ask_competition_question', info);
         $('#list-competition-answers').append("<li><h4>Groups Answered:</h4></li>");
-        $('#list-competition-answers').append("<li><button class='end mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect'><i class='fa fa-times'> End Question</i></button> or select the group below to award points.  Groups will appear in the order that they buzz in.</li>");
+        $('#list-competition-answers').append("<li><button class='end mdl-button mdl-js-button mdl-button--primary'><i class='fa fa-times'> no team was correct</i></button> or select the group that answered correctly below to award points.</li> <li>Groups will appear below in the order that they buzz in.</li>");
       } else {
         var groupId = ids[0];
         dispatcher.trigger('movements.ask_question', channelNumber);
