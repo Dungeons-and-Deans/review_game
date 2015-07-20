@@ -2,8 +2,7 @@
   <div class="modal-fg mdl-cell--3-col">
     <%= form_tag send_message_path(@game_session, group), remote: true, :class => "mdl-grid" do %>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--6-col">
-        <%= text_area_tag :message_text, nil, class: "mdl-textfield__input" %>
-        <%= label_tag :enter_message_here, nil, class: "mdl-textfield__label" %>
+        <%= text_area_tag :message_text, nil, class: "mdl-textfield__input", placeholder: "Enter Message Here" %>
       </div>
 
       <div class="input">
