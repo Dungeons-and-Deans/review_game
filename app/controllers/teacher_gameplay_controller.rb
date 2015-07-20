@@ -74,7 +74,7 @@ class TeacherGameplayController < ApplicationController
       @question.update(question_params)
       if params[:question][:right]
         group = Group.find(params[:group_id])
-        @question.give_points(group.id)
+        @question.give_points(group)
         WebsocketRails[:"group_listen#{group.game_session_id}"].trigger 'update_score', group
       end
     end

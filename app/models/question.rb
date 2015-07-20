@@ -13,8 +13,7 @@ class Question < ActiveRecord::Base
     end
   end
 
-  def give_points(id)
-    group = Group.find(id)
+  def give_points(group)
     group.update(score: group.score + self.difficulty_level)
   end
 
