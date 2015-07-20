@@ -1,4 +1,5 @@
 <h3>Next Question</h3>
+<%= link_to "Skip This Question", next_question_path(@game_session, @question, @current_group), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored button", method: :patch, remote: true %>
 
 <div class="question-content">
   <h4><%= @question.content %></h4>
@@ -7,8 +8,6 @@
 <div>
   <h5>Answer: <%= @question.answer %></h5>
 </div>
-
-<%= link_to "Skip This Question", next_question_path(@game_session, @question, @current_group), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored button", method: :patch, remote: true %>
 
 <div>
   <div class="mdl-cell mdl-cell--2-col"></div>
