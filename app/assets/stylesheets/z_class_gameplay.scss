@@ -50,5 +50,9 @@
 }
 
 canvas {
-  background-size: cover !important;
+  position: absolute;
+  left: 0;
+  top: 7rem;
+  width: 70rem;
+  height: 100%;
 }
