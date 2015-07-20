@@ -1,10 +1,13 @@
 
 <div class="current-group" id="<%= @current_group.id %>">
-  <h3><%= "#{@current_group.name}: " %>
+  <h3>
+    <%= "#{@current_group.this_turn?}".html_safe %>
+    <%= "#{@current_group.name}: " %>
     <span id="update_score<%= @current_group.id %>" class="scores">
       <%= render partial: '/teacher_gameplay/scores' %>
     </span>
   </h3>
+  <%= "This group is currently taking a turn." if @current_group.group_turn?%><br>
   <button id="send-message" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
     Send Message
   </button>
