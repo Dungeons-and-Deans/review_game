@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   patch 'game_sessions/:id/end_game' => 'game_sessions#end_game', as: :end_game
   patch 'game_sessions/:id/update_map' => 'game_sessions#update_map'
   get 'game_sessions/:id/add_group' => 'game_sessions#add_group'
+  patch 'game_sessions/:id/update' => 'game_sessions#update', as: :update_game_session
+  get 'game_sessions/:id/edit' => 'game_sessions#edit', as: :edit_game_session
 
 
 

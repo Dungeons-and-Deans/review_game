@@ -34,7 +34,7 @@
   <tbody>
     <% @games.each do |game| %>
       <% game.available_game_sessions(@teacher.id).each do |game_session| %>
-        <tr>
+        <tr id="game<%=game_session.id%>">
           <td class="mdl-data-table__cell--non-numeric"><%= game_session.name %></td>
           <td><i class="<%= game_session.icon.description %> fa-2x"></i></td>
           <td class="mdl-data-table__cell--non-numeric"><%= game.name %></td>
@@ -42,7 +42,10 @@
           <td class="mdl-data-table__cell--non-numeric"><%= Group.find(game_session.winning_group_id).name if game_session.winning_group_id %></td>
           <td><%= link_to 'Play', teacher_gameplay_path(game_session) %></td>
           <td><%= link_to 'Groups', game_session_groups_path(game_session) %></td>
-          <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, delete_game_session_path(game_session), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_game_session_path(game_session), html_options = {remote: true} %>
+            <%= link_to '<i class="fa fa-times"></i>'.html_safe, delete_game_session_path(game_session), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     <% end %>
