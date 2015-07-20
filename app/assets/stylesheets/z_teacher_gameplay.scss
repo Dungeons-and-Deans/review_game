@@ -215,7 +215,7 @@ form.edit_group {
   background-color: $blue-primary;
   color: white;
   vertical-align: middle;
-  padding: 4px;
+  padding: 6px;
   border: 0;
   border-radius: 0.2rem;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)
@@ -237,3 +237,14 @@ form.edit_group {
   margin-top: 0;
 }
 
+.skip-question {
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: $blue-primary;
+  color: white;
+  vertical-align: middle;
+  padding: 6px;
+  border: 0;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)
+}
