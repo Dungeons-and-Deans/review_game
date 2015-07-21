@@ -13,39 +13,6 @@
   <img class="map" src="<%= @map.file_path %>">
 </div>
 
-<div class="tools">
-  <span id="colors">
-    <a href="#mapSketch" data-color="#000000" title="Black"><i class="fa fa-paint-brush fa-2x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-color="#ff0000" title="Red"><i class="fa fa-paint-brush fa-2x" style="color: red;"></i></a>
-    <a href="#mapSketch" data-color="#00ff00" title="Green"><i class="fa fa-paint-brush fa-2x" style="color: #00ff00;"></i></a>
-    <a href="#mapSketch" data-color="#f39c12" title="Orange"><i class="fa fa-paint-brush fa-2x" style="color: #f39c12;"></i></a>
-    <a href="#mapSketch" data-color="#0000ff" title="Blue"><i class="fa fa-paint-brush fa-2x" style="color: #0000ff;"></i></a>
-    <a href="#mapSketch" data-color="#DBE300" title="Yellow"><i class="fa fa-paint-brush fa-2x" style="color: #DBE300;"></i></a>
-    <a href="#mapSketch" data-color="#00ffff" title="Cyan"><i class="fa fa-paint-brush fa-2x" style="color: #00ffff;"></i></a>
-    <a href="#mapSketch" data-color="#ffffff" title="White"><i class="fa fa-paint-brush fa-2x" style="color: #ffffff; text-shadow: -1px 1px black, 1px 1px black, -1px -1px black, 1px -1px black;"></i></a>
-  </span>
-  <span>
-    <a href="#mapSketch" data-size="3"><i class="fa fa-pencil fa-2x" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="9"><i class="fa fa-circle" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="30"><i class="fa fa-circle fa-2x" style="color: black;"></i></a>
-		<a href="#mapSketch" data-size="60"><i class="fa fa-circle fa-3x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-tool="eraser"><i class="fa fa-eraser fa-2x" style="color: black;"></i></a>
-    <a href="#mapSketch" data-download='png'><i class="fa fa-save fa-2x" style="color: black;"></i></a>
-    Sketch must be saved before leaving or reloading the page.
-  </span>
-</div>
-
-
-
-<script type="text/javascript">
-  $(function() {
-    var hasImg = <%= @game_session.canvas.file? %>;
-    var imgSrc = "<%= j(@game_session.canvas.url) %>";
-
-    $('#mapSketch').sketch({ img: hasImg ? imgSrc : undefined });
-  });
-</script>
-
 <% @players.each do |player| %>
   <i name="<%= player.group_id %>" class="<%= @icon.description %> fa-2x <%= player.group_id %> draggables icon", id="<%= player.id %>" >
     <span class="first-letter"><%= player.student.first_name[0] %></span>
