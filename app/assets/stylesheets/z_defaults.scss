@@ -41,6 +41,12 @@ body a {
 
 table.table {
   width: 100%;
+  table-layout: fixed;
+}
+
+table td {
+  width: 100%;
+  overflow: auto;
 }
 
 .card {
