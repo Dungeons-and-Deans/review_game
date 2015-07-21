@@ -7,8 +7,15 @@
 // app/views/pages/home.html.erb
 
 .page-title {
+  font-size: 5em;
   font-weight: bold;
-  color: #424242;
+  margin: 4rem 0 2rem 0;
+}
+
+.page-subtitle {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 2rem 0 2rem 0;
 }
 
 .landing-page {
@@ -43,4 +50,5 @@
   color: #F5F5F5;
   display: inline-block;
   margin: 0 auto;
+  font-size: 1.2em;
 }
