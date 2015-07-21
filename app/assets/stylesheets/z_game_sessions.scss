@@ -47,6 +47,16 @@ li.draggables {
 }
 
 .win-page {
-  background-image: url('giphy.com/embed/IjmMzurYulKEw');
+  background-image: asset-url('fireworks5.gif');
   background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.winners {
+  color: #FAFAFA;
 }
