@@ -20,12 +20,14 @@
           <tr>
             <% twogroups.each do |group| %>
               <td class="roster-row">
-                <% group.students.order(:last_name).each do |student| %>
-                  <li>
-                    <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
-                    <%= student.full_name %>
-                  </li>
-                <% end %>
+                <ul>
+                  <% group.students.order(:last_name).each do |student| %>
+                    <li>
+                      <%= link_to student.active?(group).html_safe, active_path(@game_session, student), remote: true %>
+                      <%= student.full_name %>
+                    </li>
+                  <% end %>
+                </ul>
               </td>
             <% end %>
           </tr>
