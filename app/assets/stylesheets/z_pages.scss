@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'z_colors';
+
 // app/views/pages/home.html.erb
 
 .page-title {
   font-weight: bold;
+  color: #424242;
 }
 
 .landing-page {
@@ -17,11 +20,11 @@
   bottom: 0;
   left: 0;
   z-index: -50;
-  -webkit-filter: blur(9px);
-  -moz-filter: blur(9px);
-  -o-filter: blur(9px);
-  -ms-filter: blur(9px);
-  filter: blur(9px);
+  -webkit-filter: blur(5px) grayscale(60%);
+  -moz-filter: blur(5px) grayscale(60%);
+  -o-filter: blur(5px) grayscale(60%);
+  -ms-filter: blur(5px) grayscale(60%);
+  filter: blur(5px) grayscale(60%);
 }
 
 .pages-links {
@@ -32,6 +35,11 @@
   }
 }
 
+.page-wording-wrapper {
+  text-align: center;
+}
+
 .page-wording {
-  color: #FFFFFF;
+  color: #FEFEFE;
+  display: inline-block;
 }

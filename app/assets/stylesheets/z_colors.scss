@@ -1,10 +1,12 @@
-$gray-dark: rgba(66, 66, 66, 0.7);
+$gray-dark-opacity: rgba(66, 66, 66, 0.7);
 $white-off: #FAFAFA;
+$white-off-opacity: rgba(255, 255, 255, 0.3);
 $blue-primary: #2196F3;
 $gray-blue: #354152;
 $correct-green: #60B514;
 
-$modal-bg: $gray-dark;
+
+$modal-bg: $gray-dark-opacity;
 $modal-fg: $white-off;
 $body: $white-off;
 $secondary: $gray-blue;
