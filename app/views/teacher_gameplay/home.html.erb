@@ -63,3 +63,18 @@
     <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-margin">Close</button>
   </div>
 </div>
+
+<div id="sendMessageModal" class="modal">
+  <div class="modal-fg">
+    <%= form_tag send_message_path(@game_session, @current_group), remote: true, :class => "mdl-grid" do %>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell mdl-cell--6-col">
+        <%= text_area_tag :message_text, nil, class: "mdl-textfield__input", placeholder: "Enter Message Here" %>
+      </div>
+
+      <div class="input">
+        <%= submit_tag 'Send', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+      </div>
+    <% end %>
+    <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
+  </div>
+</div>
