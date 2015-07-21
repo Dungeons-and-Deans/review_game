@@ -29,16 +29,6 @@
         <li><div id="s<%= s.id %>"><%= render partial: '/supplies/show', locals: { s: s } %></div></li>
       <% end %>
     <% end %>
-    <li>
-      <div class="modal" id="suppliesModal">
-        <div class="modal-fg mdl-cell--3-col">
-          <h2>
-            <%= render partial: '/supplies/form', locals: { id: @current_group.id, supply: Supply.new } %>
-          </h2>
-          <button class="close-modal mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Close</button>
-        </div>
-      </div>
-    </li>
   </ul>
 </div>
 
