@@ -2,10 +2,15 @@
 
 one:
   game: :one
-  name: MyString
-  file_path: MyString
+  name: "map1"
+  file_path: "mapfile1"
 
 two:
-  game: :one
-  name: MyString
-  file_path: MyString
+  game: :two
+  name: "map2"
+  file_path: "mapfile2"
+
+three:
+  game: :three
+  name: "map3"
+  file_path: "mapfile3"

@@ -14,3 +14,9 @@ two:
   movement: 1
   story: "A story"
   closing: "A closing"
+
+three:
+  name: "GameThree"
+  movement: 1
+  story: "A story"
+  closing: "A closing"

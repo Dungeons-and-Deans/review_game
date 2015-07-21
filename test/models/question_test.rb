@@ -8,7 +8,10 @@ class QuestionTest < ActiveSupport::TestCase
   test "percent correct" do
     assert_equal 20, @question.percent_correct
   end
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test 'give points' do
+    assert_difference('Group.first.score', 1) do
+      @question.give_points(Group.first)
+    end
+  end
 end
