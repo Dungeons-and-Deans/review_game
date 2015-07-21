@@ -64,8 +64,7 @@ app.teacherGameplay = {
     $('#list-competition-answers').delegate('button.correct', 'click', function() {
       var url = $('#competition-question-form').attr('action');
       var group = $(this).attr('id');
-      var new_url = url.split('/').splice(-1, 1).join('/');
-      console.log(new_url);
+      var new_url = url.split('/').slice(0, 5).join('/') + '/' + group;
 
       $('#competition-question-form').attr('action', new_url);
       $('#competition-question-form').submit();
