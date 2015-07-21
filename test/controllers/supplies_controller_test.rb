@@ -16,7 +16,7 @@ class SuppliesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    xhr get: :edit, format: :js
+    xhr :get, :edit, id: @supply, format: "js"
     assert_response :success
   end
 

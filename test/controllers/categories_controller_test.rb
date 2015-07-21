@@ -26,7 +26,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    xhr get: :edit, format: :js
+    xhr :get, :edit, id: @category, format: "js"
     assert_response :success
   end
 

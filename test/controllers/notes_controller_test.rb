@@ -14,7 +14,7 @@ class NotesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    xhr get: :edit, format: :js, id: @note
+    xhr :get, :edit, id: @note, format: "js"
     assert_response :success
   end
 
