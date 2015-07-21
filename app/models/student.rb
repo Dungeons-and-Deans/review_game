@@ -6,8 +6,6 @@ class Student < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # before_create :set_games_won
-
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
@@ -26,9 +24,5 @@ class Student < ActiveRecord::Base
       '<i class="fa fa-times"></i>'
     end
   end
-
-  # private def set_games_won
-  #   self.games_won = 0
-  # end
 
 end
