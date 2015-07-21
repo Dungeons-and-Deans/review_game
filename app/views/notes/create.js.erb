@@ -1,1 +1,4 @@
 $('#notes<%= @current_group.id %>').html("<%= j(render partial: '/notes/index', locals: { group: @current_group }) %>");
+
+$("#notesModal").toggleClass('active');
+$('#notesModal').find('textarea')[0].value = ''
