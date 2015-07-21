@@ -1,34 +1,34 @@
 require 'test_helper'
 
 class SuppliesControllerTest < ActionController::TestCase
-  test "should get show" do
-    get :show
-    assert_response :success
-  end
 
-  test "should get new" do
-    get :new
-    assert_response :success
+  setup do
+    sign_in teachers(:three)
+    @game_session = game_sessions(:one)
+    @supply = supplies(:one)
+    @group = groups(:one)
   end
 
   test "should get create" do
-    get :create
-    assert_response :success
+    assert_difference('Supply.count', 1) do
+      post :create, format: :js, id: @game_session, group_id: @group, supply: { name: @supply.name, amount: @supply.amount, group_id: @group.id }
+    end
   end
 
   test "should get edit" do
-    get :edit
+    xhr get: :edit, format: :js
     assert_response :success
   end
 
   test "should get update" do
-    get :update
+    patch :update, format: :js, id: @group, supply_id: @supply, supply: { name: @supply.name, amount: @supply.amount }
     assert_response :success
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    assert_difference('Supply.count', -1) do
+      delete :destroy, format: :js, id: @group, supply_id: @supply
+    end
   end
 
 end

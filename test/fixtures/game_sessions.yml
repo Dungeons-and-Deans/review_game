@@ -5,9 +5,15 @@ one:
   game: :one
   turn_group_id: 1
   icon: :one
+  winning_group_id: 1
+  current_question_id: 1
+  min_difficulty: 1
 
 two:
   name: "game2"
   game: :one
   turn_group_id: 2
   icon: :one
+  winning_group_id: 2
+  current_question_id: 2
+  min_difficulty: 2

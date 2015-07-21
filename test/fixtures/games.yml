@@ -4,9 +4,13 @@ one:
   teacher: :one
   name: "GameOne"
   movement: 1
+  story: "A story"
+  closing: "A closing"
 
 
 two:
   teacher: :one
   name: "GameTwo"
   movement: 1
+  story: "A story"
+  closing: "A closing"

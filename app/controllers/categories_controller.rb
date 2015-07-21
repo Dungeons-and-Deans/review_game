@@ -19,16 +19,6 @@ class CategoriesController < ApplicationController
     redirect_to @category
   end
 
-  def create
-    @category = Category.new(category_params)
-
-    if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
-    else
-      render :new
-    end
-  end
-
   def edit
     respond_to do |format|
       format.js

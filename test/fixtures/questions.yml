@@ -6,6 +6,7 @@ one:
   category: :one
   right: 1
   wrong: 4
+  answer: "answer"
 
 two:
   content: "question2"
@@ -13,3 +14,4 @@ two:
   category: :two
   right: 5
   wrong: 2
+  answer: "answer"

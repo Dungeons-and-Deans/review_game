@@ -13,9 +13,4 @@ class TeacherGameplayControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get groups" do
-    get :groups, id: @game_session.id
-    assert_response :success
-  end
-
 end

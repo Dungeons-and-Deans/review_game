@@ -22,7 +22,7 @@ class StudentsControllerTest < ActionController::TestCase
       post :create, student: { first_name: @student.first_name, games_won: @student.games_won, last_name: @student.last_name, teacher_id: @student.teacher_id }
     end
 
-    assert_redirected_to student_path(assigns(:student))
+    assert_redirected_to students_path
   end
 
   test "should show student" do
@@ -37,7 +37,7 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should update student" do
     patch :update, id: @student, student: { first_name: @student.first_name, games_won: @student.games_won, last_name: @student.last_name, teacher_id: @student.teacher_id }
-    assert_redirected_to student_path(assigns(:student))
+    assert_redirected_to students_path
   end
 
   test "should destroy student" do

@@ -2,10 +2,6 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :set_current_group, only: [ :update, :destroy]
 
-  def new
-    @note = Note.new
-  end
-
   def edit
     respond_to do |format|
       format.js
