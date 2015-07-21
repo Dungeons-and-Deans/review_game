@@ -12,6 +12,12 @@
   <div id="group-links">
     <%= render partial: 'group_links' %>
   </div>
+  <div class="group-nav-links">
+  <div id="next-turn">
+    <%= render partial: '/teacher_gameplay/next_turn' %>
+  </div>
+  <%= render partial: 'winner' %>
+  </div>
 </div>
 
 <div class="mdl-cell mdl-cell--5-col column-2">
@@ -39,12 +45,7 @@
   </div>
 </div>
 
-<div class="teacher-footer">
-  <div id="next-turn">
-    <%= render partial: '/teacher_gameplay/next_turn' %>
-  </div>
-  <%= render partial: 'winner' %>
-</div>
+  
 
 <div id="answer-buttons">
   <%= render partial: 'answer_buttons' %>

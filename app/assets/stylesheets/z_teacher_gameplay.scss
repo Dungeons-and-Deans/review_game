@@ -10,7 +10,7 @@
 }
 
 div.column-1 {
-  height: 80vh;
+  height: 100vh;
   margin-left: -8px;
   background: $gray-blue;
   color: #FFFFFF;
@@ -58,22 +58,13 @@ div#roster {
   margin-top: 2rem;
 }
 
-div.teacher-footer {
-  background: $gray-blue;
-  height: 5vh;
-  padding: 2rem 4rem;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .bookmark {
   margin: 1rem 0;
+  padding: 0.5rem 2rem;
 }
 
-.bookmark {
-  padding: 0.5rem 2rem;
+.group-nav-links {
+  text-align: center;
 }
 
 span.group-name {
@@ -100,14 +91,6 @@ button.correct {
 button#send-competition-question {
   position: absolute;
   right: 0;
-}
-
-.next-turn {
-  float: left;
-}
-
-.choose-winner {
-  float: right;
 }
 
 #winnerModal {
