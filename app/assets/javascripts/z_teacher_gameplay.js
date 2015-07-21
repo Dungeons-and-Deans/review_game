@@ -48,18 +48,6 @@ app.teacherGameplay = {
     })
   },
 
-  chooseWinner: function () {
-    $('button.choose-winner').on('click', function () {
-      $('#winnerModal').toggleClass('active');
-    });
-  },
-
-  closeWinner: function () {
-    $('button.choose-winner-close').on('click', function () {
-      $('#winnerModal').toggleClass('active');
-    });
-  },
-
   sendMessage: function () {
     $(".column-2").on('click', '#send-message', function () {
       $("#sendMessageModal").toggleClass('active');

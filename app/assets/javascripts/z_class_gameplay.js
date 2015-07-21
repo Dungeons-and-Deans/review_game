@@ -4,7 +4,7 @@
 app.classGameplay = {
   dragDrop: function () {
     $('.draggables').draggable({
-      
+
       containment: ('#map-container'),
       stop: function () {
         var id = event.target.id;
@@ -26,7 +26,18 @@ app.classGameplay = {
         } else {
         revert: true;
       }}
-      
+
+    });
+  },
+  chooseWinner: function () {
+    $('button.choose-winner').on('click', function () {
+      $('#winnerModal').toggleClass('active');
+    });
+  },
+
+  closeWinner: function () {
+    $('button.choose-winner-close').on('click', function () {
+      $('#winnerModal').toggleClass('active');
     });
   },
 

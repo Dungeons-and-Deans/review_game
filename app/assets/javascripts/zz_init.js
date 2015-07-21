@@ -27,8 +27,7 @@ $(function () {
     app.teacherGameplay.sendQuestion();
     app.teacherGameplay.addSupplies();
     app.teacherGameplay.assignSupplies();
-    app.teacherGameplay.chooseWinner();
-    app.teacherGameplay.closeWinner();
+
     app.teacherGameplay.sendMessage();
     app.teacherGameplay.chooseCorrect();
     app.teacherGameplay.chooseNoGroup();
@@ -44,16 +43,19 @@ $(function () {
 
   }
 
+  app.classGameplay.chooseWinner();
+  app.classGameplay.closeWinner();
+
   app.gameSession.removePlaceholder();
   app.modalClose();
-  
-  
+
+
   var map = $('img.map');
   var canvas = $('canvas');
-  
+
   canvas.attr({
     width: map.width(),
     height: map.height()
   });
-  
+
 });
