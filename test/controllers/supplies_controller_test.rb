@@ -15,11 +15,6 @@ class SuppliesControllerTest < ActionController::TestCase
     end
   end
 
-  test "should get edit" do
-    xhr :get, :edit, id: @supply, format: "js"
-    assert_response :success
-  end
-
   test "should get update" do
     patch :update, format: :js, id: @group, supply_id: @supply, supply: { name: @supply.name, amount: @supply.amount }
     assert_response :success
