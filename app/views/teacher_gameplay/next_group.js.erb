@@ -7,3 +7,4 @@ $('#next-question').html("<%= j(render partial: 'next_question') %>");
 $('.box').prop('checked', false);
 $('#box<%= @current_group.id %>').prop('checked', true);
 $('#box<%= @current_group.id %>').prop('disabled', true);
+$('#modals').html("<%= j(render partial: 'modals') %>");
