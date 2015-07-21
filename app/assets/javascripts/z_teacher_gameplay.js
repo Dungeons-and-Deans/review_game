@@ -63,7 +63,7 @@ app.teacherGameplay = {
   chooseCorrect: function () {
     $('#list-competition-answers').delegate('button.correct', 'click', function() {
       var url = $('#competition-question-form').attr('action');
-      var group = $(this).closest('button').attr('id');
+      var group = $(this).attr('id');
       var new_url = url.slice(0, -1) + group;
 
       $('#competition-question-form').attr('action', new_url);
